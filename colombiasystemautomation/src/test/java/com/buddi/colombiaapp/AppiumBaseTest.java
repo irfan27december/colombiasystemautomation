@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.colombia.utilities.ReadProperties;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -17,29 +19,36 @@ public class AppiumBaseTest {
 	AppiumServerJava appiumServer;
 	AndroidDriver<AndroidElement> driver;
 	WebDriverWait wait;
+	int time = 20;
 	File appDir;
 	File appName;
 	DesiredCapabilities cap;
-
+	public static final String testDataExcelFileName = "testdata.xlsx";
+	ReadProperties readProperties = new ReadProperties();
+	int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
+	String appiumServerIPAddress = readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS");
+	String appiumServerURL;
+	
 	@BeforeTest
 	public void startAppriumServer(){
 		System.out.println("In startAppriumServer method....");
 		appiumServer = new AppiumServerJava();
+		
 		//Check if Appium Server is running
-		if(appiumServer.checkIfServerIsRunnning(appiumServer.appiumServerPort) == true){
-			System.out.println("Appium Server already running on port - " + appiumServer.appiumServerPort);
-			System.out.println("Stopping Appium Server running on port - " + appiumServer.appiumServerPort);
+		if(appiumServer.checkIfServerIsRunnning(appiumServerPort) == true){
+			System.out.println("Appium Server already running on port - " + appiumServerPort);
+			System.out.println("Stopping Appium Server running on port - " + appiumServerPort);
 			appiumServer.stopServer();
 		}else{
-			System.out.println("Starting Appium Server running on port - " + appiumServer.appiumServerPort);
+			System.out.println("Starting Appium Server running on port - " + appiumServerPort);
 			appiumServer.startServer();		
 		}
 
-		appDir = new File("src/test/java/apps");
-		appName = new File(appDir, "columbia-debug.apk");
+		appDir = new File(readProperties.getPropertyValue("APP_DIRECTORY"));
+		appName = new File(readProperties.getPropertyValue("APP_DIRECTORY"), readProperties.getPropertyValue("APP_NAME"));
 
 		cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "SampleEmulator");
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, readProperties.getPropertyValue("ANDROID_EMULATOR_DEVICE_NAME"));
 		cap.setCapability(MobileCapabilityType.APP, appName.getAbsolutePath());
 		cap.setCapability("autoGrantPermissions", true);
 		cap.setCapability("autoAcceptAlerts", true);
@@ -53,12 +62,13 @@ public class AppiumBaseTest {
 		cap.setCapability("appWaitActivity","***");		
 
 		try {
-			driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+			appiumServerURL = "http://"+appiumServerIPAddress+":"+appiumServerPort+"/wd/hub";
+			driver = new AndroidDriver<AndroidElement>(new URL(appiumServerURL), cap);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		wait = new WebDriverWait(driver, 20);
+		wait = new WebDriverWait(driver, time);
 	}
 
 

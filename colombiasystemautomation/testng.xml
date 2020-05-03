@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="com.instatech.buddi.appiumproject.LoginColombiaApp"/>
+      <class name="com.buddi.colombiaapp.LoginColombiaAppNew"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

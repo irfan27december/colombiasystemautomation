@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.net.ServerSocket;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.colombia.utilities.ReadProperties;
+
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
@@ -13,8 +16,9 @@ public class AppiumServerJava {
 	private AppiumDriverLocalService service;
 	private AppiumServiceBuilder builder;
 	private DesiredCapabilities cap;
-	public String appiumServerIPAddress = "127.0.0.1";
-	public int appiumServerPort = 4723;
+	/*public String appiumServerIPAddress = "127.0.0.1";
+	public int appiumServerPort = 4723;*/
+	ReadProperties readProperties = new ReadProperties();
 	
 	public void startServer() {
 		//Set Capabilities
@@ -23,8 +27,8 @@ public class AppiumServerJava {
 		
 		//Build the Appium service
 		builder = new AppiumServiceBuilder();
-		builder.withIPAddress(appiumServerIPAddress);
-		builder.usingPort(appiumServerPort);
+		builder.withIPAddress(readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS"));		
+		builder.usingPort(Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT")));
 		builder.withCapabilities(cap);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
 		builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");

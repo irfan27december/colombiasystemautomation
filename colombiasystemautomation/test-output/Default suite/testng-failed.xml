@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.instatech.buddi.appiumproject.LoginColombiaAppNew">
+      <class name="com.buddi.colombiaapp.LoginColombiaAppNew">
         <methods>
-          <include name="stopAppriumServer"/>
           <include name="loginColombiaApp"/>
+          <include name="stopAppriumServer"/>
           <include name="startAppriumServer"/>
         </methods>
-      </class> <!-- com.instatech.buddi.appiumproject.LoginColombiaAppNew -->
+      </class> <!-- com.buddi.colombiaapp.LoginColombiaAppNew -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
