@@ -1,4 +1,4 @@
-package com.buddi.colombiaapp;
+package com.buddi.colombiaapp.samples;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+
+import com.buddi.colombiaapp.tests.AppiumServerJava;
 
 import io.appium.java_client.android.*;
 

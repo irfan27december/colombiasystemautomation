@@ -1,4 +1,4 @@
-package com.buddi.colombiaapp;
+package com.buddi.colombiaapp.tests;
 
 import java.io.IOException;
 import java.net.ServerSocket;

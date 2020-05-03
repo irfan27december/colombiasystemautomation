@@ -1,4 +1,4 @@
-package com.buddi.colombiaapp;
+package com.buddi.colombiaapp.tests;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -16,24 +16,26 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class AppiumBaseTest {
+	ReadProperties readProperties = new ReadProperties();
 	AppiumServerJava appiumServer;
 	AndroidDriver<AndroidElement> driver;
 	WebDriverWait wait;
+	
+	DesiredCapabilities cap;
 	int time = 20;
 	File appDir;
 	File appName;
-	DesiredCapabilities cap;
-	public static final String testDataExcelFileName = "testdata.xlsx";
-	ReadProperties readProperties = new ReadProperties();
-	int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
-	String appiumServerIPAddress = readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS");
-	String appiumServerURL;
 	
+	public static final String testDataExcelFileName = "testdata.xlsx";	
+	public int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
+	public String appiumServerIPAddress = readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS");
+	String appiumServerURL;
+
 	@BeforeTest
 	public void startAppriumServer(){
 		System.out.println("In startAppriumServer method....");
 		appiumServer = new AppiumServerJava();
-		
+
 		//Check if Appium Server is running
 		if(appiumServer.checkIfServerIsRunnning(appiumServerPort) == true){
 			System.out.println("Appium Server already running on port - " + appiumServerPort);
@@ -43,7 +45,11 @@ public class AppiumBaseTest {
 			System.out.println("Starting Appium Server running on port - " + appiumServerPort);
 			appiumServer.startServer();		
 		}
-
+		launchColombiaApp();		
+	}
+	
+	//Method to launch app
+	public void launchColombiaApp(){
 		appDir = new File(readProperties.getPropertyValue("APP_DIRECTORY"));
 		appName = new File(readProperties.getPropertyValue("APP_DIRECTORY"), readProperties.getPropertyValue("APP_NAME"));
 
@@ -65,7 +71,6 @@ public class AppiumBaseTest {
 			appiumServerURL = "http://"+appiumServerIPAddress+":"+appiumServerPort+"/wd/hub";
 			driver = new AndroidDriver<AndroidElement>(new URL(appiumServerURL), cap);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		wait = new WebDriverWait(driver, time);

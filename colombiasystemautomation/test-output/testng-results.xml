@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="28993" started-at="2020-05-03T08:23:09Z" finished-at="2020-05-03T08:23:38Z">
+  <suite name="Suite" duration-ms="28632" started-at="2020-05-03T08:54:47Z" finished-at="2020-05-03T08:55:16Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="28993" started-at="2020-05-03T08:23:09Z" finished-at="2020-05-03T08:23:38Z">
-      <class name="com.buddi.colombiaapp.LoginColombiaAppNew">
-        <test-method status="PASS" signature="startAppriumServer()[pri:0, instance:com.buddi.colombiaapp.LoginColombiaAppNew@ff5b51f]" name="startAppriumServer" is-config="true" duration-ms="15368" started-at="2020-05-03T08:23:09Z" finished-at="2020-05-03T08:23:25Z">
+    <test name="Test" duration-ms="28632" started-at="2020-05-03T08:54:47Z" finished-at="2020-05-03T08:55:16Z">
+      <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest">
+        <test-method status="PASS" signature="startAppriumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="startAppriumServer" is-config="true" duration-ms="15099" started-at="2020-05-03T08:54:47Z" finished-at="2020-05-03T08:55:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startAppriumServer -->
-        <test-method status="PASS" signature="loginColombiaApp()[pri:0, instance:com.buddi.colombiaapp.LoginColombiaAppNew@ff5b51f]" name="loginColombiaApp" duration-ms="13535" started-at="2020-05-03T08:23:25Z" finished-at="2020-05-03T08:23:38Z">
+        <test-method status="PASS" signature="loginColombiaApp()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="loginColombiaApp" duration-ms="13446" started-at="2020-05-03T08:55:02Z" finished-at="2020-05-03T08:55:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginColombiaApp -->
-        <test-method status="PASS" signature="stopAppriumServer()[pri:0, instance:com.buddi.colombiaapp.LoginColombiaAppNew@ff5b51f]" name="stopAppriumServer" is-config="true" duration-ms="52" started-at="2020-05-03T08:23:38Z" finished-at="2020-05-03T08:23:38Z">
+        <test-method status="PASS" signature="stopAppriumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="stopAppriumServer" is-config="true" duration-ms="50" started-at="2020-05-03T08:55:16Z" finished-at="2020-05-03T08:55:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopAppriumServer -->
-      </class> <!-- com.buddi.colombiaapp.LoginColombiaAppNew -->
+      </class> <!-- com.buddi.colombiaapp.tests.LoginColombiaAppTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

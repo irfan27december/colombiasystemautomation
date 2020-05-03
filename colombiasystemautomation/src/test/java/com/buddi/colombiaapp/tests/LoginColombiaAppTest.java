@@ -1,4 +1,4 @@
-package com.buddi.colombiaapp;
+package com.buddi.colombiaapp.tests;
 
 
 import java.io.File;
@@ -16,7 +16,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class LoginColombiaAppNew extends AppiumBaseTest{
+public class LoginColombiaAppTest extends AppiumBaseTest{
 
 	//private static AndroidDriver driver;
 	//AndroidDriver<AndroidElement> driver;
@@ -56,8 +56,6 @@ public class LoginColombiaAppNew extends AppiumBaseTest{
 
 	@Test(priority = 0)
 	public void loginColombiaApp() throws InterruptedException{
-
-
 		String phoneID = driver.findElement(MobileBy.id("txt_phone_id")).getAttribute("text");
 		System.out.println("Phone ID is " +phoneID );
 
@@ -71,8 +69,12 @@ public class LoginColombiaAppNew extends AppiumBaseTest{
 		Thread.sleep(5000);
 	}
 
-
-
+	@Test(priority = 1)
+	public void logOutColombiaApp() throws InterruptedException{
+		driver.findElement(MobileBy.className("android.widget.ImageView")).click();
+		Thread.sleep(5000);
+	
+	}
 
 
 }

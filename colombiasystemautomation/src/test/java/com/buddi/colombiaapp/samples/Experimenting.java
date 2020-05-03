@@ -1,4 +1,4 @@
-package com.buddi.colombiaapp;
+package com.buddi.colombiaapp.samples;
 
 
 import io.appium.java_client.MobileBy;

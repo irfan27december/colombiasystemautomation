@@ -7,14 +7,13 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Platform;
 
-import com.buddi.colombiaapp.AppiumBaseTest;
+import com.buddi.colombiaapp.tests.AppiumBaseTest;
+
+import static com.buddi.colombiaapp.tests.AppiumBaseTest.testDataExcelFileName;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
- 
-//import static com.colombia.seleniumtests.BaseTest.testDataExcelFileName;
-import static com.buddi.colombiaapp.AppiumBaseTest.testDataExcelFileName;
  
 /**
  * Created by obaskirt on 28-Oct-17.
