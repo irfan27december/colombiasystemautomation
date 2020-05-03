@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="38994" started-at="2020-05-03T07:02:40Z" finished-at="2020-05-03T07:03:19Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="38994" started-at="2020-05-03T07:02:40Z" finished-at="2020-05-03T07:03:19Z">
+      <class name="com.buddi.colombiaapp.LoginColombiaAppNew">
+        <test-method status="PASS" signature="startAppriumServer()[pri:0, instance:com.buddi.colombiaapp.LoginColombiaAppNew@ff5b51f]" name="startAppriumServer" is-config="true" duration-ms="24434" started-at="2020-05-03T07:02:40Z" finished-at="2020-05-03T07:03:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startAppriumServer -->
+        <test-method status="PASS" signature="loginColombiaApp()[pri:0, instance:com.buddi.colombiaapp.LoginColombiaAppNew@ff5b51f]" name="loginColombiaApp" duration-ms="14474" started-at="2020-05-03T07:03:04Z" finished-at="2020-05-03T07:03:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginColombiaApp -->
+        <test-method status="PASS" signature="stopAppriumServer()[pri:0, instance:com.buddi.colombiaapp.LoginColombiaAppNew@ff5b51f]" name="stopAppriumServer" is-config="true" duration-ms="52" started-at="2020-05-03T07:03:19Z" finished-at="2020-05-03T07:03:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopAppriumServer -->
+      </class> <!-- com.buddi.colombiaapp.LoginColombiaAppNew -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
