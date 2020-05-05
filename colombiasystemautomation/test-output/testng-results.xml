@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="30804" started-at="2020-05-05T12:05:16Z" finished-at="2020-05-05T12:05:47Z">
+  <suite name="Default suite" duration-ms="29052" started-at="2020-05-05T12:34:05Z" finished-at="2020-05-05T12:34:34Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="30804" started-at="2020-05-05T12:05:16Z" finished-at="2020-05-05T12:05:47Z">
+    <test name="Default test" duration-ms="29052" started-at="2020-05-05T12:34:05Z" finished-at="2020-05-05T12:34:34Z">
       <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest">
-        <test-method status="PASS" signature="startAppriumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="startAppriumServer" is-config="true" duration-ms="13777" started-at="2020-05-05T12:05:16Z" finished-at="2020-05-05T12:05:30Z">
+        <test-method status="PASS" signature="startAppriumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="startAppriumServer" is-config="true" duration-ms="12659" started-at="2020-05-05T12:34:05Z" finished-at="2020-05-05T12:34:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startAppriumServer -->
-        <test-method status="PASS" signature="getAppHomeScreenMainTitle()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="getAppHomeScreenMainTitle" duration-ms="2347" started-at="2020-05-05T12:05:30Z" finished-at="2020-05-05T12:05:32Z">
+        <test-method status="PASS" signature="getAppHomeScreenMainTitle()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="getAppHomeScreenMainTitle" duration-ms="1463" started-at="2020-05-05T12:34:18Z" finished-at="2020-05-05T12:34:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAppHomeScreenMainTitle -->
-        <test-method status="PASS" signature="getAppHomeScreenSubTitle()[pri:1, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="getAppHomeScreenSubTitle" duration-ms="353" started-at="2020-05-05T12:05:32Z" finished-at="2020-05-05T12:05:33Z">
+        <test-method status="PASS" signature="getAppHomeScreenSubTitle()[pri:1, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="getAppHomeScreenSubTitle" duration-ms="305" started-at="2020-05-05T12:34:19Z" finished-at="2020-05-05T12:34:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAppHomeScreenSubTitle -->
-        <test-method status="PASS" signature="loginColombiaApp()[pri:2, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="loginColombiaApp" duration-ms="9153" started-at="2020-05-05T12:05:33Z" finished-at="2020-05-05T12:05:42Z">
+        <test-method status="PASS" signature="loginColombiaApp()[pri:2, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="loginColombiaApp" duration-ms="9400" started-at="2020-05-05T12:34:19Z" finished-at="2020-05-05T12:34:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginColombiaApp -->
-        <test-method status="PASS" signature="logOutColombiaApp()[pri:3, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="logOutColombiaApp" duration-ms="5119" started-at="2020-05-05T12:05:42Z" finished-at="2020-05-05T12:05:47Z">
+        <test-method status="PASS" signature="verifyNoJobsScheduledText()[pri:3, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="verifyNoJobsScheduledText" duration-ms="56" started-at="2020-05-05T12:34:29Z" finished-at="2020-05-05T12:34:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyNoJobsScheduledText -->
+        <test-method status="PASS" signature="logOutColombiaApp()[pri:4, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="logOutColombiaApp" duration-ms="5114" started-at="2020-05-05T12:34:29Z" finished-at="2020-05-05T12:34:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logOutColombiaApp -->
-        <test-method status="FAIL" signature="stopAppiumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="stopAppiumServer" is-config="true" duration-ms="0" started-at="2020-05-05T12:05:47Z" finished-at="2020-05-05T12:05:47Z">
+        <test-method status="FAIL" signature="stopAppiumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f]" name="stopAppiumServer" is-config="true" duration-ms="1" started-at="2020-05-05T12:34:34Z" finished-at="2020-05-05T12:34:34Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -64,6 +68,6 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
           </reporter-output>
         </test-method> <!-- stopAppiumServer -->
       </class> <!-- com.buddi.colombiaapp.tests.LoginColombiaAppTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
