@@ -45,6 +45,7 @@ public class LoginColombiaAppPage {
 	@FindBy(id = "edit_email") private WebElement emailField;
 	@FindBy(id = "edit_password") private WebElement passwordField;
 	@FindBy(id = "button") private WebElement loginButton;
+	@FindBy(id = "txt_no_jobs") private WebElement txtNoJobs;
 	@FindBy(className = "android.widget.ImageView") private WebElement logOutButton;
 	//WebElement logOutButton = driver.findElement(MobileBy.className("android.widget.ImageView"));
 
@@ -80,6 +81,13 @@ public class LoginColombiaAppPage {
 	public void getPhoneID(){
 		String phoneID = textPhoneID.getAttribute("text");
 		System.out.println("Phone ID is " +phoneID );
+	}
+
+	//Method to get no jobs text
+	public String getNoJobsText(){
+		String noJobsText = txtNoJobs.getText();
+		System.out.println("Screen shows following no jobs text: " +noJobsText);
+		return noJobsText;
 	}
 
 
