@@ -37,13 +37,11 @@ public class AppiumBaseTest {
 		appiumServer = new AppiumServerJava();
 
 		//Check if Appium Server is running
-		if(appiumServer.checkIfServerIsRunnning(appiumServerPort) == true){
-			System.out.println("Appium Server already running on port - " + appiumServerPort);
-			System.out.println("Stopping Appium Server running on port - " + appiumServerPort);
+		if(!appiumServer.checkIfServerIsRunnning(appiumServerPort)) {
+			appiumServer.startServer();
 			appiumServer.stopServer();
-		}else{
-			System.out.println("Starting Appium Server running on port - " + appiumServerPort);
-			appiumServer.startServer();		
+		} else {
+			System.out.println("Appium Server already running on Port - " + appiumServerPort);
 		}
 		launchColombiaApp();		
 	}
@@ -62,6 +60,7 @@ public class AppiumBaseTest {
 		cap.setCapability("fullReset", false);
 		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
 		cap.setCapability("automationName", "UiAutomator2");
+		//Package name = com.buddi.columbia.debug
 		cap.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "***");
 		cap.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY","***");
 		cap.setCapability("takesScreenshot", true); 
@@ -78,7 +77,7 @@ public class AppiumBaseTest {
 
 
 	@AfterTest(alwaysRun = true)
-	public void stopAppriumServer(){
+	public void stopAppiumServer(){
 		appiumServer.stopServer();
 	}
 

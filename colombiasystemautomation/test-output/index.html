@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,6 +100,21 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.colombiaapp.tests.LoginColombiaAppTest" hash-for-method="getAppHomeScreenMainTitle">getAppHomeScreenMainTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.colombiaapp.tests.LoginColombiaAppTest" hash-for-method="getAppHomeScreenSubTitle">getAppHomeScreenSubTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.colombiaapp.tests.LoginColombiaAppTest" hash-for-method="logOutColombiaApp">logOutColombiaApp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.colombiaapp.tests.LoginColombiaAppTest" hash-for-method="loginColombiaApp">loginColombiaApp</a> <!-- method navigator-link -->
@@ -123,6 +138,27 @@
               <span class="class-name">com.buddi.colombiaapp.tests.LoginColombiaAppTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getAppHomeScreenMainTitle">
+                  </a> <!-- getAppHomeScreenMainTitle -->
+                  <span class="method-name">getAppHomeScreenMainTitle</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="getAppHomeScreenSubTitle">
+                  </a> <!-- getAppHomeScreenSubTitle -->
+                  <span class="method-name">getAppHomeScreenSubTitle</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="logOutColombiaApp">
+                  </a> <!-- logOutColombiaApp -->
+                  <span class="method-name">logOutColombiaApp</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="loginColombiaApp">
@@ -184,16 +220,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'loginColombiaApp')
 data.setCell(0, 2, 'com.buddi.colombiaapp.tests.LoginColombiaAppTest')
-data.setCell(0, 3, 13446);
+data.setCell(0, 3, 9153);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'logOutColombiaApp')
+data.setCell(1, 2, 'com.buddi.colombiaapp.tests.LoginColombiaAppTest')
+data.setCell(1, 3, 5119);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'getAppHomeScreenMainTitle')
+data.setCell(2, 2, 'com.buddi.colombiaapp.tests.LoginColombiaAppTest')
+data.setCell(2, 3, 2347);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'getAppHomeScreenSubTitle')
+data.setCell(3, 2, 'com.buddi.colombiaapp.tests.LoginColombiaAppTest')
+data.setCell(3, 3, 353);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 16 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -225,12 +273,26 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
+                <span class="method-name">getAppHomeScreenMainTitle</span>
+                <span class="method-start">13811 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getAppHomeScreenSubTitle</span>
+                <span class="method-start">16161 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">loginColombiaApp</span>
-                <span class="method-start">15129 ms</span>
+                <span class="method-start">16515 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">logOutColombiaApp</span>
+                <span class="method-start">25671 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
-                <span class="method-name">stopAppriumServer</span>
-                <span class="method-start">28579 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">stopAppiumServer</span>
+                <span class="method-start">30793 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

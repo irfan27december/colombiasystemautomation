@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun May 03 13:51:39 IST 2020</td>
+<td>Started on:</td><td>Tue May 05 17:29:06 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>29 seconds (29264 ms)</td>
+<tr><td>Total time:</td><td>35 seconds (35163 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,74 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.buddi.colombiaapp.tests.LoginColombiaAppTest.stopAppiumServer()'><b>stopAppiumServer</b><br>Test class: com.buddi.colombiaapp.tests.LoginColombiaAppTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.colombiaapp.tests.AppiumServerJava.stopServer(AppiumServerJava.java:43)
+	at com.buddi.colombiaapp.tests.AppiumBaseTest.stopAppiumServer(AppiumBaseTest.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.TestRunner.afterRun(TestRunner.java:725)
+	at org.testng.TestRunner.run(TestRunner.java:509)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace672313607", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace672313607'><pre>java.lang.NullPointerException
+	at com.buddi.colombiaapp.tests.AppiumServerJava.stopServer(AppiumServerJava.java:43)
+	at com.buddi.colombiaapp.tests.AppiumBaseTest.stopAppiumServer(AppiumBaseTest.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.TestRunner.afterRun(TestRunner.java:725)
+	at org.testng.TestRunner.run(TestRunner.java:509)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,10 +143,25 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.buddi.colombiaapp.LoginColombiaAppNew.loginColombiaApp()'><b>loginColombiaApp</b><br>Test class: com.buddi.colombiaapp.LoginColombiaAppNew</td>
+<td title='com.buddi.colombiaapp.tests.LoginColombiaAppTest.getAppHomeScreenMainTitle()'><b>getAppHomeScreenMainTitle</b><br>Test class: com.buddi.colombiaapp.tests.LoginColombiaAppTest</td>
 <td></td>
-<td>13</td>
-<td>com.buddi.colombiaapp.LoginColombiaAppNew@ff5b51f</td></tr>
+<td>1</td>
+<td>com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f</td></tr>
+<tr>
+<td title='com.buddi.colombiaapp.tests.LoginColombiaAppTest.getAppHomeScreenSubTitle()'><b>getAppHomeScreenSubTitle</b><br>Test class: com.buddi.colombiaapp.tests.LoginColombiaAppTest</td>
+<td></td>
+<td>0</td>
+<td>com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f</td></tr>
+<tr>
+<td title='com.buddi.colombiaapp.tests.LoginColombiaAppTest.logOutColombiaApp()'><b>logOutColombiaApp</b><br>Test class: com.buddi.colombiaapp.tests.LoginColombiaAppTest</td>
+<td></td>
+<td>5</td>
+<td>com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f</td></tr>
+<tr>
+<td title='com.buddi.colombiaapp.tests.LoginColombiaAppTest.loginColombiaApp()'><b>loginColombiaApp</b><br>Test class: com.buddi.colombiaapp.tests.LoginColombiaAppTest</td>
+<td></td>
+<td>10</td>
+<td>com.buddi.colombiaapp.tests.LoginColombiaAppTest@ff5b51f</td></tr>
 </table><p>
 </body>
 </html>

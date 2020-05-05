@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.buddi.colombiaapp.LoginColombiaAppNew">
+      <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest">
         <methods>
-          <include name="loginColombiaApp"/>
-          <include name="stopAppriumServer"/>
           <include name="startAppriumServer"/>
+          <include name="loginColombiaApp"/>
+          <include name="logOutColombiaApp"/>
+          <include name="stopAppriumServer"/>
         </methods>
-      </class> <!-- com.buddi.colombiaapp.LoginColombiaAppNew -->
+      </class> <!-- com.buddi.colombiaapp.tests.LoginColombiaAppTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
