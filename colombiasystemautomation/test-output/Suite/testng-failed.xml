@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.instatech.buddi.appiumproject.LoginColombiaApp">
+      <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest">
         <methods>
-          <include name="setUp"/>
-          <include name="loginColombiaApp"/>
-          <include name="tearDown"/>
+          <include name="startAppriumServer"/>
+          <include name="stopAppiumServer"/>
+          <include name="verifyNoJobsScheduledText"/>
         </methods>
-      </class> <!-- com.instatech.buddi.appiumproject.LoginColombiaApp -->
+      </class> <!-- com.buddi.colombiaapp.tests.LoginColombiaAppTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -6,10 +6,13 @@ import java.net.URL;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import com.colombia.utilities.ReadProperties;
+import com.colombia.utilities.StringConstants;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -22,7 +25,7 @@ public class AppiumBaseTest {
 	WebDriverWait wait;
 	
 	DesiredCapabilities cap;
-	int time = 20;
+	int TIME_SECONDS = 20;
 	File appDir;
 	File appName;
 	
@@ -31,17 +34,18 @@ public class AppiumBaseTest {
 	public String appiumServerIPAddress = readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS");
 	String appiumServerURL;
 
-	@BeforeTest
+	@BeforeSuite
 	public void startAppriumServer(){
 		System.out.println("In startAppriumServer method....");
 		appiumServer = new AppiumServerJava();
 
 		//Check if Appium Server is running
 		if(!appiumServer.checkIfServerIsRunnning(appiumServerPort)) {
+			System.out.println("Appium Server is running on port - " + appiumServerPort);
 			appiumServer.startServer();
-			appiumServer.stopServer();
+			//appiumServer.stopServer();
 		} else {
-			System.out.println("Appium Server already running on Port - " + appiumServerPort);
+			System.out.println("Appium Server is already running on port - " + appiumServerPort);
 		}
 		launchColombiaApp();		
 	}
@@ -61,8 +65,10 @@ public class AppiumBaseTest {
 		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
 		cap.setCapability("automationName", "UiAutomator2");
 		//Package name = com.buddi.columbia.debug
-		cap.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "***");
-		cap.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY","***");
+		cap.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "com.buddi.columbia.debug");
+		cap.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY",".MainActivity");
+		/*cap.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "***");
+		cap.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY","***");*/
 		cap.setCapability("takesScreenshot", true); 
 		cap.setCapability("appWaitActivity","***");		
 
@@ -72,11 +78,12 @@ public class AppiumBaseTest {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		wait = new WebDriverWait(driver, time);
+		wait = new WebDriverWait(driver, TIME_SECONDS);
 	}
 
+	
 
-	@AfterTest(alwaysRun = true)
+	@AfterSuite(alwaysRun = true)
 	public void stopAppiumServer(){
 		appiumServer.stopServer();
 	}

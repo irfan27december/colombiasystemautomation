@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.buddi.colombiapp.pages.LoginColombiaAppPage;
+import com.colombia.common.CommonActions;
 import com.colombia.utilities.StringConstants;
 
 public class LoginColombiaAppTest extends AppiumBaseTest{
@@ -42,6 +43,7 @@ public class LoginColombiaAppTest extends AppiumBaseTest{
 	@Test(priority = 3)
 	public void verifyNoJobsScheduledText() throws InterruptedException{
 		LoginColombiaAppPage loginColombiaAppPage = PageFactory.initElements(driver, LoginColombiaAppPage.class);
+		Thread.sleep(5000);
 		String actualNoJobsText = loginColombiaAppPage.getNoJobsText();
 		Assert.assertEquals(actualNoJobsText, StringConstants.APP_NO_JOBS_TXT);
 	}

@@ -53,6 +53,7 @@ public class LoginColombiaAppPage {
 
 	// To verify if App home screen main title is present
 	public boolean isAppHomeScreenMainTitlePresent(){
+		//CommonActions.waitForElementToBeVisible(driver, AppMainTitle);
 		return AppMainTitle.isDisplayed();
 	}
 
@@ -66,6 +67,7 @@ public class LoginColombiaAppPage {
 
 	// To verify if App home screen sub title is present
 	public boolean isAppHomeScreenSubTitlePresent(){
+		//CommonActions.waitForElementToBeVisible(driver, AppSubTitle);
 		return AppSubTitle.isDisplayed();
 	}
 
@@ -79,12 +81,14 @@ public class LoginColombiaAppPage {
 
 	//Method to get Phone ID
 	public void getPhoneID(){
+		//CommonActions.waitForElementToBeVisible(driver, textPhoneID);
 		String phoneID = textPhoneID.getAttribute("text");
 		System.out.println("Phone ID is " +phoneID );
 	}
 
 	//Method to get no jobs text
 	public String getNoJobsText(){
+		//CommonActions.waitForElementToBeVisible(driver, txtNoJobs);
 		String noJobsText = txtNoJobs.getText();
 		System.out.println("Screen shows following no jobs text: " +noJobsText);
 		return noJobsText;
@@ -129,6 +133,7 @@ public class LoginColombiaAppPage {
 	//App logout method
 	public void logOutColombiaApp(){
 		clickLogOutButton();
+		System.out.println("Logged out successfully...");
 	}
 
 
