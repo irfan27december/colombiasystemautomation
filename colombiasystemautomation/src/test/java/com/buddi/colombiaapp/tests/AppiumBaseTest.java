@@ -3,6 +3,7 @@ package com.buddi.colombiaapp.tests;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -75,6 +76,7 @@ public class AppiumBaseTest {
 		try {
 			appiumServerURL = "http://"+appiumServerIPAddress+":"+appiumServerPort+"/wd/hub";
 			driver = new AndroidDriver<AndroidElement>(new URL(appiumServerURL), cap);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
