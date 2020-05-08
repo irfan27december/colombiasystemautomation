@@ -2,6 +2,7 @@ package com.buddi.colombiaapp.tests;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 /**
  * @author irfan
@@ -11,8 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.buddi.colombiapp.pages.LoginColombiaAppPage;
-import com.colombia.common.CommonActions;
-import com.colombia.utilities.StringConstants;
+import com.colombia.testdata.StringConstants;
 
 public class LoginColombiaAppTest extends AppiumBaseTest{
 	
@@ -36,8 +36,10 @@ public class LoginColombiaAppTest extends AppiumBaseTest{
 	public void loginColombiaApp() throws InterruptedException{
 		LoginColombiaAppPage loginColombiaAppPage = PageFactory.initElements(driver, LoginColombiaAppPage.class);
 		loginColombiaAppPage.getPhoneID();
+		Reporter.log("Launching app...");
 		loginColombiaAppPage.loginColombiaApp();
-		Thread.sleep(5000);
+		Reporter.log("Launched app...");
+		Thread.sleep(10000);
 	}
 
 	@Test(priority = 3)
@@ -52,6 +54,7 @@ public class LoginColombiaAppTest extends AppiumBaseTest{
 	public void logOutColombiaApp() throws InterruptedException{
 		LoginColombiaAppPage loginColombiaAppPage = PageFactory.initElements(driver, LoginColombiaAppPage.class);		
 		loginColombiaAppPage.logOutColombiaApp();
+		Reporter.log("Logged out app...");
 		Thread.sleep(5000);
 	}
 

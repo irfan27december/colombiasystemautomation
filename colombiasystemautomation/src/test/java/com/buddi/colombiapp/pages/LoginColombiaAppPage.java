@@ -10,6 +10,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import com.colombia.common.CommonActions;
+import com.colombia.testdata.StringConstants;
+import com.colombia.testdata.TestData;
 import com.colombia.utilities.ReadProperties;
 
 import io.appium.java_client.MobileBy;
@@ -100,7 +102,7 @@ public class LoginColombiaAppPage {
 		CommonActions.waitForElementToBeVisible(driver, emailField);
 		emailField.click();
 		emailField.clear();
-		emailField.sendKeys("irfan.ahmed@buddi.co.uk");
+		emailField.sendKeys(TestData.APP_EMAIL);
 	}
 
 	//Method to set text in Password field
@@ -108,7 +110,7 @@ public class LoginColombiaAppPage {
 		CommonActions.waitForElementToBeVisible(driver, passwordField);
 		passwordField.click();
 		passwordField.clear();
-		passwordField.sendKeys("MIA@27dec");
+		passwordField.sendKeys(TestData.APP_PASSWORD);
 	}
 
 	//Method to click Login button
