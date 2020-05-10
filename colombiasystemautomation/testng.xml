@@ -3,7 +3,7 @@
 <suite name="Suite"  parallel="true">
   <test name="Test">
     <classes>
-      <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/> 
+      <!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/>  -->
       <class name="com.buddi.hdportal.tests.HDPortalLoginTest"/>
       <class name="com.buddi.hdportal.tests.HDPortalHomeTest"/>
     </classes>

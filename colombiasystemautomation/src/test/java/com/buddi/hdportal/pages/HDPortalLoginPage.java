@@ -87,6 +87,6 @@ public class HDPortalLoginPage {
 	// Method to logout HD portal
 	public void logoutHDPortal(){
 		clickLogOut();
-		System.out.println("Logged out HD portal successfully....");
+		//System.out.println("Logged out HD portal successfully....");
 	}
 }

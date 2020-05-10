@@ -173,6 +173,7 @@ public class HDPortalBaseTest {
 		driver.quit();
 	}*/
 
+	//Method to log out HD portal
 	public void cleanup() {
 		hdPortalLoginPage.logoutHDPortal();	
 	}
@@ -181,7 +182,8 @@ public class HDPortalBaseTest {
 	public void clean() throws InterruptedException {
 		//logger.debug("after suite has been called");
 		try {
-			//cleanup();
+			cleanup();
+			System.out.println("Logged out HD portal...");
 		} catch (Exception e) {
 			Reporter.log(e.getMessage());
 			//logger.error("cleanup failed due to the error", e);
