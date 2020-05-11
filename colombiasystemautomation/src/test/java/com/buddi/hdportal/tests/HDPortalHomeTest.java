@@ -16,7 +16,6 @@ import com.colombia.testdata.StringConstants;
 public class HDPortalHomeTest extends HDPortalBaseTest{
 	@Test(priority=3)
 	public void verifyHelpDeskTitle() throws InterruptedException{
-		//HDPortalHomePage hdPortalHomePage = PageFactory.initElements(driver, HDPortalHomePage.class);	
 		Reporter.log("Launching HD Portal home page...");
 		Thread.sleep(5000);
 		boolean isHelpDeskTitleDisplayed = hdPortalHomePage.verifyHelpDeskTitle();
@@ -28,10 +27,10 @@ public class HDPortalHomeTest extends HDPortalBaseTest{
 		System.out.println("Launching HD portal home page...");
 	}
 	
-	@Test(priority=4)
+	/*@Test(priority=4)
 	public void expandManagementMenu() throws InterruptedException{
 		hdPortalHomePage.clickManagementMenu();
 		Thread.sleep(5000);
-	}
+	}*/
 	
 }

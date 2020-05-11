@@ -18,5 +18,7 @@ public class StringConstants {
     public static final String APP_HOMESCREEN_SUBTITLE = " Help Desk System ";
     public static final String APP_NO_JOBS_TXT = "No jobs are scheduled currently";
     
+    //Management menu variables
+    public static final String USERGROUP_PANEL_TITLE = "Manage User Groups ~ Helpdesk access permission";
     public static final int TIME_SECONDS = 5;
 }

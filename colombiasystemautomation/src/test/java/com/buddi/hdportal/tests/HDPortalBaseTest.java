@@ -1,7 +1,6 @@
 package com.buddi.hdportal.tests;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -20,10 +18,9 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
+import com.buddi.hdportal.pages.HDPortalManagementPage;
 import com.colombia.utilities.ReadProperties;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -43,6 +40,9 @@ public class HDPortalBaseTest {
 	ReadProperties properties = new ReadProperties();
 	protected HDPortalLoginPage hdPortalLoginPage;	
 	protected HDPortalHomePage hdPortalHomePage;
+	protected HDPortalManagementPage hdPortalManagementPage;
+		
+	
 	
 	public static final String testDataExcelFileName = "testdata.xlsx";
 
@@ -160,7 +160,7 @@ public class HDPortalBaseTest {
 	public void initialize(@Optional("ChromeSuite") String SuiteName) {
 		hdPortalLoginPage = new HDPortalLoginPage(driver);
 		hdPortalHomePage = new HDPortalHomePage(driver);
-		
+		hdPortalManagementPage = new HDPortalManagementPage(driver);
 	}
 
 
