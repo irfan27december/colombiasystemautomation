@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
-  <parameter name="browser" value="chrome"/>
-  <parameter name="driverPath" value="drivers/chromedriver.exe"/>
-  <test thread-count="5" name="Test(failed)" parallel="methods">
-    <parameter name="password" value="Password: password is from xml"/>
-    <parameter name="username" value="Irfan: user name from xml"/>
+  <test name="Test(failed)" parallel="methods">
     <classes>
+      <class name="com.buddi.hdportal.tests.HDPortalManagementTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="deleteCreatedUserGroup"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManagementTest -->
       <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
         <methods>
           <include name="verifyHelpDeskTitle"/>
@@ -15,23 +19,6 @@
           <include name="clean"/>
         </methods>
       </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
-      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="initialize"/>
-          <include name="loginHDPortal"/>
-          <include name="launchHDPortal"/>
-          <include name="clean"/>
-        </methods>
-      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
-      <class name="com.buddi.hdportal.tests.HDPortalManagementTest">
-        <methods>
-          <include name="expandManagementMenu"/>
-          <include name="setUp"/>
-          <include name="initialize"/>
-          <include name="clean"/>
-        </methods>
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManagementTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

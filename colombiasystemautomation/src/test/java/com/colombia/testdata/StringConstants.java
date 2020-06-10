@@ -11,7 +11,7 @@ public class StringConstants {
     public static final String HDPORTAL_PAGE_TITLE = "Buddi HelpDesk System";
     public static final String HDPORTAL_FO_USER = "irfan.ahmed@buddi.co.uk";
     public static final String HDPORTAL_FO_PASSWORD = "MIA@27dec";
-    public static final String HD_MAIN_TITLE = "Herramienta de gestión (2.0.0.6)";
+    public static final String HD_MAIN_TITLE = "Herramienta de gestión (2.0.1)";
     
     // App related variables
     public static final String APP_HOMESCREEN_TITLE = "Management Tool";
@@ -20,5 +20,8 @@ public class StringConstants {
     
     //Management menu variables
     public static final String USERGROUP_PANEL_TITLE = "Manage User Groups ~ Helpdesk access permission";
+    
+    //Confirmation pop up variables
+    public static final String DELETE_USERGROUP_CONFIRMATION_TEXT = "Are you sure you wish to remove this User Group?";
     public static final int TIME_SECONDS = 5;
 }

@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.colombia.testdata.StringConstants;
+import com.colombia.testdata.TestData;
 
 /**
  * @author irfan
@@ -33,7 +34,18 @@ public class HDPortalManagementTest extends HDPortalBaseTest{
 	public void addUserGroup() throws InterruptedException{
 		hdPortalManagementPage.clickAddUserGroupsButton();
 		//Thread.sleep(5000);
-		hdPortalManagementPage.setUserGroupName();
+		hdPortalManagementPage.createUserGroup();
+		Thread.sleep(5000);
+		String actualUserGroupName = hdPortalManagementPage.getUserGroupName();
+		Assert.assertEquals(actualUserGroupName, TestData.USERGROUP_NAME);
+	}
+	
+	@Test(priority=7, groups = "Smoke")
+	public void deleteCreatedUserGroup() throws InterruptedException{
+		hdPortalManagementPage.deleteUserGroup();
+		Thread.sleep(5000);
+		boolean isUGDeleted = hdPortalManagementPage.isUserGroupDeleted();
+		Assert.assertEquals(isUGDeleted, true);
 	}
 
 }
