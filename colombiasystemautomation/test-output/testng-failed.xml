@@ -11,14 +11,6 @@
           <include name="clean"/>
         </methods>
       </class> <!-- com.buddi.hdportal.tests.HDPortalManagementTest -->
-      <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
-        <methods>
-          <include name="verifyHelpDeskTitle"/>
-          <include name="setUp"/>
-          <include name="initialize"/>
-          <include name="clean"/>
-        </methods>
-      </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

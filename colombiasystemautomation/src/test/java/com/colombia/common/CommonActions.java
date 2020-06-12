@@ -104,5 +104,21 @@ public class CommonActions {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click()", element);
 	}
+	
+	public static void handleStaleElementException(WebElement element) {
+		int counter = 0;
+		do{
+			try{
+				if(element.isDisplayed() && element.isEnabled() ){
+					counter = counter+1;
+					element.click();
+					break;
+				}
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		}while(counter == 0);
+	}
+
 
 }

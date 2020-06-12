@@ -3,9 +3,12 @@
  */
 package com.buddi.hdportal.pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -54,7 +57,7 @@ public class HDPortalManagementPage {
 	@FindBy(xpath = "//div[contains(text(),'"+TestData.USERGROUP_NAME+"')]/following::i[@class='x-fa fa-icon-red fa-times-circle']")
 	////div[contains(text(),'UG_AUTOMATION')]/following::span[@class="btn btn-default btn-sm"] --- This xpath also works
 	////td[contains(div/text(),'UG_AUTOMATION')]/following-sibling::td[div/span/i/@class='x-fa fa-icon-red fa-times-circle']/@data-qtip
-	private WebElement deleteUserGroup;
+	private WebElement deleteUserGroupIcon;
 	@FindBy(xpath = "//div[contains(text(),'Confirm')]") 
 	private WebElement confirmationPopUp;
 	@FindBy(xpath = "//div[contains(text(),'Are you sure you wish to remove this User Group?')]") 
@@ -71,7 +74,7 @@ public class HDPortalManagementPage {
 	}
 
 	// Method to click User Groups option
-	public void clickUserGroups() {
+	public void clickUserGroupsOption() {
 		CommonActions.waitForElementToBeVisible(driver, userGroupsElement);
 		userGroupsElement.click();
 		System.out.println("Clicked Uer Groups option...");
@@ -80,6 +83,7 @@ public class HDPortalManagementPage {
 	// Method to verify user groups panel title
 	public String verifyUserGroupsPanelTitle() {
 		CommonActions.waitForElementToBeVisible(driver, userGroupsPanelTitleElement);
+		System.out.println(userGroupsPanelTitleElement.getText()+" user groups panel title is displayed...");
 		return userGroupsPanelTitleElement.getText();
 	}
 
@@ -101,67 +105,101 @@ public class HDPortalManagementPage {
 	}
 
 	//Method to create user group
-	public void createUserGroup(){
+	public void createUserGroup() throws InterruptedException{
 		setUserGroupName();
-		try {
-			Thread.sleep(5000);
-			if(addButton.isEnabled()){	
-				System.out.println("Add button is enabled "+addButton.isEnabled());		
-				CommonActions.waitForElementToBeClickable(driver, addButton);
-				Actions builder = new Actions(driver);
-				builder.sendKeys(Keys.TAB).build().perform();
-				builder.sendKeys(Keys.SPACE).build().perform();
-			}else{
-				System.out.println("Add button is not enabled "+addButton.isEnabled());
-			}
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(addButton.isEnabled()){	
+			System.out.println("Add button is enabled "+addButton.isEnabled());		
+			CommonActions.waitForElementToBeClickable(driver, addButton);
+			Actions builder = new Actions(driver);
+			builder.sendKeys(Keys.TAB).build().perform();
+			builder.sendKeys(Keys.SPACE).build().perform();
+			CommonActions.waitForElementToBeVisible(driver, userGroupName);
+			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		}else{
+			System.out.println("Add button is not enabled "+addButton.isEnabled());
 		}
 	}
 
 	//Method to get user group name
 	public String getUserGroupName(){
+		CommonActions.waitForElementToBeVisible(driver, userGroupName);
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		System.out.println("User group is created successfully with name:  "+userGroupName.getText());
 		return userGroupName.getText();
 	}
 
-
-	//Method to verify confirmation pop up
-	public void verifyConfirmationText(){
-		if(deleteUserGroupConfirmationText.isDisplayed()){
-			System.out.println("Confirmation text is displayed...");
+	//Method to select user group
+	public void selectUserGroup(){
+		if(userGroupName.isDisplayed()){
+			CommonActions.waitForElementToBeClickable(driver, userGroupName);
+			CommonActions.handleStaleElementException(userGroupName);
+			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+			System.out.println("Clicked on user group with name: "+TestData.USERGROUP_NAME);
 		}else{
-			System.out.println("Confirmation text is not displayed...");
+			System.out.println("Failed to click on user group with name: "+TestData.USERGROUP_NAME);
+		}
+	}
+
+
+
+	//Method to delete user group
+	public void deleteUserGroup(){
+		selectUserGroup();
+		if(deleteUserGroupIcon.isDisplayed()){
+			CommonActions.waitForElementToBeClickable(driver, deleteUserGroupIcon);
+			CommonActions.handleStaleElementException(deleteUserGroupIcon);			
+			verifyConfirmationPopUp();
+			verifyConfirmationText();
+			clickYesInConfirmationPopUp();
+			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		}else{
+			System.out.println("Delete user group button is not displayed...");
 		}
 	}
 
 	//Method to verify confirmation pop up
 	public void verifyConfirmationPopUp(){
 		if(confirmationPopUp.isDisplayed()){
-			verifyConfirmationText();
-			deleteUserGroup();
+			CommonActions.waitForElementToBeVisible(driver, confirmationPopUp);
+			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+			System.out.println("Confirmation pop up is displayed..."+confirmationPopUp.getText());
 		}else{
 			System.out.println("Confirmation pop up is not displayed...");
 		}
 	}
 
-
-	//Method to delete user group
-	public void deleteUserGroup(){
-		if(deleteUserGroup.isDisplayed()){
-			CommonActions.waitForElementToBeClickable(driver, deleteUserGroup);
-			//= WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(),'UG_AUTOMATION')]/following::i[@class='x-fa fa-icon-red fa-times-circle']"))).click()
-			deleteUserGroup.click();
-			buttonYes.click();
+	//Method to verify confirmation pop up
+	public void verifyConfirmationText(){
+		if(deleteUserGroupConfirmationText.isDisplayed()){
+			CommonActions.waitForElementToBeVisible(driver, deleteUserGroupConfirmationText);
+			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+			System.out.println(deleteUserGroupConfirmationText.getText()+" confirmation text is displayed...");
 		}else{
-			System.out.println("Delete user group button is not displayed...");
+			System.out.println(deleteUserGroupConfirmationText.getText()+" confirmation text is not displayed...");
 		}
 	}
 
+	//Method to click Yes button in confirmation pop up
+	public void clickYesInConfirmationPopUp(){
+		if(buttonYes.isDisplayed() && buttonYes.isEnabled()){
+			CommonActions.waitForElementToBeVisible(driver, buttonYes);			
+			System.out.println("Yes button is displayed in confirmation pop up....");
+			buttonYes.click();
+			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		}else{
+			System.out.println("Yes button is not displayed in confirmation pop up....");
+		}
+	}
+
+
 	//Method to check if a user group exist
 	public boolean isUserGroupDeleted(){
-		System.out.println("User group is deleted...");
-		return userGroupName.isDisplayed();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		try{
+			System.out.println("User group with name: "+userGroupName+ " is deleted...");					
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return userGroupName.isDisplayed();	
 	}
 }
