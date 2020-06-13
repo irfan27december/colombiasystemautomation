@@ -3,14 +3,34 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
   <test name="Test(failed)" parallel="methods">
     <classes>
+      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="loginHDPortal"/>
+          <include name="launchHDPortal"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
       <class name="com.buddi.hdportal.tests.HDPortalManagementTest">
         <methods>
+          <include name="clickUserGroupsMenuItem"/>
+          <include name="addUserGroup"/>
+          <include name="expandManagementMenu"/>
           <include name="setUp"/>
           <include name="initialize"/>
           <include name="deleteCreatedUserGroup"/>
           <include name="clean"/>
         </methods>
       </class> <!-- com.buddi.hdportal.tests.HDPortalManagementTest -->
+      <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
+        <methods>
+          <include name="verifyHelpDeskTitle"/>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

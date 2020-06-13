@@ -3,7 +3,9 @@
 <suite name="Suite" parallel="true">
 <!-- <suite name="Suite" parallel = "classes" thread-count = "2"> -->
 <!-- <suite name="Suite" thread-count="3" parallel="methods"> -->
-	
+	<listeners>
+		<listener class-name="com.buddi.colombia.listeners.TestListener" />
+	</listeners>
 
 	<!-- <parameter name="browser" value="chrome"></parameter>
 	<parameter name="driverPath" value="drivers/chromedriver.exe"></parameter> -->

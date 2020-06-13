@@ -17,7 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.colombia.common.CommonActions;
+import com.buddi.colombia.common.CommonActions;
 import com.colombia.testdata.TestData;
 
 /**
@@ -196,7 +196,10 @@ public class HDPortalManagementPage {
 	public boolean isUserGroupDeleted(){
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		try{
-			System.out.println("User group with name: "+userGroupName+ " is deleted...");					
+			System.out.println("User group with name: "+userGroupName.getText()+ " is deleted...");	
+			String fileSeperator = System.getProperty("file.separator");
+			String reportFilepath = System.getProperty("user.dir") +fileSeperator+ "test-report";
+			System.out.println("Folder path: "+reportFilepath);
 		}catch(Exception e){
 			e.printStackTrace();
 		}

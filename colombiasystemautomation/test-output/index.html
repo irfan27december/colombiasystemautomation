@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,51 +91,51 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">7 methods,  7 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.hdportal.tests.HDPortalManagementTest" hash-for-method="addUserGroup">addUserGroup</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.hdportal.tests.HDPortalManagementTest" hash-for-method="clickUserGroupsMenuItem">clickUserGroupsMenuItem</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.hdportal.tests.HDPortalManagementTest" hash-for-method="deleteCreatedUserGroup">deleteCreatedUserGroup</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.hdportal.tests.HDPortalManagementTest" hash-for-method="expandManagementMenu">expandManagementMenu</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.hdportal.tests.HDPortalLoginTest" hash-for-method="launchHDPortal">launchHDPortal</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.hdportal.tests.HDPortalLoginTest" hash-for-method="loginHDPortal">loginHDPortal</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="skipped.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.buddi.hdportal.tests.HDPortalHomeTest" hash-for-method="verifyHelpDeskTitle">verifyHelpDeskTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -147,9 +147,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.buddi.hdportal.tests.HDPortalLoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -158,6 +158,60 @@
                   <a name="launchHDPortal">
                   </a> <!-- launchHDPortal -->
                   <span class="method-name">launchHDPortal</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 81
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-I3V0BKGE&apos;, ip: &apos;10.0.0.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00545E93+2449043]
+	Ordinal0 [0x00478281+1606273]
+	Ordinal0 [0x0036F889+522377]
+	Ordinal0 [0x003005F3+67059]
+	Ordinal0 [0x002FCD92+52626]
+	Ordinal0 [0x0031C127+180519]
+	Ordinal0 [0x0031BF2D+180013]
+	Ordinal0 [0x00319E5B+171611]
+	Ordinal0 [0x00301DD8+73176]
+	Ordinal0 [0x00302E50+77392]
+	Ordinal0 [0x00302DE9+77289]
+	Ordinal0 [0x0048D7F7+1693687]
+	GetHandleVerifier [0x005E4576+522742]
+	GetHandleVerifier [0x005E42B4+522036]
+	GetHandleVerifier [0x005F9587+608775]
+	GetHandleVerifier [0x005E4DE6+524902]
+	Ordinal0 [0x00485BDC+1661916]
+	Ordinal0 [0x0048F15B+1700187]
+	Ordinal0 [0x0048F2C3+1700547]
+	Ordinal0 [0x004A5135+1790261]
+	BaseThreadInitThunk [0x75846359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DC7C24+228]
+	RtlGetAppContainerNamedObjectPath [0x77DC7BF4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:76)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -165,13 +219,67 @@
                   <a name="loginHDPortal">
                   </a> <!-- loginHDPortal -->
                   <span class="method-name">loginHDPortal</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 81
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-I3V0BKGE&apos;, ip: &apos;10.0.0.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00545E93+2449043]
+	Ordinal0 [0x00478281+1606273]
+	Ordinal0 [0x0036F889+522377]
+	Ordinal0 [0x003005F3+67059]
+	Ordinal0 [0x002FCD92+52626]
+	Ordinal0 [0x0031C127+180519]
+	Ordinal0 [0x0031BF2D+180013]
+	Ordinal0 [0x00319E5B+171611]
+	Ordinal0 [0x00301DD8+73176]
+	Ordinal0 [0x00302E50+77392]
+	Ordinal0 [0x00302DE9+77289]
+	Ordinal0 [0x0048D7F7+1693687]
+	GetHandleVerifier [0x005E4576+522742]
+	GetHandleVerifier [0x005E42B4+522036]
+	GetHandleVerifier [0x005F9587+608775]
+	GetHandleVerifier [0x005E4DE6+524902]
+	Ordinal0 [0x00485BDC+1661916]
+	Ordinal0 [0x0048F15B+1700187]
+	Ordinal0 [0x0048F2C3+1700547]
+	Ordinal0 [0x004A5135+1790261]
+	BaseThreadInitThunk [0x75846359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DC7C24+228]
+	RtlGetAppContainerNamedObjectPath [0x77DC7BF4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:76)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.buddi.hdportal.tests.HDPortalManagementTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -180,6 +288,60 @@
                   <a name="addUserGroup">
                   </a> <!-- addUserGroup -->
                   <span class="method-name">addUserGroup</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 81
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-I3V0BKGE&apos;, ip: &apos;10.0.0.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00545E93+2449043]
+	Ordinal0 [0x00478281+1606273]
+	Ordinal0 [0x0036F889+522377]
+	Ordinal0 [0x003005F3+67059]
+	Ordinal0 [0x002FCD92+52626]
+	Ordinal0 [0x0031C127+180519]
+	Ordinal0 [0x0031BF2D+180013]
+	Ordinal0 [0x00319E5B+171611]
+	Ordinal0 [0x00301DD8+73176]
+	Ordinal0 [0x00302E50+77392]
+	Ordinal0 [0x00302DE9+77289]
+	Ordinal0 [0x0048D7F7+1693687]
+	GetHandleVerifier [0x005E4576+522742]
+	GetHandleVerifier [0x005E42B4+522036]
+	GetHandleVerifier [0x005F9587+608775]
+	GetHandleVerifier [0x005E4DE6+524902]
+	Ordinal0 [0x00485BDC+1661916]
+	Ordinal0 [0x0048F15B+1700187]
+	Ordinal0 [0x0048F2C3+1700547]
+	Ordinal0 [0x004A5135+1790261]
+	BaseThreadInitThunk [0x75846359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DC7C24+228]
+	RtlGetAppContainerNamedObjectPath [0x77DC7BF4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:76)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -187,6 +349,60 @@
                   <a name="clickUserGroupsMenuItem">
                   </a> <!-- clickUserGroupsMenuItem -->
                   <span class="method-name">clickUserGroupsMenuItem</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 81
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-I3V0BKGE&apos;, ip: &apos;10.0.0.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00545E93+2449043]
+	Ordinal0 [0x00478281+1606273]
+	Ordinal0 [0x0036F889+522377]
+	Ordinal0 [0x003005F3+67059]
+	Ordinal0 [0x002FCD92+52626]
+	Ordinal0 [0x0031C127+180519]
+	Ordinal0 [0x0031BF2D+180013]
+	Ordinal0 [0x00319E5B+171611]
+	Ordinal0 [0x00301DD8+73176]
+	Ordinal0 [0x00302E50+77392]
+	Ordinal0 [0x00302DE9+77289]
+	Ordinal0 [0x0048D7F7+1693687]
+	GetHandleVerifier [0x005E4576+522742]
+	GetHandleVerifier [0x005E42B4+522036]
+	GetHandleVerifier [0x005F9587+608775]
+	GetHandleVerifier [0x005E4DE6+524902]
+	Ordinal0 [0x00485BDC+1661916]
+	Ordinal0 [0x0048F15B+1700187]
+	Ordinal0 [0x0048F2C3+1700547]
+	Ordinal0 [0x004A5135+1790261]
+	BaseThreadInitThunk [0x75846359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DC7C24+228]
+	RtlGetAppContainerNamedObjectPath [0x77DC7BF4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:76)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -194,6 +410,60 @@
                   <a name="deleteCreatedUserGroup">
                   </a> <!-- deleteCreatedUserGroup -->
                   <span class="method-name">deleteCreatedUserGroup</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 81
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-I3V0BKGE&apos;, ip: &apos;10.0.0.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00545E93+2449043]
+	Ordinal0 [0x00478281+1606273]
+	Ordinal0 [0x0036F889+522377]
+	Ordinal0 [0x003005F3+67059]
+	Ordinal0 [0x002FCD92+52626]
+	Ordinal0 [0x0031C127+180519]
+	Ordinal0 [0x0031BF2D+180013]
+	Ordinal0 [0x00319E5B+171611]
+	Ordinal0 [0x00301DD8+73176]
+	Ordinal0 [0x00302E50+77392]
+	Ordinal0 [0x00302DE9+77289]
+	Ordinal0 [0x0048D7F7+1693687]
+	GetHandleVerifier [0x005E4576+522742]
+	GetHandleVerifier [0x005E42B4+522036]
+	GetHandleVerifier [0x005F9587+608775]
+	GetHandleVerifier [0x005E4DE6+524902]
+	Ordinal0 [0x00485BDC+1661916]
+	Ordinal0 [0x0048F15B+1700187]
+	Ordinal0 [0x0048F2C3+1700547]
+	Ordinal0 [0x004A5135+1790261]
+	BaseThreadInitThunk [0x75846359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DC7C24+228]
+	RtlGetAppContainerNamedObjectPath [0x77DC7BF4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:76)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -201,13 +471,67 @@
                   <a name="expandManagementMenu">
                   </a> <!-- expandManagementMenu -->
                   <span class="method-name">expandManagementMenu</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 81
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-I3V0BKGE&apos;, ip: &apos;10.0.0.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00545E93+2449043]
+	Ordinal0 [0x00478281+1606273]
+	Ordinal0 [0x0036F889+522377]
+	Ordinal0 [0x003005F3+67059]
+	Ordinal0 [0x002FCD92+52626]
+	Ordinal0 [0x0031C127+180519]
+	Ordinal0 [0x0031BF2D+180013]
+	Ordinal0 [0x00319E5B+171611]
+	Ordinal0 [0x00301DD8+73176]
+	Ordinal0 [0x00302E50+77392]
+	Ordinal0 [0x00302DE9+77289]
+	Ordinal0 [0x0048D7F7+1693687]
+	GetHandleVerifier [0x005E4576+522742]
+	GetHandleVerifier [0x005E42B4+522036]
+	GetHandleVerifier [0x005F9587+608775]
+	GetHandleVerifier [0x005E4DE6+524902]
+	Ordinal0 [0x00485BDC+1661916]
+	Ordinal0 [0x0048F15B+1700187]
+	Ordinal0 [0x0048F2C3+1700547]
+	Ordinal0 [0x004A5135+1790261]
+	BaseThreadInitThunk [0x75846359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DC7C24+228]
+	RtlGetAppContainerNamedObjectPath [0x77DC7BF4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:76)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
-          <div class="suite-Suite-class-passed">
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.buddi.hdportal.tests.HDPortalHomeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -216,10 +540,64 @@
                   <a name="verifyHelpDeskTitle">
                   </a> <!-- verifyHelpDeskTitle -->
                   <span class="method-name">verifyHelpDeskTitle</span>
+                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: session not created: This version of ChromeDriver only supports Chrome version 81
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
+System info: host: &apos;LAPTOP-I3V0BKGE&apos;, ip: &apos;10.0.0.3&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00545E93+2449043]
+	Ordinal0 [0x00478281+1606273]
+	Ordinal0 [0x0036F889+522377]
+	Ordinal0 [0x003005F3+67059]
+	Ordinal0 [0x002FCD92+52626]
+	Ordinal0 [0x0031C127+180519]
+	Ordinal0 [0x0031BF2D+180013]
+	Ordinal0 [0x00319E5B+171611]
+	Ordinal0 [0x00301DD8+73176]
+	Ordinal0 [0x00302E50+77392]
+	Ordinal0 [0x00302DE9+77289]
+	Ordinal0 [0x0048D7F7+1693687]
+	GetHandleVerifier [0x005E4576+522742]
+	GetHandleVerifier [0x005E42B4+522036]
+	GetHandleVerifier [0x005F9587+608775]
+	GetHandleVerifier [0x005E4DE6+524902]
+	Ordinal0 [0x00485BDC+1661916]
+	Ordinal0 [0x0048F15B+1700187]
+	Ordinal0 [0x0048F2C3+1700547]
+	Ordinal0 [0x004A5135+1790261]
+	BaseThreadInitThunk [0x75846359+25]
+	RtlGetAppContainerNamedObjectPath [0x77DC7C24+228]
+	RtlGetAppContainerNamedObjectPath [0x77DC7BF4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)
+	at java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:76)
+... Removed 23 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -296,38 +674,38 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginHDPortal')
+data.setCell(0, 1, 'launchHDPortal')
 data.setCell(0, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
-data.setCell(0, 3, 11128);
+data.setCell(0, 3, 0);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyHelpDeskTitle')
-data.setCell(1, 2, 'com.buddi.hdportal.tests.HDPortalHomeTest')
-data.setCell(1, 3, 5194);
+data.setCell(1, 1, 'clickUserGroupsMenuItem')
+data.setCell(1, 2, 'com.buddi.hdportal.tests.HDPortalManagementTest')
+data.setCell(1, 3, 0);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'launchHDPortal')
-data.setCell(2, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
-data.setCell(2, 3, 5031);
+data.setCell(2, 1, 'deleteCreatedUserGroup')
+data.setCell(2, 2, 'com.buddi.hdportal.tests.HDPortalManagementTest')
+data.setCell(2, 3, 0);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'deleteCreatedUserGroup')
-data.setCell(3, 2, 'com.buddi.hdportal.tests.HDPortalManagementTest')
-data.setCell(3, 3, 1272);
+data.setCell(3, 1, 'verifyHelpDeskTitle')
+data.setCell(3, 2, 'com.buddi.hdportal.tests.HDPortalHomeTest')
+data.setCell(3, 3, 0);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'addUserGroup')
+data.setCell(4, 1, 'expandManagementMenu')
 data.setCell(4, 2, 'com.buddi.hdportal.tests.HDPortalManagementTest')
-data.setCell(4, 3, 1034);
+data.setCell(4, 3, 0);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'clickUserGroupsMenuItem')
-data.setCell(5, 2, 'com.buddi.hdportal.tests.HDPortalManagementTest')
-data.setCell(5, 3, 998);
+data.setCell(5, 1, 'loginHDPortal')
+data.setCell(5, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
+data.setCell(5, 3, 0);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'expandManagementMenu')
+data.setCell(6, 1, 'addUserGroup')
 data.setCell(6, 2, 'com.buddi.hdportal.tests.HDPortalManagementTest')
-data.setCell(6, 3, 147);
+data.setCell(6, 3, 0);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <span class="suite-total-time">Total running time: 0 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -338,20 +716,6 @@ return data;
             <span class="header-content">Reporter output for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">launchHDPortal</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Launching HD Portal...</span>
-                <span class="reporter-method-output">Launched HD Portal...</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">verifyHelpDeskTitle</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Launching HD Portal home page...</span>
-                <span class="reporter-method-output">Launched HD Portal home page...</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
@@ -387,61 +751,16 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">setUp(chromedriver, ChromeSuite)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-              <div class="configuration-class before">
-                <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">7747 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">launchHDPortal</span>
-                <span class="method-start">7789 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">loginHDPortal</span>
-                <span class="method-start">12829 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalHomeTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">23964 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">verifyHelpDeskTitle</span>
-                <span class="method-start">23969 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManagementTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">29166 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">expandManagementMenu</span>
-                <span class="method-start">29172 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">clickUserGroupsMenuItem</span>
-                <span class="method-start">29321 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">addUserGroup</span>
-                <span class="method-start">30322 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">deleteCreatedUserGroup</span>
-                <span class="method-start">31358 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">clean</span>
-                <span class="method-start">32692 ms</span>
+                <span class="method-start">3587 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,4 +1,4 @@
-package com.colombia.common;
+package com.buddi.colombia.common;
 
 import java.awt.AWTException;
 import java.awt.Robot;

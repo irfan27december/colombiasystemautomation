@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.instatech.buddi</groupId>
-	<artifactId>appiumproject</artifactId>
+	<artifactId>colombiasystemautomation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>appiumproject</name>
+	<name>colombiasystemautomation</name>
 	<url>http://maven.apache.org</url>
 
 	<!-- <properties> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
@@ -42,8 +42,9 @@
 				</configuration>
 			</plugin>
 
-			<!-- Compiler plugin configures the java version to be used for compiling 
-				the code -->
+			<!-- Compiler plugin configures the java version to be used for compiling the code -->
+			<!-- URL for configuring maven email -->
+			<!-- https://www.toolsqa.com/selenium-webdriver/send-reports-automatically-to-email-using-maven-from-eclipse/ -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -54,7 +55,71 @@
 				</configuration>
 			</plugin>
 
+			<!-- Post-Man plugin -->
+			<plugin>
+				<groupId>ch.fortysix</groupId>
+				<artifactId>maven-postman-plugin</artifactId>
+				<version>0.1.6</version>
+				<executions>
+					<execution>
+						<id>send a mail</id>
+						<phase>test</phase>
+						<goals>
+							<goal>send-mail</goal>
+						</goals>
+						<inherited>true</inherited>
+						<configuration>
+							<!-- From Email address -->
+							<from>mia27dec@gmail.com</from>
+							<!-- <from>automation27dec@gmail.com</from> -->
+							<!-- Email subject -->
+							<subject>Colombia-System Test Automation Report</subject>
+							<!-- Fail the build if the mail does not reach -->
+							<failonerror>true</failonerror>
+							<!-- Email Body Content -->
+							<htmlMessage>
+                                    <![CDATA[
+                                    <p>New test build triggered!</p>
+                                    <p>Attached html file contains the test result status</p> 
+                                    ]]>
+							</htmlMessage>
 
+
+							<!-- host -->
+							<mailhost>smtp.gmail.com</mailhost>
+							<!-- port of the host -->
+							<!-- <mailport>465</mailport> -->
+							<mailport>465</mailport>
+							<mailssl>true</mailssl>
+							<mailAltConfig>true</mailAltConfig>
+
+							<!-- Email Authentication(Username and Password) -->
+							<mailuser>mia27dec@gmail.com</mailuser>
+							<!-- <mailuser>automation27dec@gmail.com</mailuser> -->
+							<mailpassword>MIA@27dec</mailpassword>
+
+							<receivers>
+								<!-- To Email address -->
+								<!-- <receiver>mia27dec@gmail.com</receiver> <receiver>automation27dec@gmail.com</receiver> -->
+								<receiver>irfan.ahmed@buddi.co.uk</receiver>
+							</receivers>
+
+							<fileSets>
+								<fileSet>
+									<!-- Report directory Path -->
+									<directory>C://Users//irfan//git//colombiasystemautomation//colombiasystemautomation//test-report</directory>
+									<includes>
+										<!-- Report file name -->
+										<include>Colombia-System-Test-Automaton-Report.html</include>
+									</includes>
+									<!-- Use Regular Expressions like **/*.html if you want all the 
+										html files to send -->
+								</fileSet>
+							</fileSets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 
 		</plugins>
 
@@ -108,25 +173,21 @@
 		</dependency>
 
 
-		 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>6.14.3</version>
 			<scope>compile</scope>
-		</dependency> 
-		
-		 
+		</dependency>
+
+
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<!-- <dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.0.0</version>
-			<scope>compile</scope>
-		</dependency>  -->
- 		
+		<!-- <dependency> <groupId>org.testng</groupId> <artifactId>testng</artifactId> 
+			<version>7.0.0</version> <scope>compile</scope> </dependency> -->
+
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
@@ -229,7 +290,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>3.8.1</version>
+			<version>4.0.0</version>
 		</dependency>
 
 
