@@ -10,9 +10,9 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
-import com.colombia.testdata.StringConstants;
-import com.colombia.testdata.TestData;
-import com.colombia.utilities.ReadProperties;
+import com.buddi.colombia.testdata.StringConstants;
+import com.buddi.colombia.testdata.TestData;
+import com.buddi.colombia.utilities.ReadProperties;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;

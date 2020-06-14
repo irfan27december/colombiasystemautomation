@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.colombia.testdata.StringConstants;
+import com.buddi.colombia.testdata.StringConstants;
 
 /**
  * @author irfan

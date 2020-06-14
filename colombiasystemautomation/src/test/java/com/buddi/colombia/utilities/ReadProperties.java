@@ -1,4 +1,4 @@
-package com.colombia.utilities;
+package com.buddi.colombia.utilities;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

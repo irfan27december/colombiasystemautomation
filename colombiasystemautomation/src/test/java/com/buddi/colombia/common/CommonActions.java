@@ -105,12 +105,13 @@ public class CommonActions {
 		executor.executeScript("arguments[0].click()", element);
 	}
 	
-	public static void handleStaleElementException(WebElement element) {
+	//Method to handle stale element exception and click element
+	public static void clickElementToHandleStaleElementException(WebElement element) {
 		int counter = 0;
 		do{
 			try{
 				if(element.isDisplayed() && element.isEnabled() ){
-					counter = counter+1;
+					counter = counter + 1;
 					element.click();
 					break;
 				}

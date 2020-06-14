@@ -1,4 +1,4 @@
-package com.colombia.testdata;
+package com.buddi.colombia.testdata;
 
 public class StringConstants {
 	

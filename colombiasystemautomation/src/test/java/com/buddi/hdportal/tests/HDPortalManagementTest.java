@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.colombia.testdata.StringConstants;
-import com.colombia.testdata.TestData;
+import com.buddi.colombia.testdata.StringConstants;
+import com.buddi.colombia.testdata.TestData;
 
 /**
  * @author irfan
@@ -38,8 +38,16 @@ public class HDPortalManagementTest extends HDPortalBaseTest{
 		String actualUserGroupName = hdPortalManagementPage.getUserGroupName();
 		Assert.assertEquals(actualUserGroupName, TestData.USERGROUP_NAME);
 	}
-	
+
 	@Test(priority=7, groups = "Smoke")
+	public void duplicateUserGroup() throws InterruptedException{
+		hdPortalManagementPage.saveDuplicateUserGroup();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		String actualUserGroupName = hdPortalManagementPage.getDuplicateUserGroupName();
+		Assert.assertEquals(actualUserGroupName, TestData.DUPLICATE_USERGROUP_NAME);
+	}
+	
+	@Test(priority=8, groups = "Smoke")
 	public void deleteCreatedUserGroup() throws InterruptedException{
 		hdPortalManagementPage.deleteUserGroup();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -47,5 +55,16 @@ public class HDPortalManagementTest extends HDPortalBaseTest{
 		//System.out.println("Is UG deleted "+isUGDeleted);
 		Assert.assertEquals(isUGDeleted, true);
 	}
+	
+	@Test(priority=9, groups = "Smoke")
+	public void deleteDuplicateUserGroup() throws InterruptedException{
+		hdPortalManagementPage.deleteDuplicateUserGroup();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		boolean isUGDeleted = hdPortalManagementPage.isDuplicateUserGroupDeleted();
+		//System.out.println("Is UG deleted "+isUGDeleted);
+		Assert.assertEquals(isUGDeleted, true);
+	}
+
+	
 
 }

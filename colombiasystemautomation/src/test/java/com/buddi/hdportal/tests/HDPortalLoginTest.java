@@ -19,7 +19,7 @@ public class HDPortalLoginTest extends HDPortalBaseTest{
 		Reporter.log("Launching HD Portal...");
 		Thread.sleep(5000);
 		String actualTitle = hdPortalLoginPage.verifyPageTitle();
-		Assert.assertEquals(actualTitle, com.colombia.testdata.StringConstants.HDPORTAL_PAGE_TITLE);
+		Assert.assertEquals(actualTitle, com.buddi.colombia.testdata.StringConstants.HDPORTAL_PAGE_TITLE);
 		System.out.println("Launched HD portal...");
 		Reporter.log("Launched HD Portal...");				
 	}
@@ -33,7 +33,7 @@ public class HDPortalLoginTest extends HDPortalBaseTest{
 		Assert.assertEquals(isBuddiLogoPresent, hdPortalLoginPage.verifybuddiLogo());*/
 		Thread.sleep(5000);
 		String actualTitle = hdPortalLoginPage.verifyPageTitle();
-		Assert.assertEquals(actualTitle, com.colombia.testdata.StringConstants.HDPORTAL_PAGE_TITLE);
+		Assert.assertEquals(actualTitle, com.buddi.colombia.testdata.StringConstants.HDPORTAL_PAGE_TITLE);
 		System.out.println("Successfully logged in HD portal...");
 		//hdPortalLoginPage.logoutHDPortal();	
 		Thread.sleep(5000);

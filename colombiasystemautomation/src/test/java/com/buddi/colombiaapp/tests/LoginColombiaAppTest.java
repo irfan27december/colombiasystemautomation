@@ -11,8 +11,8 @@ import org.testng.Reporter;
 
 import org.testng.annotations.Test;
 
+import com.buddi.colombia.testdata.StringConstants;
 import com.buddi.colombiapp.pages.LoginColombiaAppPage;
-import com.colombia.testdata.StringConstants;
 
 public class LoginColombiaAppTest extends AppiumBaseTest{
 	

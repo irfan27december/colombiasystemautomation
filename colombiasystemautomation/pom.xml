@@ -100,8 +100,9 @@
 
 							<receivers>
 								<!-- To Email address -->
-								<!-- <receiver>mia27dec@gmail.com</receiver> <receiver>automation27dec@gmail.com</receiver> -->
-								<receiver>irfan.ahmed@buddi.co.uk</receiver>
+								<receiver>mia27dec@gmail.com</receiver> 
+								<receiver>automation27dec@gmail.com</receiver>
+								<!-- <receiver>irfan.ahmed@buddi.co.uk</receiver> -->
 							</receivers>
 
 							<fileSets>

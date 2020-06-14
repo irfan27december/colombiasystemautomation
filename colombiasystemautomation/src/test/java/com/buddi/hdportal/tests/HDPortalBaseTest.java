@@ -18,10 +18,10 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
 import com.buddi.hdportal.pages.HDPortalManagementPage;
-import com.colombia.utilities.ReadProperties;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

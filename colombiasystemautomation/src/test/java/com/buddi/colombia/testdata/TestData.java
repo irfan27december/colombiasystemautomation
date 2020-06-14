@@ -1,4 +1,4 @@
-package com.colombia.testdata;
+package com.buddi.colombia.testdata;
 
 public class TestData {
 	
@@ -8,4 +8,5 @@ public class TestData {
 
     //Management related variables
     public static final String USERGROUP_NAME = "UG_AUTOMATION";
+    public static final String DUPLICATE_USERGROUP_NAME = "DUPLICATE_UG_AUTOMATION";
 }

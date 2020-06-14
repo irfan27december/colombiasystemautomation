@@ -12,8 +12,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-import com.colombia.utilities.ReadProperties;
-import com.colombia.testdata.StringConstants;
+import com.buddi.colombia.testdata.StringConstants;
+import com.buddi.colombia.utilities.ReadProperties;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
