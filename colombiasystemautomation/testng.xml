@@ -28,7 +28,7 @@
 			<!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/> -->
 			<class name="com.buddi.hdportal.tests.HDPortalLoginTest" />
 			<class name="com.buddi.hdportal.tests.HDPortalHomeTest" />
-			<class name="com.buddi.hdportal.tests.HDPortalManagementTest" />
+			<class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

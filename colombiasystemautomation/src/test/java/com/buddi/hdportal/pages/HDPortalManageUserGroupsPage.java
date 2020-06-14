@@ -24,11 +24,11 @@ import com.buddi.colombia.testdata.TestData;
  * @author irfan
  *
  */
-public class HDPortalManagementPage {
+public class HDPortalManageUserGroupsPage {
 	WebDriver driver;
 
 	//Constructor
-	public HDPortalManagementPage(WebDriver driver){
+	public HDPortalManageUserGroupsPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -75,7 +75,16 @@ public class HDPortalManagementPage {
 	@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.DUPLICATE_USERGROUP_NAME+"')]") 
 	private WebElement duplicateUserGroupName;
 
-
+	
+	@FindBy(xpath = "//div[contains(text(),'Error')]") 
+	private WebElement errorPopUp;
+	@FindBy(xpath = "//div[contains(text(),'User Group with name already exists')]") 
+	private WebElement userGroupAlreadyExistsConfirmationText;
+	@FindBy(xpath = "//span[contains(text(),'OK')]") 
+	private WebElement buttonOK;
+	
+	
+	
 	// Method to click LHS menu option
 	public void clickManagementMenu() {
 		CommonActions.waitForElementToBeVisible(driver, managementElement);
@@ -318,14 +327,16 @@ public class HDPortalManagementPage {
 	
 	//Method to navigate to user groups option
 	public void navigateToUserGroupsOption(){
-		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.navigate().refresh();
 		CommonActions.waitForElementToBeClickable(driver, managementElement);
 		CommonActions.clickElementToHandleStaleElementException(managementElement);
-		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		CommonActions.waitForElementToBeClickable(driver, userGroupsElement);
-		CommonActions.clickElementToHandleStaleElementException(userGroupsElement);
-		
+		CommonActions.clickElementToHandleStaleElementException(userGroupsElement);		
+	}
+	
+	//Method to validate duplicate user group
+	public void validateExistingUserGroup(){
+		//Comm
 	}
 
 }

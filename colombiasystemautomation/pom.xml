@@ -42,7 +42,8 @@
 				</configuration>
 			</plugin>
 
-			<!-- Compiler plugin configures the java version to be used for compiling the code -->
+			<!-- Compiler plugin configures the java version to be used for compiling 
+				the code -->
 			<!-- URL for configuring maven email -->
 			<!-- https://www.toolsqa.com/selenium-webdriver/send-reports-automatically-to-email-using-maven-from-eclipse/ -->
 			<plugin>
@@ -100,7 +101,7 @@
 
 							<receivers>
 								<!-- To Email address -->
-								<receiver>mia27dec@gmail.com</receiver> 
+								<receiver>mia27dec@gmail.com</receiver>
 								<receiver>automation27dec@gmail.com</receiver>
 								<!-- <receiver>irfan.ahmed@buddi.co.uk</receiver> -->
 							</receivers>
@@ -160,11 +161,6 @@
 
 	</build>
 
-
-
-
-
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -172,7 +168,6 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 
@@ -183,12 +178,9 @@
 			<scope>compile</scope>
 		</dependency>
 
-
-
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<!-- <dependency> <groupId>org.testng</groupId> <artifactId>testng</artifactId> 
 			<version>7.0.0</version> <scope>compile</scope> </dependency> -->
-
 
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
@@ -197,10 +189,6 @@
 			<version>3.9</version>
 		</dependency>
 
-
-
-
-
 		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 		<dependency>
 			<groupId>io.appium</groupId>
@@ -208,17 +196,12 @@
 			<version>7.3.0</version>
 		</dependency>
 
-
-
-
-
 		<!-- Maven dependency for extent reports -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>3.1.5</version>
 		</dependency>
-
 
 		<!-- Maven dependency for Selenium -->
 
@@ -243,15 +226,12 @@
 			<version>3.141.59</version>
 		</dependency>
 
-
-
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-firefox-driver</artifactId>
 			<version>3.141.59</version>
 		</dependency>
-
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
 		<dependency>
@@ -260,11 +240,9 @@
 			<version>3.141.59</version>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
 		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
 			<version>1.2.17</version> </dependency> -->
-
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -294,9 +272,6 @@
 			<version>4.0.0</version>
 		</dependency>
 
-
-
-
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -304,6 +279,21 @@
 			<version>4.3.3.RELEASE</version>
 		</dependency>
 
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.30</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.30</version>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 

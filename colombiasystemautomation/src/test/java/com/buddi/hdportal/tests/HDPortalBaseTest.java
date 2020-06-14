@@ -21,7 +21,7 @@ import org.testng.annotations.Parameters;
 import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
-import com.buddi.hdportal.pages.HDPortalManagementPage;
+import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -40,7 +40,7 @@ public class HDPortalBaseTest {
 	ReadProperties properties = new ReadProperties();
 	protected HDPortalLoginPage hdPortalLoginPage;	
 	protected HDPortalHomePage hdPortalHomePage;
-	protected HDPortalManagementPage hdPortalManagementPage;
+	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
 		
 	
 	
@@ -160,7 +160,7 @@ public class HDPortalBaseTest {
 	public void initialize(@Optional("ChromeSuite") String SuiteName) {
 		hdPortalLoginPage = new HDPortalLoginPage(driver);
 		hdPortalHomePage = new HDPortalHomePage(driver);
-		hdPortalManagementPage = new HDPortalManagementPage(driver);
+		hdPortalManageUserGroupsPage = new HDPortalManageUserGroupsPage(driver);
 	}
 
 

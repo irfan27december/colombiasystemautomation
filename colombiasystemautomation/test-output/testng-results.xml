@@ -17,20 +17,57 @@
       <![CDATA[Launched HD Portal home page...]]>
     </line>
   </reporter-output>
-  <suite name="Suite" duration-ms="32002" started-at="2020-06-14T06:52:04Z" finished-at="2020-06-14T06:52:36Z">
+  <suite name="Suite" duration-ms="36672" started-at="2020-06-14T08:28:28Z" finished-at="2020-06-14T08:29:05Z">
     <groups>
       <group name="Smoke">
-        <method signature="HDPortalManagementTest.addUserGroup()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="addUserGroup" class="com.buddi.hdportal.tests.HDPortalManagementTest"/>
-        <method signature="HDPortalManagementTest.clickUserGroupsMenuItem()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="clickUserGroupsMenuItem" class="com.buddi.hdportal.tests.HDPortalManagementTest"/>
-        <method signature="HDPortalManagementTest.deleteCreatedUserGroup()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="deleteCreatedUserGroup" class="com.buddi.hdportal.tests.HDPortalManagementTest"/>
-        <method signature="HDPortalManagementTest.deleteDuplicateUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="deleteDuplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManagementTest"/>
-        <method signature="HDPortalManagementTest.duplicateUserGroup()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="duplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManagementTest"/>
-        <method signature="HDPortalManagementTest.expandManagementMenu()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="expandManagementMenu" class="com.buddi.hdportal.tests.HDPortalManagementTest"/>
+        <method signature="HDPortalManageUserGroupsTest.addUserGroup()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="addUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
+        <method signature="HDPortalManageUserGroupsTest.clickUserGroupsMenuItem()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="clickUserGroupsMenuItem" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
+        <method signature="HDPortalManageUserGroupsTest.deleteCreatedUserGroup()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="deleteCreatedUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
+        <method signature="HDPortalManageUserGroupsTest.deleteDuplicateUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="deleteDuplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
+        <method signature="HDPortalManageUserGroupsTest.duplicateUserGroup()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="duplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
+        <method signature="HDPortalManageUserGroupsTest.expandManagementMenu()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="expandManagementMenu" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test name="Test" duration-ms="32002" started-at="2020-06-14T06:52:04Z" finished-at="2020-06-14T06:52:36Z">
+    <test name="Test" duration-ms="36672" started-at="2020-06-14T08:28:28Z" finished-at="2020-06-14T08:29:05Z">
+      <class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="initialize" is-config="true" duration-ms="7" started-at="2020-06-14T13:58:50Z" finished-at="2020-06-14T13:58:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ChromeSuite]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="expandManagementMenu()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="expandManagementMenu" duration-ms="193" started-at="2020-06-14T13:58:50Z" finished-at="2020-06-14T13:58:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- expandManagementMenu -->
+        <test-method status="PASS" signature="clickUserGroupsMenuItem()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="clickUserGroupsMenuItem" duration-ms="1032" started-at="2020-06-14T13:58:50Z" finished-at="2020-06-14T13:58:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickUserGroupsMenuItem -->
+        <test-method status="PASS" signature="addUserGroup()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="addUserGroup" duration-ms="1105" started-at="2020-06-14T13:58:51Z" finished-at="2020-06-14T13:58:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addUserGroup -->
+        <test-method status="PASS" signature="duplicateUserGroup()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="duplicateUserGroup" duration-ms="4549" started-at="2020-06-14T13:58:52Z" finished-at="2020-06-14T13:58:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duplicateUserGroup -->
+        <test-method status="PASS" signature="deleteCreatedUserGroup()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="deleteCreatedUserGroup" duration-ms="3920" started-at="2020-06-14T13:58:57Z" finished-at="2020-06-14T13:59:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCreatedUserGroup -->
+        <test-method status="PASS" signature="deleteDuplicateUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@20322d26]" name="deleteDuplicateUserGroup" duration-ms="3971" started-at="2020-06-14T13:59:01Z" finished-at="2020-06-14T13:59:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteDuplicateUserGroup -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManageUserGroupsTest -->
       <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@29ca901e]" name="setUp" is-config="true" duration-ms="7644" started-at="2020-06-14T12:21:56Z" finished-at="2020-06-14T12:22:04Z">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@5025a98f]" name="setUp" is-config="true" duration-ms="8078" started-at="2020-06-14T13:58:20Z" finished-at="2020-06-14T13:58:28Z">
           <params>
             <param index="0">
               <value>
@@ -46,7 +83,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@29ca901e]" name="initialize" is-config="true" duration-ms="44" started-at="2020-06-14T12:22:04Z" finished-at="2020-06-14T12:22:04Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@5025a98f]" name="initialize" is-config="true" duration-ms="140" started-at="2020-06-14T13:58:28Z" finished-at="2020-06-14T13:58:28Z">
           <params>
             <param index="0">
               <value>
@@ -57,7 +94,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@29ca901e]" name="launchHDPortal" duration-ms="5113" started-at="2020-06-14T12:22:04Z" finished-at="2020-06-14T12:22:09Z">
+        <test-method status="PASS" signature="launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@5025a98f]" name="launchHDPortal" duration-ms="5204" started-at="2020-06-14T13:58:28Z" finished-at="2020-06-14T13:58:34Z">
           <reporter-output>
             <line>
               <![CDATA[Launching HD Portal...]]>
@@ -67,54 +104,17 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchHDPortal -->
-        <test-method status="PASS" signature="loginHDPortal()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@29ca901e]" name="loginHDPortal" duration-ms="10615" started-at="2020-06-14T12:22:09Z" finished-at="2020-06-14T12:22:20Z">
+        <test-method status="PASS" signature="loginHDPortal()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@5025a98f]" name="loginHDPortal" duration-ms="11252" started-at="2020-06-14T13:58:34Z" finished-at="2020-06-14T13:58:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginHDPortal -->
-        <test-method status="PASS" signature="clean()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@29ca901e]" name="clean" is-config="true" duration-ms="5059" started-at="2020-06-14T12:22:36Z" finished-at="2020-06-14T12:22:42Z">
+        <test-method status="PASS" signature="clean()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@5025a98f]" name="clean" is-config="true" duration-ms="5339" started-at="2020-06-14T13:59:06Z" finished-at="2020-06-14T13:59:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clean -->
       </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
-      <class name="com.buddi.hdportal.tests.HDPortalManagementTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="initialize" is-config="true" duration-ms="3" started-at="2020-06-14T12:22:25Z" finished-at="2020-06-14T12:22:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="expandManagementMenu()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="expandManagementMenu" duration-ms="88" started-at="2020-06-14T12:22:25Z" finished-at="2020-06-14T12:22:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- expandManagementMenu -->
-        <test-method status="PASS" signature="clickUserGroupsMenuItem()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="clickUserGroupsMenuItem" duration-ms="807" started-at="2020-06-14T12:22:25Z" finished-at="2020-06-14T12:22:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickUserGroupsMenuItem -->
-        <test-method status="PASS" signature="addUserGroup()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="addUserGroup" duration-ms="624" started-at="2020-06-14T12:22:26Z" finished-at="2020-06-14T12:22:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addUserGroup -->
-        <test-method status="PASS" signature="duplicateUserGroup()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="duplicateUserGroup" duration-ms="3581" started-at="2020-06-14T12:22:27Z" finished-at="2020-06-14T12:22:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- duplicateUserGroup -->
-        <test-method status="PASS" signature="deleteCreatedUserGroup()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="deleteCreatedUserGroup" duration-ms="2935" started-at="2020-06-14T12:22:30Z" finished-at="2020-06-14T12:22:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteCreatedUserGroup -->
-        <test-method status="PASS" signature="deleteDuplicateUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManagementTest@6adede5]" name="deleteDuplicateUserGroup" duration-ms="2963" started-at="2020-06-14T12:22:33Z" finished-at="2020-06-14T12:22:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteDuplicateUserGroup -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManagementTest -->
       <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalHomeTest@5649fd9b]" name="initialize" is-config="true" duration-ms="4" started-at="2020-06-14T12:22:20Z" finished-at="2020-06-14T12:22:20Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalHomeTest@49993335]" name="initialize" is-config="true" duration-ms="9" started-at="2020-06-14T13:58:45Z" finished-at="2020-06-14T13:58:45Z">
           <params>
             <param index="0">
               <value>
@@ -125,7 +125,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="verifyHelpDeskTitle()[pri:3, instance:com.buddi.hdportal.tests.HDPortalHomeTest@5649fd9b]" name="verifyHelpDeskTitle" duration-ms="5124" started-at="2020-06-14T12:22:20Z" finished-at="2020-06-14T12:22:25Z">
+        <test-method status="PASS" signature="verifyHelpDeskTitle()[pri:3, instance:com.buddi.hdportal.tests.HDPortalHomeTest@49993335]" name="verifyHelpDeskTitle" duration-ms="5206" started-at="2020-06-14T13:58:45Z" finished-at="2020-06-14T13:58:50Z">
           <reporter-output>
             <line>
               <![CDATA[Launching HD Portal home page...]]>
