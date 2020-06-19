@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import com.buddi.colombia.testdata.TestData;
+
 /**
  * @author irfan
  *
@@ -28,7 +30,7 @@ public class HDPortalLoginTest extends HDPortalBaseTest{
 	@Test(priority=1)
 	public void loginHDPortal() throws InterruptedException{
 		//HDPortalLoginPage hdPortalLoginPage = PageFactory.initElements(driver, HDPortalLoginPage.class);	
-		hdPortalLoginPage.loginHDPortal();
+		hdPortalLoginPage.loginHDPortal(TestData.HDPORTAL_EMAIL, TestData.HDPORTAL_PASSWORD);
 		/*boolean isBuddiLogoPresent = true;
 		Assert.assertEquals(isBuddiLogoPresent, hdPortalLoginPage.verifybuddiLogo());*/
 		Thread.sleep(5000);

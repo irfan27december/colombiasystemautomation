@@ -45,19 +45,19 @@ public class HDPortalLoginPage {
 	}
 
 	//Method to set user name
-	public void setUserName(){
+	public void setUserName(String userName){
 		CommonActions.waitForElementToBeClickable(driver, hdUserNameElement);
 		hdUserNameElement.clear();	
 		hdUserNameElement.click();	
-		hdUserNameElement.sendKeys(TestData.APP_EMAIL);
+		hdUserNameElement.sendKeys(userName);
 	}
 
 	//Method to set password
-	public void setPassword(){
+	public void setPassword(String password){
 		CommonActions.waitForElementToBeClickable(driver, hdPasswordElement);
 		hdPasswordElement.clear();	
 		hdPasswordElement.click();	
-		hdPasswordElement.sendKeys(TestData.APP_PASSWORD);
+		hdPasswordElement.sendKeys(password);
 	}
 
 	// To verify buddi logo
@@ -72,9 +72,9 @@ public class HDPortalLoginPage {
 	}
 
 	// Method to login HD portal
-	public void loginHDPortal(){
-		setUserName();
-		setPassword();
+	public void loginHDPortal(String userName, String password){
+		setUserName(userName);
+		setPassword(password);
 		clickLogin();
 	}
 
