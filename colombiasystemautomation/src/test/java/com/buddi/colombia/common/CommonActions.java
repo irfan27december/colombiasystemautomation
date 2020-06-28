@@ -104,7 +104,7 @@ public class CommonActions {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click()", element);
 	}
-	
+
 	//Method to handle stale element exception and click element
 	public static void clickElementToHandleStaleElementException(WebElement element) {
 		int counter = 0;
@@ -121,5 +121,29 @@ public class CommonActions {
 		}while(counter == 0);
 	}
 
+	/*How below method works.
+	You need to pass three parameter
+	1- Driver- pass the driver reference, which will find the element.
+	2- Xpath – pass the xpath of the element, which you want to find of the page.
+	3- Time- pass the time it will keep polling after each second and if max limit exceeds then it will throw null pointer exception*/
+	//http://learn-automation.com/best-way-to-handle-synchronization-in-selenium-webdriver/
+
+	public static WebElement isElementPresent(WebDriver driver,  String xpath, int time){
+		WebElement element = null;
+		for(int i = 0; i < time; i++){
+			try{
+				element = driver.findElement(By.xpath(xpath));
+				break;
+			}
+			catch(Exception e){
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					System.out.println("Waiting for element to appear on DOM");
+				}
+			}
+		}
+		return element;
+	}
 
 }

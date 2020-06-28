@@ -11,7 +11,7 @@ public class StringConstants {
     public static final String HDPORTAL_PAGE_TITLE = "Buddi HelpDesk System";
     public static final String HDPORTAL_FO_USER = "irfan.ahmed@buddi.co.uk";
     public static final String HDPORTAL_FO_PASSWORD = "MIA@27dec";
-    public static final String HD_MAIN_TITLE = "Herramienta de gestión (2.0.1)";
+    public static final String HD_MAIN_TITLE = "Herramienta de gestión (2.0.2)";
     
     // App related variables
     public static final String APP_HOMESCREEN_TITLE = "Management Tool";

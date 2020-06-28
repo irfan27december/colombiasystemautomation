@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
-import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.ReadProperties;
 
 /**

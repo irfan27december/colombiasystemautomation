@@ -155,6 +155,8 @@ public class HDPortalBaseTest {
 		}
 	}
 
+	
+	//Method to initialize all the page classes
 	@Parameters({ "SuiteName" })
 	@BeforeClass
 	public void initialize(@Optional("ChromeSuite") String SuiteName) {
@@ -174,7 +176,7 @@ public class HDPortalBaseTest {
 	}*/
 
 	//Method to log out HD portal
-	public void cleanup() {
+	public void logoutHDPortal() {
 		hdPortalLoginPage.logoutHDPortal();	
 	}
 
@@ -182,7 +184,7 @@ public class HDPortalBaseTest {
 	public void clean() throws InterruptedException {
 		//logger.debug("after suite has been called");
 		try {
-			cleanup();
+			logoutHDPortal();
 			System.out.println("Logged out HD portal...");
 		} catch (Exception e) {
 			Reporter.log(e.getMessage());

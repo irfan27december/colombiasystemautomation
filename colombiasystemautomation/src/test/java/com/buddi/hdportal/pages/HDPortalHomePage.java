@@ -38,7 +38,7 @@ public class HDPortalHomePage {
  
 	
 	// Method to verify HD title
-	public boolean verifyHelpDeskTitle() {
+	public boolean verifyHelpDeskMainTitle() {
 		return helpDeskTitleElement.isDisplayed();
 	}
 

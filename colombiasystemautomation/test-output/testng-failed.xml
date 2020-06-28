@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Colombia System Smoke Test Automation Suite]">
+  <parameter name="browser" value="chromedriver"/>
+  <parameter name="SuiteName" value="ChromeSuite"/>
   <listeners>
     <listener class-name="com.buddi.colombia.listeners.TestListener"/>
   </listeners>
-  <test name="Test(failed)">
+  <test name="Tests(failed)">
+    <groups>
+      <run>
+        <include name="Smoke"/>
+      </run>
+    </groups>
     <classes>
+      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
+        <methods>
+          <include name="loginHDPortal"/>
+          <include name="launchHDPortal"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
       <class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest">
         <methods>
+          <include name="accessManagementMenu"/>
+          <include name="accessUserGroupsMenuItem"/>
           <include name="deleteCreatedUserGroup"/>
           <include name="duplicateUserGroup"/>
-          <include name="setUp"/>
-          <include name="initialize"/>
+          <include name="addUserGroup"/>
           <include name="deleteDuplicateUserGroup"/>
           <include name="clean"/>
         </methods>
       </class> <!-- com.buddi.hdportal.tests.HDPortalManageUserGroupsTest -->
+      <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
+        <methods>
+          <include name="verifyHelpDeskTitleInHomePage"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Tests(failed) -->
+</suite> <!-- Failed suite [Colombia System Smoke Test Automation Suite] -->

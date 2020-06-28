@@ -35,12 +35,15 @@ public class HDPortalManageUserGroupsPage {
 
 	//Using FindBy for locating elements
 
+	//Web elements related to manage user groups
 	@FindBy(xpath = "//div[contains(text(),'Management')]") 
 	private WebElement managementElement;
 	@FindBy(xpath = "//div[contains(text(),'User Groups')]") 
 	private WebElement userGroupsElement;
 	@FindBy(xpath = "//div[contains(text(),'Manage User Groups ~ Helpdesk access permission')]") 
 	private WebElement userGroupsPanelTitleElement;
+
+	//Web elements related to add user groups
 	@FindBy(xpath = "//span[contains(text(),'Add')]") 
 	private WebElement toolBarAddUserGroupButton;
 	@FindBy(xpath = "//div[contains(text(),'Add User Group')]") 
@@ -54,6 +57,8 @@ public class HDPortalManageUserGroupsPage {
 	@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.USERGROUP_NAME+"')]") 
 	private WebElement userGroupName;
 
+
+	//Web elements related to delete user groups
 	@FindBy(xpath = "//div[contains(text(),'"+TestData.USERGROUP_NAME+"')]/following::i[@class='x-fa fa-icon-red fa-times-circle']")
 	////div[contains(text(),'UG_AUTOMATION')]/following::span[@class="btn btn-default btn-sm"] --- This xpath also works
 	////td[contains(div/text(),'UG_AUTOMATION')]/following-sibling::td[div/span/i/@class='x-fa fa-icon-red fa-times-circle']/@data-qtip
@@ -65,9 +70,9 @@ public class HDPortalManageUserGroupsPage {
 	@FindBy(xpath = "//span[contains(text(),'Yes')]") 
 	private WebElement buttonYes;
 
-
+	//Web elements related to duplicate user groups
 	@FindBy(xpath = "//span[contains(text(),'Duplicate')]") 
-	private WebElement duplicateUserGroupButton;	
+	private WebElement toolBarDuplicateUserGroupButton;	
 	@FindBy(xpath = "//input[@name='name']") 
 	private WebElement duplicateUGNameElement;
 	@FindBy(xpath = "*//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(),'Duplicate')]")
@@ -75,14 +80,14 @@ public class HDPortalManageUserGroupsPage {
 	@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.DUPLICATE_USERGROUP_NAME+"')]") 
 	private WebElement duplicateUserGroupName;
 
-	
+	//Web elements related to error pop up for duplicate user groups
 	@FindBy(xpath = "//div[contains(text(),'Error')]") 
 	private WebElement errorPopUp;
 	@FindBy(xpath = "//div[contains(text(),'User Group with name already exists')]") 
 	private WebElement userGroupAlreadyExistsConfirmationText;
 	@FindBy(xpath = "//span[contains(text(),'OK')]") 
 	private WebElement buttonOK;
-		
+
 	// Method to click LHS menu option
 	public void clickManagementMenu() {
 		CommonActions.waitForElementToBeVisible(driver, managementElement);
@@ -122,8 +127,8 @@ public class HDPortalManageUserGroupsPage {
 	}
 
 	//Method to create user group
-	public void createUserGroup() throws InterruptedException{
-		setUserGroupName(TestData.USERGROUP_NAME);
+	public void createUserGroup(String strUserGroupName){
+		setUserGroupName(strUserGroupName);
 		if(addButton.isEnabled()){	
 			System.out.println("Add button is enabled "+addButton.isEnabled());		
 			CommonActions.waitForElementToBeClickable(driver, addButton);
@@ -133,8 +138,7 @@ public class HDPortalManageUserGroupsPage {
 			/*Actions builder = new Actions(driver);
 			builder.sendKeys(Keys.TAB).build().perform();
 			builder.sendKeys(Keys.SPACE).build().perform();*/
-			CommonActions.waitForElementToBeVisible(driver, userGroupName);
-			
+			CommonActions.waitForElementToBeVisible(driver, userGroupName);			
 		}else{
 			System.out.println("Add button is not enabled "+addButton.isEnabled());
 		}
@@ -148,23 +152,23 @@ public class HDPortalManageUserGroupsPage {
 	}
 
 	//Method to select user group
-	public void selectUserGroup(){
+	public void selectUserGroup(String strUserGroupName){
 		navigateToUserGroupsOption();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		if(userGroupName.isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, userGroupName);
 			CommonActions.clickElementToHandleStaleElementException(userGroupName);
-			System.out.println("Clicked on user group with name: "+TestData.USERGROUP_NAME);
+			System.out.println("Clicked on user group with name: "+strUserGroupName);
 		}else{
-			System.out.println("Failed to click on user group with name: "+TestData.USERGROUP_NAME);
+			System.out.println("Failed to click on user group with name: "+strUserGroupName);
 		}
 	}
 
 
 
 	//Method to delete user group
-	public void deleteUserGroup(){
-		selectUserGroup();
+	public void deleteUserGroup(String strUserGroupName){
+		//selectUserGroup(strUserGroupName);
 		if(deleteUserGroupIcon.isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, deleteUserGroupIcon);
 			CommonActions.clickElementToHandleStaleElementException(deleteUserGroupIcon);			
@@ -219,11 +223,11 @@ public class HDPortalManageUserGroupsPage {
 	}
 
 	// Method to click Duplicate button
-	public void clickDuplicateButton() {
-		if(duplicateUserGroupButton.isDisplayed()){
+	public void clickDuplicateButtonOnToolBar() {
+		if(toolBarDuplicateUserGroupButton.isDisplayed()){
 			//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-			CommonActions.waitForElementToBeVisible(driver, duplicateUserGroupButton);
-			CommonActions.clickElementToHandleStaleElementException(duplicateUserGroupButton);	
+			CommonActions.waitForElementToBeVisible(driver, toolBarDuplicateUserGroupButton);
+			CommonActions.clickElementToHandleStaleElementException(toolBarDuplicateUserGroupButton);	
 			System.out.println("Clicked Duplicate button...");	
 		}else{
 			System.out.println("Failed to click Duplicate button...");
@@ -257,24 +261,24 @@ public class HDPortalManageUserGroupsPage {
 	}
 
 	//Method to save duplicate user group
-	public void createDuplicateUserGroup(){
-		selectUserGroup();
-		clickDuplicateButton();
+	public void createDuplicateUserGroup(String strDuplicateUserGroupName){
+		//selectUserGroup(strDuplicateUserGroupName);
+		clickDuplicateButtonOnToolBar();
 		setDuplicateUserGroupName(TestData.DUPLICATE_USERGROUP_NAME);
 		clickDuplicateUserGroupButton();
 		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 	}
 
 	//Method to select duplicate user group
-	public void selectDuplicateUserGroup(){
+	public void selectDuplicateUserGroup(String strDuplicateUserGroupName){
 		navigateToUserGroupsOption();
 		if(duplicateUserGroupName.isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, duplicateUserGroupName);
-			//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 			CommonActions.clickElementToHandleStaleElementException(duplicateUserGroupName);
-			System.out.println("Clicked on user group with name: "+TestData.DUPLICATE_USERGROUP_NAME);
+			System.out.println("Clicked on user group with name: "+strDuplicateUserGroupName);
 		}else{
-			System.out.println("Failed to click on user group with name: "+TestData.DUPLICATE_USERGROUP_NAME);
+			System.out.println("Failed to click on user group with name: "+strDuplicateUserGroupName);
 		}
 	}
 
@@ -288,8 +292,8 @@ public class HDPortalManageUserGroupsPage {
 
 
 	//Method to delete duplicate user group
-	public void deleteDuplicateUserGroup(){
-		selectDuplicateUserGroup();
+	public void deleteDuplicateUserGroup(String strDuplicateUserGroupName){
+		//selectDuplicateUserGroup(strDuplicateUserGroupName);
 		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		if(deleteUserGroupIcon.isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, deleteUserGroupIcon);
@@ -313,7 +317,7 @@ public class HDPortalManageUserGroupsPage {
 		}
 		return duplicateUserGroupName.isDisplayed();	
 	}
-	
+
 	//Method to navigate to user groups option
 	public void navigateToUserGroupsOption(){
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -323,10 +327,40 @@ public class HDPortalManageUserGroupsPage {
 		CommonActions.waitForElementToBeClickable(driver, userGroupsElement);
 		CommonActions.clickElementToHandleStaleElementException(userGroupsElement);		
 	}
-	
+
+
+
+	//Method to verify error pop up
+	public boolean isErrorPopUpDisplayed(){
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		if(errorPopUp.isDisplayed()){
+			//System.out.println("A pop up with title "+errorPopUp.getText()+ " appeared...");
+			return true;
+		}else{
+			System.out.println("A pop up with title "+errorPopUp.getText()+ " did not appear...");
+			return false;
+		}
+	}
+
+	//Method to verify error message in error pop up 
+	public boolean isErrorMessageDisplayed(){
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		if(userGroupAlreadyExistsConfirmationText.isDisplayed()){
+			System.out.println("Error pop up appear with text "+userGroupAlreadyExistsConfirmationText.getText()+ " appeared...");
+			return true;
+		}else{
+			System.out.println("Error pop up appear with text "+userGroupAlreadyExistsConfirmationText.getText()+ " did not appear...");
+			return false;
+		}		
+	}
+
 	//Method to validate duplicate user group
 	public void validateExistingUserGroup(){
-		//Comm
+		if(isErrorPopUpDisplayed() && isErrorMessageDisplayed()){		
+			CommonActions.waitForElementToBeClickable(driver, buttonOK);
+		}else{
+			System.out.println("Error pop up appear with text "+userGroupAlreadyExistsConfirmationText.getText()+ " did not appear...");
+		}
 	}
 
 }

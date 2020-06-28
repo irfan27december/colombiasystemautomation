@@ -3,6 +3,8 @@
  */
 package com.buddi.hdportal.tests;
 
+import java.util.concurrent.TimeUnit;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -14,11 +16,13 @@ import com.buddi.colombia.testdata.StringConstants;
  *
  */
 public class HDPortalHomeTest extends HDPortalBaseTest{
-	@Test(priority=3)
-	public void verifyHelpDeskTitle() throws InterruptedException{
+	
+	//Method to verify help desk title in home page
+	@Test(priority = 1, groups = "Smoke")
+	public void verifyHelpDeskTitleInHomePage() throws InterruptedException{
 		Reporter.log("Launching HD Portal home page...");
-		Thread.sleep(5000);
-		boolean isHelpDeskTitleDisplayed = hdPortalHomePage.verifyHelpDeskTitle();
+		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+		boolean isHelpDeskTitleDisplayed = hdPortalHomePage.verifyHelpDeskMainTitle();
 		Assert.assertEquals(isHelpDeskTitleDisplayed, true);	
 		Assert.assertEquals(hdPortalHomePage.getHelpDeskTitle(), StringConstants.HD_MAIN_TITLE);
 		boolean isStatusTitleDisplayed = hdPortalHomePage.verifyStatusTitle();
@@ -26,11 +30,6 @@ public class HDPortalHomeTest extends HDPortalBaseTest{
 		Reporter.log("Launched HD Portal home page...");	
 		System.out.println("Launching HD portal home page...");
 	}
-	
-	/*@Test(priority=4)
-	public void expandManagementMenu() throws InterruptedException{
-		hdPortalHomePage.clickManagementMenu();
-		Thread.sleep(5000);
-	}*/
+
 	
 }
