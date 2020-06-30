@@ -5,6 +5,7 @@ package com.buddi.hdportal.tests;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,7 +19,6 @@ import com.buddi.colombia.testdata.TestData;
 public class HDPortalManageUserGroupsTest extends HDPortalBaseTest{
 
 	@Test(priority = 1, groups = "Smoke")
-	/*@Test(priority = 1,groups="Smoke")*/
 	public void accessManagementMenu() throws InterruptedException{
 		hdPortalManageUserGroupsPage.clickManagementMenu();
 	}
@@ -34,7 +34,7 @@ public class HDPortalManageUserGroupsTest extends HDPortalBaseTest{
 	public void createNewUserGroup(){
 		hdPortalManageUserGroupsPage.clickAddUserGroupsButtonOnToolBar();
 		hdPortalManageUserGroupsPage.createUserGroup(TestData.USERGROUP_NAME);
-		String actualUserGroupName = hdPortalManageUserGroupsPage.getUserGroupName();
+		String actualUserGroupName = hdPortalManageUserGroupsPage.getUserGroupName(TestData.USERGROUP_NAME);
 		Assert.assertEquals(actualUserGroupName, TestData.USERGROUP_NAME);
 	}
 
@@ -42,13 +42,12 @@ public class HDPortalManageUserGroupsTest extends HDPortalBaseTest{
 	public void duplicateUserGroup() throws InterruptedException{
 		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
 		hdPortalManageUserGroupsPage.createDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME);
-		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		String actualUserGroupName = hdPortalManageUserGroupsPage.getDuplicateUserGroupName();
+		String actualUserGroupName = hdPortalManageUserGroupsPage.getDuplicateUserGroupName(TestData.DUPLICATE_USERGROUP_NAME);
 		Assert.assertEquals(actualUserGroupName, TestData.DUPLICATE_USERGROUP_NAME);
 	}
 
 	@Test(priority = 5, groups = "Smoke")
-	public void verifyDuplicateUserGroup(){
+	public void createDuplicateUserGroupInLowerCase(){
 		hdPortalManageUserGroupsPage.clickAddUserGroupsButtonOnToolBar();
 		hdPortalManageUserGroupsPage.createUserGroup(TestData.USERGROUP_NAME.toLowerCase());
 		hdPortalManageUserGroupsPage.validateExistingUserGroup();
@@ -56,24 +55,61 @@ public class HDPortalManageUserGroupsTest extends HDPortalBaseTest{
 		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
 		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
 	}
-
+	
+	
 	@Test(priority = 6, groups = "Smoke")
+	public void createDuplicateUserGroupPrefixedWithSpaces(){
+		hdPortalManageUserGroupsPage.navigateToUserGroupsOption();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		hdPortalManageUserGroupsPage.clickAddUserGroupsButtonOnToolBar();
+		hdPortalManageUserGroupsPage.createUserGroup("            "+TestData.USERGROUP_NAME.toLowerCase());
+		hdPortalManageUserGroupsPage.validateExistingUserGroup();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
+		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
+	}
+	
+	
+	@Test(priority = 7, groups = "Smoke")
+	public void duplicateAnExistingUserGroupInLowerCase() throws InterruptedException{
+		hdPortalManageUserGroupsPage.navigateToUserGroupsOption();
+		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
+		hdPortalManageUserGroupsPage.createDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME.toLowerCase());
+		hdPortalManageUserGroupsPage.validateExistingUserGroup();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
+		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
+	}
+	
+	@Test(priority = 8, groups = "Smoke")
+	public void duplicateAnExistingUserGroupPrefixedWithSpaces() throws InterruptedException{
+		hdPortalManageUserGroupsPage.navigateToUserGroupsOption();
+		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
+		hdPortalManageUserGroupsPage.createDuplicateUserGroup("          "+TestData.DUPLICATE_USERGROUP_NAME);
+		hdPortalManageUserGroupsPage.validateExistingUserGroup();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
+		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
+	}
+	
+
+	@Test(priority = 9, groups = "Smoke")
 	public void deleteCreatedUserGroup() throws InterruptedException{
 		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		hdPortalManageUserGroupsPage.deleteUserGroup(TestData.USERGROUP_NAME);
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isUGDeleted = hdPortalManageUserGroupsPage.isUserGroupDeleted();
+		boolean isUGDeleted = hdPortalManageUserGroupsPage.isUserGroupDeleted(TestData.USERGROUP_NAME);
 		Assert.assertEquals(isUGDeleted, true);
 	}
 
-	@Test(priority = 7, groups = "Smoke")
+	@Test(priority = 10, groups = "Smoke")
 	public void deleteDuplicateUserGroup() throws InterruptedException{
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);		
 		hdPortalManageUserGroupsPage.selectDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		hdPortalManageUserGroupsPage.deleteDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME);
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isUGDeleted = hdPortalManageUserGroupsPage.isDuplicateUserGroupDeleted();
+		boolean isUGDeleted = hdPortalManageUserGroupsPage.isDuplicateUserGroupDeleted(TestData.DUPLICATE_USERGROUP_NAME);
 		Assert.assertEquals(isUGDeleted, true);
 	}
 
