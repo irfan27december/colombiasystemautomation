@@ -5,7 +5,6 @@ package com.buddi.hdportal.tests;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -32,6 +31,8 @@ public class HDPortalManageUserGroupsTest extends HDPortalBaseTest{
 
 	@Test(priority = 3, groups = "Smoke")
 	public void createNewUserGroup(){
+		hdPortalManageUserGroupsPage.navigateToUserGroupsOption();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		hdPortalManageUserGroupsPage.clickAddUserGroupsButtonOnToolBar();
 		hdPortalManageUserGroupsPage.createUserGroup(TestData.USERGROUP_NAME);
 		String actualUserGroupName = hdPortalManageUserGroupsPage.getUserGroupName(TestData.USERGROUP_NAME);

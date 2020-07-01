@@ -11,16 +11,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
+import com.buddi.colombia.testdata.StringConstants;
+import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
+import com.buddi.hdportal.pages.HDPortalManageManualAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -40,17 +45,18 @@ public class HDPortalBaseTest {
 	ReadProperties properties = new ReadProperties();
 	protected HDPortalLoginPage hdPortalLoginPage;	
 	protected HDPortalHomePage hdPortalHomePage;
+	protected HDPortalManageManualAlertsPage hdPortalManageManualAlertsPage;
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
-		
-	
-	
+
+
+
 	public static final String testDataExcelFileName = "testdata.xlsx";
 
 
 	//Set driver binary automatically using WebDriverManager
 	@Parameters({"browser", "SuiteName"})
 	@BeforeSuite
-	public void setUp(@Optional("chromedriver") String browser, @Optional("ChromeSuite") String SuiteName) throws IOException{
+	public void setUp(@Optional("chromedriver") String browser, @Optional("ChromeSuite") String SuiteName) throws IOException, InterruptedException{
 
 		if(browser.equalsIgnoreCase("chromedriver")){
 			//setup the chromedriver using WebDriverManager
@@ -83,7 +89,7 @@ public class HDPortalBaseTest {
 					getBrowserCapabilities(browser, SuiteName));
 			driver.manage().window().maximize();*/	
 		}
-		
+
 		driver.get(properties.getPropertyValue("HDPORTAL_URL"));			
 		driver.manage().window().maximize();			
 		driver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
@@ -155,7 +161,7 @@ public class HDPortalBaseTest {
 		}
 	}
 
-	
+
 	//Method to initialize all the page classes
 	@Parameters({ "SuiteName" })
 	@BeforeClass
@@ -163,7 +169,10 @@ public class HDPortalBaseTest {
 		hdPortalLoginPage = new HDPortalLoginPage(driver);
 		hdPortalHomePage = new HDPortalHomePage(driver);
 		hdPortalManageUserGroupsPage = new HDPortalManageUserGroupsPage(driver);
+		hdPortalManageManualAlertsPage = new HDPortalManageManualAlertsPage(driver);
 	}
+
+
 
 
 
