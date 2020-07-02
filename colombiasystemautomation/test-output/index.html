@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite">
-              <span class="suite-name border-passed">Colombia System Smoke Test Automation Suite</span>
+              <span class="suite-name border-failed">Colombia System Smoke Test Automation Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">14 methods,   14 passed</span>
+                    <span class="method-stats">14 methods, 1 failed,   13 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" class="hide-methods failed suite-Colombia_System_Smoke_Test_Automation_Suite"> (hide)</a> <!-- hide-methods failed suite-Colombia_System_Smoke_Test_Automation_Suite -->
+                      <a href="#" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" class="show-methods failed suite-Colombia_System_Smoke_Test_Automation_Suite"> (show)</a> <!-- show-methods failed suite-Colombia_System_Smoke_Test_Automation_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Colombia_System_Smoke_Test_Automation_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" title="com.buddi.hdportal.tests.HDPortalManageManualAlertsTest" hash-for-method="accessNewAlertsMenuAndVerifyPanelTitle">accessNewAlertsMenuAndVerifyPanelTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Colombia_System_Smoke_Test_Automation_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,11 +117,6 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" title="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" hash-for-method="accessManagementMenu">accessManagementMenu</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" title="com.buddi.hdportal.tests.HDPortalManageManualAlertsTest" hash-for-method="accessNewAlertsMenuAndVerifyPanelTitle">accessNewAlertsMenuAndVerifyPanelTitle</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -182,9 +191,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" class="panel Colombia_System_Smoke_Test_Automation_Suite">
-          <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
+          <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.buddi.hdportal.tests.HDPortalManageManualAlertsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -193,47 +202,14 @@
                   <a name="accessNewAlertsMenuAndVerifyPanelTitle">
                   </a> <!-- accessNewAlertsMenuAndVerifyPanelTitle -->
                   <span class="method-name">accessNewAlertsMenuAndVerifyPanelTitle</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [New Alert1] but found [New Alerts]
+	at com.buddi.hdportal.tests.HDPortalManageManualAlertsTest.accessNewAlertsMenuAndVerifyPanelTitle(HDPortalManageManualAlertsTest.java:24)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed -->
-          <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.buddi.hdportal.tests.HDPortalHomeTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyHelpDeskTitleInHomePage">
-                  </a> <!-- verifyHelpDeskTitleInHomePage -->
-                  <span class="method-name">verifyHelpDeskTitleInHomePage</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed -->
-          <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.buddi.hdportal.tests.HDPortalLoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="launchHDPortal">
-                  </a> <!-- launchHDPortal -->
-                  <span class="method-name">launchHDPortal</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="loginHDPortal">
-                  </a> <!-- loginHDPortal -->
-                  <span class="method-name">loginHDPortal</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed -->
+          </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-failed -->
           <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -312,6 +288,43 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed -->
+          <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.buddi.hdportal.tests.HDPortalHomeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyHelpDeskTitleInHomePage">
+                  </a> <!-- verifyHelpDeskTitleInHomePage -->
+                  <span class="method-name">verifyHelpDeskTitleInHomePage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed -->
+          <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.buddi.hdportal.tests.HDPortalLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="launchHDPortal">
+                  </a> <!-- launchHDPortal -->
+                  <span class="method-name">launchHDPortal</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginHDPortal">
+                  </a> <!-- loginHDPortal -->
+                  <span class="method-name">loginHDPortal</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed -->
         </div> <!-- panel Colombia_System_Smoke_Test_Automation_Suite -->
         <div panel-name="test-xml-Colombia_System_Smoke_Test_Automation_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -331,8 +344,8 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.buddi.hdportal.tests.HDPortalLoginTest&quot;/&gt;
       &lt;class name=&quot;com.buddi.hdportal.tests.HDPortalHomeTest&quot;/&gt;
-      &lt;class name=&quot;com.buddi.hdportal.tests.HDPortalManageUserGroupsTest&quot;/&gt;
       &lt;class name=&quot;com.buddi.hdportal.tests.HDPortalManageManualAlertsTest&quot;/&gt;
+      &lt;class name=&quot;com.buddi.hdportal.tests.HDPortalManageUserGroupsTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Tests --&gt;
 &lt;/suite&gt; &lt;!-- Colombia System Smoke Test Automation Suite --&gt;
@@ -434,66 +447,66 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(14);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'duplicateAnExistingUserGroupPrefixedWithSpaces')
+data.setCell(0, 1, 'duplicateAnExistingUserGroupInLowerCase')
 data.setCell(0, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(0, 3, 5537);
+data.setCell(0, 3, 7176);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'duplicateAnExistingUserGroupInLowerCase')
+data.setCell(1, 1, 'duplicateAnExistingUserGroupPrefixedWithSpaces')
 data.setCell(1, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(1, 3, 5436);
+data.setCell(1, 3, 7014);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'loginHDPortal')
-data.setCell(2, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
-data.setCell(2, 3, 3994);
+data.setCell(2, 1, 'duplicateUserGroup')
+data.setCell(2, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
+data.setCell(2, 3, 4504);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'duplicateUserGroup')
-data.setCell(3, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(3, 3, 3481);
+data.setCell(3, 1, 'loginHDPortal')
+data.setCell(3, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
+data.setCell(3, 3, 4401);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'deleteDuplicateUserGroup')
+data.setCell(4, 1, 'createDuplicateUserGroupPrefixedWithSpaces')
 data.setCell(4, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(4, 3, 3004);
+data.setCell(4, 3, 3833);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'createDuplicateUserGroupPrefixedWithSpaces')
+data.setCell(5, 1, 'deleteDuplicateUserGroup')
 data.setCell(5, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(5, 3, 2935);
+data.setCell(5, 3, 3680);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'deleteCreatedUserGroup')
 data.setCell(6, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(6, 3, 2827);
+data.setCell(6, 3, 3651);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'createNewUserGroup')
 data.setCell(7, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(7, 3, 2822);
+data.setCell(7, 3, 3514);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'verifyHelpDeskTitleInHomePage')
 data.setCell(8, 2, 'com.buddi.hdportal.tests.HDPortalHomeTest')
-data.setCell(8, 3, 1917);
+data.setCell(8, 3, 2352);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'createDuplicateUserGroupInLowerCase')
 data.setCell(9, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(9, 3, 882);
+data.setCell(9, 3, 1235);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'accessNewAlertsMenuAndVerifyPanelTitle')
-data.setCell(10, 2, 'com.buddi.hdportal.tests.HDPortalManageManualAlertsTest')
-data.setCell(10, 3, 449);
+data.setCell(10, 1, 'accessUserGroupsMenuItem')
+data.setCell(10, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
+data.setCell(10, 3, 821);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'accessUserGroupsMenuItem')
-data.setCell(11, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(11, 3, 405);
+data.setCell(11, 1, 'accessNewAlertsMenuAndVerifyPanelTitle')
+data.setCell(11, 2, 'com.buddi.hdportal.tests.HDPortalManageManualAlertsTest')
+data.setCell(11, 3, 380);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'launchHDPortal')
 data.setCell(12, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
-data.setCell(12, 3, 137);
+data.setCell(12, 3, 197);
 data.setCell(13, 0, 13)
 data.setCell(13, 1, 'accessManagementMenu')
 data.setCell(13, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(13, 3, 82);
+data.setCell(13, 3, 190);
 window.suiteTableData['Colombia_System_Smoke_Test_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Colombia_System_Smoke_Test_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 33 seconds</span>
+              <span class="suite-total-time">Total running time: 42 seconds</span>
               <div id="times-div-Colombia_System_Smoke_Test_Automation_Suite">
               </div> <!-- times-div-Colombia_System_Smoke_Test_Automation_Suite -->
             </div> <!-- times-div -->
@@ -526,7 +539,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.buddi.hdportal.tests.HDPortalManageManualAlertsTest</span>
+              <span class="ignored-class-name">com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">setUp</span>
                 <br/>
@@ -544,7 +557,7 @@ return data;
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</span>
+              <span class="ignored-class-name">com.buddi.hdportal.tests.HDPortalManageManualAlertsTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">setUp</span>
                 <br/>
@@ -567,94 +580,93 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">8319 ms</span>
+                <span class="method-start">7330 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">launchHDPortal</span>
-                <span class="method-start">8463 ms</span>
+                <span class="method-start">7432 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginHDPortal</span>
-                <span class="method-start">8612 ms</span>
+                <span class="method-start">7641 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalHomeTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">12607 ms</span>
+                <span class="method-start">12044 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">verifyHelpDeskTitleInHomePage</span>
-                <span class="method-start">12608 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">14527 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">accessManagementMenu</span>
-                <span class="method-start">14529 ms</span>
+                <span class="method-start">12049 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManageManualAlertsTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">14612 ms</span>
+                <span class="method-start">14403 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">accessNewAlertsMenuAndVerifyPanelTitle</span>
-                <span class="method-start">14613 ms</span>
+                <span class="method-start">14404 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">initialize(ChromeSuite)</span>
+                <span class="method-start">14786 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">accessManagementMenu</span>
+                <span class="method-start">14788 ms</span>
+              </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">accessUserGroupsMenuItem</span>
-                <span class="method-start">15065 ms</span>
+                <span class="method-start">14979 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createNewUserGroup</span>
-                <span class="method-start">15471 ms</span>
+                <span class="method-start">15801 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">duplicateUserGroup</span>
-                <span class="method-start">18295 ms</span>
+                <span class="method-start">19316 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createDuplicateUserGroupInLowerCase</span>
-                <span class="method-start">21778 ms</span>
+                <span class="method-start">23822 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createDuplicateUserGroupPrefixedWithSpaces</span>
-                <span class="method-start">22661 ms</span>
+                <span class="method-start">25059 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">duplicateAnExistingUserGroupInLowerCase</span>
-                <span class="method-start">25597 ms</span>
+                <span class="method-start">28895 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">duplicateAnExistingUserGroupPrefixedWithSpaces</span>
-                <span class="method-start">31034 ms</span>
+                <span class="method-start">36074 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteCreatedUserGroup</span>
-                <span class="method-start">36571 ms</span>
+                <span class="method-start">43090 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteDuplicateUserGroup</span>
-                <span class="method-start">39399 ms</span>
+                <span class="method-start">46743 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">clean</span>
-                <span class="method-start">42843 ms</span>
+                <span class="method-start">51343 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
