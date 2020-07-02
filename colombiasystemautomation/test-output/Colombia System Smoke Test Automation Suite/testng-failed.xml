@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Colombia System Smoke Test Automation Suite]">
+  <parameter name="browser" value="chromedriver"/>
+  <parameter name="SuiteName" value="ChromeSuite"/>
+  <listeners>
+    <listener class-name="com.buddi.colombia.listeners.TestListener"/>
+  </listeners>
+  <test name="Tests(failed)">
+    <classes>
+      <class name="com.buddi.hdportal.tests.HDPortalManageManualAlertsTest">
+        <methods>
+          <include name="accessNewAlertsMenuAndVerifyPanelTitle"/>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManageManualAlertsTest -->
+    </classes>
+  </test> <!-- Tests(failed) -->
+</suite> <!-- Failed suite [Colombia System Smoke Test Automation Suite] -->

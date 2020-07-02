@@ -25,7 +25,7 @@ import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
-import com.buddi.hdportal.pages.HDPortalManageManualAlertsPage;
+import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -45,7 +45,7 @@ public class HDPortalBaseTest {
 	ReadProperties properties = new ReadProperties();
 	protected HDPortalLoginPage hdPortalLoginPage;	
 	protected HDPortalHomePage hdPortalHomePage;
-	protected HDPortalManageManualAlertsPage hdPortalManageManualAlertsPage;
+	protected HDPortalManageNewManualAlertsPage hdPortalManageNewManualAlertsPage;
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
 
 
@@ -169,7 +169,7 @@ public class HDPortalBaseTest {
 		hdPortalLoginPage = new HDPortalLoginPage(driver);
 		hdPortalHomePage = new HDPortalHomePage(driver);
 		hdPortalManageUserGroupsPage = new HDPortalManageUserGroupsPage(driver);
-		hdPortalManageManualAlertsPage = new HDPortalManageManualAlertsPage(driver);
+		hdPortalManageNewManualAlertsPage = new HDPortalManageNewManualAlertsPage(driver);
 	}
 
 
