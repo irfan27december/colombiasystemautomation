@@ -75,12 +75,12 @@ public class HDPortalManageUserGroupsPage {
 	/*@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.DUPLICATE_USERGROUP_NAME+"')]") 
 	private WebElement duplicateUserGroupName;*/
 	
-	
-	public WebElement returnUserGroupNameElement(String duplicateUGName){
-		WebElement duplicateUserGroupName = driver.findElement(By.xpath("//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+duplicateUGName+"')]"));
+	//Method accepts user group name and returns user group name element
+	public WebElement returnUserGroupNameElement(String userGroupName){
+		WebElement userGroupNameElement = driver.findElement(By.xpath("//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+userGroupName+"')]"));
 		//@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.DUPLICATE_USERGROUP_NAME+"')]") 
 		//private WebElement duplicateUserGroupName;
-		return duplicateUserGroupName;
+		return userGroupNameElement;
 	}
 
 	//Web elements related to error pop up for duplicate user groups
@@ -359,7 +359,7 @@ public class HDPortalManageUserGroupsPage {
 	public boolean isErrorMessageDisplayed(){
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		if(userGroupAlreadyExistsConfirmationText.isDisplayed()){
-			System.out.println("Error pop up appear with text "+userGroupAlreadyExistsConfirmationText.getText()+ " appeared...");
+			//System.out.println("Error pop up appear with text "+userGroupAlreadyExistsConfirmationText.getText()+ " appeared...");
 			return true;
 		}else{
 			System.out.println("Error pop up appear with text "+userGroupAlreadyExistsConfirmationText.getText()+ " did not appear...");

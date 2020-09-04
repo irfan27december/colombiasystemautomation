@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -90,10 +92,28 @@ public class HDPortalBaseTest {
 			driver.manage().window().maximize();*/	
 		}
 
-		driver.get(properties.getPropertyValue("HDPORTAL_URL"));			
+		try{		
+			driver.get(properties.getPropertyValue("HDPORTAL_URL"));	
+		}catch(Exception e){
+			Reporter.log("network server is slow..check internet connection");
+			throw new Error("network server is slow..check internet connection");
+		}
+
 		driver.manage().window().maximize();			
 		driver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		/*WebElement error = driver.findElement(By.className("error-code"));
+
+		if(error.getText().equals("DNS_PROBE_FINISHED_NO_INTERNET") || error.getText().equals("ERR_NAME_NOT_RESOLVED")
+				|| error.getText().equals("ERR_INTERNET_DISCONNECTED")) {
+			System.out.println("No Internet Connection");
+			driver.manage().deleteAllCookies();
+			driver.close();
+			driver.quit();
+		} else {
+			System.out.println("Internet Connected");
+		}*/
 	}
 
 	/*

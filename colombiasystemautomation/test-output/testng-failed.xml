@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Colombia System Smoke Test Automation Suite]">
-  <parameter name="browser" value="chromedriver"/>
-  <parameter name="SuiteName" value="ChromeSuite"/>
-  <listeners>
-    <listener class-name="com.buddi.colombia.listeners.TestListener"/>
-  </listeners>
-  <test name="Tests(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.buddi.hdportal.tests.HDPortalManageManualAlertsTest">
+      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
         <methods>
-          <include name="accessNewAlertsMenuAndVerifyPanelTitle"/>
           <include name="setUp"/>
           <include name="initialize"/>
+          <include name="loginHDPortal"/>
+          <include name="launchHDPortal"/>
           <include name="clean"/>
         </methods>
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageManualAlertsTest -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
     </classes>
-  </test> <!-- Tests(failed) -->
-</suite> <!-- Failed suite [Colombia System Smoke Test Automation Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

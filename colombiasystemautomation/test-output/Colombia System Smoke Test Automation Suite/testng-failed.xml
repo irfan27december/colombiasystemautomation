@@ -8,14 +8,49 @@
   </listeners>
   <test name="Tests(failed)">
     <classes>
-      <class name="com.buddi.hdportal.tests.HDPortalManageManualAlertsTest">
+      <class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest">
         <methods>
-          <include name="accessNewAlertsMenuAndVerifyPanelTitle"/>
+          <include name="accessManagementMenu"/>
+          <include name="deleteCreatedUserGroup"/>
+          <include name="createDuplicateUserGroupPrefixedWithSpaces"/>
+          <include name="duplicateAnExistingUserGroupPrefixedWithSpaces"/>
+          <include name="duplicateAnExistingUserGroupInLowerCase"/>
+          <include name="deleteDuplicateUserGroup"/>
+          <include name="createNewUserGroup"/>
+          <include name="clean"/>
+          <include name="accessUserGroupsMenuItem"/>
+          <include name="duplicateUserGroup"/>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="createDuplicateUserGroupInLowerCase"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManageUserGroupsTest -->
+      <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
+        <methods>
+          <include name="verifyHelpDeskTitleInHomePage"/>
           <include name="setUp"/>
           <include name="initialize"/>
           <include name="clean"/>
         </methods>
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageManualAlertsTest -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
+      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="loginHDPortal"/>
+          <include name="launchHDPortal"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
+      <class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest">
+        <methods>
+          <include name="verifyColumnNamesInNewAlertsPageGrid"/>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="accessNewAlertsMenuAndVerifyPanelTitle"/>
+          <include name="clean"/>
+        </methods>
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest -->
     </classes>
   </test> <!-- Tests(failed) -->
 </suite> <!-- Failed suite [Colombia System Smoke Test Automation Suite] -->

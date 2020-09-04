@@ -9,7 +9,7 @@ public class TestData {
 
 	// HD Portal related login variables
 	public static final String HDPORTAL_EMAIL = "irfan.ahmed@buddi.co.uk";
-	public static final String HDPORTAL_PASSWORD = "MIA@27dec";
+	public static final String HDPORTAL_PASSWORD = "MIA@27dec1";
 
 	//HD Portal Management related variables
 	public static final String USERGROUP_NAME = "UG_AUTOMATION";
