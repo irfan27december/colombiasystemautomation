@@ -43,7 +43,7 @@ public class BaseTest {
 	WebDriverWait wait;
 	File appDir;
 	File appName;
-	DesiredCapabilities cap;
+	DesiredCapabilities capabilities;
 
 	AppiumDriverLocalService appiumService;
 	private AppiumServiceBuilder builder;
@@ -60,6 +60,9 @@ public class BaseTest {
 		//Reference: https://www.seleniumeasy.com/appium-tutorials/how-to-start-appium-server-programmatically
 		/*appiumService = AppiumDriverLocalService.buildDefaultService();
 		appiumService.start();*/
+		//https://nishantverma.gitbooks.io/appium-for-android/content/starting_appium_server.html
+		String osName = System.getProperty("os.name");
+		System.out.println("OS name: "+osName);
 		AppiumServerJava appiumServer = new AppiumServerJava();
 		int port = 4723;
 		if(!appiumServer.checkIfServerIsRunnning(port)) {
@@ -72,7 +75,7 @@ public class BaseTest {
 		builder = new AppiumServiceBuilder();
 		builder.withIPAddress("127.0.0.1");
 		builder.usingPort(4723);
-		builder.withCapabilities(cap);
+		builder.withCapabilities(capabilities);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
 		builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");
 
@@ -87,27 +90,41 @@ public class BaseTest {
 		//launchEmulator("SampleEmulator");
 
 		appDir = new File("src/test/java/apps");
-		appName = new File(appDir, "columbia-debug.apk");
-
-		cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "SampleEmulator");
-		cap.setCapability(MobileCapabilityType.APP, appName.getAbsolutePath());
-		cap.setCapability("autoGrantPermissions", true);
-		cap.setCapability("autoAcceptAlerts", true);
-		cap.setCapability("noReset", true);
-		cap.setCapability("fullReset", false);
-		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
-		cap.setCapability("automationName", "UiAutomator2");
-		cap.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "***");
-		cap.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY","***");
-		cap.setCapability("takesScreenshot", true); 
-		cap.setCapability("appWaitActivity","***");		
+		//appName = new File(appDir, "columbia-debug.apk");
+		appName = new File(appDir, "colombia-v100.apk");
+		// Created object of DesiredCapabilities class
+		capabilities = new DesiredCapabilities();
+		// Set android deviceName desired capability. Set your device name.
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "SampleEmulator");
+		
+		// Set android VERSION desired capability. Set your mobile device’s OS version.
+		//cap.setCapability(CapabilityType.VERSION, “6.0.1”);
+		// Set android platformName desired capability. It’s Android in our case here.
+		capabilities.setCapability("platformName", "Android");
+		
+		// Install app on the device.
+		driver.installApp("/src/test/java/colombia-v100.apk");
+		//capabilities.setCapability(MobileCapabilityType.APP, appName.getAbsolutePath());
+		capabilities.setCapability("autoGrantPermissions", true);
+		capabilities.setCapability("autoAcceptAlerts", true);
+		capabilities.setCapability("noReset", true);
+		capabilities.setCapability("fullReset", false);
+		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
+		capabilities.setCapability("automationName", "UiAutomator2");
+		// Set your application’s appPackage if you are using any other app.
+		capabilities.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "***");
+		//capabilities.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "com.google.android.apps.nexuslauncher");
+		capabilities.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY","***");
+		//capabilities.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY",".MainActivity, .Settings");
+		capabilities.setCapability("takesScreenshot", true); 
+		capabilities.setCapability("appWaitActivity","***");		
 
 
 		try {
-			driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+			// It will launch app in android device
+			driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		wait = new WebDriverWait(driver, 20);
@@ -129,9 +146,8 @@ public class BaseTest {
 		}
 	}
 
-
+	//Method to check if APPIUM server is running
 	public boolean checkIfServerIsRunnning(int port) {
-
 		boolean isServerRunning = false;
 		ServerSocket serverSocket;
 		try {
@@ -148,6 +164,7 @@ public class BaseTest {
 
 	@AfterTest(alwaysRun = true)
 	public void tearDown(){
+		driver.removeApp("com.google.android.apps.nexuslauncher");
 		System.out.println("Stop driver");
 		driver.quit();
 		System.out.println("Stop appium service");

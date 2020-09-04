@@ -40,15 +40,17 @@ public class LoginColombiaAppTest extends AppiumBaseTest{
 		loginColombiaAppPage.loginColombiaApp();
 		Reporter.log("Launched app...");
 		Thread.sleep(10000);
+		boolean isVisitsScreenTitlePresent = true;
+		Assert.assertEquals(isVisitsScreenTitlePresent, loginColombiaAppPage.isVisitsScreenTitlePresent());
 	}
 
-	@Test(priority = 3)
+	/*@Test(priority = 3)
 	public void verifyNoJobsScheduledText() throws InterruptedException{
 		LoginColombiaAppPage loginColombiaAppPage = PageFactory.initElements(driver, LoginColombiaAppPage.class);
 		Thread.sleep(5000);
 		String actualNoJobsText = loginColombiaAppPage.getNoJobsText();
 		Assert.assertEquals(actualNoJobsText, StringConstants.APP_NO_JOBS_TXT);
-	}
+	}*/
 	
 	@Test(priority = 4)
 	public void logOutColombiaApp() throws InterruptedException{

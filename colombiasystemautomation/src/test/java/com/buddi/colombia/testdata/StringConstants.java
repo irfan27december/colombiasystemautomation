@@ -14,8 +14,8 @@ public class StringConstants {
 	public static final String HD_MAIN_TITLE = "Herramienta de gestión (2.2.0)";
 
 	// App related variables
-	public static final String APP_HOMESCREEN_TITLE = "Management Tool";
-	public static final String APP_HOMESCREEN_SUBTITLE = " Help Desk System ";
+	public static final String APP_HOMESCREEN_TITLE = "Herramienta de gestión";
+	public static final String APP_HOMESCREEN_SUBTITLE = "Mesa de ayuda CERVI";
 	public static final String APP_NO_JOBS_TXT = "No jobs are scheduled currently";
 
 	//Management menu variables

@@ -1,187 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="6" total="21" passed="15">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
     <line>
-      <![CDATA[Test started]]>
+      <![CDATA[Launching app...]]>
     </line>
     <line>
-      <![CDATA[Launching HD Portal...]]>
+      <![CDATA[Launched app...]]>
     </line>
     <line>
-      <![CDATA[Launched HD Portal...]]>
-    </line>
-    <line>
-      <![CDATA[Launching HD Portal home page...]]>
-    </line>
-    <line>
-      <![CDATA[Launched HD Portal home page...]]>
+      <![CDATA[Logged out app...]]>
     </line>
   </reporter-output>
-  <suite name="Colombia System Smoke Test Automation Suite" duration-ms="36530" started-at="2020-09-04T07:46:54Z" finished-at="2020-09-04T07:47:30Z">
+  <suite name="Default suite" duration-ms="23154" started-at="2020-09-04T16:57:47Z" finished-at="2020-09-04T16:58:10Z">
     <groups>
-      <group name="Smoke">
-        <method signature="HDPortalHomeTest.verifyHelpDeskTitleInHomePage()[pri:1, instance:com.buddi.hdportal.tests.HDPortalHomeTest@64bfbc86]" name="verifyHelpDeskTitleInHomePage" class="com.buddi.hdportal.tests.HDPortalHomeTest"/>
-        <method signature="HDPortalLoginTest.launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd]" name="launchHDPortal" class="com.buddi.hdportal.tests.HDPortalLoginTest"/>
-        <method signature="HDPortalLoginTest.loginHDPortal()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd]" name="loginHDPortal" class="com.buddi.hdportal.tests.HDPortalLoginTest"/>
-        <method signature="HDPortalManageNewManualAlertsTest.accessNewAlertsMenuAndVerifyPanelTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bf3bbf]" name="accessNewAlertsMenuAndVerifyPanelTitle" class="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest"/>
-        <method signature="HDPortalManageNewManualAlertsTest.verifyColumnNamesInNewAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bf3bbf]" name="verifyColumnNamesInNewAlertsPageGrid" class="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.accessManagementMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="accessManagementMenu" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.accessUserGroupsMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="accessUserGroupsMenuItem" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.createDuplicateUserGroupInLowerCase()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="createDuplicateUserGroupInLowerCase" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.createDuplicateUserGroupPrefixedWithSpaces()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="createDuplicateUserGroupPrefixedWithSpaces" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.createNewUserGroup()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="createNewUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.deleteCreatedUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="deleteCreatedUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.deleteDuplicateUserGroup()[pri:10, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="deleteDuplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.duplicateAnExistingUserGroupInLowerCase()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="duplicateAnExistingUserGroupInLowerCase" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.duplicateAnExistingUserGroupPrefixedWithSpaces()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="duplicateAnExistingUserGroupPrefixedWithSpaces" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.duplicateUserGroup()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="duplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-      </group> <!-- Smoke -->
     </groups>
-    <test name="Tests" duration-ms="36530" started-at="2020-09-04T07:46:54Z" finished-at="2020-09-04T07:47:30Z">
-      <class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-04T13:17:01Z" finished-at="2020-09-04T13:17:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="23154" started-at="2020-09-04T16:57:47Z" finished-at="2020-09-04T16:58:10Z">
+      <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest">
+        <test-method status="PASS" signature="startAppriumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@1ed4004b]" name="startAppriumServer" is-config="true" duration-ms="19018" started-at="2020-09-04T22:27:28Z" finished-at="2020-09-04T22:27:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessManagementMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="accessManagementMenu" duration-ms="88" started-at="2020-09-04T13:17:01Z" finished-at="2020-09-04T13:17:01Z">
+        </test-method> <!-- startAppriumServer -->
+        <test-method status="PASS" signature="getAppHomeScreenMainTitle()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@1ed4004b]" name="getAppHomeScreenMainTitle" duration-ms="669" started-at="2020-09-04T22:27:47Z" finished-at="2020-09-04T22:27:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- accessManagementMenu -->
-        <test-method status="PASS" signature="accessUserGroupsMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="accessUserGroupsMenuItem" duration-ms="390" started-at="2020-09-04T13:17:01Z" finished-at="2020-09-04T13:17:01Z">
+        </test-method> <!-- getAppHomeScreenMainTitle -->
+        <test-method status="PASS" signature="getAppHomeScreenSubTitle()[pri:1, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@1ed4004b]" name="getAppHomeScreenSubTitle" duration-ms="104" started-at="2020-09-04T22:27:47Z" finished-at="2020-09-04T22:27:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- accessUserGroupsMenuItem -->
-        <test-method status="PASS" signature="createNewUserGroup()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="createNewUserGroup" duration-ms="3028" started-at="2020-09-04T13:17:01Z" finished-at="2020-09-04T13:17:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewUserGroup -->
-        <test-method status="PASS" signature="duplicateUserGroup()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="duplicateUserGroup" duration-ms="4089" started-at="2020-09-04T13:17:04Z" finished-at="2020-09-04T13:17:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- duplicateUserGroup -->
-        <test-method status="PASS" signature="createDuplicateUserGroupInLowerCase()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="createDuplicateUserGroupInLowerCase" duration-ms="854" started-at="2020-09-04T13:17:09Z" finished-at="2020-09-04T13:17:09Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createDuplicateUserGroupInLowerCase -->
-        <test-method status="PASS" signature="createDuplicateUserGroupPrefixedWithSpaces()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="createDuplicateUserGroupPrefixedWithSpaces" duration-ms="3054" started-at="2020-09-04T13:17:09Z" finished-at="2020-09-04T13:17:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createDuplicateUserGroupPrefixedWithSpaces -->
-        <test-method status="PASS" signature="duplicateAnExistingUserGroupInLowerCase()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="duplicateAnExistingUserGroupInLowerCase" duration-ms="5876" started-at="2020-09-04T13:17:12Z" finished-at="2020-09-04T13:17:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- duplicateAnExistingUserGroupInLowerCase -->
-        <test-method status="PASS" signature="duplicateAnExistingUserGroupPrefixedWithSpaces()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="duplicateAnExistingUserGroupPrefixedWithSpaces" duration-ms="5881" started-at="2020-09-04T13:17:18Z" finished-at="2020-09-04T13:17:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- duplicateAnExistingUserGroupPrefixedWithSpaces -->
-        <test-method status="PASS" signature="deleteCreatedUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="deleteCreatedUserGroup" duration-ms="3190" started-at="2020-09-04T13:17:24Z" finished-at="2020-09-04T13:17:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteCreatedUserGroup -->
-        <test-method status="PASS" signature="deleteDuplicateUserGroup()[pri:10, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113]" name="deleteDuplicateUserGroup" duration-ms="3062" started-at="2020-09-04T13:17:27Z" finished-at="2020-09-04T13:17:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteDuplicateUserGroup -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageUserGroupsTest -->
-      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd]" name="setUp" is-config="true" duration-ms="7507" started-at="2020-09-04T13:16:46Z" finished-at="2020-09-04T13:16:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chromedriver]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd]" name="initialize" is-config="true" duration-ms="39" started-at="2020-09-04T13:16:54Z" finished-at="2020-09-04T13:16:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd]" name="launchHDPortal" duration-ms="170" started-at="2020-09-04T13:16:54Z" finished-at="2020-09-04T13:16:54Z">
+        </test-method> <!-- getAppHomeScreenSubTitle -->
+        <test-method status="PASS" signature="loginColombiaApp()[pri:2, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@1ed4004b]" name="loginColombiaApp" duration-ms="14483" started-at="2020-09-04T22:27:47Z" finished-at="2020-09-04T22:28:02Z">
           <reporter-output>
             <line>
-              <![CDATA[Launching HD Portal...]]>
+              <![CDATA[Launching app...]]>
             </line>
             <line>
-              <![CDATA[Launched HD Portal...]]>
+              <![CDATA[Launched app...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- launchHDPortal -->
-        <test-method status="PASS" signature="loginHDPortal()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd]" name="loginHDPortal" duration-ms="3488" started-at="2020-09-04T13:16:54Z" finished-at="2020-09-04T13:16:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginHDPortal -->
-        <test-method status="PASS" signature="clean()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd]" name="clean" is-config="true" duration-ms="5250" started-at="2020-09-04T13:17:32Z" finished-at="2020-09-04T13:17:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clean -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
-      <class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bf3bbf]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-04T13:17:00Z" finished-at="2020-09-04T13:17:00Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessNewAlertsMenuAndVerifyPanelTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bf3bbf]" name="accessNewAlertsMenuAndVerifyPanelTitle" duration-ms="376" started-at="2020-09-04T13:17:00Z" finished-at="2020-09-04T13:17:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessNewAlertsMenuAndVerifyPanelTitle -->
-        <test-method status="PASS" signature="verifyColumnNamesInNewAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bf3bbf]" name="verifyColumnNamesInNewAlertsPageGrid" duration-ms="362" started-at="2020-09-04T13:17:01Z" finished-at="2020-09-04T13:17:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyColumnNamesInNewAlertsPageGrid -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest -->
-      <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalHomeTest@64bfbc86]" name="initialize" is-config="true" duration-ms="1" started-at="2020-09-04T13:16:58Z" finished-at="2020-09-04T13:16:58Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="verifyHelpDeskTitleInHomePage()[pri:1, instance:com.buddi.hdportal.tests.HDPortalHomeTest@64bfbc86]" name="verifyHelpDeskTitleInHomePage" duration-ms="2534" started-at="2020-09-04T13:16:58Z" finished-at="2020-09-04T13:17:00Z">
+        </test-method> <!-- loginColombiaApp -->
+        <test-method status="PASS" signature="logOutColombiaApp()[pri:4, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@1ed4004b]" name="logOutColombiaApp" duration-ms="7867" started-at="2020-09-04T22:28:02Z" finished-at="2020-09-04T22:28:10Z">
           <reporter-output>
             <line>
-              <![CDATA[Launching HD Portal home page...]]>
-            </line>
-            <line>
-              <![CDATA[Launched HD Portal home page...]]>
+              <![CDATA[Logged out app...]]>
             </line>
           </reporter-output>
-        </test-method> <!-- verifyHelpDeskTitleInHomePage -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
-    </test> <!-- Tests -->
-  </suite> <!-- Colombia System Smoke Test Automation Suite -->
+        </test-method> <!-- logOutColombiaApp -->
+        <test-method status="PASS" signature="stopAppiumServer()[pri:0, instance:com.buddi.colombiaapp.tests.LoginColombiaAppTest@1ed4004b]" name="stopAppiumServer" is-config="true" duration-ms="51" started-at="2020-09-04T22:28:10Z" finished-at="2020-09-04T22:28:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopAppiumServer -->
+      </class> <!-- com.buddi.colombiaapp.tests.LoginColombiaAppTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
