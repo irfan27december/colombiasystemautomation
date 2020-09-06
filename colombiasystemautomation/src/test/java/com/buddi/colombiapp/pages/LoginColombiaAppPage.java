@@ -6,17 +6,12 @@ package com.buddi.colombiapp.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
 import com.buddi.colombia.testdata.StringConstants;
 import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.ReadProperties;
-
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
  * @author irfan
@@ -35,43 +30,36 @@ public class LoginColombiaAppPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	//@FindBy(xpath = "//*[contains(@value='Management Tool')]") private WebElement AppMainTitle;	
-	//@FindBy(how=How.XPATH,using=("//android.widget.TextView[contains(text(),'Management Tool')]")) private WebElement AppMainTitle;
-	//@FindBy(how=How.XPATH,using=("//android.widget.TextView[contains(.,' Help Desk System ')]")) private WebElement AppMainTitle;
-	//@AndroidFindBy(uiAutomator = "new UiSelector().textContains('Management Tool')") private MobileElement AppMainTitle;
-
-
-	//Old locators
-	/*@FindBy(xpath = "//*[@class='android.widget.TextView'][@index = '1']") private WebElement AppMainTitle;	
+	/*@FindBy(xpath = "//*[contains(@value='Management Tool')]") private WebElement AppMainTitle;	
+	@FindBy(how=How.XPATH,using=("//android.widget.TextView[contains(text(),'Management Tool')]")) private WebElement AppMainTitle;
+	@FindBy(how=How.XPATH,using=("//android.widget.TextView[contains(.,' Help Desk System ')]")) private WebElement AppMainTitle;
+	@AndroidFindBy(uiAutomator = "new UiSelector().textContains('Management Tool')") private MobileElement AppMainTitle;
+	@FindBy(xpath = "//*[@class='android.widget.TextView'][@index = '1']") private WebElement AppMainTitle;	
 	@FindBy(xpath = "//*[@class='android.widget.TextView'][@index = '0']") private WebElement AppSubTitle;	
-	@FindBy(id = "txt_phone_id") private WebElement textPhoneID;*/
+	@FindBy(id = "txt_phone_id") private WebElement textPhoneID;
+	@FindBy(id = "edit_email") private WebElement emailField;
+	@FindBy(id = "edit_password") private WebElement passwordField;
+	@FindBy(id = "button") private WebElement loginButton;
+	@FindBy(className = "android.widget.ImageButton") private WebElement burgerIcon;
+	@FindBy(xpath = "//*[@class='androidx.appcompat.widget.LinearLayoutCompat'][@index = '2']") private WebElement logOutButton;
+	@FindBy(className = "android.widget.CheckedTextView") private WebElement logOutButton;
+	@FindBy(xpath = "//*[@class='android.widget.CheckedTextView'][@index = '0']") private WebElement logoutConfirmation;
+	@FindBy(className = "android.widget.ImageView") private WebElement logOutButton;
+	WebElement logOutButton = driver.findElement(MobileBy.className("android.widget.ImageView"));*/
 
 	@FindBy(id = "login_title_textview") private WebElement AppMainTitle;	
 	@FindBy(id = "login_subtitle_textview") private WebElement AppSubTitle;	
 	@FindBy(id = "login_phone_id_text") private WebElement textPhoneID;
-
-	/*@FindBy(id = "edit_email") private WebElement emailField;
-	@FindBy(id = "edit_password") private WebElement passwordField;
-	@FindBy(id = "button") private WebElement loginButton;*/
-
 	@FindBy(id = "login_email_edit") private WebElement emailField;
 	@FindBy(id = "login_password_edit") private WebElement passwordField;
 	@FindBy(id = "login_button") private WebElement loginButton;
 	@FindBy(className = "android.widget.TextView") private WebElement visitsScreenTitle;
-	
-	@FindBy(xpath = "//*[@class='android.widget.ImageButton'][@index = '0']") private WebElement burgerIcon;
-	//@FindBy(className = "android.widget.ImageButton") private WebElement burgerIcon;
-	//@FindBy(xpath = "//*[@class='androidx.appcompat.widget.LinearLayoutCompat'][@index = '2']") private WebElement logOutButton;
-	@FindBy(id = "nav_logout") private WebElement logOutButton;
-	//@FindBy(className = "android.widget.CheckedTextView") private WebElement logOutButton;
-	//@FindBy(xpath = "//*[@class='android.widget.CheckedTextView'][@index = '0']") private WebElement logoutConfirmation;
+	@FindBy(xpath = "//*[@class='android.widget.ImageButton'][@index = '0']") private WebElement burgerIcon;	
+	@FindBy(id = "nav_logout") private WebElement logOutButton;	
 	@FindBy(id = "md_text_message") private WebElement logoutConfirmation;
-	//@FindBy(xpath = "//*[@class='android.widget.Button'][@index = '2']") private WebElement okButton;
 	@FindBy(id = "md_button_positive") private WebElement okButton;
-
 	@FindBy(id = "txt_no_jobs") private WebElement txtNoJobs;
-	//@FindBy(className = "android.widget.ImageView") private WebElement logOutButton;
-	//WebElement logOutButton = driver.findElement(MobileBy.className("android.widget.ImageView"));
+	
 
 
 
@@ -146,13 +134,13 @@ public class LoginColombiaAppPage {
 	public boolean isVisitsScreenTitlePresent(){
 		//CommonActions.waitForElementToBeVisible(driver, visitsScreenTitle);		
 		if(visitsScreenTitle.getText().equalsIgnoreCase("Visits")){
-			System.out.println("Visits screen is displayed "+visitsScreenTitle.isDisplayed());
+			System.out.println("Visits screen is displayed ");
 			return visitsScreenTitle.isDisplayed();
 		}else{
-			System.out.println("Visits screen is not displayed... "+visitsScreenTitle.isDisplayed());
+			System.out.println("Visits screen is not displayed... ");
 			return visitsScreenTitle.isDisplayed();
 		}
-		
+
 	}
 
 	//Method to click LogOut button
@@ -163,7 +151,7 @@ public class LoginColombiaAppPage {
 		if(logOutButton.isDisplayed()){			
 			logOutButton.click();
 			System.out.println("Logout option is displayed and clicked");
-			if(logoutConfirmation.getText().equalsIgnoreCase("Do you want to logout?")){
+			if(logoutConfirmation.getText().equalsIgnoreCase(StringConstants.APP_LOGOUT_CONFIRMATION)){
 				System.out.println("Logout confirmation box is displayed...");
 				CommonActions.waitForElementToBeVisible(driver, okButton);
 				okButton.click();				
@@ -188,7 +176,7 @@ public class LoginColombiaAppPage {
 		}else{
 			System.out.println("Logout option is not displayed...");
 		}*/
-		
+
 	}
 
 	//App login method

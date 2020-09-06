@@ -17,6 +17,7 @@ public class StringConstants {
 	public static final String APP_HOMESCREEN_TITLE = "Herramienta de gestión";
 	public static final String APP_HOMESCREEN_SUBTITLE = "Mesa de ayuda CERVI";
 	public static final String APP_NO_JOBS_TXT = "No jobs are scheduled currently";
+	public static final String APP_LOGOUT_CONFIRMATION = "Do you want to logout?";
 
 	//Management menu variables
 	public static final String USERGROUP_PANEL_TITLE = "Manage User Groups ~ Helpdesk access permission";

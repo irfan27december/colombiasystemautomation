@@ -24,12 +24,12 @@ public class AppiumBaseTest {
 	AppiumServerJava appiumServer;
 	AndroidDriver<AndroidElement> driver;
 	WebDriverWait wait;
-	
-	DesiredCapabilities cap;
+
+	DesiredCapabilities capabilities;
 	int TIME_SECONDS = 20;
 	File appDir;
 	File appName;
-	
+
 	public static final String testDataExcelFileName = "testdata.xlsx";	
 	public int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
 	public String appiumServerIPAddress = readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS");
@@ -50,32 +50,56 @@ public class AppiumBaseTest {
 		}
 		launchColombiaApp();		
 	}
-	
+
 	//Method to launch app
 	public void launchColombiaApp(){
 		appDir = new File(readProperties.getPropertyValue("APP_DIRECTORY"));
 		appName = new File(readProperties.getPropertyValue("APP_DIRECTORY"), readProperties.getPropertyValue("APP_NAME"));
-
-		cap = new DesiredCapabilities();
-		cap.setCapability(MobileCapabilityType.DEVICE_NAME, readProperties.getPropertyValue("ANDROID_EMULATOR_DEVICE_NAME"));
-		cap.setCapability(MobileCapabilityType.APP, appName.getAbsolutePath());
-		cap.setCapability("autoGrantPermissions", true);
-		cap.setCapability("autoAcceptAlerts", true);
-		cap.setCapability("noReset", true);
-		cap.setCapability("fullReset", false);
-		cap.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
-		cap.setCapability("automationName", "UiAutomator2");
-		//Package name = com.buddi.columbia.debug
-		cap.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "com.buddi.columbia.debug");
-		cap.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY",".MainActivity");
-		/*cap.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "***");
-		cap.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY","***");*/
-		cap.setCapability("takesScreenshot", true); 
-		cap.setCapability("appWaitActivity","***");		
+		//Create object of DesiredCapabilities class
+		capabilities = new DesiredCapabilities();	
+		//http://appium.io/docs/en/writing-running-appium/caps/
+		// Set android deviceName desired capability. Set your device name.
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, readProperties.getPropertyValue("ANDROID_EMULATOR_DEVICE_NAME"));
+		// Set android VERSION desired capability. Set your mobile device’s OS version.
+		//capabilities.setCapability(CapabilityType.VERSION, “6.0.1”);
+		// Set android platformName desired capability. It’s Android in our case here.
+		//capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, readProperties.getPropertyValue("EMULATOR_PLATFORM"));
+		capabilities.setCapability(MobileCapabilityType.APP, appName.getAbsolutePath());
+		
+		/*Grant permissions your app requires and grant them to the app on install. 
+		Defaults to false. If noReset is true, this capability doesn't work.*/
+		capabilities.setCapability("autoGrantPermissions", true);
+		/*Accept all iOS alerts automatically if they pop up. 
+		This includes privacy access permission alerts (e.g., location, contacts, photos). Default is false*/
+		capabilities.setCapability("autoAcceptAlerts", true);
+		// reset app state before this session
+		capabilities.setCapability("noReset", true);
+		//capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+		//Perform a complete reset
+		capabilities.setCapability("fullReset", false);
+		//capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
+		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
+		//Which automation engine to use, Appium (default), or UiAutomator2, Espresso, or UiAutomator1 for Android
+		//capabilities.setCapability("automationName", "UiAutomator2");
+		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, readProperties.getPropertyValue("EMULATOR_AUTOMATION_NAME"));
+		/*Set your application’s appPackage if you are using any other app
+		Java package of the Android app you want to run. 
+		By default this capability is received from the package manifest (@package attribute value)*/
+		/*capabilities.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "com.google.android.apps.nexuslauncher");*/
+		capabilities.setCapability("AndroidMobileCapabilityType.APP_PACKAGE", "***");
+		/*Activity name for the Android activity you want to launch from your package. 
+		This often needs to be preceded by a . (e.g., .MainActivity instead of MainActivity).*/
+		capabilities.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY","***");
+		//capabilities.setCapability("AndroidMobileCapabilityType.APP_ACTIVITY",".MainActivity");
+		capabilities.setCapability("takesScreenshot", true); 
+		/*Activity name/names, comma separated, for the Android activity you want to wait for. 
+		By default the value of this capability is the same as for appActivity.*/
+		capabilities.setCapability("appWaitActivity","***");		
 
 		try {
 			appiumServerURL = "http://"+appiumServerIPAddress+":"+appiumServerPort+"/wd/hub";
-			driver = new AndroidDriver<AndroidElement>(new URL(appiumServerURL), cap);
+			driver = new AndroidDriver<AndroidElement>(new URL(appiumServerURL), capabilities);
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
@@ -83,10 +107,14 @@ public class AppiumBaseTest {
 		wait = new WebDriverWait(driver, TIME_SECONDS);
 	}
 
-	
+
 
 	@AfterSuite(alwaysRun = true)
-	public void stopAppiumServer(){
+	public void stopAppiumServer(){	
+		//capabilities.setCapability("noResetValue","false");
+		//driver.removeApp(readProperties.getPropertyValue("APP_PACKAGE_NAME"));
+		System.out.println("Stop driver");
+		driver.quit();
 		appiumServer.stopServer();
 	}
 

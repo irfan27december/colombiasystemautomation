@@ -14,11 +14,8 @@ import org.testng.annotations.BeforeTest;
 
 import com.buddi.colombiaapp.tests.AppiumServerJava;
 
-import io.appium.java_client.android.*;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -92,7 +89,7 @@ public class BaseTest {
 		appDir = new File("src/test/java/apps");
 		//appName = new File(appDir, "columbia-debug.apk");
 		appName = new File(appDir, "colombia-v100.apk");
-		// Created object of DesiredCapabilities class
+		// Create object of DesiredCapabilities class
 		capabilities = new DesiredCapabilities();
 		// Set android deviceName desired capability. Set your device name.
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "SampleEmulator");
@@ -105,6 +102,7 @@ public class BaseTest {
 		// Install app on the device.
 		driver.installApp("/src/test/java/colombia-v100.apk");
 		//capabilities.setCapability(MobileCapabilityType.APP, appName.getAbsolutePath());
+		
 		capabilities.setCapability("autoGrantPermissions", true);
 		capabilities.setCapability("autoAcceptAlerts", true);
 		capabilities.setCapability("noReset", true);

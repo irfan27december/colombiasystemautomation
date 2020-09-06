@@ -15,21 +15,22 @@ public class AppiumServerJava {
 
 	private AppiumDriverLocalService service;
 	private AppiumServiceBuilder builder;
-	private DesiredCapabilities cap;
+	private DesiredCapabilities capabilities;
 	/*public String appiumServerIPAddress = "127.0.0.1";
 	public int appiumServerPort = 4723;*/
-	ReadProperties readProperties = new ReadProperties();
+	static ReadProperties readProperties = new ReadProperties();
+	public static int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
 	
 	public void startServer() {
 		//Set Capabilities
-		cap = new DesiredCapabilities();
-		cap.setCapability("noReset", "false");
+		capabilities = new DesiredCapabilities();
+		capabilities.setCapability("noReset", "false");
 		
 		//Build the Appium service
 		builder = new AppiumServiceBuilder();
 		builder.withIPAddress(readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS"));		
 		builder.usingPort(Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT")));
-		builder.withCapabilities(cap);
+		builder.withCapabilities(capabilities);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
 		builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");
 		
@@ -61,13 +62,12 @@ public class AppiumServerJava {
 
 	public static void main(String[] args) {
 		AppiumServerJava appiumServer = new AppiumServerJava();
-		
-		int port = 4723;
-		if(!appiumServer.checkIfServerIsRunnning(port)) {
+		//int port = 4723;
+		if(!appiumServer.checkIfServerIsRunnning(appiumServerPort)) {
 			appiumServer.startServer();
 			appiumServer.stopServer();
 		} else {
-			System.out.println("Appium Server already running on Port - " + port);
+			System.out.println("Appium Server already running on port - " + appiumServerPort);
 		}
 	}
 }
