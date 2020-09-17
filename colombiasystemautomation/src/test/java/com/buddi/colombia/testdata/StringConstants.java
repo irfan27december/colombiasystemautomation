@@ -21,6 +21,7 @@ public class StringConstants {
 
 	//Management menu variables
 	public static final String USERGROUP_PANEL_TITLE = "Manage User Groups ~ Helpdesk access permission";
+	public static final String KNOWLEDGEBASE_PANEL_TITLE = "Manage Knowledge Base";
 
 	//Confirmation pop up variables
 	public static final String DELETE_USERGROUP_CONFIRMATION_TEXT = "Are you sure you wish to remove this User Group?";

@@ -27,6 +27,7 @@ import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
+import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
 
@@ -49,6 +50,7 @@ public class HDPortalBaseTest {
 	protected HDPortalHomePage hdPortalHomePage;
 	protected HDPortalManageNewManualAlertsPage hdPortalManageNewManualAlertsPage;
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
+	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
 
 
 
@@ -190,6 +192,7 @@ public class HDPortalBaseTest {
 		hdPortalHomePage = new HDPortalHomePage(driver);
 		hdPortalManageUserGroupsPage = new HDPortalManageUserGroupsPage(driver);
 		hdPortalManageNewManualAlertsPage = new HDPortalManageNewManualAlertsPage(driver);
+		hdPortalManageKnowledgeBasePage = new HDPortalManageKnowledgeBasePage(driver);
 	}
 
 

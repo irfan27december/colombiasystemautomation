@@ -27,8 +27,9 @@
 			<!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/> -->
 			<class name="com.buddi.hdportal.tests.HDPortalLoginTest" />
 			<class name="com.buddi.hdportal.tests.HDPortalHomeTest" />
-			<class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" />
-			<class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" />
+			<!-- <class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" />
+			<class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" /> -->
+			<class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" />
 		</classes>
 	</test> <!-- Test -->
 	
