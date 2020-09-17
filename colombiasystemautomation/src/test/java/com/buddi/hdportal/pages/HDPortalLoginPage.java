@@ -28,14 +28,10 @@ public class HDPortalLoginPage {
 	}
 
 	//Using FindBy for locating elements
-	@FindBy(xpath = "//input[@name='username']") 
-	private WebElement hdUserNameElement;	
-	@FindBy(xpath = "//input[@name='password']") 
-	private WebElement hdPasswordElement;
-	@FindBy(xpath = "//span[text()='Login']") 
-	private WebElement loginElement;
-	@FindBy(xpath = "//span[text()='Logout']") 
-	private WebElement logOutElement;
+	@FindBy(xpath = "//input[@name='username']") private WebElement hdUserNameElement;	
+	@FindBy(xpath = "//input[@name='password']") private WebElement hdPasswordElement;
+	@FindBy(xpath = "//span[text()='Login']") private WebElement loginElement;
+	@FindBy(xpath = "//span[text()='Logout']") private WebElement logOutElement;
 	
 
 	//Method to verify HD login page title

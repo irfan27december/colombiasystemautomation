@@ -6,8 +6,11 @@
       <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest">
         <methods>
           <include name="startAppriumServer"/>
+          <include name="loginColombiaApp"/>
           <include name="stopAppiumServer"/>
+          <include name="getAppHomeScreenSubTitle"/>
           <include name="logOutColombiaApp"/>
+          <include name="getAppHomeScreenMainTitle"/>
         </methods>
       </class> <!-- com.buddi.colombiaapp.tests.LoginColombiaAppTest -->
     </classes>
