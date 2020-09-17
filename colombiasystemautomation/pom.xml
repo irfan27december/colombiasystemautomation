@@ -89,13 +89,13 @@
 							<!-- host -->
 							<mailhost>smtp.gmail.com</mailhost>
 							<!-- port of the host -->
-							<!-- <mailport>465</mailport> -->
 							<mailport>465</mailport>
+							<!-- <mailport>587</mailport> -->
 							<mailssl>true</mailssl>
 							<mailAltConfig>true</mailAltConfig>
 
 							<!-- Email Authentication(Username and Password) -->
-							<mailuser>mia27dec@gmail.com</mailuser>
+							<mailuser>mia27dec@gmail.com</mailuser> 
 							<!-- <mailuser>automation27dec@gmail.com</mailuser> -->
 							<mailpassword>MIA@27dec</mailpassword>
 
@@ -103,7 +103,7 @@
 								<!-- To Email address -->
 								<receiver>mia27dec@gmail.com</receiver>
 								<receiver>automation27dec@gmail.com</receiver>
-								<!-- <receiver>irfan.ahmed@buddi.co.uk</receiver> -->
+								<receiver>irfan.ahmed@buddi.co.uk</receiver> 
 							</receivers>
 
 							<fileSets>

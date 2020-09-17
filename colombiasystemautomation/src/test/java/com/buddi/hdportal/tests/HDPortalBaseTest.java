@@ -104,6 +104,7 @@ public class HDPortalBaseTest {
 		driver.manage().window().maximize();			
 		driver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 
 		/*WebElement error = driver.findElement(By.className("error-code"));
 
@@ -195,17 +196,6 @@ public class HDPortalBaseTest {
 		hdPortalManageKnowledgeBasePage = new HDPortalManageKnowledgeBasePage(driver);
 	}
 
-
-
-
-
-	/*//Method to close browser
-	@AfterSuite(alwaysRun=true)
-	public void tearDown(){
-		driver.manage().deleteAllCookies();
-		driver.close();
-		driver.quit();
-	}*/
 
 	//Method to log out HD portal
 	public void logoutHDPortal() {

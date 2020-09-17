@@ -18,7 +18,7 @@ import com.buddi.colombia.testdata.TestData;
 public class HDPortalManageKnowledgeBaseTest extends HDPortalBaseTest{
 
 	@Test(priority = 1, groups = "Smoke")
-	public void accessManagementMenu() throws InterruptedException{
+	public void accessManagementMenuForKB() throws InterruptedException{
 		hdPortalManageKnowledgeBasePage.clickManagementMenu();
 	}
 
@@ -34,86 +34,17 @@ public class HDPortalManageKnowledgeBaseTest extends HDPortalBaseTest{
 		//hdPortalManageKnowledgeBasePage.navigateToKnowledgeBaseOption();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		hdPortalManageKnowledgeBasePage.clickKnowledgeBaseButtonOnToolBar();
-		hdPortalManageKnowledgeBasePage.createKnowledgeBase(TestData.KNOWLEDGEBASE_NAME,TestData.KNOWLEDGEBASE_SUBJECT,TestData.KNOWLEDGEBASE_DESCRIPTION);
-		String actualKnowledgeBaseName = hdPortalManageKnowledgeBasePage.getKnowledgeBaseName(TestData.KNOWLEDGEBASE_NAME);
-		Assert.assertEquals(actualKnowledgeBaseName, TestData.KNOWLEDGEBASE_NAME);
+		hdPortalManageKnowledgeBasePage.createKnowledgeBase(TestData.KNOWLEDGEBASE_ITEMNAME,TestData.KNOWLEDGEBASE_SUBJECT,TestData.KNOWLEDGEBASE_DESCRIPTION);
+		String actualKnowledgeBaseItemName = hdPortalManageKnowledgeBasePage.getKnowledgeBaseItemName(TestData.KNOWLEDGEBASE_ITEMNAME);
+		Assert.assertEquals(actualKnowledgeBaseItemName, TestData.KNOWLEDGEBASE_ITEMNAME);
+		/*String actualKnowledgeBaseSubject = hdPortalManageKnowledgeBasePage.returnKnowledgeBaseSubject(TestData.KNOWLEDGEBASE_SUBJECT);
+		Assert.assertEquals(actualKnowledgeBaseSubject, TestData.KNOWLEDGEBASE_SUBJECT);
+		String actualKnowledgeBaseDescription = hdPortalManageKnowledgeBasePage.returnKnowledgeBaseDescription(TestData.KNOWLEDGEBASE_DESCRIPTION);
+		Assert.assertEquals(actualKnowledgeBaseDescription, TestData.KNOWLEDGEBASE_DESCRIPTION);*/
+		hdPortalManageKnowledgeBasePage.navigateToKnowledgeBaseOption();
+		hdPortalManageKnowledgeBasePage.searchKnowledgeBaseByItemName(TestData.KNOWLEDGEBASE_ITEMNAME);
+		hdPortalManageKnowledgeBasePage.selectKnowledgebase(TestData.KNOWLEDGEBASE_ITEMNAME);
 	}
-	
-/*
-	@Test(priority = 4, groups = "Smoke")
-	public void duplicateUserGroup() throws InterruptedException{
-		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
-		hdPortalManageUserGroupsPage.createDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME);
-		String actualUserGroupName = hdPortalManageUserGroupsPage.getDuplicateUserGroupName(TestData.DUPLICATE_USERGROUP_NAME);
-		Assert.assertEquals(actualUserGroupName, TestData.DUPLICATE_USERGROUP_NAME);
-	}
-
-	@Test(priority = 5, groups = "Smoke")
-	public void createDuplicateUserGroupInLowerCase(){
-		hdPortalManageUserGroupsPage.clickAddUserGroupsButtonOnToolBar();
-		hdPortalManageUserGroupsPage.createUserGroup(TestData.USERGROUP_NAME.toLowerCase());
-		hdPortalManageUserGroupsPage.validateExistingUserGroup();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
-		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
-	}
-	
-	
-	@Test(priority = 6, groups = "Smoke")
-	public void createDuplicateUserGroupPrefixedWithSpaces(){
-		hdPortalManageUserGroupsPage.navigateToUserGroupsOption();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		hdPortalManageUserGroupsPage.clickAddUserGroupsButtonOnToolBar();
-		hdPortalManageUserGroupsPage.createUserGroup("            "+TestData.USERGROUP_NAME.toLowerCase());
-		hdPortalManageUserGroupsPage.validateExistingUserGroup();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
-		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
-	}
-	
-	
-	@Test(priority = 7, groups = "Smoke")
-	public void duplicateAnExistingUserGroupInLowerCase() throws InterruptedException{
-		hdPortalManageUserGroupsPage.navigateToUserGroupsOption();
-		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
-		hdPortalManageUserGroupsPage.createDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME.toLowerCase());
-		hdPortalManageUserGroupsPage.validateExistingUserGroup();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
-		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
-	}
-	
-	@Test(priority = 8, groups = "Smoke")
-	public void duplicateAnExistingUserGroupPrefixedWithSpaces() throws InterruptedException{
-		hdPortalManageUserGroupsPage.navigateToUserGroupsOption();
-		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
-		hdPortalManageUserGroupsPage.createDuplicateUserGroup("          "+TestData.DUPLICATE_USERGROUP_NAME);
-		hdPortalManageUserGroupsPage.validateExistingUserGroup();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isDuplicateErrorMessageDisplayed = hdPortalManageUserGroupsPage.isErrorMessageDisplayed();
-		Assert.assertEquals(isDuplicateErrorMessageDisplayed, true);
-	}
-	
-
-	@Test(priority = 9, groups = "Smoke")
-	public void deleteCreatedUserGroup() throws InterruptedException{
-		hdPortalManageUserGroupsPage.selectUserGroup(TestData.USERGROUP_NAME);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		hdPortalManageUserGroupsPage.deleteUserGroup(TestData.USERGROUP_NAME);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isUGDeleted = hdPortalManageUserGroupsPage.isUserGroupDeleted(TestData.USERGROUP_NAME);
-		Assert.assertEquals(isUGDeleted, true);
-	}
-
-	@Test(priority = 10, groups = "Smoke")
-	public void deleteDuplicateUserGroup() throws InterruptedException{
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);		
-		hdPortalManageUserGroupsPage.selectDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME);
-		hdPortalManageUserGroupsPage.deleteDuplicateUserGroup(TestData.DUPLICATE_USERGROUP_NAME);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		boolean isUGDeleted = hdPortalManageUserGroupsPage.isDuplicateUserGroupDeleted(TestData.DUPLICATE_USERGROUP_NAME);
-		Assert.assertEquals(isUGDeleted, true);
-	}*/
 
 
 }

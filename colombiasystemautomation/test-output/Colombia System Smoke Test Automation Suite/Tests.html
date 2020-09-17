@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>15/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/16</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Sep 17 12:08:03 IST 2020</td>
+<td>Started on:</td><td>Thu Sep 17 18:26:27 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>40 seconds (40665 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (147 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,104 +67,583 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessManagementMenu()'><b>accessManagementMenu</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
+<td title='com.buddi.hdportal.tests.HDPortalHomeTest.setUp()'><b>setUp</b><br>Test class: com.buddi.hdportal.tests.HDPortalHomeTest<br>Parameters: chromedriver, ChromeSuite<br/>
+<a href="#Output-624795507" onClick='toggleBox("Output-624795507", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-624795507" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-624795507">
+Launching HD Portal...<br/>
+</div>
+</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace624795507", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace624795507'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>7</td>
+<td>com.buddi.hdportal.tests.HDPortalHomeTest@192b07fd</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalHomeTest.initialize()'><b>initialize</b><br>Test class: com.buddi.hdportal.tests.HDPortalHomeTest</td>
 <td></td>
 <td>0</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td>com.buddi.hdportal.tests.HDPortalHomeTest@192b07fd</td></tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest.initialize()'><b>initialize</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest</td>
+<td></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bfbc86</td></tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.initialize()'><b>initialize</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
+<td></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest.initialize()'><b>initialize</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest</td>
+<td></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@55d56113</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest.accessKnowledgeBaseMenuItem()'><b>accessKnowledgeBaseMenuItem</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace333793193", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace333793193'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@55d56113</td></tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessManagementMenu()'><b>accessManagementMenu</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2101527076", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2101527076'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest.accessManagementMenuForKB()'><b>accessManagementMenuForKB</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1577167234", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1577167234'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@55d56113</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest.accessNewAlertsMenuAndVerifyPanelTitle()'><b>accessNewAlertsMenuAndVerifyPanelTitle</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest</td>
-<td></td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace548482954", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace548482954'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
 <td>0</td>
-<td>com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bf3bbf</td></tr>
+<td>com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bfbc86</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessUserGroupsMenuItem()'><b>accessUserGroupsMenuItem</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1884231057", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1884231057'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
 <td>0</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createDuplicateUserGroupInLowerCase()'><b>createDuplicateUserGroupInLowerCase</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1767230265", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1767230265'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
 <td>0</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createDuplicateUserGroupPrefixedWithSpaces()'><b>createDuplicateUserGroupPrefixedWithSpaces</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
-<td>3</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace727666004", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace727666004'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
+<tr>
+<td title='com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest.createNewKnowledgeBase()'><b>createNewKnowledgeBase</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace234740890", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace234740890'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@55d56113</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createNewUserGroup()'><b>createNewUserGroup</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
-<td>3</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace937277082", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace937277082'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.deleteCreatedUserGroup()'><b>deleteCreatedUserGroup</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
-<td>3</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace628064884", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace628064884'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.deleteDuplicateUserGroup()'><b>deleteDuplicateUserGroup</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
-<td>3</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1389509050", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1389509050'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateAnExistingUserGroupInLowerCase()'><b>duplicateAnExistingUserGroupInLowerCase</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
-<td>6</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace414225167", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace414225167'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateAnExistingUserGroupPrefixedWithSpaces()'><b>duplicateAnExistingUserGroupPrefixedWithSpaces</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
-<td>7</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace975033189", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace975033189'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateUserGroup()'><b>duplicateUserGroup</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</td>
-<td></td>
-<td>4</td>
-<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@55d56113</td></tr>
-<tr>
-<td title='com.buddi.hdportal.tests.HDPortalLoginTest.launchHDPortal()'><b>launchHDPortal</b><br>Test class: com.buddi.hdportal.tests.HDPortalLoginTest<br/>
-<a href="#Output-424786033" onClick='toggleBox("Output-424786033", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-424786033" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-424786033">
-Launching HD Portal...<br/>
-Launched HD Portal...<br/>
-</div>
-</td>
-<td></td>
-<td>1</td>
-<td>com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd</td></tr>
-<tr>
-<td title='com.buddi.hdportal.tests.HDPortalLoginTest.loginHDPortal()'><b>loginHDPortal</b><br>Test class: com.buddi.hdportal.tests.HDPortalLoginTest</td>
-<td></td>
-<td>1</td>
-<td>com.buddi.hdportal.tests.HDPortalLoginTest@192b07fd</td></tr>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1586151649", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1586151649'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@64bf3bbf</td></tr>
 <tr>
 <td title='com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest.verifyColumnNamesInNewAlertsPageGrid()'><b>verifyColumnNamesInNewAlertsPageGrid</b><br>Test class: com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest</td>
-<td></td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1591916281", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1591916281'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
 <td>0</td>
-<td>com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bf3bbf</td></tr>
+<td>com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@64bfbc86</td></tr>
 <tr>
-<td title='com.buddi.hdportal.tests.HDPortalHomeTest.verifyHelpDeskTitleInHomePage()'><b>verifyHelpDeskTitleInHomePage</b><br>Test class: com.buddi.hdportal.tests.HDPortalHomeTest<br/>
-<a href="#Output-1822434669" onClick='toggleBox("Output-1822434669", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1822434669" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1822434669">
-Launching HD Portal home page...<br/>
-Launched HD Portal home page...<br/>
-</div>
-</td>
-<td></td>
-<td>2</td>
-<td>com.buddi.hdportal.tests.HDPortalHomeTest@64bfbc86</td></tr>
+<td title='com.buddi.hdportal.tests.HDPortalHomeTest.verifyHelpDeskTitleInHomePage()'><b>verifyHelpDeskTitleInHomePage</b><br>Test class: com.buddi.hdportal.tests.HDPortalHomeTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+... Removed 19 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1280603381", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1280603381'><pre>java.lang.NullPointerException
+	at com.buddi.hdportal.tests.HDPortalBaseTest.launchHDPortal(HDPortalBaseTest.java:220)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.setUp(HDPortalBaseTest.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>com.buddi.hdportal.tests.HDPortalHomeTest@192b07fd</td></tr>
 </table><p>
 </body>
 </html>
