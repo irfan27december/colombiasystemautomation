@@ -28,4 +28,14 @@ public class TestData {
 	public static final String KNOWLEDGEBASE_ITEMNAME = "KB_AUTOMATION_"+randomInt;
 	public static final String KNOWLEDGEBASE_SUBJECT = "This is the subject for knowledge base...";
 	public static final String KNOWLEDGEBASE_DESCRIPTION = "This is the description for knowledge base...";
+	
+	
+	//Alert related variables
+	public static final String ALERT_WEARER_NAME = "9010203040 ~ Pacífica Rosalía Huerta, Automation-";
+	public static final String ALERT_SEVERITY = "Standard";
+	public static final String ALERT_START_DATE_FORMAT = "dd/MM/yyyy";
+	public static final String ALERT_START_HOUR = "20";
+	public static final String ALERT_START_MINUTES = "50";
+	public static final String ALERT_NOTES = "Manual alert is created...";
+	
 }

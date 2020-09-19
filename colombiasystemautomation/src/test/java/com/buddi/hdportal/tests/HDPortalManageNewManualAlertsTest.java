@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.buddi.colombia.testdata.StringConstants;
+import com.buddi.colombia.testdata.TestData;
 
 /**
  * @author irfan
@@ -28,6 +29,7 @@ public class HDPortalManageNewManualAlertsTest extends HDPortalBaseTest{
 	@Test(priority = 2, groups = "Smoke")
 	//Open and Wearer column names are not validated
 	public void verifyColumnNamesInNewAlertsPageGrid(){
+		hdPortalManageNewManualAlertsPage.navigateToNewAlertsOption();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		LinkedList<String> list = hdPortalManageNewManualAlertsPage.returnNewAlertsPageColumns();		
 		//Iterating LinkedList
@@ -39,6 +41,21 @@ public class HDPortalManageNewManualAlertsTest extends HDPortalBaseTest{
 			System.out.println("Actual column name    "+actualColumnName + " = " + "Expected column name   "+expectedColumnName );
 			Assert.assertEquals(actualColumnName, expectedColumnName);
 		}
+	}
+
+	@Test(priority = 3, groups = "Smoke")
+	public void createNewAlert(){
+		hdPortalManageNewManualAlertsPage.navigateToNewAlertsOption();
+		hdPortalManageNewManualAlertsPage.clickToolsBarAddAlertButton();
+		String actualAddNewAlertDialogTitle = hdPortalManageNewManualAlertsPage.verifyAddNewAlertDialogTitle();
+		Assert.assertEquals(actualAddNewAlertDialogTitle, StringConstants.ADD_NEW_ALERT_DIALOG_TITLE);
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		hdPortalManageNewManualAlertsPage.createNewAlert(TestData.ALERT_WEARER_NAME, TestData.ALERT_SEVERITY, TestData.ALERT_START_DATE_FORMAT,
+				TestData.ALERT_START_HOUR, TestData.ALERT_START_MINUTES, TestData.ALERT_NOTES);
+		hdPortalManageNewManualAlertsPage.clickInProgressAlertstMenu();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		String actualInProgressAlertsGridTitle = hdPortalManageNewManualAlertsPage.verifyInProgressAlertsPanelTitle();
+		Assert.assertEquals(actualInProgressAlertsGridTitle, StringConstants.IN_PROGRESS_ALERTS_PANEL_TITLE);
 	}
 
 }

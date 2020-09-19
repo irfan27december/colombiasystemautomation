@@ -26,8 +26,7 @@ public class StringConstants {
 
 	//Visits menu variables
 	public static final String PENDING_VISITS_GRID_TITLE = "Pending Visits";
-
-
+	
 	//Confirmation pop up variables
 	public static final String DELETE_USERGROUP_CONFIRMATION_TEXT = "Are you sure you wish to remove this User Group?";
 	public static final int TIME_SECONDS = 5;
@@ -47,5 +46,7 @@ public class StringConstants {
 	public static final String NEWALERTS_PAGE_RULETYPE_COLUMN = "Rule Type";
 	public static final String NEWALERTS_PAGE_RULENAME_COLUMN = "Rule Name";
 	public static final String NEWALERTS_PAGE_LOCKED_COLUMN = "Locked";
+	public static final String ADD_NEW_ALERT_DIALOG_TITLE = "Add New Alert";
+	public static final String IN_PROGRESS_ALERTS_PANEL_TITLE = "In Progress Alerts";
 
 }
