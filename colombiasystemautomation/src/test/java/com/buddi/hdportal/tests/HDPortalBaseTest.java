@@ -29,6 +29,7 @@ import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
+import com.buddi.hdportal.pages.HDPortalManagePendingVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -51,6 +52,7 @@ public class HDPortalBaseTest {
 	protected HDPortalManageNewManualAlertsPage hdPortalManageNewManualAlertsPage;
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
 	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
+	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
 
 
 
@@ -94,7 +96,7 @@ public class HDPortalBaseTest {
 			driver.manage().window().maximize();*/	
 		}
 
-		try{		
+		try{	
 			driver.get(properties.getPropertyValue("HDPORTAL_URL"));	
 		}catch(Exception e){
 			Reporter.log("network server is slow..check internet connection");
@@ -194,6 +196,7 @@ public class HDPortalBaseTest {
 		hdPortalManageUserGroupsPage = new HDPortalManageUserGroupsPage(driver);
 		hdPortalManageNewManualAlertsPage = new HDPortalManageNewManualAlertsPage(driver);
 		hdPortalManageKnowledgeBasePage = new HDPortalManageKnowledgeBasePage(driver);
+		hdPortalManagePendingVisitsPage = new HDPortalManagePendingVisitsPage(driver);
 	}
 
 

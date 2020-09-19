@@ -41,7 +41,7 @@ public class HDPortalManageKnowledgeBaseTest extends HDPortalBaseTest{
 		Assert.assertEquals(actualKnowledgeBaseSubject, TestData.KNOWLEDGEBASE_SUBJECT);
 		String actualKnowledgeBaseDescription = hdPortalManageKnowledgeBasePage.returnKnowledgeBaseDescription(TestData.KNOWLEDGEBASE_DESCRIPTION);
 		Assert.assertEquals(actualKnowledgeBaseDescription, TestData.KNOWLEDGEBASE_DESCRIPTION);*/
-		hdPortalManageKnowledgeBasePage.navigateToKnowledgeBaseOption();
+		//hdPortalManageKnowledgeBasePage.navigateToKnowledgeBaseOption();
 		hdPortalManageKnowledgeBasePage.searchKnowledgeBaseByItemName(TestData.KNOWLEDGEBASE_ITEMNAME);
 		hdPortalManageKnowledgeBasePage.selectKnowledgebase(TestData.KNOWLEDGEBASE_ITEMNAME);
 	}

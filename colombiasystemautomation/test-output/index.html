@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Colombia_System_Smoke_Test_Automation_Suite">
-                    <span class="test-stats">6 tests</span>
+                    <span class="test-stats">7 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">18 methods,   18 passed</span>
+                    <span class="method-stats">20 methods,   20 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -122,7 +122,17 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" title="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest" hash-for-method="accessPendingMenuItem">accessPendingMenuItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" title="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" hash-for-method="accessUserGroupsMenuItem">accessUserGroupsMenuItem</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Colombia_System_Smoke_Test_Automation_Suite" title="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest" hash-for-method="accessVisitsMenu">accessVisitsMenu</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -349,6 +359,28 @@
           <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+              <span class="class-name">com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="accessPendingMenuItem">
+                  </a> <!-- accessPendingMenuItem -->
+                  <span class="method-name">accessPendingMenuItem</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="accessVisitsMenu">
+                  </a> <!-- accessVisitsMenu -->
+                  <span class="method-name">accessVisitsMenu</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed -->
+          <div class="suite-Colombia_System_Smoke_Test_Automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
               <span class="class-name">com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -410,6 +442,11 @@
       &lt;class name=&quot;com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- HD Portal Manage Knowledge Base --&gt;
+  &lt;test name=&quot;HD Portal Manage Pending Visits&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- HD Portal Manage Pending Visits --&gt;
 &lt;/suite&gt; &lt;!-- Colombia System Smoke Test Automation Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -437,6 +474,9 @@
               </li>
               <li>
                 <span class="test-name">HD Portal Manage Knowledge Base (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">HD Portal Manage Pending Visits (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -466,7 +506,15 @@
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
+                <span class="method-in-group-name">accessPendingMenuItem</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">accessUserGroupsMenuItem</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">accessVisitsMenu</span>
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
@@ -538,84 +586,92 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(18);
+data.addRows(20);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginHDPortal')
-data.setCell(0, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
-data.setCell(0, 3, 23921);
+data.setCell(0, 1, 'createNewKnowledgeBase')
+data.setCell(0, 2, 'com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest')
+data.setCell(0, 3, 8141);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'createNewKnowledgeBase')
-data.setCell(1, 2, 'com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest')
-data.setCell(1, 3, 9201);
+data.setCell(1, 1, 'duplicateAnExistingUserGroupInLowerCase')
+data.setCell(1, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
+data.setCell(1, 3, 6636);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'duplicateAnExistingUserGroupInLowerCase')
+data.setCell(2, 1, 'duplicateAnExistingUserGroupPrefixedWithSpaces')
 data.setCell(2, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(2, 3, 8987);
+data.setCell(2, 3, 6618);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'duplicateAnExistingUserGroupPrefixedWithSpaces')
-data.setCell(3, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(3, 3, 8138);
+data.setCell(3, 1, 'loginHDPortal')
+data.setCell(3, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
+data.setCell(3, 3, 5729);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'duplicateUserGroup')
 data.setCell(4, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(4, 3, 6475);
+data.setCell(4, 3, 4254);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'createDuplicateUserGroupPrefixedWithSpaces')
+data.setCell(5, 1, 'deleteCreatedUserGroup')
 data.setCell(5, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(5, 3, 4327);
+data.setCell(5, 3, 4097);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'deleteDuplicateUserGroup')
 data.setCell(6, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(6, 3, 4261);
+data.setCell(6, 3, 3694);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'deleteCreatedUserGroup')
+data.setCell(7, 1, 'createDuplicateUserGroupPrefixedWithSpaces')
 data.setCell(7, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(7, 3, 4059);
+data.setCell(7, 3, 3615);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'createNewUserGroup')
 data.setCell(8, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(8, 3, 3638);
+data.setCell(8, 3, 3113);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'verifyHelpDeskTitleInHomePage')
 data.setCell(9, 2, 'com.buddi.hdportal.tests.HDPortalHomeTest')
-data.setCell(9, 3, 1980);
+data.setCell(9, 3, 1975);
 data.setCell(10, 0, 10)
 data.setCell(10, 1, 'createDuplicateUserGroupInLowerCase')
 data.setCell(10, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(10, 3, 1146);
+data.setCell(10, 3, 1089);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'accessUserGroupsMenuItem')
 data.setCell(11, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(11, 3, 1035);
+data.setCell(11, 3, 806);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'accessNewAlertsMenuAndVerifyPanelTitle')
 data.setCell(12, 2, 'com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest')
-data.setCell(12, 3, 436);
+data.setCell(12, 3, 414);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'verifyColumnNamesInNewAlertsPageGrid')
-data.setCell(13, 2, 'com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest')
-data.setCell(13, 3, 395);
+data.setCell(13, 1, 'accessPendingMenuItem')
+data.setCell(13, 2, 'com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest')
+data.setCell(13, 3, 386);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'accessKnowledgeBaseMenuItem')
 data.setCell(14, 2, 'com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest')
-data.setCell(14, 3, 336);
+data.setCell(14, 3, 347);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'accessManagementMenu')
-data.setCell(15, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
-data.setCell(15, 3, 143);
+data.setCell(15, 1, 'verifyColumnNamesInNewAlertsPageGrid')
+data.setCell(15, 2, 'com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest')
+data.setCell(15, 3, 342);
 data.setCell(16, 0, 16)
 data.setCell(16, 1, 'accessManagementMenuForKB')
 data.setCell(16, 2, 'com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest')
-data.setCell(16, 3, 123);
+data.setCell(16, 3, 135);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'launchHDPortal')
-data.setCell(17, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
-data.setCell(17, 3, 38);
+data.setCell(17, 1, 'accessVisitsMenu')
+data.setCell(17, 2, 'com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest')
+data.setCell(17, 3, 134);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'accessManagementMenu')
+data.setCell(18, 2, 'com.buddi.hdportal.tests.HDPortalManageUserGroupsTest')
+data.setCell(18, 3, 94);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'launchHDPortal')
+data.setCell(19, 2, 'com.buddi.hdportal.tests.HDPortalLoginTest')
+data.setCell(19, 3, 44);
 window.suiteTableData['Colombia_System_Smoke_Test_Automation_Suite']= { tableData: data, tableDiv: 'times-div-Colombia_System_Smoke_Test_Automation_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 51 seconds</span>
               <div id="times-div-Colombia_System_Smoke_Test_Automation_Suite">
               </div> <!-- times-div-Colombia_System_Smoke_Test_Automation_Suite -->
             </div> <!-- times-div -->
@@ -655,7 +711,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setUp(chromedriver, ChromeSuite)</span>
                 <span class="method-start">0 ms</span>
@@ -665,111 +721,126 @@ return data;
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">8144 ms</span>
+                <span class="method-start">7533 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">launchHDPortal</span>
-                <span class="method-start">8254 ms</span>
+                <span class="method-start">7635 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginHDPortal</span>
-                <span class="method-start">8307 ms</span>
+                <span class="method-start">7693 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalHomeTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">32787 ms</span>
+                <span class="method-start">13931 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">verifyHelpDeskTitleInHomePage</span>
-                <span class="method-start">32790 ms</span>
+                <span class="method-start">13933 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManageUserGroupsTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">34901 ms</span>
+                <span class="method-start">16005 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">accessManagementMenu</span>
-                <span class="method-start">34908 ms</span>
+                <span class="method-start">16006 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">accessUserGroupsMenuItem</span>
-                <span class="method-start">35054 ms</span>
+                <span class="method-start">16101 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createNewUserGroup</span>
-                <span class="method-start">36091 ms</span>
+                <span class="method-start">16908 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">duplicateUserGroup</span>
-                <span class="method-start">39731 ms</span>
+                <span class="method-start">20022 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createDuplicateUserGroupInLowerCase</span>
-                <span class="method-start">46207 ms</span>
+                <span class="method-start">24279 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createDuplicateUserGroupPrefixedWithSpaces</span>
-                <span class="method-start">47356 ms</span>
+                <span class="method-start">25370 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">duplicateAnExistingUserGroupInLowerCase</span>
-                <span class="method-start">51685 ms</span>
+                <span class="method-start">28987 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">duplicateAnExistingUserGroupPrefixedWithSpaces</span>
-                <span class="method-start">60675 ms</span>
+                <span class="method-start">35625 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteCreatedUserGroup</span>
-                <span class="method-start">68815 ms</span>
+                <span class="method-start">42245 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">deleteDuplicateUserGroup</span>
-                <span class="method-start">72876 ms</span>
+                <span class="method-start">46345 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">77316 ms</span>
+                <span class="method-start">50228 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">accessNewAlertsMenuAndVerifyPanelTitle</span>
-                <span class="method-start">77318 ms</span>
+                <span class="method-start">50230 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyColumnNamesInNewAlertsPageGrid</span>
-                <span class="method-start">77756 ms</span>
+                <span class="method-start">50646 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">initialize(ChromeSuite)</span>
-                <span class="method-start">78368 ms</span>
+                <span class="method-start">51193 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">accessManagementMenuForKB</span>
-                <span class="method-start">78371 ms</span>
+                <span class="method-start">51197 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">accessKnowledgeBaseMenuItem</span>
-                <span class="method-start">78496 ms</span>
+                <span class="method-start">51334 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createNewKnowledgeBase</span>
-                <span class="method-start">78834 ms</span>
+                <span class="method-start">51684 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">initialize(ChromeSuite)</span>
+                <span class="method-start">59982 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">accessVisitsMenu</span>
+                <span class="method-start">59987 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">accessPendingMenuItem</span>
+                <span class="method-start">60122 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">clean</span>
-                <span class="method-start">88262 ms</span>
+                <span class="method-start">60672 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

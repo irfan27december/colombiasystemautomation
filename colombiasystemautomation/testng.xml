@@ -55,7 +55,7 @@
 				<class name="com.buddi.hdportal.tests.HDPortalHomeTest" />
 			</classes>
 		</test>
-				
+			
 		<test name = "HD Portal Manage User Groups">
 			<classes>
 				<class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" />
@@ -71,6 +71,12 @@
 		<test name = "HD Portal Manage Knowledge Base">
 			<classes>
 				<class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" />
+			</classes>
+		</test>
+		 
+		<test name = "HD Portal Manage Pending Visits">
+			<classes>
+				<class name="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest" />
 			</classes>
 		</test>
  

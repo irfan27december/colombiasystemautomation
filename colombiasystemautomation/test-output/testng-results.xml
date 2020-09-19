@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="18" passed="18">
+<testng-results skipped="0" failed="0" ignored="0" total="20" passed="20">
   <reporter-output>
     <line>
       <![CDATA[Test started]]>
@@ -23,7 +23,7 @@
       <![CDATA[Launched HD Portal home page...]]>
     </line>
   </reporter-output>
-  <suite name="Colombia System Smoke Test Automation Suite" duration-ms="80125" started-at="2020-09-17T13:50:54Z" finished-at="2020-09-17T13:52:14Z">
+  <suite name="Colombia System Smoke Test Automation Suite" duration-ms="53189" started-at="2020-09-19T14:33:17Z" finished-at="2020-09-19T14:34:10Z">
     <groups>
       <group name="Smoke">
         <method signature="HDPortalLoginTest.launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@4fe3c938]" name="launchHDPortal" class="com.buddi.hdportal.tests.HDPortalLoginTest"/>
@@ -44,13 +44,15 @@
         <method signature="HDPortalManageKnowledgeBaseTest.accessKnowledgeBaseMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="accessKnowledgeBaseMenuItem" class="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest"/>
         <method signature="HDPortalManageKnowledgeBaseTest.accessManagementMenuForKB()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="accessManagementMenuForKB" class="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest"/>
         <method signature="HDPortalManageKnowledgeBaseTest.createNewKnowledgeBase()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="createNewKnowledgeBase" class="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest"/>
+        <method signature="HDPortalManagePendingVisitsTest.accessPendingMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@1d16f93d]" name="accessPendingMenuItem" class="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest"/>
+        <method signature="HDPortalManagePendingVisitsTest.accessVisitsMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@1d16f93d]" name="accessVisitsMenu" class="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test name="App" duration-ms="5" started-at="2020-09-17T13:50:54Z" finished-at="2020-09-17T13:50:54Z">
+    <test name="App" duration-ms="13" started-at="2020-09-19T14:33:17Z" finished-at="2020-09-19T14:33:17Z">
     </test> <!-- App -->
-    <test name="Login HD Portal" duration-ms="24094" started-at="2020-09-17T13:50:54Z" finished-at="2020-09-17T13:51:18Z">
+    <test name="Login HD Portal" duration-ms="5896" started-at="2020-09-19T14:33:17Z" finished-at="2020-09-19T14:33:23Z">
       <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@4fe3c938]" name="initialize" is-config="true" duration-ms="83" started-at="2020-09-17T19:20:54Z" finished-at="2020-09-17T19:20:54Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@4fe3c938]" name="initialize" is-config="true" duration-ms="75" started-at="2020-09-19T20:03:17Z" finished-at="2020-09-19T20:03:18Z">
           <params>
             <param index="0">
               <value>
@@ -61,7 +63,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@4fe3c938]" name="launchHDPortal" duration-ms="38" started-at="2020-09-17T19:20:54Z" finished-at="2020-09-17T19:20:54Z">
+        <test-method status="PASS" signature="launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@4fe3c938]" name="launchHDPortal" duration-ms="44" started-at="2020-09-19T20:03:18Z" finished-at="2020-09-19T20:03:18Z">
           <reporter-output>
             <line>
               <![CDATA[Launching HD Portal...]]>
@@ -71,15 +73,15 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchHDPortal -->
-        <test-method status="PASS" signature="loginHDPortal()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@4fe3c938]" name="loginHDPortal" duration-ms="23921" started-at="2020-09-17T19:20:55Z" finished-at="2020-09-17T19:21:18Z">
+        <test-method status="PASS" signature="loginHDPortal()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@4fe3c938]" name="loginHDPortal" duration-ms="5729" started-at="2020-09-19T20:03:18Z" finished-at="2020-09-19T20:03:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginHDPortal -->
       </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
     </test> <!-- Login HD Portal -->
-    <test name="HD Portal Home Page" duration-ms="1985" started-at="2020-09-17T13:51:19Z" finished-at="2020-09-17T13:51:21Z">
+    <test name="HD Portal Home Page" duration-ms="1980" started-at="2020-09-19T14:33:24Z" finished-at="2020-09-19T14:33:26Z">
       <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalHomeTest@4e9ba398]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-17T19:21:19Z" finished-at="2020-09-17T19:21:19Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalHomeTest@4e9ba398]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-19T20:03:24Z" finished-at="2020-09-19T20:03:24Z">
           <params>
             <param index="0">
               <value>
@@ -90,7 +92,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="verifyHelpDeskTitleInHomePage()[pri:1, instance:com.buddi.hdportal.tests.HDPortalHomeTest@4e9ba398]" name="verifyHelpDeskTitleInHomePage" duration-ms="1980" started-at="2020-09-17T19:21:19Z" finished-at="2020-09-17T19:21:21Z">
+        <test-method status="PASS" signature="verifyHelpDeskTitleInHomePage()[pri:1, instance:com.buddi.hdportal.tests.HDPortalHomeTest@4e9ba398]" name="verifyHelpDeskTitleInHomePage" duration-ms="1975" started-at="2020-09-19T20:03:24Z" finished-at="2020-09-19T20:03:26Z">
           <reporter-output>
             <line>
               <![CDATA[Launching HD Portal home page...]]>
@@ -102,9 +104,9 @@
         </test-method> <!-- verifyHelpDeskTitleInHomePage -->
       </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
     </test> <!-- HD Portal Home Page -->
-    <test name="HD Portal Manage User Groups" duration-ms="42241" started-at="2020-09-17T13:51:21Z" finished-at="2020-09-17T13:52:03Z">
+    <test name="HD Portal Manage User Groups" duration-ms="34038" started-at="2020-09-19T14:33:26Z" finished-at="2020-09-19T14:34:00Z">
       <class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="initialize" is-config="true" duration-ms="6" started-at="2020-09-17T19:21:21Z" finished-at="2020-09-17T19:21:21Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="initialize" is-config="true" duration-ms="1" started-at="2020-09-19T20:03:26Z" finished-at="2020-09-19T20:03:26Z">
           <params>
             <param index="0">
               <value>
@@ -115,51 +117,51 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessManagementMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="accessManagementMenu" duration-ms="143" started-at="2020-09-17T19:21:21Z" finished-at="2020-09-17T19:21:21Z">
+        <test-method status="PASS" signature="accessManagementMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="accessManagementMenu" duration-ms="94" started-at="2020-09-19T20:03:26Z" finished-at="2020-09-19T20:03:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessManagementMenu -->
-        <test-method status="PASS" signature="accessUserGroupsMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="accessUserGroupsMenuItem" duration-ms="1035" started-at="2020-09-17T19:21:21Z" finished-at="2020-09-17T19:21:22Z">
+        <test-method status="PASS" signature="accessUserGroupsMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="accessUserGroupsMenuItem" duration-ms="806" started-at="2020-09-19T20:03:26Z" finished-at="2020-09-19T20:03:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessUserGroupsMenuItem -->
-        <test-method status="PASS" signature="createNewUserGroup()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="createNewUserGroup" duration-ms="3638" started-at="2020-09-17T19:21:22Z" finished-at="2020-09-17T19:21:26Z">
+        <test-method status="PASS" signature="createNewUserGroup()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="createNewUserGroup" duration-ms="3113" started-at="2020-09-19T20:03:27Z" finished-at="2020-09-19T20:03:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createNewUserGroup -->
-        <test-method status="PASS" signature="duplicateUserGroup()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="duplicateUserGroup" duration-ms="6475" started-at="2020-09-17T19:21:26Z" finished-at="2020-09-17T19:21:32Z">
+        <test-method status="PASS" signature="duplicateUserGroup()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="duplicateUserGroup" duration-ms="4254" started-at="2020-09-19T20:03:30Z" finished-at="2020-09-19T20:03:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- duplicateUserGroup -->
-        <test-method status="PASS" signature="createDuplicateUserGroupInLowerCase()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="createDuplicateUserGroupInLowerCase" duration-ms="1146" started-at="2020-09-17T19:21:32Z" finished-at="2020-09-17T19:21:34Z">
+        <test-method status="PASS" signature="createDuplicateUserGroupInLowerCase()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="createDuplicateUserGroupInLowerCase" duration-ms="1089" started-at="2020-09-19T20:03:34Z" finished-at="2020-09-19T20:03:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDuplicateUserGroupInLowerCase -->
-        <test-method status="PASS" signature="createDuplicateUserGroupPrefixedWithSpaces()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="createDuplicateUserGroupPrefixedWithSpaces" duration-ms="4327" started-at="2020-09-17T19:21:34Z" finished-at="2020-09-17T19:21:38Z">
+        <test-method status="PASS" signature="createDuplicateUserGroupPrefixedWithSpaces()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="createDuplicateUserGroupPrefixedWithSpaces" duration-ms="3615" started-at="2020-09-19T20:03:35Z" finished-at="2020-09-19T20:03:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createDuplicateUserGroupPrefixedWithSpaces -->
-        <test-method status="PASS" signature="duplicateAnExistingUserGroupInLowerCase()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="duplicateAnExistingUserGroupInLowerCase" duration-ms="8987" started-at="2020-09-17T19:21:38Z" finished-at="2020-09-17T19:21:47Z">
+        <test-method status="PASS" signature="duplicateAnExistingUserGroupInLowerCase()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="duplicateAnExistingUserGroupInLowerCase" duration-ms="6636" started-at="2020-09-19T20:03:39Z" finished-at="2020-09-19T20:03:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- duplicateAnExistingUserGroupInLowerCase -->
-        <test-method status="PASS" signature="duplicateAnExistingUserGroupPrefixedWithSpaces()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="duplicateAnExistingUserGroupPrefixedWithSpaces" duration-ms="8138" started-at="2020-09-17T19:21:47Z" finished-at="2020-09-17T19:21:55Z">
+        <test-method status="PASS" signature="duplicateAnExistingUserGroupPrefixedWithSpaces()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="duplicateAnExistingUserGroupPrefixedWithSpaces" duration-ms="6618" started-at="2020-09-19T20:03:46Z" finished-at="2020-09-19T20:03:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- duplicateAnExistingUserGroupPrefixedWithSpaces -->
-        <test-method status="PASS" signature="deleteCreatedUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="deleteCreatedUserGroup" duration-ms="4059" started-at="2020-09-17T19:21:55Z" finished-at="2020-09-17T19:21:59Z">
+        <test-method status="PASS" signature="deleteCreatedUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="deleteCreatedUserGroup" duration-ms="4097" started-at="2020-09-19T20:03:52Z" finished-at="2020-09-19T20:03:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteCreatedUserGroup -->
-        <test-method status="PASS" signature="deleteDuplicateUserGroup()[pri:10, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="deleteDuplicateUserGroup" duration-ms="4261" started-at="2020-09-17T19:21:59Z" finished-at="2020-09-17T19:22:03Z">
+        <test-method status="PASS" signature="deleteDuplicateUserGroup()[pri:10, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@6536e911]" name="deleteDuplicateUserGroup" duration-ms="3694" started-at="2020-09-19T20:03:56Z" finished-at="2020-09-19T20:04:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteDuplicateUserGroup -->
       </class> <!-- com.buddi.hdportal.tests.HDPortalManageUserGroupsTest -->
     </test> <!-- HD Portal Manage User Groups -->
-    <test name="HD Portal Alerts" duration-ms="838" started-at="2020-09-17T13:52:04Z" finished-at="2020-09-17T13:52:04Z">
+    <test name="HD Portal Alerts" duration-ms="763" started-at="2020-09-19T14:34:00Z" finished-at="2020-09-19T14:34:01Z">
       <class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@335eadca]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-17T19:22:04Z" finished-at="2020-09-17T19:22:04Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@335eadca]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-19T20:04:00Z" finished-at="2020-09-19T20:04:00Z">
           <params>
             <param index="0">
               <value>
@@ -170,19 +172,46 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessNewAlertsMenuAndVerifyPanelTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@335eadca]" name="accessNewAlertsMenuAndVerifyPanelTitle" duration-ms="436" started-at="2020-09-17T19:22:04Z" finished-at="2020-09-17T19:22:04Z">
+        <test-method status="PASS" signature="accessNewAlertsMenuAndVerifyPanelTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@335eadca]" name="accessNewAlertsMenuAndVerifyPanelTitle" duration-ms="414" started-at="2020-09-19T20:04:00Z" finished-at="2020-09-19T20:04:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- accessNewAlertsMenuAndVerifyPanelTitle -->
-        <test-method status="PASS" signature="verifyColumnNamesInNewAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@335eadca]" name="verifyColumnNamesInNewAlertsPageGrid" duration-ms="395" started-at="2020-09-17T19:22:04Z" finished-at="2020-09-17T19:22:04Z">
+        <test-method status="PASS" signature="verifyColumnNamesInNewAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@335eadca]" name="verifyColumnNamesInNewAlertsPageGrid" duration-ms="342" started-at="2020-09-19T20:04:01Z" finished-at="2020-09-19T20:04:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyColumnNamesInNewAlertsPageGrid -->
       </class> <!-- com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest -->
     </test> <!-- HD Portal Alerts -->
-    <test name="HD Portal Manage Knowledge Base" duration-ms="9671" started-at="2020-09-17T13:52:05Z" finished-at="2020-09-17T13:52:14Z">
+    <test name="HD Portal Manage Knowledge Base" duration-ms="8635" started-at="2020-09-19T14:34:01Z" finished-at="2020-09-19T14:34:10Z">
       <class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="setUp" is-config="true" duration-ms="7912" started-at="2020-09-17T19:20:46Z" finished-at="2020-09-17T19:20:54Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="initialize" is-config="true" duration-ms="4" started-at="2020-09-19T20:04:01Z" finished-at="2020-09-19T20:04:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ChromeSuite]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="accessManagementMenuForKB()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="accessManagementMenuForKB" duration-ms="135" started-at="2020-09-19T20:04:01Z" finished-at="2020-09-19T20:04:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessManagementMenuForKB -->
+        <test-method status="PASS" signature="accessKnowledgeBaseMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="accessKnowledgeBaseMenuItem" duration-ms="347" started-at="2020-09-19T20:04:01Z" finished-at="2020-09-19T20:04:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accessKnowledgeBaseMenuItem -->
+        <test-method status="PASS" signature="createNewKnowledgeBase()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="createNewKnowledgeBase" duration-ms="8141" started-at="2020-09-19T20:04:02Z" finished-at="2020-09-19T20:04:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewKnowledgeBase -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest -->
+    </test> <!-- HD Portal Manage Knowledge Base -->
+    <test name="HD Portal Manage Pending Visits" duration-ms="529" started-at="2020-09-19T14:34:10Z" finished-at="2020-09-19T14:34:10Z">
+      <class name="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@1d16f93d]" name="setUp" is-config="true" duration-ms="7320" started-at="2020-09-19T20:03:10Z" finished-at="2020-09-19T20:03:17Z">
           <params>
             <param index="0">
               <value>
@@ -198,7 +227,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-17T19:22:05Z" finished-at="2020-09-17T19:22:05Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@1d16f93d]" name="initialize" is-config="true" duration-ms="5" started-at="2020-09-19T20:04:10Z" finished-at="2020-09-19T20:04:10Z">
           <params>
             <param index="0">
               <value>
@@ -209,23 +238,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessManagementMenuForKB()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="accessManagementMenuForKB" duration-ms="123" started-at="2020-09-17T19:22:05Z" finished-at="2020-09-17T19:22:05Z">
+        <test-method status="PASS" signature="accessVisitsMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@1d16f93d]" name="accessVisitsMenu" duration-ms="134" started-at="2020-09-19T20:04:10Z" finished-at="2020-09-19T20:04:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- accessManagementMenuForKB -->
-        <test-method status="PASS" signature="accessKnowledgeBaseMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="accessKnowledgeBaseMenuItem" duration-ms="336" started-at="2020-09-17T19:22:05Z" finished-at="2020-09-17T19:22:05Z">
+        </test-method> <!-- accessVisitsMenu -->
+        <test-method status="PASS" signature="accessPendingMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@1d16f93d]" name="accessPendingMenuItem" duration-ms="386" started-at="2020-09-19T20:04:10Z" finished-at="2020-09-19T20:04:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- accessKnowledgeBaseMenuItem -->
-        <test-method status="PASS" signature="createNewKnowledgeBase()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="createNewKnowledgeBase" duration-ms="9201" started-at="2020-09-17T19:22:05Z" finished-at="2020-09-17T19:22:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewKnowledgeBase -->
-        <test-method status="PASS" signature="clean()[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@4b4523f8]" name="clean" is-config="true" duration-ms="5192" started-at="2020-09-17T19:22:14Z" finished-at="2020-09-17T19:22:20Z">
+        </test-method> <!-- accessPendingMenuItem -->
+        <test-method status="PASS" signature="clean()[pri:0, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@1d16f93d]" name="clean" is-config="true" duration-ms="1282" started-at="2020-09-19T20:04:11Z" finished-at="2020-09-19T20:04:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clean -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest -->
-    </test> <!-- HD Portal Manage Knowledge Base -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest -->
+    </test> <!-- HD Portal Manage Pending Visits -->
   </suite> <!-- Colombia System Smoke Test Automation Suite -->
 </testng-results>

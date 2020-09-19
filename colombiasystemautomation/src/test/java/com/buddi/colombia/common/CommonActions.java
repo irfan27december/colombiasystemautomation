@@ -115,7 +115,8 @@ public class CommonActions {
 					element.click();
 					break;
 				}
-			}catch(Exception ex){
+			}catch(StaleElementReferenceException ex){
+				element.click();
 				ex.printStackTrace();
 			}
 		}while(counter == 0);

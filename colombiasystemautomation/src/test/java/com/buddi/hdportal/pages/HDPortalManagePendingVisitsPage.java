@@ -20,24 +20,24 @@ import com.buddi.colombia.testdata.TestData;
  * @author irfan
  *
  */
-public class HDPortalManageKnowledgeBasePage {
+public class HDPortalManagePendingVisitsPage {
 	WebDriver driver;
 
 	//Constructor
-	public HDPortalManageKnowledgeBasePage(WebDriver driver){
+	public HDPortalManagePendingVisitsPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	//Using FindBy for locating elements
 
-	//Web elements related to manage knowledge base
-	@FindBy(xpath = "//div[contains(text(),'Management')]") 
-	private WebElement managementElement;
-	@FindBy(xpath = "//div[contains(text(),'Knowledge Base')]") 
-	private WebElement knowledgeBaseElement;
-	@FindBy(xpath = "//div[contains(text(),'Manage Knowledge Base')]") 
-	private WebElement knowledgeBasePanelTitleElement;
+	//Web elements related to pending visits
+	@FindBy(xpath = "//div[@class='x-treelist-item-text' and text()='Visits']") 
+	private WebElement visitsMenuElement;
+	@FindBy(xpath = "//div[@class='x-treelist-item-text' and text()='Pending']") 
+	private WebElement pendingVisitsElement;
+	@FindBy(xpath = "//div[@class='x-title-text x-title-text-default-framed x-title-item' and text()='Pending Visits']") 
+	private WebElement pendingVisitsGridTitleElement;
 
 	//Web elements related to add knowledge base
 	@FindBy(xpath = "//span[contains(text(),'Add')]") 
@@ -85,30 +85,30 @@ public class HDPortalManageKnowledgeBasePage {
 	}
 
 	// Method to click LHS menu option
-	public void clickManagementMenu() {
-		CommonActions.waitForElementToBeVisible(driver, managementElement);
-		managementElement.click();
-		System.out.println("Management menu is expanded...");
+	public void clickVisitsMenu() {
+		CommonActions.waitForElementToBeVisible(driver, visitsMenuElement);
+		visitsMenuElement.click();
+		System.out.println("Visits menu is expanded...");
 	}
 
-	// Method to click Knowledge Base option
-	public void clickKnowledgeBaseOption() {
-		CommonActions.waitForElementToBeVisible(driver, knowledgeBaseElement);
-		knowledgeBaseElement.click();
-		System.out.println("Clicked Knowledge Base option...");
+	// Method to click Pending option
+	public void clickPendingOption() {
+		CommonActions.waitForElementToBeVisible(driver, pendingVisitsElement);
+		pendingVisitsElement.click();
+		System.out.println("Clicked Pending option under Visits menu...");
 	}
 
-	// Method to verify Knowledge Base panel title
-	public String verifyKnowledgeBasePanelTitle() {
-		CommonActions.waitForElementToBeVisible(driver, knowledgeBasePanelTitleElement);
-		System.out.println(knowledgeBasePanelTitleElement.getText()+" knowledge base panel title is displayed...");
-		return knowledgeBasePanelTitleElement.getText();
+	// Method to verify Pending Visits Grid title
+	public String verifyPendingVisitsGridTitle() {
+		CommonActions.waitForElementToBeVisible(driver, pendingVisitsGridTitleElement);
+		System.out.println(pendingVisitsGridTitleElement.getText()+" pending visit grid title is displayed...");
+		return pendingVisitsGridTitleElement.getText();
 	}
 
 	// Method to click Add knowledge base tool bar button
 	public void clickKnowledgeBaseButtonOnToolBar() {
 		driver.navigate().refresh();
-		navigateToKnowledgeBaseOption();
+		navigateToPendingVisitsOption();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		if(toolBarAddKnowledgeBaseButton.isDisplayed()){
 			System.out.println("Add tool bar button to add knowledge base is displayed...");
@@ -191,28 +191,27 @@ public class HDPortalManageKnowledgeBasePage {
 
 	//Method to select knowledge base
 	public void selectKnowledgebase(String strKnowledgeBaseName){
-		navigateToKnowledgeBaseOption();
+		//navigateToKnowledgeBaseOption();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		if(returnKnowledgeBaseNameElement(strKnowledgeBaseName).isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
 			CommonActions.clickElementToHandleStaleElementException(returnKnowledgeBaseNameElement(strKnowledgeBaseName));
 			System.out.println("Clicked/Selected on knowledge base with name: "+strKnowledgeBaseName);
-			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		}else{
 			System.out.println("Failed to click on knowledge base with name: "+strKnowledgeBaseName);
 		}
 	}
 
 
-	//Method to navigate to knowledge base option
-	public void navigateToKnowledgeBaseOption(){
+	//Method to navigate to pending visits option
+	public void navigateToPendingVisitsOption(){
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.navigate().refresh();
-		CommonActions.waitForElementToBeClickable(driver, managementElement);
-		CommonActions.clickElementToHandleStaleElementException(managementElement);
+		CommonActions.waitForElementToBeClickable(driver, visitsMenuElement);
+		CommonActions.clickElementToHandleStaleElementException(visitsMenuElement);
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		CommonActions.waitForElementToBeClickable(driver, knowledgeBaseElement);
-		CommonActions.clickElementToHandleStaleElementException(knowledgeBaseElement);		
+		CommonActions.waitForElementToBeClickable(driver, pendingVisitsElement);
+		CommonActions.clickElementToHandleStaleElementException(pendingVisitsElement);		
 	}
 
 
