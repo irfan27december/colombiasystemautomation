@@ -12,6 +12,7 @@ public class StringConstants {
 	/*public static final String HDPORTAL_FO_USER = "irfan.ahmed@buddi.co.uk";
 	public static final String HDPORTAL_FO_PASSWORD = "MIA@27dec1"*/;
 	public static final String HD_MAIN_TITLE = "Herramienta de gestión (2.2.0)";
+	public static final int TIME_SECONDS = 5;
 
 	// App related variables
 	public static final String APP_HOMESCREEN_TITLE = "Herramienta de gestión";
@@ -22,15 +23,12 @@ public class StringConstants {
 	//Management menu variables
 	public static final String USERGROUP_PANEL_TITLE = "Manage User Groups ~ Helpdesk access permission";
 	public static final String KNOWLEDGEBASE_PANEL_TITLE = "Manage Knowledge Base";
+	//Confirmation pop up variables
+	public static final String DELETE_USERGROUP_CONFIRMATION_TEXT = "Are you sure you wish to remove this User Group?";
 
 
 	//Visits menu variables
 	public static final String PENDING_VISITS_GRID_TITLE = "Pending Visits";
-	
-	//Confirmation pop up variables
-	public static final String DELETE_USERGROUP_CONFIRMATION_TEXT = "Are you sure you wish to remove this User Group?";
-	public static final int TIME_SECONDS = 5;
-
 
 	//Alerts management variables
 	public static final String ALERTS_PANEL_TITLE = "New Alerts";
