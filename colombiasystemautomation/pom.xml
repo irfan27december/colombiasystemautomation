@@ -97,7 +97,7 @@
 							<!-- Email Authentication(Username and Password) -->
 							<mailuser>mia27dec@gmail.com</mailuser> 
 							<!-- <mailuser>automation27dec@gmail.com</mailuser> -->
-							<mailpassword>MIA@27dec</mailpassword>
+							<mailpassword>****</mailpassword>
 
 							<receivers>
 								<!-- To Email address -->
