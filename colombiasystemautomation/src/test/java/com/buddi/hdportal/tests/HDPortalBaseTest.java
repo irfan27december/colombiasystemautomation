@@ -27,6 +27,7 @@ import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
+import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManagePendingVisitsPage;
@@ -53,7 +54,7 @@ public class HDPortalBaseTest {
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
 	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
 	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
-
+	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
 
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
@@ -197,6 +198,7 @@ public class HDPortalBaseTest {
 		hdPortalManageNewManualAlertsPage = new HDPortalManageNewManualAlertsPage(driver);
 		hdPortalManageKnowledgeBasePage = new HDPortalManageKnowledgeBasePage(driver);
 		hdPortalManagePendingVisitsPage = new HDPortalManagePendingVisitsPage(driver);
+		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
 	}
 
 

@@ -22,7 +22,7 @@ public class HDPortalManageNewManualAlertsTest extends HDPortalBaseTest{
 		hdPortalManageNewManualAlertsPage.clickNewAlertstMenu();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		String actualNewAlertsPanelTitle = hdPortalManageNewManualAlertsPage.verifyNewAlertsPanelTitle();
-		Assert.assertEquals(actualNewAlertsPanelTitle, StringConstants.NEWALERTS_PANEL_TITLE);
+		Assert.assertEquals(actualNewAlertsPanelTitle, StringConstants.ALERTS_PANEL_TITLE);
 	}
 
 
@@ -52,10 +52,14 @@ public class HDPortalManageNewManualAlertsTest extends HDPortalBaseTest{
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		hdPortalManageNewManualAlertsPage.createNewAlert(TestData.ALERT_WEARER_NAME, TestData.ALERT_SEVERITY, TestData.ALERT_START_DATE_FORMAT,
 				TestData.ALERT_START_HOUR, TestData.ALERT_START_MINUTES, TestData.ALERT_NOTES);
-		hdPortalManageNewManualAlertsPage.clickInProgressAlertstMenu();
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		String actualInProgressAlertsGridTitle = hdPortalManageNewManualAlertsPage.verifyInProgressAlertsPanelTitle();
+		driver.navigate().refresh();
+		hdPortalManageInProgressAlertsPage.clickInProgressAlertstMenu();
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		String actualInProgressAlertsGridTitle = hdPortalManageInProgressAlertsPage.verifyInProgressAlertsPanelTitle();
 		Assert.assertEquals(actualInProgressAlertsGridTitle, StringConstants.IN_PROGRESS_ALERTS_PANEL_TITLE);
+		boolean isWearerNUIDisplayInInProgressListPage = hdPortalManageNewManualAlertsPage.isWearerNUIDisplayedInInProgressListPage(TestData.WEARER_NUI);
+		Assert.assertEquals(isWearerNUIDisplayInInProgressListPage, true);
 	}
 
 }

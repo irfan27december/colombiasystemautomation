@@ -48,10 +48,10 @@ public class HDPortalManageNewManualAlertsPage {
 	private WebElement regionalColumnElement;
 
 	//In Progress Alerts elements
-	@FindBy(xpath = "//div[contains(text(),'In Progress Alerts')]") 
+	/*@FindBy(xpath = "//div[contains(text(),'In Progress Alerts')]") 
 	private WebElement inProgressAlertsElement;
 	@FindBy(xpath = "//div[contains(text(),'In Progress Alerts')]") 
-	private WebElement inProgressAlertsPanelTitleElement;
+	private WebElement inProgressAlertsPanelTitleElement;*/
 
 	//Web elements related to add alert
 	@FindBy(xpath = "//span/span[contains(@class,'x-btn-inner x-btn-inner-default-toolbar-small') and contains(text(), 'Add')]") 
@@ -72,7 +72,7 @@ public class HDPortalManageNewManualAlertsPage {
 	private WebElement notesField;
 	@FindBy(xpath = "//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(),'Add')]")
 	private WebElement addNewAlertButton;
-
+ 
 	// Method to click LHS menu option
 	public void clickNewAlertstMenu() {
 		CommonActions.waitForElementToBeVisible(driver, newAlertsElement);
@@ -109,17 +109,17 @@ public class HDPortalManageNewManualAlertsPage {
 
 	public LinkedList<String> returnNewAlertsPageColumns(){
 		LinkedList<String> list = new LinkedList<String>();
-		//list.add(StringConstants.NEWALERTS_PAGE_OPENALERT_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_STATUS_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_DATETIME_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_REGIONAL_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_WEARERGROUP_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_NUI_COLUMN);
-		//list.add(StringConstants.NEWALERTS_PAGE_WEARER_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_DEVICE_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_RULETYPE_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_RULENAME_COLUMN);
-		list.add(StringConstants.NEWALERTS_PAGE_LOCKED_COLUMN);
+		//list.add(StringConstants.ALERTS_PAGE_OPENALERT_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_STATUS_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_DATETIME_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_REGIONAL_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_WEARERGROUP_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_NUI_COLUMN);
+		//list.add(StringConstants.ALERTS_PAGE_WEARER_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_DEVICE_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_RULETYPE_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_RULENAME_COLUMN);
+		list.add(StringConstants.ALERTS_PAGE_LOCKED_COLUMN);
 		return list;
 	}
 
@@ -147,6 +147,20 @@ public class HDPortalManageNewManualAlertsPage {
 		return null;
 	}
 
+	//Method to check if Add New Alert dialog is displayed
+	public boolean isAddNewAlertDialogDisplayed(){
+		CommonActions.waitForElementToBeVisible(driver, addNewAlertDialogTitleElement);
+		if(addNewAlertDialogTitleElement.isDisplayed()){
+			System.out.println("Add New Alert dialog box is displayed...");
+			return true;
+		}else{
+			System.out.println("Add New Alert dialog box is not displayed...");
+			return false;
+		}
+		//return false;
+	}
+
+
 
 	//Method to set alert wearer name
 	//9010203040 ~ Pacífica Rosalía Huerta, Automation-
@@ -163,19 +177,15 @@ public class HDPortalManageNewManualAlertsPage {
 
 	//Method to set alert severity
 	public void setAlertSeverity(String alertSeverity) {
-		/*CommonActions.waitForElementToBeVisible(driver, alertSeverityDropDown);
-		alertSeverityDropDown.click();
-		alertSeverityDropDown.sendKeys(alertSeverity);
-		CommonActions.autoSuggestionMethod(driver);*/
 		// getting the list of elements with the xpath
-		List<WebElement> opt = driver.findElements(By.xpath("//input[@name='alertseverity']"));
-		int s = opt.size();
+		List<WebElement> listOfComboBox = driver.findElements(By.xpath("//input[@name='alertseverity']"));
+		int numberOfComboBoxOptions = listOfComboBox.size();
 		// Iterating through the list selecting the desired option
-		for( int j = 0; j< opt.size();j++){
+		for( int j = 0; j< listOfComboBox.size(); j++){
 			// if the option is By Subject click that option
-			if( opt.get(j).getText().equals("Standard")){
-				System.out.println("opt.get(j)   "+opt.get(j));
-				opt.get(j).click();
+			if( listOfComboBox.get(j).getText().equals(alertSeverity)){
+				System.out.println("opt.get(j)   "+listOfComboBox.get(j));
+				listOfComboBox.get(j).click();
 				break;
 			}
 		}
@@ -247,10 +257,23 @@ public class HDPortalManageNewManualAlertsPage {
 		setAlertStartMinutes(alertStartMinutes);
 		setAlertNotes(alertNotes);
 		clickAddNewAlertButton();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 	}
 
 
+	//Method to check NUI in In Progress alerts page 
+	public boolean isWearerNUIDisplayedInInProgressListPage(String wearerNUI){
+		WebElement wearerNUIElement = driver.findElement(By.xpath("//div[contains(text(),'"+wearerNUI+"')]"));
+		CommonActions.waitForElementToBeVisible(driver, wearerNUIElement);
+		if(wearerNUIElement.isDisplayed()){
+			System.out.println("Wearer with NUI "+wearerNUI+ " is displayed in In Progress Alerts list page...");	
+			return true;
+		}else{
+			System.out.println("Wearer with NUI "+wearerNUI+ " is not displayed in In Progress Alerts list page...");
+			return false;
+		}
+	}
+	/*
 
 	// Method to click In Progress Alerts menu option
 	public void clickInProgressAlertstMenu() {
@@ -265,7 +288,7 @@ public class HDPortalManageNewManualAlertsPage {
 		System.out.println(inProgressAlertsElement.getText()+" in progress alerts panel title is displayed...");
 		return inProgressAlertsElement.getText();
 	}
-
+	 */
 	//Method to navigate to New Alerts
 	public void navigateToNewAlertsOption(){
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);

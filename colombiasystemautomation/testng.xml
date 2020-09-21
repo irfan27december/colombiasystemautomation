@@ -55,7 +55,7 @@
 				<class name="com.buddi.hdportal.tests.HDPortalHomeTest" />
 			</classes>
 		</test>
-			
+		
 		<test name = "HD Portal Manage User Groups">
 			<classes>
 				<class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" />
@@ -74,9 +74,15 @@
 			</classes>
 		</test>
 		 
-		<test name = "HD Portal Alerts">
+		<test name = "HD Portal New Alerts">
 			<classes>
 				<class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" />
+			</classes>
+		</test>
+		
+		<test name = "HD Portal In Progress Alerts">
+			<classes>
+				<class name="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest" />
 			</classes>
 		</test>
 		

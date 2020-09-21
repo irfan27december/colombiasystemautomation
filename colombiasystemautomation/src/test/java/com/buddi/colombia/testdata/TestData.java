@@ -31,7 +31,8 @@ public class TestData {
 	
 	
 	//Alert related variables
-	public static final String ALERT_WEARER_NAME = "9010203040 ~ Pacífica Rosalía Huerta, Automation-";
+	public static final String WEARER_NUI = "9010203040";
+	public static final String ALERT_WEARER_NAME = "Automation"; //Pacífica Rosalía Huerta, Automation-
 	public static final String ALERT_SEVERITY = "Standard";
 	public static final String ALERT_START_DATE_FORMAT = "dd/MM/yyyy";
 	public static final String ALERT_START_HOUR = "20";

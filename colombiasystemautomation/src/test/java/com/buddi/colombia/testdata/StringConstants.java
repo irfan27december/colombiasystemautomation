@@ -32,20 +32,19 @@ public class StringConstants {
 	public static final int TIME_SECONDS = 5;
 
 
-	//New Alerts menu variables
-	public static final String NEWALERTS_PANEL_TITLE = "New Alerts";
-	//New Alerts page column variables
-	public static final String NEWALERTS_PAGE_OPENALERT_COLUMN = "Open";
-	public static final String NEWALERTS_PAGE_STATUS_COLUMN = "Status";
-	public static final String NEWALERTS_PAGE_DATETIME_COLUMN = "Date/time";
-	public static final String NEWALERTS_PAGE_REGIONAL_COLUMN = "Regional";
-	public static final String NEWALERTS_PAGE_WEARERGROUP_COLUMN = "Wearer Group";
-	public static final String NEWALERTS_PAGE_NUI_COLUMN = "NUI";
-	public static final String NEWALERTS_PAGE_WEARER_COLUMN = "Wearer";
-	public static final String NEWALERTS_PAGE_DEVICE_COLUMN = "Device";
-	public static final String NEWALERTS_PAGE_RULETYPE_COLUMN = "Rule Type";
-	public static final String NEWALERTS_PAGE_RULENAME_COLUMN = "Rule Name";
-	public static final String NEWALERTS_PAGE_LOCKED_COLUMN = "Locked";
+	//Alerts management variables
+	public static final String ALERTS_PANEL_TITLE = "New Alerts";
+	public static final String ALERTS_PAGE_OPENALERT_COLUMN = "Open";
+	public static final String ALERTS_PAGE_STATUS_COLUMN = "Status";
+	public static final String ALERTS_PAGE_DATETIME_COLUMN = "Date/time";
+	public static final String ALERTS_PAGE_REGIONAL_COLUMN = "Regional";
+	public static final String ALERTS_PAGE_WEARERGROUP_COLUMN = "Wearer Group";
+	public static final String ALERTS_PAGE_NUI_COLUMN = "NUI";
+	public static final String ALERTS_PAGE_WEARER_COLUMN = "Wearer";
+	public static final String ALERTS_PAGE_DEVICE_COLUMN = "Device";
+	public static final String ALERTS_PAGE_RULETYPE_COLUMN = "Rule Type";
+	public static final String ALERTS_PAGE_RULENAME_COLUMN = "Rule Name";
+	public static final String ALERTS_PAGE_LOCKED_COLUMN = "Locked";
 	public static final String ADD_NEW_ALERT_DIALOG_TITLE = "Add New Alert";
 	public static final String IN_PROGRESS_ALERTS_PANEL_TITLE = "In Progress Alerts";
 

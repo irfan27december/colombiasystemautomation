@@ -6,17 +6,17 @@
   <listeners>
     <listener class-name="com.buddi.colombia.listeners.TestListener"/>
   </listeners>
-  <test name="HD Portal Alerts(failed)">
+  <test name="HD Portal In Progress Alerts(failed)">
     <classes>
-      <class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest">
+      <class name="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest">
         <methods>
-          <include name="createNewAlert"/>
-          <include name="verifyColumnNamesInNewAlertsPageGrid"/>
+          <include name="OpenAlertDetailPage"/>
+          <include name="CloseAlertDetailPage"/>
           <include name="setUp"/>
           <include name="initialize"/>
           <include name="clean"/>
         </methods>
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest -->
     </classes>
-  </test> <!-- HD Portal Alerts(failed) -->
+  </test> <!-- HD Portal In Progress Alerts(failed) -->
 </suite> <!-- Failed suite [Colombia System Smoke Test Automation Suite] -->
