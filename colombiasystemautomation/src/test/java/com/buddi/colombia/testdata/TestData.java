@@ -13,12 +13,12 @@ public class TestData {
 	static int randomInt = random.nextInt(1000);
 
 	public static final String APP_EMAIL = "idrees14september@gmail.com";
-	public static final String APP_PASSWORD = "fo-ahm7529";
+	public static final String APP_PASSWORD = "*****";
 
 
 	// HD Portal related login variables
 	public static final String HDPORTAL_EMAIL = "irfan.ahmed@buddi.co.uk";
-	public static final String HDPORTAL_PASSWORD = "MIA@27dec1";
+	public static final String HDPORTAL_PASSWORD = "*****";
 
 	//HD Portal Management related variables
 	public static final String USERGROUP_NAME = "UG_AUTOMATION";

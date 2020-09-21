@@ -29,24 +29,29 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  */
 public class CommonActions {
+	
+	//Method to select drop down option by value
 	public static void selectByValue(WebDriver driver, WebElement element, String value) {
 		Select select = new Select(element);
 		element.click();
 		select.selectByValue(value);
 	}
 
+	//Method to select drop down option by visible test
 	public static void selectByVisibleText(WebDriver driver, WebElement element, String text) {
 		Select select = new Select(element);
 		element.click();
 		select.selectByVisibleText(text);
 	}
 
+	//Method to select drop down option by index
 	public static void selectByIndex(WebDriver driver, WebElement element, int index) {
 		Select select = new Select(element);
 		element.click();
 		select.selectByIndex(index);
 	}
 
+	//Method to get drop down values
 	public static List<WebElement> getDropDownValues(WebDriver driver, WebElement element) {
 		Select select = new Select(element);
 		element.click();
@@ -54,21 +59,25 @@ public class CommonActions {
 		return lisofvalues;
 	}
 
+	//Method to wait for element to be clickable
 	public static void waitForElementToBeClickable(WebDriver driver, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 50000);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
+	//Method to wait for element to be visible 
 	public static void waitForElementToBeVisible(WebDriver driver, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 50000);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
+	//Method to wait for element to be visible by text
 	public static void waitForElementToBeVisibleByText(WebDriver driver, By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, 50000);
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
+	//Method to wait for element for its presence
 	public static void waitUntil(WebDriver driver, By locator, int timeout) {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(timeout, TimeUnit.SECONDS)
 				.pollingEvery(5, TimeUnit.SECONDS).ignoring(NoSuchElementException.class)
@@ -76,6 +85,7 @@ public class CommonActions {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
+	//Method to wait till button is enabled
 	public static void waitUntilButtonEnabled(WebDriver driver, By locator, int timeout) {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(timeout, TimeUnit.SECONDS)
 				.pollingEvery(5, TimeUnit.SECONDS).ignoring(NoSuchElementException.class)
@@ -83,6 +93,7 @@ public class CommonActions {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
+	//Method to uplaod file
 	public static void fileUpload(String uploadPath) throws InterruptedException, AWTException {
 		Thread.sleep(4000);
 		setClipboardData(uploadPath);
@@ -97,11 +108,13 @@ public class CommonActions {
 		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
 
+	//Method to set clipboard data
 	public static void setClipboardData(String string) {
 		StringSelection stringSelection = new StringSelection(string);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 	}
 
+	//Method to click element using Javascript
 	public static void javaScriptClick(WebElement element, WebDriver driver) {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click()", element);
