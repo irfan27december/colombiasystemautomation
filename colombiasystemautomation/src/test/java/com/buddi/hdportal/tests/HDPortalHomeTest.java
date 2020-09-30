@@ -28,7 +28,7 @@ public class HDPortalHomeTest extends HDPortalBaseTest{
 		boolean isStatusTitleDisplayed = hdPortalHomePage.verifyStatusTitle();
 		Assert.assertEquals(isStatusTitleDisplayed, true);		
 		Reporter.log("Launched HD Portal home page...");	
-		System.out.println("Launching HD portal home page...");
+		System.out.println("Login to HD portal is successfull and HD portal home page has appeared...");
 	}
 
 	

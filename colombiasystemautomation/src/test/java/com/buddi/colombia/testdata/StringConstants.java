@@ -9,8 +9,6 @@ public class StringConstants {
 
 	// HD Portal variable
 	public static final String HDPORTAL_PAGE_TITLE = "Buddi HelpDesk System";
-	/*public static final String HDPORTAL_FO_USER = "irfan.ahmed@buddi.co.uk";
-	public static final String HDPORTAL_FO_PASSWORD = "MIA@27dec1"*/;
 	public static final String HD_MAIN_TITLE = "Herramienta de gestión (2.2.0)";
 	public static final int TIME_SECONDS = 5;
 
@@ -31,7 +29,7 @@ public class StringConstants {
 	public static final String PENDING_VISITS_GRID_TITLE = "Pending Visits";
 
 	//Alerts management variables
-	public static final String ALERTS_PANEL_TITLE = "New Alerts";
+	public static final String ALERTS_GRID_TITLE = "New Alerts";
 	public static final String ALERTS_PAGE_OPENALERT_COLUMN = "Open";
 	public static final String ALERTS_PAGE_STATUS_COLUMN = "Status";
 	public static final String ALERTS_PAGE_DATETIME_COLUMN = "Date/time";
@@ -43,7 +41,10 @@ public class StringConstants {
 	public static final String ALERTS_PAGE_RULETYPE_COLUMN = "Rule Type";
 	public static final String ALERTS_PAGE_RULENAME_COLUMN = "Rule Name";
 	public static final String ALERTS_PAGE_LOCKED_COLUMN = "Locked";
+	public static final String ALERTS_PAGE_CLOSED_COLUMN = "Closed";
 	public static final String ADD_NEW_ALERT_DIALOG_TITLE = "Add New Alert";
-	public static final String IN_PROGRESS_ALERTS_PANEL_TITLE = "In Progress Alerts";
+	public static final String IN_PROGRESS_ALERTS_GRID_TITLE = "In Progress Alerts";
+	public static final String CLOSE_ALERT_DIALOG_TITLE = "Close Alert";
+	public static final String ALERT_HISTORY_GRID_TITLE = "Alert History";
 
 }

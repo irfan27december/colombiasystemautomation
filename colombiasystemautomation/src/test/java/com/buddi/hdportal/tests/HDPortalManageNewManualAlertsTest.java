@@ -17,49 +17,56 @@ import com.buddi.colombia.testdata.TestData;
 
 public class HDPortalManageNewManualAlertsTest extends HDPortalBaseTest{
 
+	//Access New Alerts menu and verify grid title
 	@Test(priority = 1, groups = "Smoke")
-	public void accessNewAlertsMenuAndVerifyPanelTitle(){
+	public void accessNewAlertsMenuAndVerifyGridTitle(){
 		hdPortalManageNewManualAlertsPage.clickNewAlertstMenu();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		String actualNewAlertsPanelTitle = hdPortalManageNewManualAlertsPage.verifyNewAlertsPanelTitle();
-		Assert.assertEquals(actualNewAlertsPanelTitle, StringConstants.ALERTS_PANEL_TITLE);
+		String actualNewAlertsGridTitle = hdPortalManageNewManualAlertsPage.verifyNewAlertsGridTitle();
+		Assert.assertEquals(actualNewAlertsGridTitle, StringConstants.ALERTS_GRID_TITLE);
 	}
 
-
-	@Test(priority = 2, groups = "Smoke")
 	//Open and Wearer column names are not validated
+	@Test(priority = 2, groups = "Smoke", dependsOnMethods={"accessNewAlertsMenuAndVerifyGridTitle"})
 	public void verifyColumnNamesInNewAlertsPageGrid(){
 		hdPortalManageNewManualAlertsPage.navigateToNewAlertsOption();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		LinkedList<String> list = hdPortalManageNewManualAlertsPage.returnNewAlertsPageColumns();		
 		//Iterating LinkedList
 		Iterator<String> iterator = hdPortalManageNewManualAlertsPage.returnNewAlertsPageColumns().iterator();
-		System.out.println("List size is "+list.size());
 		while(iterator.hasNext()){
 			String expectedColumnName = iterator.next();
 			String actualColumnName = hdPortalManageNewManualAlertsPage.returnColumnNameElement(expectedColumnName).getText();
-			System.out.println("Actual column name    "+actualColumnName + " = " + "Expected column name   "+expectedColumnName );
+			//System.out.println("Actual column name    "+actualColumnName + " = " + "Expected column name   "+expectedColumnName );
 			Assert.assertEquals(actualColumnName, expectedColumnName);
 		}
 	}
 
-	@Test(priority = 3, groups = "Smoke")
-	public void createNewAlert(){
+	//Method to create new alert
+	@Test(priority = 3, groups = "Smoke", dependsOnMethods={"accessNewAlertsMenuAndVerifyGridTitle"})
+	public void createNewAlert() throws InterruptedException{
 		hdPortalManageNewManualAlertsPage.navigateToNewAlertsOption();
 		hdPortalManageNewManualAlertsPage.clickToolsBarAddAlertButton();
 		String actualAddNewAlertDialogTitle = hdPortalManageNewManualAlertsPage.verifyAddNewAlertDialogTitle();
 		Assert.assertEquals(actualAddNewAlertDialogTitle, StringConstants.ADD_NEW_ALERT_DIALOG_TITLE);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		hdPortalManageNewManualAlertsPage.createNewAlert(TestData.ALERT_WEARER_NAME, TestData.ALERT_SEVERITY, TestData.ALERT_START_DATE_FORMAT,
 				TestData.ALERT_START_HOUR, TestData.ALERT_START_MINUTES, TestData.ALERT_NOTES);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		boolean isWearerNameAndNUIPresentInAlertsDetailPage = hdPortalManageNewManualAlertsPage.isWearerNameNUIDisplayedInAlertsDetailPage(
+				TestData.ALERT_WEARER_NAME, TestData.WEARER_NUI);
+		Assert.assertEquals(isWearerNameAndNUIPresentInAlertsDetailPage, true);
+
+	}
+
+	//Method to verify the newly created alert
+	@Test(priority = 4, groups = "Smoke",dependsOnMethods={"createNewAlert"})
+	public void verifyNewlyCreatedAlert(){
 		driver.navigate().refresh();
-		hdPortalManageInProgressAlertsPage.clickInProgressAlertstMenu();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		String actualInProgressAlertsGridTitle = hdPortalManageInProgressAlertsPage.verifyInProgressAlertsPanelTitle();
-		Assert.assertEquals(actualInProgressAlertsGridTitle, StringConstants.IN_PROGRESS_ALERTS_PANEL_TITLE);
-		boolean isWearerNUIDisplayInInProgressListPage = hdPortalManageNewManualAlertsPage.isWearerNUIDisplayedInInProgressListPage(TestData.WEARER_NUI);
-		Assert.assertEquals(isWearerNUIDisplayInInProgressListPage, true);
+		hdPortalManageInProgressAlertsPage.clickInProgressAlertsMenu();
+		driver.manage().timeouts().implicitlyWait(50000, TimeUnit.MILLISECONDS);
+		String actualInProgressAlertsGridTitle = hdPortalManageInProgressAlertsPage.verifyInProgressAlertsGridTitle();
+		Assert.assertEquals(actualInProgressAlertsGridTitle, StringConstants.IN_PROGRESS_ALERTS_GRID_TITLE);
+		boolean isWearerNUIDisplayedInInProgressListPage = hdPortalManageNewManualAlertsPage.isWearerNUIDisplayedInInProgressListPage(TestData.WEARER_NUI);
+		Assert.assertEquals(isWearerNUIDisplayedInInProgressListPage, true);
+		boolean isWearerNameDisplayedInInProgressListPage = hdPortalManageNewManualAlertsPage.isWearerNameDisplayedInInProgressListPage(TestData.ALERT_WEARER_NAME);
+		Assert.assertEquals(isWearerNameDisplayedInInProgressListPage, true);
 	}
 
 }

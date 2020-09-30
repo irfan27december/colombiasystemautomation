@@ -49,14 +49,10 @@ public class HDPortalManageUserGroupsPage {
 	private WebElement addButton;
 	@FindBy(xpath = "//div[contains(text(),'User group created')]") 
 	private WebElement userGroupsAddedMessage;
-	/*@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.USERGROUP_NAME+"')]") 
-	private WebElement userGroupName;*/
-
 
 	//Web elements related to delete user groups
 	@FindBy(xpath = "//div[contains(text(),'"+TestData.USERGROUP_NAME+"')]/following::i[@class='x-fa fa-icon-red fa-times-circle']")
-	////div[contains(text(),'UG_AUTOMATION')]/following::span[@class="btn btn-default btn-sm"] --- This xpath also works
-	////td[contains(div/text(),'UG_AUTOMATION')]/following-sibling::td[div/span/i/@class='x-fa fa-icon-red fa-times-circle']/@data-qtip
+	//div[contains(text(),'UG_AUTOMATION')]/following::span[@class="btn btn-default btn-sm"] --- This xpath also works
 	private WebElement deleteUserGroupIcon;
 	@FindBy(xpath = "//div[contains(text(),'Confirm')]") 
 	private WebElement confirmationPopUp;
@@ -72,14 +68,10 @@ public class HDPortalManageUserGroupsPage {
 	private WebElement duplicateUGNameElement;
 	@FindBy(xpath = "*//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(),'Duplicate')]")
 	private WebElement duplicateButton;
-	/*@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.DUPLICATE_USERGROUP_NAME+"')]") 
-	private WebElement duplicateUserGroupName;*/
 	
 	//Method accepts user group name and returns user group name element
 	public WebElement returnUserGroupNameElement(String userGroupName){
 		WebElement userGroupNameElement = driver.findElement(By.xpath("//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+userGroupName+"')]"));
-		//@FindBy(xpath = "//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+TestData.DUPLICATE_USERGROUP_NAME+"')]") 
-		//private WebElement duplicateUserGroupName;
 		return userGroupNameElement;
 	}
 
@@ -124,10 +116,14 @@ public class HDPortalManageUserGroupsPage {
 	// Method to set user group name
 	public void setUserGroupName(String userGroupName) {
 		CommonActions.waitForElementToBeVisible(driver, nameField);
-		nameField.click();
-		nameField.clear();
-		nameField.sendKeys(userGroupName);
-		System.out.println("Entered user group name...");		
+		if(nameField.isDisplayed()){
+			nameField.click();
+			nameField.clear();
+			nameField.sendKeys(userGroupName);
+			System.out.println("Entered user group name...");
+		}else{
+			System.out.println("Failed to enter user group name...");
+		}				
 	}
 
 	//Method to create user group
@@ -138,10 +134,6 @@ public class HDPortalManageUserGroupsPage {
 			CommonActions.waitForElementToBeClickable(driver, addButton);
 			CommonActions.clickElementToHandleStaleElementException(addButton);
 			driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
-			//Below action code works fine
-			/*Actions builder = new Actions(driver);
-			builder.sendKeys(Keys.TAB).build().perform();
-			builder.sendKeys(Keys.SPACE).build().perform();*/
 			CommonActions.waitForElementToBeVisible(driver, returnUserGroupNameElement(strUserGroupName));			
 		}else{
 			System.out.println("Add button is not enabled "+addButton.isEnabled());
@@ -158,7 +150,7 @@ public class HDPortalManageUserGroupsPage {
 	//Method to select user group
 	public void selectUserGroup(String strUserGroupName){
 		navigateToUserGroupsOption();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		CommonActions.scrollDownVertically(driver, returnUserGroupNameElement(strUserGroupName));
 		if(returnUserGroupNameElement(strUserGroupName).isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, returnUserGroupNameElement(strUserGroupName));
 			CommonActions.clickElementToHandleStaleElementException(returnUserGroupNameElement(strUserGroupName));
@@ -168,11 +160,11 @@ public class HDPortalManageUserGroupsPage {
 		}
 	}
 
-
-
 	//Method to delete user group
 	public void deleteUserGroup(String strUserGroupName){
 		//selectUserGroup(strUserGroupName);
+		CommonActions.scrollDownVertically(driver);
+		CommonActions.scrollDownVertically(driver, deleteUserGroupIcon);
 		if(deleteUserGroupIcon.isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, deleteUserGroupIcon);
 			CommonActions.clickElementToHandleStaleElementException(deleteUserGroupIcon);			
@@ -214,7 +206,6 @@ public class HDPortalManageUserGroupsPage {
 			System.out.println("Yes button is not displayed in confirmation pop up....");
 		}
 	}
-
 
 	//Method to check if a user group exist
 	public boolean isUserGroupDeleted(String strUserGroupName){
@@ -276,6 +267,7 @@ public class HDPortalManageUserGroupsPage {
 	//Method to select duplicate user group
 	public void selectDuplicateUserGroup(String strDuplicateUserGroupName){
 		navigateToUserGroupsOption();
+		CommonActions.scrollDownVertically(driver, returnUserGroupNameElement(strDuplicateUserGroupName));
 		try{
 			if(returnUserGroupNameElement(strDuplicateUserGroupName).isDisplayed()){
 				JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -307,7 +299,9 @@ public class HDPortalManageUserGroupsPage {
 	//Method to delete duplicate user group
 	public void deleteDuplicateUserGroup(String strDuplicateUserGroupName){
 		//selectDuplicateUserGroup(strDuplicateUserGroupName);
+		CommonActions.scrollDownVertically(driver);
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		CommonActions.scrollDownVertically(driver, deleteUserGroupIcon);
 		if(deleteUserGroupIcon.isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, deleteUserGroupIcon);
 			CommonActions.clickElementToHandleStaleElementException(deleteUserGroupIcon);			
@@ -333,7 +327,7 @@ public class HDPortalManageUserGroupsPage {
 
 	//Method to navigate to user groups option
 	public void navigateToUserGroupsOption(){
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.navigate().refresh();
 		CommonActions.waitForElementToBeClickable(driver, managementElement);
 		CommonActions.clickElementToHandleStaleElementException(managementElement);

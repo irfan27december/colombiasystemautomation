@@ -10,25 +10,27 @@
 	<name>colombiasystemautomation</name>
 	<url>http://maven.apache.org</url>
 
-	<!-- <properties> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
-		</properties> -->
-
+	<!-- A character encoding scheme such as ASCII, UTF-8 or UTF-16 can be chosen 
+		to be used for the reading and writing of files. The best practice is to 
+		define encoding for copying filtered resources via the property ${project.build.sourceEncoding} 
+		which should be defined in the pom properties section like this: -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 
-
 	<build>
 		<!-- Source directory configuration -->
-		<sourceDirectory>src</sourceDirectory>
+		<!-- <sourceDirectory>src</sourceDirectory> -->
+		<sourceDirectory>${src.dir}</sourceDirectory>
 		<plugins>
 			<!-- Following plugin executes the testng tests -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M3</version>
+				<!-- <version>3.0.0-M3</version> -->
+				<version>3.0.0-M5</version>
 				<configuration>
 					<!-- Suite testng xml file to consider for test execution -->
 					<suiteXmlFiles>
@@ -51,6 +53,13 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
+					<!-- Sometimes when you may need to compile a certain project to a different 
+						version than what you are currently using. The javac can accept such command 
+						using -source and -target. The Compiler Plugin can also be configured to 
+						provide these options during compilation. For example, if you want to use 
+						the Java 8 language features (-source 1.8) and also want the compiled classes 
+						to be compatible with JVM 1.8 (-target 1.8), you can either add the two following 
+						properties, which are the default property names for the plugin parameters: -->
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
@@ -95,21 +104,22 @@
 							<mailAltConfig>true</mailAltConfig>
 
 							<!-- Email Authentication(Username and Password) -->
-							<mailuser>mia27dec@gmail.com</mailuser> 
+							<mailuser>mia27dec@gmail.com</mailuser>
 							<!-- <mailuser>automation27dec@gmail.com</mailuser> -->
-							<mailpassword>****</mailpassword>
+							<mailpassword>MIA@27dec</mailpassword>
 
 							<receivers>
 								<!-- To Email address -->
 								<receiver>mia27dec@gmail.com</receiver>
 								<receiver>automation27dec@gmail.com</receiver>
-								<receiver>irfan.ahmed@buddi.co.uk</receiver> 
+								<receiver>irfan.ahmed@buddi.co.uk</receiver>
 							</receivers>
 
 							<fileSets>
 								<fileSet>
 									<!-- Report directory Path -->
-									<directory>C://Users//irfan//git//colombiasystemautomation//colombiasystemautomation//test-report</directory>
+									<!-- <directory>C://Users//irfan//git//colombiasystemautomation//colombiasystemautomation//test-report</directory> -->
+									<directory>${project.basedir}/test-report</directory>
 									<includes>
 										<!-- Report file name -->
 										<include>Colombia-System-Test-Automaton-Report.html</include>
@@ -124,7 +134,7 @@
 			</plugin>
 
 		</plugins>
-
+		<!-- To define the plugin version in POM -->
 		<pluginManagement>
 			<plugins>
 				<!-- Ignore/Execute plugin execution -->
@@ -257,6 +267,46 @@
 			<version>4.1.0</version>
 		</dependency>
 
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/ooxml-schemas -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>ooxml-schemas</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.xml.stream/stax-api -->
+		<dependency>
+			<groupId>javax.xml.stream</groupId>
+			<artifactId>stax-api</artifactId>
+			<version>1.0-2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.15</version>
+		</dependency>
+
+
+
+
+		<!-- MySQL dependency -->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>

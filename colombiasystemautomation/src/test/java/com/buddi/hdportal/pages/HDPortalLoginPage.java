@@ -3,6 +3,7 @@
  */
 package com.buddi.hdportal.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,7 +33,10 @@ public class HDPortalLoginPage {
 	@FindBy(xpath = "//input[@name='password']") private WebElement hdPasswordElement;
 	@FindBy(xpath = "//span[text()='Login']") private WebElement loginElement;
 	@FindBy(xpath = "//span[text()='Logout']") private WebElement logOutElement;
-	
+	@FindBy(xpath = "//div[@class='x-window x-layer x-window-default x-border-box x-resizable x-window-resizable x-window-default-resizable']") 
+	private WebElement loginPanelElement;
+	@FindBy(xpath = "//div[@class='x-title-text x-title-text-default x-title-item' and text()='Login failed']") 
+	private WebElement loginFailedDialogBoxTitle;
 
 	//Method to verify HD login page title
 	public String verifyPageTitle() {
@@ -55,10 +59,10 @@ public class HDPortalLoginPage {
 		hdPasswordElement.sendKeys(password);
 	}
 
-	// To verify buddi logo
-	/*public boolean verifybuddiLogo(){
-		return buddiLogoElement.isDisplayed();
-	}*/
+	// To check if login panel appeared
+	public boolean isloginPanelDisplayed(){
+		return loginPanelElement.isDisplayed();
+	}
 
 	//Method to click login element
 	public void clickLogin(){
@@ -71,6 +75,24 @@ public class HDPortalLoginPage {
 		setUserName(userName);
 		setPassword(password);
 		clickLogin();
+	}
+
+	// To check if login failed dialog box is displayed
+	public boolean isloginFailedDialogBoxDisplayed(){
+		System.out.println("Is login failed dialog box appeared... "+loginFailedDialogBoxTitle.isDisplayed());
+		return loginFailedDialogBoxTitle.isDisplayed();
+	}
+
+	// To check if login failed message appeared
+	public boolean isUserIconDisplayed(){
+		WebElement userIconElement = driver.findElement(By.xpath("//span[@class='x-btn-icon-el x-btn-icon-el-default-small x-fa fa-user ']"));
+		System.out.println("Is user icon displayed : "+userIconElement.isDisplayed());
+		return userIconElement.isDisplayed();
+	}
+
+	//Method to click logout element
+	public boolean isLogOutOptionDisplayed(){
+		return logOutElement.isDisplayed();		
 	}
 
 	//Method to click logout element

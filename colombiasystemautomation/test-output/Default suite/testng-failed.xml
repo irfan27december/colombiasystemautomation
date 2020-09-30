@@ -3,16 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest">
+      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
         <methods>
-          <include name="startAppriumServer"/>
-          <include name="loginColombiaApp"/>
-          <include name="stopAppiumServer"/>
-          <include name="getAppHomeScreenSubTitle"/>
-          <include name="logOutColombiaApp"/>
-          <include name="getAppHomeScreenMainTitle"/>
+          <include name="loginHDPortalWithValidCredentials" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="initialize"/>
+          <include name="launchHDPortal"/>
+          <include name="clean"/>
         </methods>
-      </class> <!-- com.buddi.colombiaapp.tests.LoginColombiaAppTest -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

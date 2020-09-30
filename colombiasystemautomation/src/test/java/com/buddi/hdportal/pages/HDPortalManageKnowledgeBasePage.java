@@ -3,18 +3,15 @@
  */
 package com.buddi.hdportal.pages;
 
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
-import com.buddi.colombia.testdata.TestData;
 
 /**
  * @author irfan
@@ -65,12 +62,10 @@ public class HDPortalManageKnowledgeBasePage {
 	@FindBy(xpath = "*//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(),'Update')]")
 	private WebElement updateButton;
 
-
-
 	//Method accepts knowledge base name and returns knowledge base name element
 	public WebElement returnKnowledgeBaseNameElement(String knowledgeBaseName){
-		//knowledgeBaseName = knowledgeBaseName+randomInt;
-		WebElement knowledgeBaseNameElement = driver.findElement(By.xpath("//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+knowledgeBaseName+"')]"));
+		WebElement knowledgeBaseNameElement = driver.findElement(By.xpath("//div[contains(@class,'x-grid-cell-inner')][contains(text(),"
+				+ "'"+knowledgeBaseName+"')]"));
 		return knowledgeBaseNameElement;
 	}
 
@@ -87,29 +82,41 @@ public class HDPortalManageKnowledgeBasePage {
 	// Method to click LHS menu option
 	public void clickManagementMenu() {
 		CommonActions.waitForElementToBeVisible(driver, managementElement);
-		managementElement.click();
-		System.out.println("Management menu is expanded...");
+		if(managementElement.isDisplayed()){
+			managementElement.click();
+			System.out.println("Management menu is expanded...");
+		}else{
+			System.out.println("Management menu is not expanded...");
+		}
 	}
 
 	// Method to click Knowledge Base option
 	public void clickKnowledgeBaseOption() {
 		CommonActions.waitForElementToBeVisible(driver, knowledgeBaseElement);
-		knowledgeBaseElement.click();
-		System.out.println("Clicked Knowledge Base option...");
+		if(knowledgeBaseElement.isDisplayed()){
+			knowledgeBaseElement.click();
+			System.out.println("Clicked Knowledge Base option...");
+		}else{
+			System.out.println("Knowledge Base option is not displayed...");
+		}
 	}
 
 	// Method to verify Knowledge Base panel title
 	public String verifyKnowledgeBasePanelTitle() {
 		CommonActions.waitForElementToBeVisible(driver, knowledgeBasePanelTitleElement);
-		System.out.println(knowledgeBasePanelTitleElement.getText()+" knowledge base panel title is displayed...");
-		return knowledgeBasePanelTitleElement.getText();
+		if(knowledgeBasePanelTitleElement.isDisplayed()){
+			System.out.println(knowledgeBasePanelTitleElement.getText()+" knowledge base panel title is displayed...");
+			return knowledgeBasePanelTitleElement.getText();
+		}else{
+			return knowledgeBasePanelTitleElement.getText();
+		}
 	}
 
 	// Method to click Add knowledge base tool bar button
 	public void clickKnowledgeBaseButtonOnToolBar() {
 		driver.navigate().refresh();
 		navigateToKnowledgeBaseOption();
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		if(toolBarAddKnowledgeBaseButton.isDisplayed()){
 			System.out.println("Add tool bar button to add knowledge base is displayed...");
 			CommonActions.waitForElementToBeVisible(driver, toolBarAddKnowledgeBaseButton);
@@ -120,36 +127,44 @@ public class HDPortalManageKnowledgeBasePage {
 		}
 	}
 
-
 	// Method to set item number
 	public void setItemNumber(String itemNumber) {
 		CommonActions.waitForElementToBeVisible(driver, itemNumberField);
-		itemNumberField.click();
-		itemNumberField.clear();
-		itemNumberField.sendKeys(itemNumber);
-		System.out.println("Entered item number is..."+itemNumber);		
+		if(itemNumberField.isDisplayed()){
+			itemNumberField.click();
+			itemNumberField.clear();
+			itemNumberField.sendKeys(itemNumber);
+			System.out.println("Entered item number is..."+itemNumber);	
+		}else{
+			System.out.println("Item # field is not displayed...");
+		}			
 	}
-
 
 	// Method to set subject
 	public void setSubject(String subject) {
 		CommonActions.waitForElementToBeVisible(driver, subjectField);
-		subjectField.click();
-		subjectField.clear();
-		subjectField.sendKeys(subject);
-		System.out.println("Entered subject is..."+subject);		
+		if(subjectField.isDisplayed()){
+			subjectField.click();
+			subjectField.clear();
+			subjectField.sendKeys(subject);
+			System.out.println("Entered subject is..."+subject);
+		}else{
+			System.out.println("Subject field is not displayed...");
+		}		
 	}
-
 
 	// Method to set description
 	public void setDescription(String description) {
 		CommonActions.waitForElementToBeVisible(driver, descriptionField);
-		descriptionField.click();
-		descriptionField.clear();
-		descriptionField.sendKeys(description);
-		System.out.println("Entered description is..."+description);		
+		if(descriptionField.isDisplayed()){
+			descriptionField.click();
+			descriptionField.clear();
+			descriptionField.sendKeys(description);
+			System.out.println("Entered description is..."+description);
+		}else{
+			System.out.println("Description field is not displayed...");
+		}			
 	}
-
 
 	//Method to create knowledge base
 	public void createKnowledgeBase(String strItemNumber, String strSubject, String strDescription){
@@ -160,11 +175,6 @@ public class HDPortalManageKnowledgeBasePage {
 			System.out.println("Add button to create KB is enabled "+addButton.isEnabled());		
 			CommonActions.waitForElementToBeClickable(driver, addButton);
 			CommonActions.clickElementToHandleStaleElementException(addButton);
-			driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
-			//Below action code works fine
-			/*Actions builder = new Actions(driver);
-			builder.sendKeys(Keys.TAB).build().perform();
-			builder.sendKeys(Keys.SPACE).build().perform();*/
 			CommonActions.waitForElementToBeVisible(driver, returnKnowledgeBaseNameElement(strItemNumber));			
 		}else{
 			System.out.println("Add button to create KB is not enabled "+addButton.isEnabled());
@@ -174,12 +184,17 @@ public class HDPortalManageKnowledgeBasePage {
 	//Method to search knowledge base by item name
 	public String searchKnowledgeBaseByItemName(String strKnowledgeBaseName){
 		CommonActions.waitForElementToBeVisible(driver, searchField);
-		searchField.click();
-		searchField.clear();
-		searchField.sendKeys(strKnowledgeBaseName);
-		CommonActions.waitForElementToBeVisible(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
-		System.out.println("Knowledge base with name "+returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText()+" is searched and is displayed...");
-		return returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText();
+		if(searchField.isDisplayed()){
+			searchField.click();
+			searchField.clear();
+			searchField.sendKeys(strKnowledgeBaseName);
+			//driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+			CommonActions.waitForElementToBeVisible(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
+			System.out.println("Knowledge base with name "+returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText()+" is searched and is displayed...");
+			return returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText();
+		}else{
+			return returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText();
+		}		
 	}
 
 	//Method to get knowledge base name
@@ -192,12 +207,11 @@ public class HDPortalManageKnowledgeBasePage {
 	//Method to select knowledge base
 	public void selectKnowledgebase(String strKnowledgeBaseName){
 		navigateToKnowledgeBaseOption();
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		if(returnKnowledgeBaseNameElement(strKnowledgeBaseName).isDisplayed()){
 			CommonActions.waitForElementToBeClickable(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
 			CommonActions.clickElementToHandleStaleElementException(returnKnowledgeBaseNameElement(strKnowledgeBaseName));
 			System.out.println("Clicked/Selected on knowledge base with name: "+strKnowledgeBaseName);
-			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		}else{
 			System.out.println("Failed to click on knowledge base with name: "+strKnowledgeBaseName);
 		}
@@ -206,11 +220,10 @@ public class HDPortalManageKnowledgeBasePage {
 
 	//Method to navigate to knowledge base option
 	public void navigateToKnowledgeBaseOption(){
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.navigate().refresh();
 		CommonActions.waitForElementToBeClickable(driver, managementElement);
 		CommonActions.clickElementToHandleStaleElementException(managementElement);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		CommonActions.waitForElementToBeClickable(driver, knowledgeBaseElement);
 		CommonActions.clickElementToHandleStaleElementException(knowledgeBaseElement);		
 	}
@@ -219,9 +232,13 @@ public class HDPortalManageKnowledgeBasePage {
 	// Method to click edit button
 	public void clickEditButton() {
 		CommonActions.waitForElementToBeVisible(driver, editButton);
-		editButton.click();
-		descriptionField.clear();
-		System.out.println("Edit button is clicked...");		
+		if(editButton.isDisplayed()){
+			editButton.click();
+			descriptionField.clear();
+			System.out.println("Edit button is clicked...");
+		}else{
+			System.out.println("Edit button is not clicked...");
+		}		
 	}
 
 

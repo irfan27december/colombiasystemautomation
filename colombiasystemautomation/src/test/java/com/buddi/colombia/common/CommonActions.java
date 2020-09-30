@@ -166,7 +166,65 @@ public class CommonActions {
 	public static void autoSuggestionMethod(WebDriver driver){
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.DOWN).perform();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		action.sendKeys(Keys.ENTER).perform();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	}
+
+	//To zoom In page 4 time using CTRL and + keys.
+	public static void zoomIn(WebDriver driver){		
+		for(int i = 0; i < 4; i++){   
+			driver.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+		}
+	}
+	//To zoom out page 4 time using CTRL and - keys.
+	public static void zoomOut(WebDriver driver){		
+		for(int i = 0; i < 4; i++){
+			driver.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
+		}
+	}
+	//To set browser to default zoom level 100%
+	public static void set100(WebDriver driver){		
+		driver.findElement(By.tagName("html")).sendKeys(Keys.chord(Keys.CONTROL, "0"));
+	}
+
+
+	//To zoom out page 4 time using CTRL and - keys.
+	public static void zoomInBy(WebDriver driver, String zoomInPercentage){	
+		//String zoomInJS = "document.body.style.zoom='50%'"; 
+		String zoomInJS = "document.body.style.zoom='"+zoomInPercentage+"'"; 
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript(zoomInJS); 
+	}
+
+	//Method for zoom actions
+	public static void zoomActions(WebDriver driver){
+		driver.findElement(By.tagName("html")).sendKeys(
+				Keys.chord(Keys.CONTROL, Keys.ADD));
+		driver.findElement(By.tagName("html")).sendKeys(
+				Keys.chord(Keys.CONTROL, Keys.ADD));
+		driver.findElement(By.tagName("html")).sendKeys(
+				Keys.chord(Keys.CONTROL, Keys.ADD));
+		driver.findElement(By.tagName("html")).sendKeys(
+				Keys.chord(Keys.CONTROL, Keys.ADD));
+		driver.findElement(By.tagName("html")).sendKeys(
+				Keys.chord(Keys.CONTROL, Keys.ADD));
+		driver.findElement(By.tagName("html")).sendKeys(
+				Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
+		driver.findElement(By.tagName("html")).sendKeys(
+				Keys.chord(Keys.CONTROL, "0"));
+	}
+
+	// This  method will scroll down the page by  1000 pixel vertical	
+	public static void scrollDownVertically(WebDriver driver){
+		JavascriptExecutor js = (JavascriptExecutor) driver;	
+		js.executeScript("window.scrollBy(0,1000)");
+	}
+
+	// This  method will scroll the page till the element is found
+	public static void scrollDownVertically(WebDriver driver, WebElement element){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView();", element);
 	}
 
 }

@@ -29,14 +29,12 @@ public class HDPortalHomePage {
 
 	@FindBy(xpath = "//div[@class='helpdesk-title' and contains(text(), 'Herramienta de gestión')]") 
 	private WebElement helpDeskTitleElement;
-
 	@FindBy(xpath = "//div[contains(text(),'Status')]") 
 	private WebElement statusElement;
-
 	@FindBy(xpath = "//div[contains(text(),'Management')]") 
 	private WebElement managementElement;
- 
-	
+
+
 	// Method to verify HD title
 	public boolean verifyHelpDeskMainTitle() {
 		return helpDeskTitleElement.isDisplayed();
@@ -44,7 +42,7 @@ public class HDPortalHomePage {
 
 	// Method to get HD title
 	public String getHelpDeskTitle() {
-		System.out.println("Main title is: "+ helpDeskTitleElement.getText());
+		System.out.println("HelpDesk main title is: "+ helpDeskTitleElement.getText());
 		return helpDeskTitleElement.getText();
 	}
 
@@ -53,13 +51,14 @@ public class HDPortalHomePage {
 		return statusElement.isDisplayed();
 	}
 
+	// Method to verify home page title
 	public String verifyHomePageTitle(){
 		return driver.getTitle();
 	}
 
 	// Method to click LHS menu option
 	public void clickManagementMenu() {
-	CommonActions.waitForElementToBeVisible(driver, managementElement);
-	managementElement.click();
+		CommonActions.waitForElementToBeVisible(driver, managementElement);
+		managementElement.click();
 	}
 }

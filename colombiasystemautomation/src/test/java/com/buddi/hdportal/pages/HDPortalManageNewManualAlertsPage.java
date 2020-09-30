@@ -1,28 +1,18 @@
 package com.buddi.hdportal.pages;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
 import com.buddi.colombia.testdata.StringConstants;
-import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.DateToString;
-import com.mysql.cj.x.protobuf.MysqlxExpect.Open.Condition.Key;
 
 /**
  * @author irfan
@@ -43,15 +33,9 @@ public class HDPortalManageNewManualAlertsPage {
 	@FindBy(xpath = "//div[contains(text(),'New Alerts')]") 
 	private WebElement newAlertsElement;
 	@FindBy(xpath = "//div[contains(text(),'New Alerts')]") 
-	private WebElement newAlertsPanelTitleElement;
+	private WebElement newAlertsGridTitleElement;
 	@FindBy(xpath = "//span[contains(text(),'Regional')]") 
 	private WebElement regionalColumnElement;
-
-	//In Progress Alerts elements
-	/*@FindBy(xpath = "//div[contains(text(),'In Progress Alerts')]") 
-	private WebElement inProgressAlertsElement;
-	@FindBy(xpath = "//div[contains(text(),'In Progress Alerts')]") 
-	private WebElement inProgressAlertsPanelTitleElement;*/
 
 	//Web elements related to add alert
 	@FindBy(xpath = "//span/span[contains(@class,'x-btn-inner x-btn-inner-default-toolbar-small') and contains(text(), 'Add')]") 
@@ -72,19 +56,26 @@ public class HDPortalManageNewManualAlertsPage {
 	private WebElement notesField;
 	@FindBy(xpath = "//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(),'Add')]")
 	private WebElement addNewAlertButton;
- 
+
 	// Method to click LHS menu option
 	public void clickNewAlertstMenu() {
+		//driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		driver.navigate().refresh();
 		CommonActions.waitForElementToBeVisible(driver, newAlertsElement);
-		newAlertsElement.click();
-		System.out.println("New Alerts menu is clicked...");
+		if(newAlertsElement.isDisplayed()){	
+			CommonActions.waitForElementToBeClickable(driver, newAlertsElement);
+			newAlertsElement.click();
+			System.out.println("New Alerts menu is clicked...");
+		}else{
+			System.out.println("New Alerts menu is not clicked...");
+		}
 	}
 
 	// Method to verify new alerts panel title
-	public String verifyNewAlertsPanelTitle() {
-		CommonActions.waitForElementToBeVisible(driver, newAlertsPanelTitleElement);
-		System.out.println(newAlertsPanelTitleElement.getText()+" new alerts panel title is displayed...");
-		return newAlertsPanelTitleElement.getText();
+	public String verifyNewAlertsGridTitle() {
+		CommonActions.waitForElementToBeVisible(driver, newAlertsGridTitleElement);
+		System.out.println(newAlertsGridTitleElement.getText()+" grid title is displayed...");
+		return newAlertsGridTitleElement.getText();
 	}
 
 	//Method to get count of alerts page grid columns
@@ -100,9 +91,6 @@ public class HDPortalManageNewManualAlertsPage {
 
 	//Method accepts column name and returns column element
 	public WebElement returnColumnNameElement(String columnName){
-		/*WebElement columnElement = driver.findElement(By.xpath("//div[@class='x-column-header-inner x-leaf-column-header']/following::span[contains(text(),'"+columnName+"')]['"+getXpathCount(columnName)+"']"));		
-		System.out.println("columnElement       "+columnElement);*/
-		//WebElement columnElement = driver.findElement(By.xpath("//span[contains(text(),'"+columnName+"')]"));
 		WebElement columnElement = driver.findElement(By.xpath("//div[@class='x-column-header-text']/following::span[contains(text(),'"+columnName+"')]"));
 		return columnElement;	
 	}
@@ -123,15 +111,14 @@ public class HDPortalManageNewManualAlertsPage {
 		return list;
 	}
 
-
 	//Method to click tools bar add button
 	public void clickToolsBarAddAlertButton() {
 		CommonActions.waitForElementToBeVisible(driver, toolBarAddAlertButton);
-		if(toolBarAddAlertButton.isEnabled()){
+		if(toolBarAddAlertButton.isDisplayed()){
 			toolBarAddAlertButton.click();
-			System.out.println("Tools bar add button is clicked...");
+			System.out.println("Tools bar add button is clicked to create new alert...");
 		}else{
-			System.out.println("Tools bar add button is not clicked...");
+			System.out.println("Tools bar add button is not clicked to create new alert...");
 		}
 	}
 
@@ -139,10 +126,10 @@ public class HDPortalManageNewManualAlertsPage {
 	public String verifyAddNewAlertDialogTitle(){
 		CommonActions.waitForElementToBeVisible(driver, addNewAlertDialogTitleElement);
 		if(addNewAlertDialogTitleElement.isEnabled()){
-			System.out.println("Add New Alert dialog box is displayed...");
+			System.out.println("Add New Alert dialog box is displayed with title..."+addNewAlertDialogTitleElement.getText());
 			return addNewAlertDialogTitleElement.getText();
 		}else{
-			System.out.println("Add New Alert dialog box is not displayed...");
+			System.out.println("Add New Alert dialog box is not displayed with title..."+addNewAlertDialogTitleElement.getText());
 		}
 		return null;
 	}
@@ -157,81 +144,115 @@ public class HDPortalManageNewManualAlertsPage {
 			System.out.println("Add New Alert dialog box is not displayed...");
 			return false;
 		}
-		//return false;
 	}
 
-
-
 	//Method to set alert wearer name
-	//9010203040 ~ Pacífica Rosalía Huerta, Automation-
-	//NUI: 9010203040
-	//CC: 50607080
-	public void setAlertWearerName(String alertWearerName) {
+	public void setAlertWearerName(String alertWearerName) throws InterruptedException {
 		CommonActions.waitForElementToBeVisible(driver, alertWearerDropDown);
-		alertWearerDropDown.click();
-		alertWearerDropDown.clear();
-		alertWearerDropDown.sendKeys(alertWearerName);
-		CommonActions.autoSuggestionMethod(driver);
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		if(alertWearerDropDown.isDisplayed()){
+			alertWearerDropDown.click();
+			System.out.println("Wearer drop down is displayed...");
+			//driver.manage().timeouts().implicitlyWait(50000, TimeUnit.MILLISECONDS);
+			//Not ideal to use Thread.sleep, will check for alternate solution for this
+			Thread.sleep(3000);
+			alertWearerDropDown.sendKeys(alertWearerName);
+			CommonActions.autoSuggestionMethod(driver);
+		}else{
+			System.out.println("Wearer drop down is not displayed...");
+		}		
 	}
 
 	//Method to set alert severity
-	public void setAlertSeverity(String alertSeverity) {
-		// getting the list of elements with the xpath
-		List<WebElement> listOfComboBox = driver.findElements(By.xpath("//input[@name='alertseverity']"));
-		int numberOfComboBoxOptions = listOfComboBox.size();
-		// Iterating through the list selecting the desired option
-		for( int j = 0; j< listOfComboBox.size(); j++){
-			// if the option is By Subject click that option
-			if( listOfComboBox.get(j).getText().equals(alertSeverity)){
-				System.out.println("opt.get(j)   "+listOfComboBox.get(j));
-				listOfComboBox.get(j).click();
-				break;
+	public void setAlertSeverity(String alertSeverity) throws InterruptedException {
+		if(alertSeverityDropDown.isDisplayed()){
+			alertSeverityDropDown.click();
+			System.out.println("Severity drop down is displayed...");
+			alertSeverityDropDown.sendKeys(Keys.ARROW_DOWN);
+			if(alertSeverity.equalsIgnoreCase("high")){
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ENTER);				
+			}else if(alertSeverity.equalsIgnoreCase("medium")){
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ENTER);		
+			}else if(alertSeverity.equalsIgnoreCase("low")){
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_UP);
+				alertSeverityDropDown.sendKeys(Keys.ENTER);				
+			}else if(alertSeverity.equalsIgnoreCase("standard")){	
+				//alertSeverityDropDown.sendKeys(Keys.ESCAPE);	
+				alertSeverityDropDown.sendKeys(Keys.ARROW_DOWN);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_DOWN);
+				alertSeverityDropDown.sendKeys(Keys.ARROW_DOWN);
+				alertSeverityDropDown.sendKeys(Keys.ENTER);
+			}else{
+				alertSeverityDropDown.sendKeys(Keys.TAB);
 			}
+			alertSeverityDropDown.sendKeys(Keys.TAB);
+			//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		}else{
+			System.out.println("Severity drop down is not displayed...");
 		}
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		
 	}
 
 	//Method to set alert start date
 	public void setAlertStartDate(String alertStartDateFormat) {
 		CommonActions.waitForElementToBeVisible(driver, startDateField);
-		startDateField.click();
-		startDateField.clear();
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-		System.out.println("DateToString.returnDate(alertStartDateFormat)     "+DateToString.returnDate(alertStartDateFormat));
-		startDateField.sendKeys(DateToString.returnDate(alertStartDateFormat));
-		//startDateField.sendKeys(Keys.TAB);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		if(startDateField.isDisplayed()){
+			startDateField.click();
+			startDateField.clear();
+			//System.out.println("DateToString.returnDate(alertStartDateFormat)     "+DateToString.returnDate(alertStartDateFormat));
+			startDateField.sendKeys(DateToString.returnDate(alertStartDateFormat));
+			//startDateField.sendKeys(Keys.TAB);
+		}else{
+			System.out.println("Date field is not displayed...");
+		}		
 	}
 
 	//Method to set alert start hours
 	public void setAlertStartHours(String alertStartHours){
 		CommonActions.waitForElementToBeVisible(driver, startHourField);
-		startHourField.click();
-		startHourField.clear();
-		startHourField.sendKeys(alertStartHours);
-		startHourField.sendKeys(Keys.TAB);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		if(startHourField.isDisplayed()){
+			startHourField.click();
+			startHourField.clear();
+			startHourField.sendKeys(alertStartHours);
+			startHourField.sendKeys(Keys.TAB);
+			//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		}else{
+			System.out.println("Hour field is not displayed...");
+		}		
 	}
 
 
 	//Method to set alert start minutes
 	public void setAlertStartMinutes(String alertStartMinutes){
 		CommonActions.waitForElementToBeVisible(driver, startMinutesField);
-		startMinutesField.click();
-		startMinutesField.clear();
-		startMinutesField.sendKeys(alertStartMinutes);
-		startMinutesField.sendKeys(Keys.TAB);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		if(startMinutesField.isDisplayed()){
+			startMinutesField.click();
+			startMinutesField.clear();
+			startMinutesField.sendKeys(alertStartMinutes);
+			startMinutesField.sendKeys(Keys.TAB);
+		}else{
+			System.out.println("Minutes field is not displayed...");
+		}		
 	}
 
 	//Method to set alert notes
 	public void setAlertNotes(String alertNotes){
 		CommonActions.waitForElementToBeVisible(driver, notesField);
-		notesField.click();
-		notesField.clear();
-		notesField.sendKeys(alertNotes);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		if(notesField.isDisplayed()){
+			notesField.click();
+			notesField.clear();
+			notesField.sendKeys(alertNotes);
+			//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		}else{
+			System.out.println("Notes field is not displayed...");
+		}		
 	}
 
 
@@ -241,7 +262,6 @@ public class HDPortalManageNewManualAlertsPage {
 		if(addNewAlertButton.isEnabled()){
 			addNewAlertButton.click();
 			System.out.println("Add new alert button is clicked in Add New Alert dialog...");
-			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		}else{
 			System.out.println("Failed to click add new alert button is clicked in Add New Alert dialog...");
 		}
@@ -249,7 +269,7 @@ public class HDPortalManageNewManualAlertsPage {
 
 	//Method to create new alert
 	public void createNewAlert(String alertWearerName, String alertSeverity, String alertStartDateFormat, String alertStartHours, 
-			String alertStartMinutes, String alertNotes){
+			String alertStartMinutes, String alertNotes) throws InterruptedException{
 		setAlertWearerName(alertWearerName);
 		setAlertSeverity(alertSeverity);
 		setAlertStartDate(alertStartDateFormat);
@@ -257,9 +277,21 @@ public class HDPortalManageNewManualAlertsPage {
 		setAlertStartMinutes(alertStartMinutes);
 		setAlertNotes(alertNotes);
 		clickAddNewAlertButton();
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 	}
 
+	//Method to check NUI and wearre name displayed in alerts detail page  
+	public boolean isWearerNameNUIDisplayedInAlertsDetailPage(String wearerName, String wearerNUI){		
+		WebElement wearerNameElement = driver.findElement(By.xpath("//a[@class='wearerlink' and text()='"+wearerName+"']"));
+		WebElement wearerNUIElement = driver.findElement(By.xpath("//table[3]/tbody/tr/td[6]/b/i[text()='"+wearerNUI+"']"));
+		CommonActions.waitForElementToBeVisible(driver, wearerNUIElement);
+		if(wearerNUIElement.isDisplayed() && wearerNameElement.isDisplayed()){
+			System.out.println("Wearer with name "+wearerName+" and NUI "+wearerNUI+ " is displayed in alerts detail page...");	
+			return true;
+		}else{
+			System.out.println("Wearer with name "+wearerName+" and NUI "+wearerNUI+ " is not displayed in alerts detail page...");
+			return false;
+		}
+	}
 
 	//Method to check NUI in In Progress alerts page 
 	public boolean isWearerNUIDisplayedInInProgressListPage(String wearerNUI){
@@ -273,28 +305,25 @@ public class HDPortalManageNewManualAlertsPage {
 			return false;
 		}
 	}
-	/*
 
-	// Method to click In Progress Alerts menu option
-	public void clickInProgressAlertstMenu() {
-		CommonActions.waitForElementToBeVisible(driver, inProgressAlertsElement);
-		inProgressAlertsElement.click();
-		System.out.println("In Progress Alerts menu is clicked...");
+	//Method to check wearer name in In Progress alerts page 
+	public boolean isWearerNameDisplayedInInProgressListPage(String wearerName){
+		WebElement wearerNameElement = driver.findElement(By.xpath("//div[contains(text(),'"+wearerName+"')]"));
+		CommonActions.waitForElementToBeVisible(driver, wearerNameElement);
+		if(wearerNameElement.isDisplayed()){
+			System.out.println("Wearer with name "+wearerName+ " is displayed in In Progress Alerts list page...");	
+			return true;
+		}else{
+			System.out.println("Wearer with name "+wearerName+ " is not displayed in In Progress Alerts list page...");
+			return false;
+		}
 	}
 
-	// Method to verify in progress alerts panel title
-	public String verifyInProgressAlertsPanelTitle() {
-		CommonActions.waitForElementToBeVisible(driver, inProgressAlertsElement);
-		System.out.println(inProgressAlertsElement.getText()+" in progress alerts panel title is displayed...");
-		return inProgressAlertsElement.getText();
-	}
-	 */
+
 	//Method to navigate to New Alerts
 	public void navigateToNewAlertsOption(){
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.navigate().refresh();
 		CommonActions.waitForElementToBeClickable(driver, newAlertsElement);
 		CommonActions.clickElementToHandleStaleElementException(newAlertsElement);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);	
 	}
 }

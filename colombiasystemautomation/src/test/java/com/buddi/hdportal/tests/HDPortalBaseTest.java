@@ -5,28 +5,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 
-import com.buddi.colombia.testdata.StringConstants;
-import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
+import com.buddi.hdportal.pages.HDPortalManageAlertHistoryPage;
 import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
@@ -55,6 +50,8 @@ public class HDPortalBaseTest {
 	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
 	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
 	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
+	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
+	
 
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
@@ -199,6 +196,7 @@ public class HDPortalBaseTest {
 		hdPortalManageKnowledgeBasePage = new HDPortalManageKnowledgeBasePage(driver);
 		hdPortalManagePendingVisitsPage = new HDPortalManagePendingVisitsPage(driver);
 		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
+		hdPortalManageAlertHistoryPage = new HDPortalManageAlertHistoryPage(driver);
 	}
 
 
