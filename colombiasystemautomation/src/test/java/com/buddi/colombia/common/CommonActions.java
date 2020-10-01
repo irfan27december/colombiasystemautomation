@@ -29,7 +29,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  */
 public class CommonActions {
-	
+
 	//Method to select drop down option by value
 	public static void selectByValue(WebDriver driver, WebElement element, String value) {
 		Select select = new Select(element);
@@ -115,7 +115,7 @@ public class CommonActions {
 	}
 
 	//Method to click element using Javascript
-	public static void javaScriptClick(WebElement element, WebDriver driver) {
+	public static void javaScriptClick(WebDriver driver, WebElement element ) {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click()", element);
 	}
@@ -190,9 +190,9 @@ public class CommonActions {
 
 
 	//To zoom out page 4 time using CTRL and - keys.
-	public static void zoomInBy(WebDriver driver, String zoomInPercentage){	
-		//String zoomInJS = "document.body.style.zoom='50%'"; 
-		String zoomInJS = "document.body.style.zoom='"+zoomInPercentage+"'"; 
+	public static void zoomInBy(WebDriver driver){	
+		String zoomInJS = "document.body.style.zoom='90%'"; 
+		//String zoomInJS = "document.body.style.zoom='"+zoomInPercentage+"'"; 
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript(zoomInJS); 
 	}
@@ -213,6 +213,29 @@ public class CommonActions {
 				Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
 		driver.findElement(By.tagName("html")).sendKeys(
 				Keys.chord(Keys.CONTROL, "0"));
+	}
+
+	public static void zoomOut() throws AWTException{
+		Robot robot = new Robot();
+		System.out.println("About to zoom out");
+		for (int i = 0; i < 2; i++) {
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_SUBTRACT);
+			robot.keyRelease(KeyEvent.VK_SUBTRACT);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+		}
+	}
+
+	public static void zoomIn() throws AWTException{
+		Robot robot = new Robot();
+		System.out.println("About to zoom in");
+		for (int i = 0; i < 2; i++) {
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_ADD);
+			robot.keyRelease(KeyEvent.VK_ADD);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+		}
+
 	}
 
 	// This  method will scroll down the page by  1000 pixel vertical	
