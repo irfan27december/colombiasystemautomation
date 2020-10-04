@@ -7,20 +7,24 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcelSheet {
-    public static XSSFWorkbook WBook = null;
-    public static XSSFSheet WSheet= null;
-    
+	public static XSSFWorkbook workBook = null;
+	public static XSSFSheet workSheet = null;
 
-    public static XSSFSheet DataSheet(String filePath, String sheetName){
-        File file = new File(filePath);
-        try {
-            FileInputStream fis = new FileInputStream(file);
-            WBook = new XSSFWorkbook(fis);
-            WSheet = WBook.getSheet(sheetName);         
-        } catch (Exception e) {         
-            e.printStackTrace();
-        }
-        return WSheet;      
-    }       
+	//Method excel sheet name
+	public static XSSFSheet DataSheet(String filePath, String sheetName){
+		//Import excel sheet
+		File file = new File(filePath);
+		try {
+			// Load the file
+			FileInputStream fis = new FileInputStream(file);
+			// Load the workbook
+			workBook = new XSSFWorkbook(fis);
+			// Load the sheet in which data is stored
+			workSheet = workBook.getSheet(sheetName);         
+		} catch (Exception e) {         
+			e.printStackTrace();
+		}
+		return workSheet;      
+	}       
 
 }

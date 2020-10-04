@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="31" passed="31">
+<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
     <line>
       <![CDATA[Test started]]>
@@ -8,334 +8,203 @@
       <![CDATA[Test started]]>
     </line>
     <line>
-      <![CDATA[Launching HD Portal...]]>
-    </line>
-    <line>
-      <![CDATA[Launched HD Portal...]]>
-    </line>
-    <line>
-      <![CDATA[Test started]]>
-    </line>
-    <line>
-      <![CDATA[Launching HD Portal home page...]]>
-    </line>
-    <line>
-      <![CDATA[Launched HD Portal home page...]]>
+      <![CDATA[Failed to convert data to an object
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 6636, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c8e37417-6d58-4b4c-8e20-e675173d74ec
+*** Element info: {Using=xpath, value=//span[text()='Logout']}]]>
     </line>
   </reporter-output>
-  <suite name="Colombia System Smoke Test Automation Suite" duration-ms="94287" started-at="2020-09-30T04:54:37Z" finished-at="2020-09-30T04:56:11Z">
+  <suite name="Colombia System Smoke Test Automation Suite" duration-ms="11323" started-at="2020-10-04T14:34:49Z" finished-at="2020-10-04T14:35:00Z">
     <groups>
       <group name="Smoke">
         <method signature="HDPortalLoginTest.launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="launchHDPortal" class="com.buddi.hdportal.tests.HDPortalLoginTest"/>
-        <method signature="HDPortalLoginTest.loginHDPortalWithValidCredentials()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="loginHDPortalWithValidCredentials" class="com.buddi.hdportal.tests.HDPortalLoginTest"/>
-        <method signature="HDPortalHomeTest.verifyHelpDeskTitleInHomePage()[pri:1, instance:com.buddi.hdportal.tests.HDPortalHomeTest@5f9d02cb]" name="verifyHelpDeskTitleInHomePage" class="com.buddi.hdportal.tests.HDPortalHomeTest"/>
-        <method signature="HDPortalManageNewManualAlertsTest.accessNewAlertsMenuAndVerifyGridTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="accessNewAlertsMenuAndVerifyGridTitle" class="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest"/>
-        <method signature="HDPortalManageNewManualAlertsTest.createNewAlert()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="createNewAlert" class="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest"/>
-        <method signature="HDPortalManageNewManualAlertsTest.verifyColumnNamesInNewAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="verifyColumnNamesInNewAlertsPageGrid" class="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest"/>
-        <method signature="HDPortalManageNewManualAlertsTest.verifyNewlyCreatedAlert()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="verifyNewlyCreatedAlert" class="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest"/>
-        <method signature="HDPortalManageInProgressAlertsTest.accessInProgressAlertsMenuAndVerifyGridTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="accessInProgressAlertsMenuAndVerifyGridTitle" class="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest"/>
-        <method signature="HDPortalManageInProgressAlertsTest.openAlertDetailPage()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="openAlertDetailPage" class="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest"/>
-        <method signature="HDPortalManageInProgressAlertsTest.confirmAlertFromDetailsPage()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="confirmAlertFromDetailsPage" class="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest"/>
-        <method signature="HDPortalManageInProgressAlertsTest.verifyColumnNamesInInProgressAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="verifyColumnNamesInInProgressAlertsPageGrid" class="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest"/>
-        <method signature="HDPortalManageAlertHistoryTest.accessAlertHistoryMenuAndVerifyGridTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest@67b92f0a]" name="accessAlertHistoryMenuAndVerifyGridTitle" class="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest"/>
-        <method signature="HDPortalManageAlertHistoryTest.openAlertDetailPage()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest@67b92f0a]" name="openAlertDetailPage" class="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest"/>
-        <method signature="HDPortalManageAlertHistoryTest.verifyReopenAlertButtonInAlertDetailPage()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest@67b92f0a]" name="verifyReopenAlertButtonInAlertDetailPage" class="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest"/>
-        <method signature="HDPortalManagePendingVisitsTest.accessPendingMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@6e0e048a]" name="accessPendingMenuItem" class="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest"/>
-        <method signature="HDPortalManagePendingVisitsTest.accessVisitsMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@6e0e048a]" name="accessVisitsMenu" class="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest"/>
-        <method signature="HDPortalManagePendingVisitsTest.clickAddNewVisitToolBarButton()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@6e0e048a]" name="clickAddNewVisitToolBarButton" class="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.accessManagementMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="accessManagementMenu" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.accessUserGroupsMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="accessUserGroupsMenuItem" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.createNewUserGroup()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="createNewUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.deleteCreatedUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="deleteCreatedUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.duplicateUserGroup()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="duplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.createDuplicateUserGroupInLowerCase()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="createDuplicateUserGroupInLowerCase" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.createDuplicateUserGroupPrefixedWithSpaces()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="createDuplicateUserGroupPrefixedWithSpaces" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.deleteDuplicateUserGroup()[pri:10, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="deleteDuplicateUserGroup" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.duplicateAnExistingUserGroupInLowerCase()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="duplicateAnExistingUserGroupInLowerCase" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageUserGroupsTest.duplicateAnExistingUserGroupPrefixedWithSpaces()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="duplicateAnExistingUserGroupPrefixedWithSpaces" class="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest"/>
-        <method signature="HDPortalManageKnowledgeBaseTest.accessManagementMenuForKnowledgeBase()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="accessManagementMenuForKnowledgeBase" class="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest"/>
-        <method signature="HDPortalManageKnowledgeBaseTest.accessKnowledgeBaseMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="accessKnowledgeBaseMenuItem" class="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest"/>
-        <method signature="HDPortalManageKnowledgeBaseTest.createNewKnowledgeBase()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="createNewKnowledgeBase" class="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest"/>
-        <method signature="HDPortalManageKnowledgeBaseTest.verifyNewlyCreatedKnowledgeBase()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="verifyNewlyCreatedKnowledgeBase" class="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest"/>
+        <method signature="HDPortalLoginTest.loginHDPortalWithValidCredentials(java.lang.String, java.lang.String)[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="loginHDPortalWithValidCredentials" class="com.buddi.hdportal.tests.HDPortalLoginTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test name="App" duration-ms="17" started-at="2020-09-30T04:54:37Z" finished-at="2020-09-30T04:54:37Z">
+    <test name="App" duration-ms="4" started-at="2020-10-04T14:34:49Z" finished-at="2020-10-04T14:34:49Z">
     </test> <!-- App -->
-    <test name="Login HD Portal" duration-ms="4224" started-at="2020-09-30T04:54:37Z" finished-at="2020-09-30T04:54:41Z">
+    <test name="Login HD Portal" duration-ms="11048" started-at="2020-10-04T14:34:49Z" finished-at="2020-10-04T14:35:00Z">
       <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="initialize" is-config="true" duration-ms="56" started-at="2020-09-30T10:24:37Z" finished-at="2020-09-30T10:24:37Z">
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="setUp" is-config="true" duration-ms="16327" started-at="2020-10-04T20:04:33Z" finished-at="2020-10-04T20:04:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="launchHDPortal" duration-ms="19" started-at="2020-09-30T10:24:37Z" finished-at="2020-09-30T10:24:37Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Launching HD Portal...]]>
-            </line>
-            <line>
-              <![CDATA[Launched HD Portal...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- launchHDPortal -->
-        <test-method status="PASS" signature="loginHDPortalWithValidCredentials()[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="loginHDPortalWithValidCredentials" duration-ms="4108" started-at="2020-09-30T10:24:37Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalLoginTest.launchHDPortal" finished-at="2020-09-30T10:24:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginHDPortalWithValidCredentials -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
-    </test> <!-- Login HD Portal -->
-    <test name="HD Portal Home Page" duration-ms="2633" started-at="2020-09-30T04:54:42Z" finished-at="2020-09-30T04:54:45Z">
-      <class name="com.buddi.hdportal.tests.HDPortalHomeTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalHomeTest@5f9d02cb]" name="initialize" is-config="true" duration-ms="7" started-at="2020-09-30T10:24:42Z" finished-at="2020-09-30T10:24:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="verifyHelpDeskTitleInHomePage()[pri:1, instance:com.buddi.hdportal.tests.HDPortalHomeTest@5f9d02cb]" name="verifyHelpDeskTitleInHomePage" duration-ms="2623" started-at="2020-09-30T10:24:42Z" finished-at="2020-09-30T10:24:45Z">
-          <reporter-output>
-            <line>
-              <![CDATA[Launching HD Portal home page...]]>
-            </line>
-            <line>
-              <![CDATA[Launched HD Portal home page...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- verifyHelpDeskTitleInHomePage -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalHomeTest -->
-    </test> <!-- HD Portal Home Page -->
-    <test name="HD Portal New Alerts" duration-ms="16022" started-at="2020-09-30T04:54:45Z" finished-at="2020-09-30T04:55:01Z">
-      <class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="initialize" is-config="true" duration-ms="5" started-at="2020-09-30T10:24:45Z" finished-at="2020-09-30T10:24:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessNewAlertsMenuAndVerifyGridTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="accessNewAlertsMenuAndVerifyGridTitle" duration-ms="2313" started-at="2020-09-30T10:24:45Z" finished-at="2020-09-30T10:24:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessNewAlertsMenuAndVerifyGridTitle -->
-        <test-method status="PASS" signature="verifyColumnNamesInNewAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="verifyColumnNamesInNewAlertsPageGrid" duration-ms="2260" started-at="2020-09-30T10:24:47Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest.accessNewAlertsMenuAndVerifyGridTitle" finished-at="2020-09-30T10:24:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyColumnNamesInNewAlertsPageGrid -->
-        <test-method status="PASS" signature="createNewAlert()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="createNewAlert" duration-ms="8741" started-at="2020-09-30T10:24:49Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest.accessNewAlertsMenuAndVerifyGridTitle" finished-at="2020-09-30T10:24:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewAlert -->
-        <test-method status="PASS" signature="verifyNewlyCreatedAlert()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest@6f1fba17]" name="verifyNewlyCreatedAlert" duration-ms="2697" started-at="2020-09-30T10:24:58Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest.createNewAlert" finished-at="2020-09-30T10:25:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewlyCreatedAlert -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest -->
-    </test> <!-- HD Portal New Alerts -->
-    <test name="HD Portal In Progress Alerts" duration-ms="6983" started-at="2020-09-30T04:55:01Z" finished-at="2020-09-30T04:55:08Z">
-      <class name="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="initialize" is-config="true" duration-ms="5" started-at="2020-09-30T10:25:01Z" finished-at="2020-09-30T10:25:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessInProgressAlertsMenuAndVerifyGridTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="accessInProgressAlertsMenuAndVerifyGridTitle" duration-ms="1928" started-at="2020-09-30T10:25:01Z" finished-at="2020-09-30T10:25:03Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessInProgressAlertsMenuAndVerifyGridTitle -->
-        <test-method status="PASS" signature="verifyColumnNamesInInProgressAlertsPageGrid()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="verifyColumnNamesInInProgressAlertsPageGrid" duration-ms="2615" started-at="2020-09-30T10:25:03Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest.accessInProgressAlertsMenuAndVerifyGridTitle" finished-at="2020-09-30T10:25:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyColumnNamesInInProgressAlertsPageGrid -->
-        <test-method status="PASS" signature="openAlertDetailPage()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="openAlertDetailPage" duration-ms="296" started-at="2020-09-30T10:25:06Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest.accessInProgressAlertsMenuAndVerifyGridTitle" finished-at="2020-09-30T10:25:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openAlertDetailPage -->
-        <test-method status="PASS" signature="confirmAlertFromDetailsPage()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest@5a8e6209]" name="confirmAlertFromDetailsPage" duration-ms="2132" started-at="2020-09-30T10:25:06Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest.openAlertDetailPage" finished-at="2020-09-30T10:25:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- confirmAlertFromDetailsPage -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest -->
-    </test> <!-- HD Portal In Progress Alerts -->
-    <test name="HD Portal Alert History" duration-ms="3057" started-at="2020-09-30T04:55:08Z" finished-at="2020-09-30T04:55:11Z">
-      <class name="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest@67b92f0a]" name="initialize" is-config="true" duration-ms="4" started-at="2020-09-30T10:25:08Z" finished-at="2020-09-30T10:25:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessAlertHistoryMenuAndVerifyGridTitle()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest@67b92f0a]" name="accessAlertHistoryMenuAndVerifyGridTitle" duration-ms="2007" started-at="2020-09-30T10:25:08Z" finished-at="2020-09-30T10:25:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessAlertHistoryMenuAndVerifyGridTitle -->
-        <test-method status="PASS" signature="openAlertDetailPage()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest@67b92f0a]" name="openAlertDetailPage" duration-ms="584" started-at="2020-09-30T10:25:10Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest.accessAlertHistoryMenuAndVerifyGridTitle" finished-at="2020-09-30T10:25:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openAlertDetailPage -->
-        <test-method status="PASS" signature="verifyReopenAlertButtonInAlertDetailPage()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest@67b92f0a]" name="verifyReopenAlertButtonInAlertDetailPage" duration-ms="457" started-at="2020-09-30T10:25:11Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest.openAlertDetailPage" finished-at="2020-09-30T10:25:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyReopenAlertButtonInAlertDetailPage -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest -->
-    </test> <!-- HD Portal Alert History -->
-    <test name="HD Portal Manage Pending Visits" duration-ms="12344" started-at="2020-09-30T04:55:12Z" finished-at="2020-09-30T04:55:24Z">
-      <class name="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@6e0e048a]" name="initialize" is-config="true" duration-ms="7" started-at="2020-09-30T10:25:12Z" finished-at="2020-09-30T10:25:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessVisitsMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@6e0e048a]" name="accessVisitsMenu" duration-ms="1799" started-at="2020-09-30T10:25:12Z" finished-at="2020-09-30T10:25:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessVisitsMenu -->
-        <test-method status="PASS" signature="accessPendingMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@6e0e048a]" name="accessPendingMenuItem" duration-ms="5364" started-at="2020-09-30T10:25:13Z" finished-at="2020-09-30T10:25:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessPendingMenuItem -->
-        <test-method status="PASS" signature="clickAddNewVisitToolBarButton()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest@6e0e048a]" name="clickAddNewVisitToolBarButton" duration-ms="5164" started-at="2020-09-30T10:25:19Z" finished-at="2020-09-30T10:25:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickAddNewVisitToolBarButton -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest -->
-    </test> <!-- HD Portal Manage Pending Visits -->
-    <test name="HD Portal Manage User Groups" duration-ms="33315" started-at="2020-09-30T04:55:24Z" finished-at="2020-09-30T04:55:57Z">
-      <class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest">
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="initialize" is-config="true" duration-ms="1" started-at="2020-09-30T10:25:24Z" finished-at="2020-09-30T10:25:24Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ChromeSuite]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessManagementMenu()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="accessManagementMenu" duration-ms="1627" started-at="2020-09-30T10:25:24Z" finished-at="2020-09-30T10:25:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessManagementMenu -->
-        <test-method status="PASS" signature="accessUserGroupsMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="accessUserGroupsMenuItem" duration-ms="807" started-at="2020-09-30T10:25:26Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessManagementMenu" finished-at="2020-09-30T10:25:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- accessUserGroupsMenuItem -->
-        <test-method status="PASS" signature="createNewUserGroup()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="createNewUserGroup" duration-ms="2871" started-at="2020-09-30T10:25:26Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessManagementMenu, com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessUserGroupsMenuItem" finished-at="2020-09-30T10:25:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewUserGroup -->
-        <test-method status="PASS" signature="duplicateUserGroup()[pri:4, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="duplicateUserGroup" duration-ms="4277" started-at="2020-09-30T10:25:29Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessManagementMenu, com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.accessUserGroupsMenuItem, com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createNewUserGroup" finished-at="2020-09-30T10:25:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- duplicateUserGroup -->
-        <test-method status="PASS" signature="createDuplicateUserGroupInLowerCase()[pri:5, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="createDuplicateUserGroupInLowerCase" duration-ms="815" started-at="2020-09-30T10:25:34Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateUserGroup, com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createNewUserGroup" finished-at="2020-09-30T10:25:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createDuplicateUserGroupInLowerCase -->
-        <test-method status="PASS" signature="createDuplicateUserGroupPrefixedWithSpaces()[pri:6, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="createDuplicateUserGroupPrefixedWithSpaces" duration-ms="3360" started-at="2020-09-30T10:25:34Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateUserGroup, com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createNewUserGroup" finished-at="2020-09-30T10:25:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createDuplicateUserGroupPrefixedWithSpaces -->
-        <test-method status="PASS" signature="duplicateAnExistingUserGroupInLowerCase()[pri:7, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="duplicateAnExistingUserGroupInLowerCase" duration-ms="7009" started-at="2020-09-30T10:25:38Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateUserGroup, com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createNewUserGroup" finished-at="2020-09-30T10:25:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- duplicateAnExistingUserGroupInLowerCase -->
-        <test-method status="PASS" signature="duplicateAnExistingUserGroupPrefixedWithSpaces()[pri:8, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="duplicateAnExistingUserGroupPrefixedWithSpaces" duration-ms="5839" started-at="2020-09-30T10:25:45Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateUserGroup, com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createNewUserGroup" finished-at="2020-09-30T10:25:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- duplicateAnExistingUserGroupPrefixedWithSpaces -->
-        <test-method status="PASS" signature="deleteCreatedUserGroup()[pri:9, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="deleteCreatedUserGroup" duration-ms="3255" started-at="2020-09-30T10:25:51Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.createNewUserGroup" finished-at="2020-09-30T10:25:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteCreatedUserGroup -->
-        <test-method status="PASS" signature="deleteDuplicateUserGroup()[pri:10, instance:com.buddi.hdportal.tests.HDPortalManageUserGroupsTest@5c5a1b69]" name="deleteDuplicateUserGroup" duration-ms="3446" started-at="2020-09-30T10:25:54Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest.duplicateUserGroup" finished-at="2020-09-30T10:25:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteDuplicateUserGroup -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageUserGroupsTest -->
-    </test> <!-- HD Portal Manage User Groups -->
-    <test name="HD Portal Manage Knowledge Base" duration-ms="13624" started-at="2020-09-30T04:55:57Z" finished-at="2020-09-30T04:56:11Z">
-      <class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest">
-        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="setUp" is-config="true" duration-ms="7950" started-at="2020-09-30T10:24:29Z" finished-at="2020-09-30T10:24:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chromedriver]]>
+                <![CDATA[firefoxdriver]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[ChromeSuite]]>
+                <![CDATA[FirefoxSuite]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="initialize" is-config="true" duration-ms="2" started-at="2020-09-30T10:25:57Z" finished-at="2020-09-30T10:25:57Z">
+        <test-method status="PASS" signature="initialize(java.lang.String)[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="initialize" is-config="true" duration-ms="91" started-at="2020-10-04T20:04:49Z" finished-at="2020-10-04T20:04:49Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ChromeSuite]]>
+                <![CDATA[FirefoxSuite]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method status="PASS" signature="accessManagementMenuForKnowledgeBase()[pri:1, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="accessManagementMenuForKnowledgeBase" duration-ms="2080" started-at="2020-09-30T10:25:57Z" finished-at="2020-09-30T10:25:59Z">
+        <test-method status="PASS" signature="launchHDPortal()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="launchHDPortal" duration-ms="11" started-at="2020-10-04T20:04:49Z" finished-at="2020-10-04T20:04:49Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- accessManagementMenuForKnowledgeBase -->
-        <test-method status="PASS" signature="accessKnowledgeBaseMenuItem()[pri:2, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="accessKnowledgeBaseMenuItem" duration-ms="794" started-at="2020-09-30T10:25:59Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest.accessManagementMenuForKnowledgeBase" finished-at="2020-09-30T10:26:00Z">
+        </test-method> <!-- launchHDPortal -->
+        <test-method status="FAIL" signature="loginHDPortalWithValidCredentials(java.lang.String, java.lang.String)[pri:1, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="loginHDPortalWithValidCredentials" duration-ms="10424" started-at="2020-10-04T20:04:50Z" data-provider="getLoginData" depends-on-methods="com.buddi.hdportal.tests.HDPortalLoginTest.launchHDPortal" finished-at="2020-10-04T20:05:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[irfan.ahmed@buddi.co.uk]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[MIA@27dec1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[Element <span id="button-1023-btnInnerEl" class="x-btn-inner x-btn-inner-default-small"> is not clickable at point (870,428) because another element <div id="toolbar-1022-innerCt" class="x-box-inner"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 6636, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c8e37417-6d58-4b4c-8e20-e675173d74ec]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <span id="button-1023-btnInnerEl" class="x-btn-inner x-btn-inner-default-small"> is not clickable at point (870,428) because another element <div id="toolbar-1022-innerCt" class="x-box-inner"> obscures it
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 6636, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c8e37417-6d58-4b4c-8e20-e675173d74ec
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy13.click(Unknown Source)
+	at com.buddi.hdportal.pages.HDPortalLoginPage.clickLogin(HDPortalLoginPage.java:82)
+	at com.buddi.hdportal.pages.HDPortalLoginPage.loginHDPortal(HDPortalLoginPage.java:90)
+	at com.buddi.hdportal.tests.HDPortalLoginTest.loginHDPortalWithValidCredentials(HDPortalLoginTest.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- accessKnowledgeBaseMenuItem -->
-        <test-method status="PASS" signature="createNewKnowledgeBase()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="createNewKnowledgeBase" duration-ms="4666" started-at="2020-09-30T10:26:00Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest.accessKnowledgeBaseMenuItem" finished-at="2020-09-30T10:26:05Z">
+        </test-method> <!-- loginHDPortalWithValidCredentials -->
+        <test-method status="FAIL" signature="clean()[pri:0, instance:com.buddi.hdportal.tests.HDPortalLoginTest@56235b8e]" name="clean" is-config="true" duration-ms="123780" started-at="2020-10-04T20:05:01Z" finished-at="2020-10-04T20:07:04Z">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 6636, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c8e37417-6d58-4b4c-8e20-e675173d74ec]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: Browsing context has been discarded
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 6636, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c8e37417-6d58-4b4c-8e20-e675173d74ec
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions.deleteAllCookies(RemoteWebDriver.java:694)
+	at com.buddi.hdportal.tests.HDPortalBaseTest.clean(HDPortalBaseTest.java:244)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:350)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createNewKnowledgeBase -->
-        <test-method status="PASS" signature="verifyNewlyCreatedKnowledgeBase()[pri:3, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="verifyNewlyCreatedKnowledgeBase" duration-ms="6078" started-at="2020-09-30T10:26:05Z" depends-on-methods="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest.createNewKnowledgeBase" finished-at="2020-09-30T10:26:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewlyCreatedKnowledgeBase -->
-        <test-method status="PASS" signature="clean()[pri:0, instance:com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest@50b494a6]" name="clean" is-config="true" duration-ms="5903" started-at="2020-09-30T10:26:11Z" finished-at="2020-09-30T10:26:17Z">
-          <reporter-output>
+            <line>
+              <![CDATA[Failed to convert data to an object
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 6636, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c8e37417-6d58-4b4c-8e20-e675173d74ec
+*** Element info: {Using=xpath, value=//span[text()='Logout']}]]>
+            </line>
           </reporter-output>
         </test-method> <!-- clean -->
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest -->
-    </test> <!-- HD Portal Manage Knowledge Base -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
+    </test> <!-- Login HD Portal -->
   </suite> <!-- Colombia System Smoke Test Automation Suite -->
 </testng-results>

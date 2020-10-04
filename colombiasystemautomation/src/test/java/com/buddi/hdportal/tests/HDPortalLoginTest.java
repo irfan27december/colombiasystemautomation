@@ -6,72 +6,65 @@ package com.buddi.hdportal.tests;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.buddi.colombia.common.CommonActions;
 import com.buddi.colombia.testdata.StringConstants;
 import com.buddi.colombia.testdata.TestData;
-import com.buddi.colombia.utilities.XLSXManager;
-import com.buddi.colombiaapp.samples.excel.XSSFExcelReader;
+import com.buddi.colombia.utilities.ReadExcelSheet;
+import com.buddi.colombia.utilities.GetExcelData;
+import com.buddi.colombia.utilities.Log;
+import com.buddi.colombiaapp.samples.excel.XLSXManager;
 
 /**
  * @author irfan
  *
  */
 public class HDPortalLoginTest extends HDPortalBaseTest{
-	private static XLSXManager xlsxManager;
-	/*public static final String testDataExcelFileName = "testdata.xlsx";	
-	private static String fileSeperator = System.getProperty("file.separator");
-	private static String testDataExcelFilePath = System.getProperty("user.dir") +fileSeperator+ "testdata";
-	private static String testDataExcelFileLocation =  testDataExcelFilePath +fileSeperator+ testDataExcelFileName;*/
+	public static XSSFSheet sheet;
+	public static Object[][] LoginData;
 
-	@DataProvider(name="testdata")
-	public static Object[][] loginTestData() throws IOException{
-		xlsxManager = new XLSXManager(xlsxManager.testDataExcelFileLocation);
-		int rowCount = xlsxManager.getRowCount("Login");
-		System.out.println("Total rows: "+rowCount);
-		int columnCount = xlsxManager.getColumnCount();
-		System.out.println("Total columns: "+columnCount);
-		Object[][] signin_credentials = new Object[rowCount][columnCount];
-		for(int iRows = 1; iRows < rowCount; iRows++){
-			if(xlsxManager.getData(0, iRows, 0)!=null)
-			signin_credentials[iRows][0] = xlsxManager.getData(0, iRows, 0);
-			if(xlsxManager.getData(0, iRows, 1)!=null)
-			signin_credentials[iRows][1] = xlsxManager.getData(0, iRows, 1);			
+	@DataProvider(name="getLoginData")
+	public static Object[][] getData() throws Exception{
+		sheet = ReadExcelSheet.DataSheet(GetExcelData.testDataExcelFileLocation, "Login");
+		int rowCount = sheet.getLastRowNum();
+		int columnCount = sheet.getRow(0).getLastCellNum();
+		LoginData = new Object[rowCount][columnCount];
+		for (int rowCnt = 1; rowCnt <= rowCount; rowCnt++){
+			for (int columnCnt = 0; columnCnt < columnCount; columnCnt++){
+				LoginData[rowCount-1][columnCnt] = GetExcelData.getCellData("Login", rowCnt, columnCnt);
+				//System.out.println(LoginData[rowCnt-1][columnCnt]);
+			}
 		}
-		return signin_credentials;
+		return LoginData;
 	}
 
 
 	//Method to launch HD portal
 	@Test(priority = 0, groups = "Smoke")
-	public void launchHDPortal() throws InterruptedException{		
+	public void launchHDPortal(){		
 		//HDPortalLoginPage hdPortalLoginPage = PageFactory.initElements(driver, HDPortalLoginPage.class);	
-		Reporter.log("Launching HD Portal...");
-		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+		Log.startTestCase("launchHDPortal");
 		String actualTitle = hdPortalLoginPage.verifyPageTitle();
 		Assert.assertEquals(actualTitle, StringConstants.HDPORTAL_PAGE_TITLE);
-		System.out.println("Launched HD portal...");
-		Reporter.log("Launched HD Portal...");				
+		Log.info("Launched HD portal...");	
+		Log.endTestCase("launchHDPortal");
 	}
 
-	//Method to login HD portal  , dataProvider="testdata"
-	@Test(priority = 1, groups = "Smoke",dependsOnMethods={"launchHDPortal"})
-	public void loginHDPortalWithValidCredentials() throws IOException{	
+	//Method to login HD portal
+	@Test(priority = 1, groups = "Smoke",dependsOnMethods={"launchHDPortal"},dataProvider="getLoginData")
+	public void loginHDPortalWithValidCredentials(String email, String password){	
 		String actualTitle = hdPortalLoginPage.verifyPageTitle();
 		if(actualTitle.equals(StringConstants.HDPORTAL_PAGE_TITLE)){			
 			Assert.assertEquals(actualTitle, StringConstants.HDPORTAL_PAGE_TITLE);
-			System.out.println("HD Portal login page is displayed...");		
+			Log.info("HD Portal login page is displayed...");
 		}else{ 
-			System.out.println("HD Portal login page is not displayed...");
-		}		
-		//hdPortalLoginPage.loginHDPortal(TestData.HDPORTAL_EMAIL, TestData.HDPORTAL_PASSWORD);	
-		xlsxManager = new XLSXManager(xlsxManager.testDataExcelFileLocation);
-		for(int iRows = 1; iRows < 2; iRows++){		
-			hdPortalLoginPage.loginHDPortal(xlsxManager.getData(0, iRows, 0), xlsxManager.getData(0, iRows, 1));	
-		}
+			Log.error("HD Portal login page is displayed...");
+		}	
+		hdPortalLoginPage.loginHDPortal(email, password);	
+		Log.endTestCase("loginHDPortalWithValidCredentials");
 	}
 }

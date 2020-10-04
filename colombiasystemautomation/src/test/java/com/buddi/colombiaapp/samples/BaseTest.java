@@ -62,9 +62,9 @@ public class BaseTest {
 		System.out.println("OS name: "+osName);
 		AppiumServerJava appiumServer = new AppiumServerJava();
 		int port = 4723;
-		if(!appiumServer.checkIfServerIsRunnning(port)) {
-			appiumServer.startServer();
-			appiumServer.stopServer();
+		if(!appiumServer.checkIfAppiumServerIsRunnning(port)) {
+			appiumServer.startAppiumServer();
+			appiumServer.stopAppiumServer();
 		} else {
 			System.out.println("Appium Server already running on Port - " + port);
 		}

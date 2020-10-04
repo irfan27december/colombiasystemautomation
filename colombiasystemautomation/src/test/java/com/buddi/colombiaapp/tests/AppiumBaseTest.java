@@ -41,10 +41,10 @@ public class AppiumBaseTest {
 		appiumServer = new AppiumServerJava();
 
 		//Check if Appium Server is running
-		if(!appiumServer.checkIfServerIsRunnning(appiumServerPort)) {
+		if(!appiumServer.checkIfAppiumServerIsRunnning(appiumServerPort)) {
 			System.out.println("Appium Server is running on port - " + appiumServerPort);
-			appiumServer.startServer();
-			//appiumServer.stopServer();
+			appiumServer.startAppiumServer();
+			//appiumServer.stopAppiumServer();
 		} else {
 			System.out.println("Appium Server is already running on port - " + appiumServerPort);
 		}
@@ -115,7 +115,7 @@ public class AppiumBaseTest {
 		//driver.removeApp(readProperties.getPropertyValue("APP_PACKAGE_NAME"));
 		System.out.println("Stop driver");
 		driver.quit();
-		appiumServer.stopServer();
+		appiumServer.stopAppiumServer();
 	}
 
 }

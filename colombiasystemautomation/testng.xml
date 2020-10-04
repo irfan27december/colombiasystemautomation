@@ -25,10 +25,10 @@
 
 	<test name="App">
 		<classes>
-			<!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/> -->
+			<!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/>  -->
 		</classes>
 	</test>
-
+	 
 	<test name="Login HD Portal">
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalLoginTest" />
@@ -40,7 +40,7 @@
 			<class name="com.buddi.hdportal.tests.HDPortalHomeTest" />
 		</classes>
 	</test>
-
+	
 	<test name="HD Portal New Alerts">
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" />
@@ -64,7 +64,7 @@
 			<class name="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest" />
 		</classes>
 	</test>
-
+ 
 	<test name="HD Portal Manage User Groups">
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" />
@@ -75,6 +75,6 @@
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" />
 		</classes>
-	</test>
+	</test> 
 
 </suite> <!-- Suite -->

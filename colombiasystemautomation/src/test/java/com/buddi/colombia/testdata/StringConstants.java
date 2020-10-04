@@ -27,6 +27,7 @@ public class StringConstants {
 
 	//Visits menu variables
 	public static final String PENDING_VISITS_GRID_TITLE = "Pending Visits";
+	
 
 	//Alerts management variables
 	public static final String ALERTS_GRID_TITLE = "New Alerts";
@@ -47,4 +48,6 @@ public class StringConstants {
 	public static final String CLOSE_ALERT_DIALOG_TITLE = "Close Alert";
 	public static final String ALERT_HISTORY_GRID_TITLE = "Alert History";
 
+	
+	public static final String ADD_NEW_VISIT_TITLE= "Add New Visit"; //Irfan: should be part of visit variables
 }

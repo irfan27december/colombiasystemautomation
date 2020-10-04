@@ -13,7 +13,7 @@ public class TestData {
 	static int randomInt = random.nextInt(1000);
 
 	public static final String APP_EMAIL = "idrees14september@gmail.com";
-	public static final String APP_PASSWORD = "*****";
+	public static final String APP_PASSWORD = "fo-ahm7529";
 
 
 	// HD Portal related login variables
@@ -40,5 +40,19 @@ public class TestData {
 	public static final String ALERT_START_MINUTES = "55";
 	public static final String ALERT_NOTES = "Manual alert is created...";
 	public static final String CLOSE_ALERT_NOTES = "Closing alert...";
+
+	//Add New Visit related variables
+	public static final String ADD_VISIT_WEARER_NUI = "1907";
+	public static final String SELECT_JOBTYPE = "Installation";
+	public static final String SELECT_WEARERGROUP = "CCP BOGOTA";
+	public static final String ADD_NEW_VISIT_WEARER=" ~ test11, SMD Col";
+	public static final String SELECT_FIELD_OFFICER = "Mohammed, Sumaiah (testbuddi1212@gmail.com)";
+	public static final String VISIT_START_DATE_FORMAT = "dd/MM/yyyy";
+	public static final String VISIT_START_HOURS = "20";
+	public static final String VISIT_START_MINUTES = "30";
+	public static final String VISIT_END_DATE_FORMAT = "dd/MM/yyyy";
+	public static final String VISIT_END_HOURS= "22";
+	public static final String VISIT_EMD_MINUTES= "40";
+	public static final String ADD_VISIT_NOTES= "Add New Visit is created";
 
 }

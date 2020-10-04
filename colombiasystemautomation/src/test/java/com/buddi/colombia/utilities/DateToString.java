@@ -2,13 +2,8 @@ package com.buddi.colombia.utilities;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
-
-import com.google.protobuf.TextFormat.ParseException;
-
-import freemarker.template.utility.DateUtil;
 
 
 
@@ -18,13 +13,12 @@ public class DateToString{
 
 	//Method to return current date in the specified date format
 	public static String returnDate(String strDateFormat){
-
 		if(strDateFormat.equalsIgnoreCase("dd/MM/yyyy")){
 			try{
 				dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 				//System.out.println("Date format is "+strDateFormat+ " and todays date is: "+dateFormat.format(date));
-			}catch(Exception e){
-				System.out.println(e.getMessage());
+			}catch(Exception e){ 
+				Log.error(e.getMessage());
 			}
 		}else if(strDateFormat.equalsIgnoreCase("dd/MM/yyyy HH:mm:ss")){
 			try{
@@ -32,7 +26,7 @@ public class DateToString{
 				//System.out.println("Date format is "+strDateFormat+ " and todays date is: "+dateFormat.format(date));
 				return dateFormat.format(date);
 			}catch(Exception e){
-				System.out.println(e.getMessage());
+				Log.error(e.getMessage());
 			}
 		}else{
 			return dateFormat.format(date);
@@ -46,19 +40,19 @@ public class DateToString{
 	private static String getNextDate(int noOfDays) throws java.text.ParseException {
 		String givenDate = returnDate("dd/MM/yyyy");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Calendar cal = Calendar.getInstance();
+		Calendar calender = Calendar.getInstance();
 		String nextDaysDate = null;
 		try {
-			cal.setTime(dateFormat.parse(givenDate));
-			cal.add(Calendar.DATE, noOfDays);
-			nextDaysDate = dateFormat.format(cal.getTime());
+			calender.setTime(dateFormat.parse(givenDate));
+			calender.add(Calendar.DATE, noOfDays);
+			nextDaysDate = dateFormat.format(calender.getTime());
 		} catch (Exception ex) {
-			//Logger.getLogger(GR_TravelRepublic.class.getName()).log(Level.SEVERE, null, ex);
+			Log.error(ex.getMessage());
 		}finally{
 			dateFormat = null;
-			cal = null;
+			calender = null;
 		}
-		System.out.println("Incremented date is: "+nextDaysDate);
+		//System.out.println("Incremented date is: "+nextDaysDate);
 		return nextDaysDate;
 	}
 
@@ -66,5 +60,4 @@ public class DateToString{
 		DateToString.returnDate("dd/MM/yyyy");
 		DateToString.getNextDate(2);
 	}
-
 }

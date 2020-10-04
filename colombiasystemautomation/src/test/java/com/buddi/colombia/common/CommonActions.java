@@ -29,6 +29,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  */
 public class CommonActions {
+	static Robot robot;
 
 	//Method to select drop down option by value
 	public static void selectByValue(WebDriver driver, WebElement element, String value) {
@@ -77,6 +78,7 @@ public class CommonActions {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 
+
 	//Method to wait for element for its presence
 	public static void waitUntil(WebDriver driver, By locator, int timeout) {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(timeout, TimeUnit.SECONDS)
@@ -98,7 +100,7 @@ public class CommonActions {
 		Thread.sleep(4000);
 		setClipboardData(uploadPath);
 		// native key strokes for CTRL, V and ENTER keys
-		Robot robot = new Robot();
+		robot = new Robot();
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_V);
 		robot.keyRelease(KeyEvent.VK_V);
@@ -120,13 +122,21 @@ public class CommonActions {
 		executor.executeScript("arguments[0].click()", element);
 	}
 
+
+	//Use ExpectedConditions.refreshed to avoid StaleElementReferenceException and retrieve the element again. 
+	//This method updates the element by redrawing it and we can access the referenced element
+	public static void waitForElementToBeRefreshed(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 50000);
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(element)));
+	}
+
 	//Method to handle stale element exception and click element
 	public static void clickElementToHandleStaleElementException(WebElement element) {
-		int counter = 0;
+		int counter = 0; 
 		do{
 			try{
 				if(element.isDisplayed() && element.isEnabled() ){
-					counter = counter + 1;
+					counter = counter + 1; 
 					element.click();
 					break;
 				}
@@ -215,8 +225,9 @@ public class CommonActions {
 				Keys.chord(Keys.CONTROL, "0"));
 	}
 
+	//Method for zoom out action
 	public static void zoomOut() throws AWTException{
-		Robot robot = new Robot();
+		robot = new Robot();
 		System.out.println("About to zoom out");
 		for (int i = 0; i < 2; i++) {
 			robot.keyPress(KeyEvent.VK_CONTROL);
@@ -226,8 +237,9 @@ public class CommonActions {
 		}
 	}
 
+	//Method for zoom in action
 	public static void zoomIn() throws AWTException{
-		Robot robot = new Robot();
+		robot = new Robot();
 		System.out.println("About to zoom in");
 		for (int i = 0; i < 2; i++) {
 			robot.keyPress(KeyEvent.VK_CONTROL);

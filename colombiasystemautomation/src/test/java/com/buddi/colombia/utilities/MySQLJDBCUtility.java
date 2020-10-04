@@ -22,7 +22,6 @@ public class MySQLJDBCUtility {
 	
 	/**
      * Get database properties
-     *
      * @return a properties key
 	 * @throws IOException 
     */
@@ -40,7 +39,6 @@ public class MySQLJDBCUtility {
 	
     /**
      * Get database connection
-     *
      * @return a Connection object
      * @throws SQLException
      */
@@ -70,8 +68,7 @@ public class MySQLJDBCUtility {
      * Get database table row count
      */
     public static int getDBTableRowCount(String dbTableName){
-    	Connection connection;
-    	
+    	Connection connection;    	
     	int tableRow = 0;
 		// create a new connection from MySQLJDBCUtil
 		try{
@@ -82,8 +79,7 @@ public class MySQLJDBCUtility {
 			String sqlQuery = "";
 			try {
 				dbTableName = getDBPropertyValue("dbtablename");
-				sqlQuery = "SELECT * FROM "+ dbTableName;
-				
+				sqlQuery = "SELECT * FROM "+ dbTableName;				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -93,7 +89,6 @@ public class MySQLJDBCUtility {
 		      }  
 			resultSet.close();
 			statement.close();
-
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
 		}

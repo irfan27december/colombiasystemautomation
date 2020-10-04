@@ -5,11 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
@@ -18,9 +22,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import com.buddi.colombia.utilities.Log;
 import com.buddi.colombia.utilities.ReadProperties;
 import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
+import com.buddi.hdportal.pages.HDPortalManageAddNewVisitPage;
 import com.buddi.hdportal.pages.HDPortalManageAlertHistoryPage;
 import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
@@ -51,17 +57,21 @@ public class HDPortalBaseTest {
 	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
 	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
 	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
-	
-
+	protected HDPortalManageAddNewVisitPage hdPortalManageAddNewVisitPage;
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
+	private static String log4jFileName = "log4.xml";
+	private static String fileSeperator = System.getProperty("file.separator");
+	private static String log4jFileFolderPath = System.getProperty("user.dir") +fileSeperator+ "resources";
+	private static String log4jFileLocation =  log4jFileFolderPath +fileSeperator+ log4jFileName;
 
 
 	//Set driver binary automatically using WebDriverManager
 	@Parameters({"browser", "SuiteName"})
 	@BeforeSuite
 	public void setUp(@Optional("chromedriver") String browser, @Optional("ChromeSuite") String SuiteName) throws IOException, InterruptedException{
-
+		// Provide Log4j configuration settings	 
+		DOMConfigurator.configure(log4jFileLocation);
 		if(browser.equalsIgnoreCase("chromedriver")){
 			//setup the chromedriver using WebDriverManager
 			WebDriverManager.chromedriver().setup();
@@ -84,27 +94,46 @@ public class HDPortalBaseTest {
 			prefs.put("profile.password_manager_enabled", false);
 			chromeOptions.setExperimentalOption("prefs", prefs);
 			driver = new ChromeDriver(chromeOptions);
+			Log.info("Chrome driver instantiated...");
 		}else if(browser.equalsIgnoreCase("firefoxdriver")){
 			//setup the firefoxdriver using WebDriverManager
 			WebDriverManager.firefoxdriver().setup();
+			/*FirefoxOptions fireFoxOptions = new FirefoxOptions();
+			FirefoxProfile profile = new FirefoxProfile();
+			//Set a preference for this particular profile.
+			profile.setPreference("dom.ipc.plugins.enabled.libflashplayer.so", false);
+			fireFoxOptions.setProfile(profile);
+			fireFoxOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);*/
 			driver = new FirefoxDriver();
+			Log.info("Firefox driver instantiated...");
+		}else if(browser.equalsIgnoreCase("iedriver")){
+			//setup the iedriver using WebDriverManager
+			WebDriverManager.iedriver().setup();
+			// Set desired capabilities to Ignore IEDriver zoom level settings and disable native events.
+			DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+			caps.setCapability("EnableNativeEvents", false);
+			caps.setCapability("ignoreZoomSetting", true);
+			driver = new InternetExplorerDriver(caps);
+			Log.info("IE driver instantiated...");
 		}else{
-			/*driver = new RemoteWebDriver(new URL(properties.getPropertyValue("eaglePortalURL")),
+			/*driver = new RemoteWebDriver(new URL(properties.getPropertyValue("HDPORTAL_URL")),
 					getBrowserCapabilities(browser, SuiteName));
 			driver.manage().window().maximize();*/	
 		}
 
 		try{	
 			driver.get(properties.getPropertyValue("HDPORTAL_URL"));	
+			Log.info("Web application launched...");
 		}catch(Exception e){
 			Reporter.log("network server is slow..check internet connection");
 			throw new Error("network server is slow..check internet connection");
 		}
 
 		driver.manage().window().maximize();			
-		driver.manage().timeouts().pageLoadTimeout(80, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Log.info("Implicit wait applied on the driver for 30 seconds");
+
 
 		/*WebElement error = driver.findElement(By.className("error-code"));
 
@@ -168,19 +197,19 @@ public class HDPortalBaseTest {
 	protected static DesiredCapabilities getBrowserCapabilities(String browserType, String SuiteName) {
 		switch (browserType) {
 		case "firefox":
-			//logger.info("Opening firefox driver");
+			Log.info("Opening firefox browser...");
 			return DesiredCapabilities.firefox();
 		case "chrome":
-			//logger.info("Opening chrome driver");
-			System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+			Log.info("Opening chrome browser...");
+			//System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 			DesiredCapabilities chromeCaps = DesiredCapabilities.chrome();
 			return chromeCaps;
 		case "IE":
-			//logger.info("Opening IE driver");
+			Log.info("Opening IE browser...");
 			return DesiredCapabilities.internetExplorer();
 		default:
-			//logger.info("browser : " + browserType + " is invalid, Launching Firefox as browser of choice..");
-			return DesiredCapabilities.chrome();
+			Log.info("browser : " + browserType + " is invalid, launching Firefox as browser of choice..");
+			return DesiredCapabilities.firefox();
 		}
 	}
 
@@ -197,6 +226,7 @@ public class HDPortalBaseTest {
 		hdPortalManagePendingVisitsPage = new HDPortalManagePendingVisitsPage(driver);
 		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
 		hdPortalManageAlertHistoryPage = new HDPortalManageAlertHistoryPage(driver);
+		hdPortalManageAddNewVisitPage = new HDPortalManageAddNewVisitPage(driver);
 	}
 
 
@@ -207,17 +237,18 @@ public class HDPortalBaseTest {
 
 	@AfterSuite(alwaysRun = true)
 	public void clean() throws InterruptedException {
-		//logger.debug("after suite has been called");
+		Log.debug("after suite has been called");
 		try {
 			logoutHDPortal();
-			System.out.println("Logged out HD portal...");
+			//Log.info("Logged out HD portal...");
 		} catch (Exception e) {
 			Reporter.log(e.getMessage());
-			//logger.error("cleanup failed due to the error", e);
+			Log.error("Cleanup failed due to the error" +e.getMessage());
 		} finally {
 			driver.manage().deleteAllCookies();
 			driver.close();
 			driver.quit();
+			Log.info("Closing browser...");		
 		}
 	}
 }

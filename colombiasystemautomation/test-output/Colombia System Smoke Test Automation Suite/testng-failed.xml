@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Colombia System Smoke Test Automation Suite]">
-  <parameter name="browser" value="chromedriver"/>
-  <parameter name="SuiteName" value="ChromeSuite"/>
+  <parameter name="browser" value="firefoxdriver"/>
+  <parameter name="SuiteName" value="FirefoxSuite"/>
   <listeners>
     <listener class-name="com.buddi.colombia.listeners.TestListener"/>
   </listeners>
-  <test name="HD Portal Alert History(failed)">
+  <test name="Login HD Portal(failed)">
     <classes>
-      <class name="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest">
+      <class name="com.buddi.hdportal.tests.HDPortalLoginTest">
         <methods>
-          <include name="openAlertDetailPage"/>
-          <include name="verifyReopenAlertButtonInAlertDetailPage"/>
+          <include name="loginHDPortalWithValidCredentials" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="initialize"/>
-          <include name="accessAlertHistoryMenuAndVerifyGridTitle"/>
+          <include name="launchHDPortal"/>
           <include name="clean"/>
         </methods>
-      </class> <!-- com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest -->
+      </class> <!-- com.buddi.hdportal.tests.HDPortalLoginTest -->
     </classes>
-  </test> <!-- HD Portal Alert History(failed) -->
+  </test> <!-- Login HD Portal(failed) -->
 </suite> <!-- Failed suite [Colombia System Smoke Test Automation Suite] -->

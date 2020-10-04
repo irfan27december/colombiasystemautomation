@@ -20,12 +20,13 @@ public class AppiumServerJava {
 	public int appiumServerPort = 4723;*/
 	static ReadProperties readProperties = new ReadProperties();
 	public static int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
-	
-	public void startServer() {
+
+	//Method to start Appium server 
+	public void startAppiumServer() {
 		//Set Capabilities
 		capabilities = new DesiredCapabilities();
 		capabilities.setCapability("noReset", "false");
-		
+
 		//Build the Appium service
 		builder = new AppiumServiceBuilder();
 		builder.withIPAddress(readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS"));		
@@ -33,19 +34,19 @@ public class AppiumServerJava {
 		builder.withCapabilities(capabilities);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
 		builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");
-		
+
 		//Start the server with the builder
 		service = AppiumDriverLocalService.buildService(builder);
 		service.start();
 	}
-	
-	//Stop the service 
-	public void stopServer() {
+
+	//Stop the Appium server service 
+	public void stopAppiumServer() {
 		service.stop();
 	}
 
-	public boolean checkIfServerIsRunnning(int port) {
-		
+	//Method to check if Appium server status
+	public boolean checkIfAppiumServerIsRunnning(int port) {		
 		boolean isServerRunning = false;
 		ServerSocket serverSocket;
 		try {
@@ -63,41 +64,41 @@ public class AppiumServerJava {
 	public static void main(String[] args) {
 		AppiumServerJava appiumServer = new AppiumServerJava();
 		//int port = 4723;
-		if(!appiumServer.checkIfServerIsRunnning(appiumServerPort)) {
-			appiumServer.startServer();
-			appiumServer.stopServer();
+		if(!appiumServer.checkIfAppiumServerIsRunnning(appiumServerPort)) {
+			appiumServer.startAppiumServer();
+			appiumServer.stopAppiumServer();
 		} else {
 			System.out.println("Appium Server already running on port - " + appiumServerPort);
 		}
 	}
 }
 
-/*public class AppiumServerJava {
+	/*public class AppiumServerJava {
 	
-	public void startServer() {
-		Runtime runtime = Runtime.getRuntime();
-		try {
-			runtime.exec("cmd.exe /c start cmd.exe /k \"appium -a 127.0.0.1 -p 4723 --session-override -dc \"{\"\"noReset\"\": \"\"false\"\"}\"\"");
-			Thread.sleep(10000);
-		} catch (IOException | InterruptedException e) {
-			e.printStackTrace();
+		public void startServer() {
+			Runtime runtime = Runtime.getRuntime();
+			try {
+				runtime.exec("cmd.exe /c start cmd.exe /k \"appium -a 127.0.0.1 -p 4723 --session-override -dc \"{\"\"noReset\"\": \"\"false\"\"}\"\"");
+				Thread.sleep(10000);
+			} catch (IOException | InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 	
-	public void stopServer() {
-		Runtime runtime = Runtime.getRuntime();
-		try {
-			runtime.exec("taskkill /F /IM node.exe");
-			runtime.exec("taskkill /F /IM cmd.exe");
-		} catch (IOException e) {
-			e.printStackTrace();
+		public void stopServer() {
+			Runtime runtime = Runtime.getRuntime();
+			try {
+				runtime.exec("taskkill /F /IM node.exe");
+				runtime.exec("taskkill /F /IM cmd.exe");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 	
-	public static void main(String[] args) {
-		AppiumServerJava appiumServer = new AppiumServerJava();
-		appiumServer.startServer();
-
-		appiumServer.stopServer();
-	}
-}*/
+		public static void main(String[] args) {
+			AppiumServerJava appiumServer = new AppiumServerJava();
+			appiumServer.startServer();
+	
+			appiumServer.stopServer();
+		}
+	}*/

@@ -1,4 +1,4 @@
-package com.buddi.colombia.utilities;
+package com.buddi.colombiaapp.samples.excel;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,0 +1,249 @@
+2020-10-03 21:17:06,552 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-03 21:17:06,552 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-03 21:17:07,052 INFO  [WebDriverManager] Using chromedriver 85.0.4183.87 (since Chrome 85 is installed in your machine) 
+2020-10-03 21:17:07,078 INFO  [WebDriverManager] Exporting webdriver.chrome.driver as C:\Users\irfan\.m2\repository\webdriver\chromedriver\win32\85.0.4183.87\chromedriver.exe 
+2020-10-03 21:17:13,476 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:17:13,476 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:17:14,635 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-03 21:17:14,635 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:17:14,635 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:17:21,997 INFO  [Log] Email field found and email is entered 
+2020-10-03 21:54:21,742 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-03 21:54:21,780 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-03 21:54:22,282 INFO  [WebDriverManager] Using chromedriver 85.0.4183.87 (since Chrome 85 is installed in your machine) 
+2020-10-03 21:54:22,309 INFO  [WebDriverManager] Exporting webdriver.chrome.driver as C:\Users\irfan\.m2\repository\webdriver\chromedriver\win32\85.0.4183.87\chromedriver.exe 
+2020-10-03 21:54:28,096 INFO  [Log] Chrome driver instantiated 
+2020-10-03 21:54:28,805 INFO  [Log] Web application launched 
+2020-10-03 21:54:30,876 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-03 21:54:30,947 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:54:30,947 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:54:30,947 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-03 21:54:30,947 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:54:30,947 INFO  [Log] **************************************************************************************** 
+2020-10-03 21:54:43,858 INFO  [Log] Email field found and email is entered 
+2020-10-03 21:54:44,053 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-03 21:54:44,142 INFO  [Log] Login button is clicked...... 
+2020-10-03 21:54:44,142 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-03 21:54:44,142 INFO  [Log] X 
+2020-10-03 21:54:44,142 INFO  [Log] X 
+2020-10-03 21:54:44,142 INFO  [Log] X 
+2020-10-03 21:54:44,142 INFO  [Log] X 
+2020-10-03 21:54:47,399 INFO  [Log] Logout link element found and is clicked... 
+2020-10-03 21:54:47,497 INFO  [Log] Logged out HD portal successfully.... 
+2020-10-03 21:54:47,497 INFO  [Log] Logged out HD portal... 
+2020-10-03 21:54:52,202 INFO  [Log] Browser closed 
+2020-10-04 19:27:27,868 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 19:27:27,868 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 19:27:31,373 INFO  [WebDriverManager] Using chromedriver 85.0.4183.87 (since Chrome 85 is installed in your machine) 
+2020-10-04 19:27:31,584 INFO  [WebDriverManager] Exporting webdriver.chrome.driver as C:\Users\irfan\.m2\repository\webdriver\chromedriver\win32\85.0.4183.87\chromedriver.exe 
+2020-10-04 19:27:46,537 INFO  [Log] Chrome driver instantiated... 
+2020-10-04 19:27:47,790 INFO  [Log] Web application launched... 
+2020-10-04 19:27:50,015 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 19:27:50,735 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:27:50,736 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:27:50,736 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 19:27:50,736 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:27:50,736 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:27:50,752 INFO  [Log] Launched HD portal... 
+2020-10-04 19:27:50,752 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 19:27:50,752 INFO  [Log] X 
+2020-10-04 19:27:50,752 INFO  [Log] X 
+2020-10-04 19:27:54,544 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 19:28:01,475 INFO  [Log] Email field found and email is entered 
+2020-10-04 19:28:01,780 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 19:28:01,898 INFO  [Log] Login button is clicked...... 
+2020-10-04 19:28:01,898 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 19:28:01,899 INFO  [Log] X 
+2020-10-04 19:28:01,899 INFO  [Log] X 
+2020-10-04 19:28:04,366 INFO  [Log] Logout link element found and is clicked... 
+2020-10-04 19:28:04,486 INFO  [Log] Logged out HD portal successfully.... 
+2020-10-04 19:28:09,552 INFO  [Log] Browser closed 
+2020-10-04 19:29:02,886 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 19:29:02,886 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 19:29:05,558 INFO  [WebDriverManager] Using geckodriver 0.27.0 (since Firefox 81 is installed in your machine) 
+2020-10-04 19:29:05,597 INFO  [WebDriverManager] Reading https://api.github.com/repos/mozilla/geckodriver/releases to seek geckodriver 
+2020-10-04 19:29:05,882 INFO  [Downloader] Downloading https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-win64.zip 
+2020-10-04 19:29:16,199 INFO  [Downloader] Extracting binary from compressed file geckodriver-v0.27.0-win64.zip 
+2020-10-04 19:29:16,286 INFO  [WebDriverManager] Exporting webdriver.gecko.driver as C:\Users\irfan\.m2\repository\webdriver\geckodriver\win64\0.27.0\geckodriver.exe 
+2020-10-04 19:29:33,571 INFO  [Log] Firefox driver instantiated... 
+2020-10-04 19:29:38,670 INFO  [Log] Web application launched... 
+2020-10-04 19:29:39,565 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 19:29:41,710 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:29:41,710 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:29:41,710 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 19:29:41,710 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:29:41,710 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:29:41,718 INFO  [Log] Launched HD portal... 
+2020-10-04 19:29:41,718 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 19:29:41,718 INFO  [Log] X 
+2020-10-04 19:29:41,718 INFO  [Log] X 
+2020-10-04 19:29:43,226 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 19:29:47,663 INFO  [Log] Email field found and email is entered 
+2020-10-04 19:29:48,072 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 19:29:48,379 INFO  [Log] Login button is clicked...... 
+2020-10-04 19:29:48,379 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 19:29:48,379 INFO  [Log] X 
+2020-10-04 19:29:48,380 INFO  [Log] X 
+2020-10-04 19:30:05,761 INFO  [Log] Logout link element found and is clicked... 
+2020-10-04 19:30:06,146 INFO  [Log] Logged out HD portal successfully.... 
+2020-10-04 19:38:56,030 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 19:38:56,030 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 19:38:56,568 INFO  [WebDriverManager] Using geckodriver 0.27.0 (since Firefox 81 is installed in your machine) 
+2020-10-04 19:38:56,596 INFO  [WebDriverManager] Exporting webdriver.gecko.driver as C:\Users\irfan\.m2\repository\webdriver\geckodriver\win64\0.27.0\geckodriver.exe 
+2020-10-04 19:39:08,822 INFO  [Log] Firefox driver instantiated... 
+2020-10-04 19:39:12,240 INFO  [Log] Web application launched... 
+2020-10-04 19:39:12,573 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 19:39:13,330 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:39:13,330 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:39:13,330 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 19:39:13,330 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:39:13,330 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:39:13,335 INFO  [Log] Launched HD portal... 
+2020-10-04 19:39:13,335 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 19:39:13,335 INFO  [Log] X 
+2020-10-04 19:39:13,335 INFO  [Log] X 
+2020-10-04 19:39:14,708 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 19:39:27,129 INFO  [Log] Email field is displayed and email is entered 
+2020-10-04 19:39:27,490 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 19:42:37,733 ERROR [Log] Cleanup failed due to the errorFailed to convert data to an object
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 2688, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c329c9b6-68b5-42d9-910f-665f7bfd6a91
+*** Element info: {Using=xpath, value=//span[text()='Logout']} 
+2020-10-04 19:57:48,465 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 19:57:48,465 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 19:57:48,992 INFO  [WebDriverManager] Using geckodriver 0.27.0 (since Firefox 81 is installed in your machine) 
+2020-10-04 19:57:49,019 INFO  [WebDriverManager] Exporting webdriver.gecko.driver as C:\Users\irfan\.m2\repository\webdriver\geckodriver\win64\0.27.0\geckodriver.exe 
+2020-10-04 19:57:55,958 INFO  [Log] Firefox driver instantiated... 
+2020-10-04 19:57:59,195 INFO  [Log] Web application launched... 
+2020-10-04 19:57:59,496 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 19:57:59,727 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:57:59,727 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:57:59,727 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 19:57:59,727 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:57:59,727 INFO  [Log] **************************************************************************************** 
+2020-10-04 19:57:59,731 INFO  [Log] Launched HD portal... 
+2020-10-04 19:57:59,731 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 19:57:59,731 INFO  [Log] X 
+2020-10-04 19:57:59,731 INFO  [Log] X 
+2020-10-04 19:58:00,256 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 19:58:08,812 INFO  [Log] Email field is displayed and email is entered 
+2020-10-04 19:58:09,146 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 19:59:51,872 ERROR [Log] Cleanup failed due to the errorFailed to convert data to an object
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 1900, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 03bcc838-6711-4ac6-97a6-971f8bbef2d8
+*** Element info: {Using=xpath, value=//span[text()='Logout']} 
+2020-10-04 20:01:42,820 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 20:01:42,821 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 20:01:43,349 INFO  [WebDriverManager] Using geckodriver 0.27.0 (since Firefox 81 is installed in your machine) 
+2020-10-04 20:01:43,379 INFO  [WebDriverManager] Exporting webdriver.gecko.driver as C:\Users\irfan\.m2\repository\webdriver\geckodriver\win64\0.27.0\geckodriver.exe 
+2020-10-04 20:01:48,080 INFO  [Log] Firefox driver instantiated... 
+2020-10-04 20:01:51,032 INFO  [Log] Web application launched... 
+2020-10-04 20:01:51,520 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 20:01:52,021 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:01:52,021 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:01:52,021 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 20:01:52,021 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:01:52,021 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:01:52,026 INFO  [Log] Launched HD portal... 
+2020-10-04 20:01:52,026 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 20:01:52,026 INFO  [Log] X 
+2020-10-04 20:01:52,026 INFO  [Log] X 
+2020-10-04 20:01:52,567 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 20:01:59,542 INFO  [Log] Email field is displayed and email is entered 
+2020-10-04 20:01:59,865 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 20:03:23,183 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 20:03:23,183 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 20:03:23,700 INFO  [WebDriverManager] Using geckodriver 0.27.0 (since Firefox 81 is installed in your machine) 
+2020-10-04 20:03:23,727 INFO  [WebDriverManager] Exporting webdriver.gecko.driver as C:\Users\irfan\.m2\repository\webdriver\geckodriver\win64\0.27.0\geckodriver.exe 
+2020-10-04 20:03:29,140 INFO  [Log] Firefox driver instantiated... 
+2020-10-04 20:03:32,348 INFO  [Log] Web application launched... 
+2020-10-04 20:03:32,654 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 20:03:33,136 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:03:33,136 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:03:33,136 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 20:03:33,136 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:03:33,136 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:03:33,144 INFO  [Log] Launched HD portal... 
+2020-10-04 20:03:33,144 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 20:03:33,144 INFO  [Log] X 
+2020-10-04 20:03:33,144 INFO  [Log] X 
+2020-10-04 20:03:33,655 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 20:03:41,049 INFO  [Log] Email field is displayed and email is entered 
+2020-10-04 20:03:41,385 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 20:04:33,349 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 20:04:33,350 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 20:04:33,977 INFO  [WebDriverManager] Using geckodriver 0.27.0 (since Firefox 81 is installed in your machine) 
+2020-10-04 20:04:34,018 INFO  [WebDriverManager] Exporting webdriver.gecko.driver as C:\Users\irfan\.m2\repository\webdriver\geckodriver\win64\0.27.0\geckodriver.exe 
+2020-10-04 20:04:42,917 INFO  [Log] Firefox driver instantiated... 
+2020-10-04 20:04:49,087 INFO  [Log] Web application launched... 
+2020-10-04 20:04:49,433 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 20:04:49,817 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:04:49,817 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:04:49,817 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 20:04:49,817 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:04:49,817 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:04:49,821 INFO  [Log] Launched HD portal... 
+2020-10-04 20:04:49,821 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 20:04:49,821 INFO  [Log] X 
+2020-10-04 20:04:49,821 INFO  [Log] X 
+2020-10-04 20:04:50,332 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 20:05:00,372 INFO  [Log] Email field is displayed and email is entered 
+2020-10-04 20:05:00,697 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 20:05:46,037 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 20:05:46,038 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 20:05:46,678 INFO  [WebDriverManager] Reading https://selenium-release.storage.googleapis.com/ to seek IEDriverServer 
+2020-10-04 20:05:48,370 INFO  [Downloader] Downloading https://selenium-release.storage.googleapis.com/3.150/IEDriverServer_x64_3.150.0.zip 
+2020-10-04 20:05:49,225 INFO  [Downloader] Extracting binary from compressed file iedriverserver_x64_3.150.0.zip 
+2020-10-04 20:05:49,267 INFO  [WebDriverManager] Exporting webdriver.ie.driver as C:\Users\irfan\.m2\repository\webdriver\IEDriverServer\x64\3.150\IEDriverServer.exe 
+2020-10-04 20:06:08,307 ERROR [Log] Cleanup failed due to the errornull 
+2020-10-04 20:07:03,724 ERROR [Log] Cleanup failed due to the errorFailed to convert data to an object
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 4452, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: eager, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 4c0c9c7b-d824-41b1-a0aa-854390f640de
+*** Element info: {Using=xpath, value=//span[text()='Logout']} 
+2020-10-04 20:07:04,860 ERROR [Log] Cleanup failed due to the errorFailed to convert data to an object
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'LAPTOP-I3V0BKGE', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_221'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 81.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200917005511, moz:geckodriverVersion: 0.27.0, moz:headless: false, moz:processID: 6636, moz:profile: C:\Users\irfan\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c8e37417-6d58-4b4c-8e20-e675173d74ec
+*** Element info: {Using=xpath, value=//span[text()='Logout']} 
+2020-10-04 20:09:18,832 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 20:09:18,832 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 20:09:19,345 INFO  [WebDriverManager] Reading https://selenium-release.storage.googleapis.com/ to seek IEDriverServer 
+2020-10-04 20:09:20,611 INFO  [WebDriverManager] Exporting webdriver.ie.driver as C:\Users\irfan\.m2\repository\webdriver\IEDriverServer\x64\3.150\IEDriverServer.exe 
+2020-10-04 20:09:22,921 INFO  [Log] IE driver instantiated... 
+2020-10-04 20:15:14,411 INFO  [WebDriverManager] Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot! 
+2020-10-04 20:15:14,412 INFO  [WebDriverManager] ====> http://tiny.cc/wdm-survey <==== 
+2020-10-04 20:15:14,927 INFO  [WebDriverManager] Using chromedriver 85.0.4183.87 (since Chrome 85 is installed in your machine) 
+2020-10-04 20:15:14,957 INFO  [WebDriverManager] Exporting webdriver.chrome.driver as C:\Users\irfan\.m2\repository\webdriver\chromedriver\win32\85.0.4183.87\chromedriver.exe 
+2020-10-04 20:15:24,110 INFO  [Log] Chrome driver instantiated... 
+2020-10-04 20:15:25,536 INFO  [Log] Web application launched... 
+2020-10-04 20:15:27,607 INFO  [Log] Implicit wait applied on the driver for 30 seconds 
+2020-10-04 20:15:27,911 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:15:27,911 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:15:27,911 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2020-10-04 20:15:27,911 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:15:27,911 INFO  [Log] **************************************************************************************** 
+2020-10-04 20:15:27,935 INFO  [Log] Launched HD portal... 
+2020-10-04 20:15:27,935 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 20:15:27,935 INFO  [Log] X 
+2020-10-04 20:15:27,935 INFO  [Log] X 
+2020-10-04 20:15:28,454 INFO  [Log] HD Portal login page is displayed... 
+2020-10-04 20:15:38,825 INFO  [Log] Email field is displayed and email is entered 
+2020-10-04 20:15:39,019 INFO  [Log] Password field is displayed and password is entered...... 
+2020-10-04 20:15:39,111 INFO  [Log] Login button is clicked...... 
+2020-10-04 20:15:39,111 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2020-10-04 20:15:39,111 INFO  [Log] X 
+2020-10-04 20:15:39,111 INFO  [Log] X 
+2020-10-04 20:17:01,673 INFO  [Log] Logout link element found and is clicked... 
+2020-10-04 20:17:01,771 INFO  [Log] Logged out HD portal successfully.... 
+2020-10-04 20:17:06,732 INFO  [Log] Closing browser... 

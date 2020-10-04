@@ -6,6 +6,7 @@ package com.buddi.hdportal.pages;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -181,6 +182,13 @@ public class HDPortalManageKnowledgeBasePage {
 		}
 	}
 
+	//Method to get knowledge base name
+	public String getKnowledgeBaseItemName(String strKnowledgeBaseName){
+		CommonActions.waitForElementToBeVisible(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
+		System.out.println("Knowledge base with name "+returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText()+" is present...");
+		return returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText();
+	}
+
 	//Method to search knowledge base by item name
 	public String searchKnowledgeBaseByItemName(String strKnowledgeBaseName){
 		CommonActions.waitForElementToBeVisible(driver, searchField);
@@ -188,7 +196,7 @@ public class HDPortalManageKnowledgeBasePage {
 			searchField.click();
 			searchField.clear();
 			searchField.sendKeys(strKnowledgeBaseName);
-			//driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+			searchField.sendKeys(Keys.ENTER);
 			CommonActions.waitForElementToBeVisible(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
 			System.out.println("Knowledge base with name "+returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText()+" is searched and is displayed...");
 			return returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText();
@@ -197,23 +205,21 @@ public class HDPortalManageKnowledgeBasePage {
 		}		
 	}
 
-	//Method to get knowledge base name
-	public String getKnowledgeBaseItemName(String strKnowledgeBaseName){
-		CommonActions.waitForElementToBeVisible(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
-		System.out.println("Knowledge base with name "+returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText()+" is present...");
-		return returnKnowledgeBaseNameElement(strKnowledgeBaseName).getText();
-	}
-
 	//Method to select knowledge base
 	public void selectKnowledgebase(String strKnowledgeBaseName){
-		navigateToKnowledgeBaseOption();
-		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		//navigateToKnowledgeBaseOption();
 		if(returnKnowledgeBaseNameElement(strKnowledgeBaseName).isDisplayed()){
+			CommonActions.waitForElementToBeVisible(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
 			CommonActions.waitForElementToBeClickable(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
+			//CommonActions.waitForElementToBeRefreshed(driver, returnKnowledgeBaseNameElement(strKnowledgeBaseName));
 			CommonActions.clickElementToHandleStaleElementException(returnKnowledgeBaseNameElement(strKnowledgeBaseName));
-			System.out.println("Clicked/Selected on knowledge base with name: "+strKnowledgeBaseName);
+			if(returnKnowledgeBaseNameElement(strKnowledgeBaseName).isSelected()){
+				System.out.println("Clicked/Selected on knowledge base with name: "+strKnowledgeBaseName);
+			}else{
+				System.out.println("Failed to click on knowledge base with name: "+strKnowledgeBaseName);
+			}			
 		}else{
-			System.out.println("Failed to click on knowledge base with name: "+strKnowledgeBaseName);
+			System.out.println("Unable to click or selecknowledge base with name: "+strKnowledgeBaseName);
 		}
 	}
 

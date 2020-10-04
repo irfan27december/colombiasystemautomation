@@ -10,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
+import com.buddi.colombia.utilities.Log;
 import com.buddi.colombia.utilities.ReadProperties;
 
 /**
@@ -46,17 +47,28 @@ public class HDPortalLoginPage {
 	//Method to set user name
 	public void setUserName(String userName){
 		CommonActions.waitForElementToBeClickable(driver, hdUserNameElement);
-		hdUserNameElement.clear();	
-		hdUserNameElement.click();	
-		hdUserNameElement.sendKeys(userName);
+		if(hdUserNameElement.isDisplayed()){
+			hdUserNameElement.clear();	
+			hdUserNameElement.click();	
+			hdUserNameElement.sendKeys(userName);
+			Log.info("Email field is displayed and email is entered");
+		}else{
+			Log.error("Email field is not displayed..."); 
+		}
+		
 	}
 
 	//Method to set password
 	public void setPassword(String password){
 		CommonActions.waitForElementToBeClickable(driver, hdPasswordElement);
-		hdPasswordElement.clear();	
-		hdPasswordElement.click();	
-		hdPasswordElement.sendKeys(password);
+		if(hdPasswordElement.isDisplayed()){
+			hdPasswordElement.clear();	
+			hdPasswordElement.click();	
+			hdPasswordElement.sendKeys(password);
+			Log.info("Password field is displayed and password is entered......");
+		}else{
+			Log.error("Password field is not displayed..."); 
+		}		
 	}
 
 	// To check if login panel appeared
@@ -67,7 +79,8 @@ public class HDPortalLoginPage {
 	//Method to click login element
 	public void clickLogin(){
 		CommonActions.waitForElementToBeClickable(driver, loginElement);
-		loginElement.click();		
+		loginElement.click();	
+		Log.info("Login button is clicked......");
 	}
 
 	// Method to login HD portal
@@ -78,32 +91,34 @@ public class HDPortalLoginPage {
 	}
 
 	// To check if login failed dialog box is displayed
-	public boolean isloginFailedDialogBoxDisplayed(){
-		System.out.println("Is login failed dialog box appeared... "+loginFailedDialogBoxTitle.isDisplayed());
+	public boolean isloginFailedDialogBoxDisplayed(){ 
+		Log.info("Is login failed dialog box appeared... "+loginFailedDialogBoxTitle.isDisplayed());
 		return loginFailedDialogBoxTitle.isDisplayed();
 	}
 
 	// To check if login failed message appeared
 	public boolean isUserIconDisplayed(){
-		WebElement userIconElement = driver.findElement(By.xpath("//span[@class='x-btn-icon-el x-btn-icon-el-default-small x-fa fa-user ']"));
-		System.out.println("Is user icon displayed : "+userIconElement.isDisplayed());
+		WebElement userIconElement = driver.findElement(By.xpath("//span[@class='x-btn-icon-el x-btn-icon-el-default-small x-fa fa-user ']")); 
+		Log.info("Is user icon displayed : "+userIconElement.isDisplayed());
 		return userIconElement.isDisplayed();
 	}
 
 	//Method to click logout element
 	public boolean isLogOutOptionDisplayed(){
+		Log.info("Is logout link displayed : "+logOutElement.isDisplayed());
 		return logOutElement.isDisplayed();		
 	}
 
 	//Method to click logout element
 	public void clickLogOut(){
 		CommonActions.waitForElementToBeClickable(driver, logOutElement);
+		Log.info("Logout link element found and is clicked...");
 		logOutElement.click();		
 	}
 
 	// Method to logout HD portal
 	public void logoutHDPortal(){
 		clickLogOut();
-		//System.out.println("Logged out HD portal successfully....");
+		Log.info("Logged out HD portal successfully....");
 	}
 }
