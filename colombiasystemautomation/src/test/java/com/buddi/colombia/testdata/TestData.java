@@ -42,10 +42,11 @@ public class TestData {
 	public static final String CLOSE_ALERT_NOTES = "Closing alert...";
 
 	//Add New Visit related variables
-	public static final String ADD_VISIT_WEARER_NUI = "1907";
-	public static final String SELECT_JOBTYPE = "Installation";
-	public static final String SELECT_WEARERGROUP = "CCP BOGOTA";
-	public static final String ADD_NEW_VISIT_WEARER=" ~ test11, SMD Col";
+	public static final String ADD_VISIT_WEARER_NUI = "1075062";
+	public static final String SELECT_JOBTYPE = "End of Monitoring";
+	public static final String SELECT_WEARERGROUP = "CPAMS LA PAZ";
+	//"1075062 ~ VIDAL  CEPEDA , JOHN JAIRO "(Add Visit automation Wearer)
+	public static final String ADD_NEW_VISIT_WEARER=" ~ VIDAL  CEPEDA , JOHN JAIRO ";
 	public static final String SELECT_FIELD_OFFICER = "Mohammed, Sumaiah (testbuddi1212@gmail.com)";
 	public static final String VISIT_START_DATE_FORMAT = "dd/MM/yyyy";
 	public static final String VISIT_START_HOURS = "20";
@@ -53,6 +54,12 @@ public class TestData {
 	public static final String VISIT_END_DATE_FORMAT = "dd/MM/yyyy";
 	public static final String VISIT_END_HOURS= "22";
 	public static final String VISIT_EMD_MINUTES= "40";
-	public static final String ADD_VISIT_NOTES= "Add New Visit is created";
+	public static final String ADD_VISIT_NOTES= "Creatig new visit...";
+
+	//Cancelled Visit related variables
+	public static final String SELECT_OUTCOME = "Cancelled";
+	public static final String SELECT_REASON = "No visit required";
+	public static final String ENTER_NOTES = "Add New Visit is cancelled";
+
 
 }
