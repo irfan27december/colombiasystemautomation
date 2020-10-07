@@ -74,7 +74,7 @@ public class HDPortalManageAddNewVisitsTest extends HDPortalBaseTest{
 
 	// @Fill all required fields and cancelled visit usecase
 	@Test(priority = 5, groups = "Smoke", dependsOnMethods = { "verifyAddNewVisit" }) 
-	public void vcancelledAddNewVisit() throws AWTException {
+	public void cancelledAddNewVisit() throws AWTException {
 		//click action dialog
 		hdPortalManageAddNewVisitPage.clickActionDialogButton();
 		//verify the action dialog title
