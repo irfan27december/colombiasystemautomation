@@ -54,7 +54,7 @@ public class TestData {
 	public static final String VISIT_END_DATE_FORMAT = "dd/MM/yyyy";
 	public static final String VISIT_END_HOURS= "22";
 	public static final String VISIT_EMD_MINUTES= "40";
-	public static final String ADD_VISIT_NOTES= "Add New Visit is created";
+	public static final String ADD_VISIT_NOTES= "Creatig new visit...";
 
 	//Cancelled Visit related variables
 	public static final String SELECT_OUTCOME = "Cancelled";
