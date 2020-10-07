@@ -1,21 +1,14 @@
 package com.buddi.hdportal.pages;
 
 import java.awt.AWTException;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
 import com.buddi.colombia.common.CommonActions;
-import com.buddi.colombia.testdata.TestData;
 import com.buddi.colombia.utilities.DateToString;
 import com.buddi.colombia.utilities.ReadProperties;
 
@@ -27,7 +20,6 @@ import com.buddi.colombia.utilities.ReadProperties;
 
 public class HDPortalManageAddNewVisitPage {
 
-
 	WebDriver driver;
 	ReadProperties properties = new ReadProperties();
 
@@ -37,7 +29,6 @@ public class HDPortalManageAddNewVisitPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	//Using FindBy for locating elements
 
 	//Web elements related to pending visits
 	//visitsMenuElement
@@ -45,60 +36,82 @@ public class HDPortalManageAddNewVisitPage {
 	private WebElement visitsMenuElement;
 	//pendingVisitsElement
 	@FindBy(xpath = "//div[@class='x-treelist-item-text' and @id='ext-element-31' and text()='Pending']") 
-	private WebElement pendingVisitsElement;
+	private WebElement pendingVisitsMenuElement;
 	//pendingVisitsGridTitleElement
 	@FindBy(xpath = "//div[@class='x-title-text x-title-text-default-framed x-title-item' and text()='Pending Visits']") 
 	private WebElement pendingVisitsGridTitleElement;
-
+	//Collapse and expand menu panel elements
+	@FindBy(xpath = "//div[@class='x-tool-tool-el x-tool-img x-tool-collapse-left ']")
+	private WebElement collapsePanelElement;
+	@FindBy(xpath ="//div[@class='x-tool-tool-el x-tool-img x-tool-expand-right ']")
+	private WebElement expandPanelElement; 
 	//Add Button
 	@FindBy(xpath = ".//span[@class = 'x-btn-inner x-btn-inner-default-toolbar-small' and contains(text(), 'Add')]")
-	private WebElement pendingVisitsAddToolBarButtonElement;	
-
-	// AddNewVisit windowtitle
+	private WebElement addToolBarButtonElement;	
+	// AddNewVisit window title
 	@FindBy(xpath = "//div[@class = 'x-title-text x-title-text-default x-title-item' and contains(text(), 'Add New Visit')]")
 	//".//div[@class = 'x-title-text x-title-text-default x-title-item'][starts-with(@id,'visitsNewAddWindow')]") 
 	private WebElement addNewVisitDialogTitleElement;
-
 	//Elements in Add New visit window 
 	@FindBy(xpath ="//input[@name='job_type_id']") 
-	private WebElement jobtypeDropDown;
-
-
+	private WebElement jobtypeDropDownElement;
 	@FindBy(xpath = "//input[@name='visitwearergroup']") 
-	private WebElement wearerGroupDropDown;
-
-
+	private WebElement wearerGroupDropDownElement;
 	@FindBy(xpath = "//input[@name='visitwearer']") 
-	private WebElement addVisitWearer;
-
+	private WebElement addVisitWearerDropDownElement;
 	@FindBy(xpath = "//input[@name='assignedofficer']")
-	private WebElement assignedfieldOfficerDropdown;
-
+	private WebElement assignedfieldOfficerDropdownElement;
+	// Start Dates related Elements
 	@FindBy(xpath = "//input[@name='startdate']") 
 	private WebElement startDateField;
 	@FindBy(xpath = "//input[@name='starthour']") 
 	private WebElement startHourField;
 	@FindBy(xpath = "//input[@name='startmin']") 
 	private WebElement startMinutesField;
-
+	// End Date related element 
 	@FindBy(xpath = "//input[@name='enddate']")
 	private WebElement endDateField;
 	@FindBy(xpath = "//input[@name='endhour']") 
 	private WebElement endHourField;
 	@FindBy(xpath = "//input[@name='endmin']") 
 	private WebElement endMinutesField;
-
+	//Notes text box element 
 	@FindBy(xpath = "//textarea[@name='notes']") 
-	private WebElement notesField;
-
+	private WebElement addVisitNotesTextBoxElement;
+	//Add Button
 	@FindBy(xpath = "//span[@class='x-btn-inner x-btn-inner-default-small' and contains(text(),'Add')]")
-	private WebElement addNewVisitButton;
-
+	private WebElement addNewVisitDialogAddButtonElement;
+	//Scheduled visits related element 
 	@FindBy(xpath= "//div[@class='x-treelist-item-text' and contains(text(),'Scheduled')]")
-	private WebElement scheduledVisitsElement;
-
+	private WebElement scheduledVisitsMenuElement;
 	@FindBy(xpath="//div[@class='x-title-text x-title-text-default-framed x-title-item'][starts-with(text(),'Visit - ')]")
-	private WebElement addNewVisitDetailPageElement;
+	private WebElement scheduledVisitGridTitleElement;
+	//Open scheduled visit
+	@FindBy(xpath="//div[@class='x-grid-cell-inner x-grid-cell-inner-action-col']/span[@class='btn btn-default btn-sm']")
+	private WebElement scheduledOpenVisitElement;
+	//Action Visit
+	@FindBy(xpath="//span[@class='x-btn-inner x-btn-inner-default-toolbar-small' and text()='Action Visit']")
+	private WebElement actionDialogButtonElement;
+	@FindBy(xpath="//div[@class='x-title-text x-title-text-default x-title-item' and text()='Action Visit']")
+	private WebElement actionDialogTitleElement;
+	//Select OutCome option
+	@FindBy(xpath="//input[@name='outcome_combo']")
+	private WebElement outComeDropdownElement;
+	// Select cancelled reason
+	@FindBy(xpath="//input[@name='cancelled_combo']")
+	private WebElement cancelledReasonDropdownElement;
+	//Notes text Box 
+	@FindBy(xpath="//textarea[@name='notes']")
+	private WebElement cancelledNotesTextBoxElement;
+	//Update button
+	@FindBy(xpath="//span[@class='x-btn-inner x-btn-inner-default-small' and text()='Update']")
+	private WebElement actionDialogUpdateButtonElement;
+	//History menu element
+	@FindBy(xpath="//div[@class='x-treelist-item-text' and text()='History']")
+	private WebElement visitHistoryMenuElement;
+	@FindBy(xpath="//div[@class='x-title-text x-title-text-default-framed x-title-item' and text()='Visit History']")
+	private WebElement visitHistoryGridTitleElement;
+
 
 	// Method to click LHS menu option
 	public void clickVisitsMenu() {
@@ -111,10 +124,10 @@ public class HDPortalManageAddNewVisitPage {
 		}
 	}
 	// Method to click Pending option
-	public void clickPendingOption() {
-		CommonActions.waitForElementToBeVisible(driver, pendingVisitsElement);
-		if(pendingVisitsElement.isDisplayed()){
-			pendingVisitsElement.click();
+	public void clickPendingOption() throws AWTException {
+		CommonActions.waitForElementToBeVisible(driver, pendingVisitsMenuElement);
+		if(pendingVisitsMenuElement.isDisplayed()){
+			pendingVisitsMenuElement.click();
 			System.out.println("Pending visits sub menu is clicked...");
 		}else{
 			System.out.println("Pending visits sub menu is not displayed...");
@@ -122,113 +135,97 @@ public class HDPortalManageAddNewVisitPage {
 	}
 
 	// Method to verify Pending Visits Grid title
-	public void verifyPendingVisitsGridTitle() {
+	public boolean isPendingVisitsGridTitleDisplayed() {
 		CommonActions.waitForElementToBeVisible(driver, pendingVisitsGridTitleElement);
 		if(pendingVisitsGridTitleElement.isDisplayed()){
 			System.out.println(pendingVisitsGridTitleElement.getText()+" : pending visit grid title is verified ...");
-			return;
+			return true;
 		}else{
 			System.out.println("Pending visits sub menu is not displayed...");
+			return false;
 		}	
 	}	
 
-	//Method to click Add new visit tool bar button
+	//Method to click Add tool bar button
 	public void clickAddNewVisitToolBarButton() throws InterruptedException, AWTException{
-		//CommonActions.zoomOut();
-		WebElement collapsePanelElement = driver.findElement(By.xpath("//div[@class='x-tool-tool-el x-tool-img x-tool-collapse-left ']"));
-		collapsePanelElement.click();
-		CommonActions.waitForElementToBeVisible(driver, pendingVisitsAddToolBarButtonElement);//Irfan: Added this line
-		//CommonActions.javaScriptClick(driver, pendingVisitsAddToolBarButtonElement); //Irfan: This element must be clicked once it is displayed
-		if(pendingVisitsAddToolBarButtonElement.isDisplayed()){ //Irfan: Here you need to check add tool bar button and not pendingVisitsElement
-			CommonActions.javaScriptClick(driver, pendingVisitsAddToolBarButtonElement);
-			System.out.println("Pending Visits Add Tool Bar Button is clicked...");
+		//CommonActions.waitForElementToBeClickable(driver, collapsePanelElement);
+		//collapsePanelElement.click();
+		CommonActions.zoomOut();
+		CommonActions.waitForElementToBeClickable(driver, addToolBarButtonElement);
+		if(addToolBarButtonElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, addToolBarButtonElement);
+			System.out.println("'Add' tool bar button is clicked...");
 		}else{
-			System.out.println("Pending Visits Add Tool Bar Button is not displayed...");
+			System.out.println("'Add' tool bar button is not displayed...");
 		}
-
 	}
 
-	//Method to verify Add New Visit dialog window title
-	public void verifyAddNewVisitDialogTitle() throws AWTException{
-		//CommonActions.zoomIn();
+	//Method to verify Add New Visit dialog window title  
+	public boolean isAddNewVisitDialogTitleDisplayed() throws AWTException{
+		CommonActions.zoomIn();
 		CommonActions.waitForElementToBeVisible(driver, addNewVisitDialogTitleElement);
 		if(addNewVisitDialogTitleElement.isDisplayed()){
-			System.out.println(addNewVisitDialogTitleElement.getText()+" : Add New Visit title is verified ...");
-			return; // Irfan: This method is not returning anything, no need to have
+			System.out.println(addNewVisitDialogTitleElement.getText()+" : dialog title is verified ...");
+			return true;
 		}else{
 			System.out.println("Add New visit dialog title is not displayed...");
+			return false;
 		}
 	}
 
 	//Method to select jobtype
 	public void setJobtype(String selectJobType ) {
 		driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
-		//CommonActions.javaScriptClick(driver, jobtypeDropDown);//Irfan: This should be called once the element is displayed
-		CommonActions.waitForElementToBeClickable(driver, jobtypeDropDown);
-		if(jobtypeDropDown.isDisplayed()){
-			CommonActions.javaScriptClick(driver, jobtypeDropDown);
+		CommonActions.waitForElementToBeClickable(driver, jobtypeDropDownElement);
+		if(jobtypeDropDownElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, jobtypeDropDownElement);
 			System.out.println("Select Job Type dropdown is clicked ...");
-			jobtypeDropDown.sendKeys(selectJobType);
+			jobtypeDropDownElement.sendKeys(selectJobType);
 			CommonActions.autoSuggestionMethod(driver);
 		}
 		else{
 			System.out.println("Select Job Type dropdown is not displayed ...");
 		}
-		/*jobtypeDropDown.click();
-		CommonActions.waitForElementToBeClickable(driver, jobtypeDropDown);
-		jobtypeDropDown.sendKeys(selectJobType);
-		CommonActions.autoSuggestionMethod(driver);*/ //Irfan:Not required, as this should be part of if-else
 	}
 
 	//Method to select the Wearer Group
 	public void setWearerGroup(String selectWearerGroup) {
-		CommonActions.waitForElementToBeClickable(driver, wearerGroupDropDown);
-		//CommonActions.javaScriptClick(driver, wearerGroupDropDown);//Irfan: This should be called once the element is displayed
-		if(wearerGroupDropDown.isDisplayed()){
-			CommonActions.javaScriptClick(driver, wearerGroupDropDown);
-			wearerGroupDropDown.sendKeys(selectWearerGroup);
+		CommonActions.waitForElementToBeClickable(driver, wearerGroupDropDownElement);
+		if(wearerGroupDropDownElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, wearerGroupDropDownElement);
+			wearerGroupDropDownElement.sendKeys(selectWearerGroup);
 			CommonActions.autoSuggestionMethod(driver);
 			System.out.println("WearerGroup dropdown is clicked...");
 		}else{
 			System.out.println("WearerGroup dropdown is not displayed...");
 		}
-		/*wearerGroupDropDown.click();
-		wearerGroupDropDown.sendKeys(selectWearerGroup);
-		CommonActions.autoSuggestionMethod(driver);*///Irfan:Not required, as this should be part of if-else
 	}
 
 	//Method to select the Wearer 
 	public void setAddNewVisitWearer(String addNewVisitWearerNUI, String addNewVisitWearer) {
-		CommonActions.waitForElementToBeVisible(driver, addVisitWearer);
-		if(addVisitWearer.isDisplayed()){
-			addVisitWearer.click();
-			String str = addNewVisitWearerNUI+addNewVisitWearer;//Irfan append NUI and wearer name and pass it
-			addVisitWearer.sendKeys(addNewVisitWearerNUI, addNewVisitWearer);// Either send wearer NUI + wearer name or just wearer name
+		CommonActions.waitForElementToBeVisible(driver, addVisitWearerDropDownElement);
+		if(addVisitWearerDropDownElement.isDisplayed()){
+			addVisitWearerDropDownElement.click();
+			String str = addNewVisitWearerNUI+addNewVisitWearer;
+			addVisitWearerDropDownElement.sendKeys(str);
 			CommonActions.autoSuggestionMethod(driver);
 			System.out.println("Select Wearer dropdown is clicked...");
 		}else{
 			System.out.println("Select Wearer dropdown is not displayed...");
 		}
-		/*addVisitWearer.click();
-		addVisitWearer.sendKeys(addNewVisitWearerNUI, addNewVisitWearer);
-		CommonActions.autoSuggestionMethod(driver);*/ //Irfan:Not required, as this should be part of if-else
 	}
-	//Method to assinged fieldofficer
+
+	//Method to assigned field officer
 	public void setAssignedFieldOfficer(String assignedFieldOfficer) {
-		CommonActions.waitForElementToBeClickable(driver, assignedfieldOfficerDropdown);
-		//CommonActions.javaScriptClick(driver, assignedfieldOfficerDropdown);  //Irfan: This should be clicked once element is displayed
-		if(assignedfieldOfficerDropdown.isDisplayed()){
-			CommonActions.javaScriptClick(driver, assignedfieldOfficerDropdown);
-			//assignedfieldOfficerDropdown.click(); //Irfan: this is not required as you are clicking element using JS
-			System.out.println("assigned field Officer dropdown is clicked...");
-			assignedfieldOfficerDropdown.sendKeys(assignedFieldOfficer);
+		CommonActions.waitForElementToBeClickable(driver, assignedfieldOfficerDropdownElement);
+		if(assignedfieldOfficerDropdownElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, assignedfieldOfficerDropdownElement);
+			System.out.println("Assigned field Officer dropdown is clicked...");
+			assignedfieldOfficerDropdownElement.sendKeys(assignedFieldOfficer);
 			CommonActions.autoSuggestionMethod(driver);
 		}else{
 			System.out.println("assigned field Officer dropdown is not displayed...");
 		}
-		/*assignedfieldOfficerDropdown.sendKeys(assignedFieldOfficer);
-		CommonActions.autoSuggestionMethod(driver);*/ //Irfan:Not required, as this should be part of if-else
-
 	}
 	//Method to set visit start date
 	public void setVisitStartDate(String visitStartDateFormat) {
@@ -239,7 +236,6 @@ public class HDPortalManageAddNewVisitPage {
 			startDateField.sendKeys(DateToString.returnDate(visitStartDateFormat));
 		}else{
 			System.out.println("Start date is not displayed...");
-			return; //Irfan: This is not required as we are not returning anything
 		}
 	}
 
@@ -253,7 +249,6 @@ public class HDPortalManageAddNewVisitPage {
 			startHourField.sendKeys(Keys.TAB);
 		}else{
 			System.out.println("Start hours is not displayed...");
-			return;//Irfan: This is not required as we are not returning anything
 		}
 	}
 
@@ -267,7 +262,6 @@ public class HDPortalManageAddNewVisitPage {
 			startMinutesField.sendKeys(Keys.TAB);
 		}else{
 			System.out.println("Start minutes is not displayed...");
-			return;//Irfan: This is not required as we are not returning anything
 		}		
 	}
 
@@ -281,7 +275,6 @@ public class HDPortalManageAddNewVisitPage {
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		}else{
 			System.out.println("End date is not displayed...");
-			return;//Irfan: This is not required as we are not returning anything
 		}	
 	}
 
@@ -295,7 +288,6 @@ public class HDPortalManageAddNewVisitPage {
 			endHourField.sendKeys(Keys.TAB);
 		}else{
 			System.out.println("End hours is not displayed...");
-			return;//Irfan: This is not required as we are not returning anything
 		}	
 	}
 
@@ -309,41 +301,35 @@ public class HDPortalManageAddNewVisitPage {
 			endMinutesField.sendKeys(Keys.TAB);
 		}else{
 			System.out.println("End minutes is not displayed...");
-			return;//Irfan: This is not required as we are not returning anything
 		}		
 	}
 
 	//Method to set visit notes
 	public void setAddNewVisitNotes(String addNewVisitNotes){
-		CommonActions.waitForElementToBeVisible(driver, notesField);
-		if(notesField.isDisplayed()){
-			notesField.click();	
-			notesField.sendKeys(addNewVisitNotes);
+		CommonActions.waitForElementToBeClickable(driver, addVisitNotesTextBoxElement);
+		if(addVisitNotesTextBoxElement.isDisplayed()){
+			addVisitNotesTextBoxElement.click();	
+			addVisitNotesTextBoxElement.sendKeys(addNewVisitNotes);
 			System.out.println("Notes text box is clicked..");
 		}else{
 			System.out.println("Notes text box failed to clicked...");
 		}
-		//notesField.sendKeys(addNewVisitNotes);//Irfan this should be part of if-else
 	}
-
 	//Method to click add button in Add New visit dialog window
-	public void clickAddNewVisitButton() {
-		CommonActions.waitForElementToBeVisible(driver, addNewVisitButton);//Irfan: Added this command
-		//CommonActions.javaScriptClick(driver, addNewVisitButton);//Irfan: This should be part of if-else
-		if(addNewVisitButton.isEnabled() && addNewVisitButton.isDisplayed()){
-			CommonActions.javaScriptClick(driver, addNewVisitButton);
+	public void clickAddNewVisitDialogAddButton() {
+		CommonActions.waitForElementToBeClickable(driver, addNewVisitDialogAddButtonElement);
+		if(addNewVisitDialogAddButtonElement.isEnabled() && addNewVisitDialogAddButtonElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, addNewVisitDialogAddButtonElement);
 			System.out.println("Add new visit button is clicked..");
-			WebElement expandPanelElement = driver.findElement(By.xpath("//div[@class='x-tool-tool-el x-tool-img x-tool-expand-right ']"));
-			CommonActions.waitForElementToBeVisible(driver, expandPanelElement);
-			expandPanelElement.click();//Irfan: Define it at the top where other elements are defined
+			//CommonActions.waitForElementToBeVisible(driver, expandPanelElement);
+			//expandPanelElement.click();
 		}else{
 			System.out.println("Failed to click add new visit button..");
 		}
-		/*addNewVisitButton.click();*///Irfan: This should be part of if-else
 	}
 
 	//Method to create new visit
-	public void createNewAddVisit(String selectJobType, String selectWearerGroup, String addNewVisitWearerNUI, String addNewVisitWearer,
+	public void createAddNewVisit(String selectJobType, String selectWearerGroup, String addNewVisitWearerNUI, String addNewVisitWearer,
 			String assignedFieldOfficer,String visitStartDateFormat, String visitStartHours, String visitStartMinutes,
 			String visitEndDateFormat,String visitEndHours, String visitEndMinutes, String addVisitNotes){
 		setJobtype(selectJobType);
@@ -357,36 +343,37 @@ public class HDPortalManageAddNewVisitPage {
 		setVisitEndHours(visitEndHours);
 		setVisitEndMinutes(visitEndMinutes);
 		setAddNewVisitNotes(addVisitNotes);
-		clickAddNewVisitButton();
+		clickAddNewVisitDialogAddButton();
 	}
 
 	// Method for viewing created Add New visit wearer details
-	public void verifyCreatedAddNewVisit() {	
-		CommonActions.waitForElementToBeVisible(driver, addNewVisitDetailPageElement);//Irfan: Added this command
-		//CommonActions.javaScriptClick(driver, addNewVisitDetailPageElement);//Irfan: This should be part of if-else
-		if(addNewVisitDetailPageElement.isDisplayed()) {
-			CommonActions.javaScriptClick(driver, addNewVisitDetailPageElement);
-			System.out.println(addNewVisitDetailPageElement.getText()+""
-					+ " -: title is displayed...\n Add New Visit created successfully...");
+	public boolean isScheduledVisitGridTitleDisplayed() throws AWTException {	
+		CommonActions.waitForElementToBeVisible(driver, scheduledVisitGridTitleElement);
+		if(scheduledVisitGridTitleElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, scheduledVisitGridTitleElement);
+			System.out.println(scheduledVisitGridTitleElement.getText()	
+					+" : Visit title is displayed...\n Add New Visit created successfully...");
+			return true;
+		}
+		else{
+			System.out.println(scheduledVisitGridTitleElement.getText()
+					+" : Visit title is not displayed...\n Add New Visit is not created...");
+			return false;
 		}
 	}
-
-	//Method to navigate to Shedulded Page
-	public void navigateToSheduledVisitsOption(){ // Irfan: Correct the spelling of Shedulded, it should be Scheduled
-		CommonActions.waitForElementToBeVisible(driver, scheduledVisitsElement);//Irfan: Added this command
-		//CommonActions.javaScriptClick(driver, scheduledVisitsElement);//Irfan: This should be part of if-else
-		if(scheduledVisitsElement.isDisplayed()) {
-			CommonActions.javaScriptClick(driver, scheduledVisitsElement);
+	//Method to navigate to Scheduled Page
+	public void clickSheduledVisitsMenu(){
+		CommonActions.waitForElementToBeVisible(driver, scheduledVisitsMenuElement);
+		if(scheduledVisitsMenuElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, scheduledVisitsMenuElement);
 			System.out.println("Scheduled Visits menu is clicked...");
 		}
 		else{
 			System.out.println("Failed to clicked on Scheduled Visits..");
 		}
-		//scheduledVisitsElement.click();//Irfan: This is not required as you are using JS to click element
 	}	
-
-	//Method to check NUI in In Shedulded visit 
-	public boolean verifyAddedNewVisitWithWearerNUIInSheduldedListPage(String addNewVisitWearerNUI){ 
+	//Method to check NUI in In Scheduled visit 
+	public boolean isWearerNUIDisplayedInScheduledListPage(String addNewVisitWearerNUI){ 
 		WebElement addVisitWearerNUIElement = driver.findElement(By.xpath("//div[@class='x-grid-cell-inner ' and contains(text(),"
 				+ " '"+addNewVisitWearerNUI+"')]"));
 		CommonActions.waitForElementToBeVisible(driver, addVisitWearerNUIElement);
@@ -398,7 +385,125 @@ public class HDPortalManageAddNewVisitPage {
 			System.out.println("Wearer with NUI "+addNewVisitWearerNUI+ " is not displayed in In Shedulded visit list page...");
 			return false;
 		}
-	}	//Irfan: If this method is returning some value then the method name must be like: isWearerNUIDisplayedInScheduledListPage
+	}
+	// Method to click open visit in scheduled page 
+	public void clickOpenVisitInScheduledPage(String addNewVisitWearerNUI ) {
+		WebElement addVisitWearerNUIElement = driver.findElement(By.xpath("//div[@class='x-grid-cell-inner ' and contains(text(),"
+				+ " '"+addNewVisitWearerNUI+"')]"));
+		CommonActions.waitForElementToBeVisible(driver, addVisitWearerNUIElement);
+		CommonActions.waitForElementToBeClickable(driver, scheduledOpenVisitElement);
+		if(scheduledOpenVisitElement.equals(addVisitWearerNUIElement) && scheduledOpenVisitElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, scheduledOpenVisitElement);
+			System.out.println("Clicked on open visit..!");
+		}
+		else{
+			System.out.println("Failed to clicked on open visit..!..");
+		}	
+	}
+	//Method to click action button 
+	public void clickActionDialogButton(){
+		CommonActions.waitForElementToBeClickable(driver, actionDialogButtonElement);
+		if(actionDialogButtonElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, actionDialogButtonElement);
+			System.out.println("Clicked on action visit button..!");
+		}
+		else{
+			System.out.println("Failed to clicked on action visit button..!");
+		}
+	}
+
+	//Method to verify Add New Visit dialog window title  
+	public boolean isActionDialogTitleDisplayed() throws AWTException{
+		CommonActions.waitForElementToBeVisible(driver, actionDialogTitleElement);
+		if(actionDialogTitleElement.isDisplayed()){
+			System.out.println(actionDialogTitleElement.getText()+" : dialog title is verified ...");
+			return true;
+		}else{
+			System.out.println("Action dialog title is not displayed...");
+			return false;
+		}
+	}
+
+	//Method to select outcome dropdown value
+	public void setOutComeOption(String selectOutCome){
+		CommonActions.waitForElementToBeClickable(driver, outComeDropdownElement);
+		if(outComeDropdownElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, outComeDropdownElement);
+			System.out.println("OutCome dropdown is clicked...");
+			outComeDropdownElement.sendKeys(selectOutCome);
+			CommonActions.autoSuggestionMethod(driver);
+		}else{
+			System.out.println("OutCome dropdown is not clicked...");
+		}
+	}
+
+	//Method to cancelled visit reason  
+	public void setCancelledReason(String selectReason){
+		CommonActions.waitForElementToBeClickable(driver, cancelledReasonDropdownElement);
+		if(cancelledReasonDropdownElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, cancelledReasonDropdownElement);
+			System.out.println("Cancelled reason dropdown is clicked...");
+			cancelledReasonDropdownElement.sendKeys(selectReason);
+			CommonActions.autoSuggestionMethod(driver);
+		}else{
+			System.out.println("Cancelled reason dropdown is notclicked...");
+		}
+	}
+
+	//Method to enter notes
+	public void enterCancelledNotes(String enterNotes){
+		CommonActions.waitForElementToBeClickable(driver, cancelledNotesTextBoxElement);
+		if(cancelledNotesTextBoxElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, cancelledNotesTextBoxElement);
+			System.out.println("Cancelled reason dropdown is clicked...");
+			cancelledNotesTextBoxElement.sendKeys(enterNotes);
+			CommonActions.autoSuggestionMethod(driver);
+		}else{
+			System.out.println("Cancelled reason dropdown is notclicked...");
+		}
+	}
+
+	//Method to click Update button
+	public void clickUpdateButton() {
+		CommonActions.waitForElementToBeClickable(driver, actionDialogUpdateButtonElement);
+		if(actionDialogUpdateButtonElement.isEnabled() && actionDialogUpdateButtonElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, actionDialogUpdateButtonElement);
+			System.out.println("Clicked Update button..");
+		}else{
+			System.out.println("Failed to click add new visit button..");
+		}
+	}
+
+	//Method to navigate to Scheduled Page
+	public void selectCancelledVisit(String outComeOption, String selectReason, String enterNotes){
+		setOutComeOption(outComeOption);
+		setCancelledReason(selectReason);
+		enterCancelledNotes(enterNotes);
+		clickUpdateButton();
+		System.out.println("Visit Cancelled successfully..!");
+	}
+	// Method to open scheduled visit
+	public void clickHistoryMenu() {
+		CommonActions.waitForElementToBeClickable(driver, visitHistoryMenuElement);
+		if(visitHistoryMenuElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, visitHistoryMenuElement);
+			System.out.println("Clicked on History menu..!");
+		}
+		else{
+			System.out.println("Failed to clicked on History menu..!");
+		}	
+	}
+	//Method to verify Add New Visit dialog window title  
+	public boolean isVisitHistoryGridTitleDisplayed() throws AWTException{
+		CommonActions.waitForElementToBeVisible(driver,visitHistoryGridTitleElement );
+		if(visitHistoryGridTitleElement.isDisplayed()){
+			System.out.println(visitHistoryGridTitleElement.getText()+" : History Grid title is verified ...");
+			return true;
+		}else{
+			System.out.println("History Grid title is not displayed...");
+			return false;
+		}
+	}
 }
 
 

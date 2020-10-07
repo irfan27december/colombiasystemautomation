@@ -5,30 +5,20 @@
 	<!-- <suite name="Suite" parallel = "classes" thread-count = "2"> -->
 	<!-- <suite name="Suite" thread-count="3" parallel="methods"> -->
 	<listeners>
-		<listener class-name="com.buddi.colombia.listeners.TestListener" />
+		<listener
+			class-name="com.buddi.colombia.listeners.TestListener" />
 	</listeners>
 
 	<parameter name="browser" value="chromedriver"></parameter>
 	<parameter name="SuiteName" value="ChromeSuite"></parameter>
 	<!-- <parameter name="driverPath" value="drivers/chromedriver.exe"></parameter> -->
 
-	<!-- Commenting this tag as the script is getting struck due to priority 
-		order <test name="Tests" preserve-order="true"> <groups> <run> <include name="Smoke" 
-		/> <include name="Functional" /> <exclude name="Regression" /> </run> </groups> 
-		<parameter name="username" value="Irfan: user name from xml" /> <parameter 
-		name="password" value="Password: password is from xml" /> <classes> <class 
-		name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/> <class name="com.buddi.hdportal.tests.HDPortalLoginTest" 
-		/> <class name="com.buddi.hdportal.tests.HDPortalHomeTest" /> <class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" 
-		/> <class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" /> 
-		<class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" /> 
-		</classes> </test> -->
-
 	<test name="App">
 		<classes>
-			<!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/>  -->
+			<!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/> -->
 		</classes>
 	</test>
-	 
+	
 	<test name="Login HD Portal">
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalLoginTest" />
@@ -43,38 +33,51 @@
 	
 	<test name="HD Portal New Alerts">
 		<classes>
-			<class name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" />
 		</classes>
 	</test>
-
+	
 	<test name="HD Portal In Progress Alerts">
 		<classes>
-			<class name="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageInProgressAlertsTest" />
 		</classes>
 	</test>
 	
 	<test name="HD Portal Alert History">
 		<classes>
-			<class name="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageAlertHistoryTest" />
 		</classes>
 	</test>
 	
 	<test name="HD Portal Manage Pending Visits">
 		<classes>
-			<class name="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest" />
 		</classes>
 	</test>
- 
+
+	<test name="HD Portal Add New Visit">
+		<classes>
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
+		</classes>
+	</test>
+
 	<test name="HD Portal Manage User Groups">
 		<classes>
-			<class name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageUserGroupsTest" />
 		</classes>
 	</test>
 
-	<test name="HD Portal Manage Knowledge Base">
+		<test name="HD Portal Manage Knowledge Base">
 		<classes>
-			<class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" />
 		</classes>
-	</test> 
+	</test>
 
-</suite> <!-- Suite -->
+</suite> 
