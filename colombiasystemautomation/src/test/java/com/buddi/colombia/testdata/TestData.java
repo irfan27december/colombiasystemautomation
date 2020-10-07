@@ -60,6 +60,17 @@ public class TestData {
 	public static final String SELECT_OUTCOME = "Cancelled";
 	public static final String SELECT_REASON = "No visit required";
 	public static final String ENTER_NOTES = "Add New Visit is cancelled";
+	
+	
+	// Credit Note variable
+	public static final String RECORDCREDITNOTE_UBIN_ITEMNUMBER = "TEST"+randomInt;
+	public static final String RECORDCREDITNOTE_WEARER_NAME= "This is the subject for wearer name...";
+	public static final String RECORDCREDITNOTE_NOTES= "This is the subject for notes...";
+	public static final String RECORDCREDITNOTE_OBSERVATION= "This is the subject for Observation...";
+	public static final String RECORDCREDITNOTE_START_DATE_FORMAT = "dd/MM/yyyy";
+	public static final String RECORDCREDITNOTE_END_DATE_FORMAT = "dd/MM/yyyy";
+	public static final String RECORDCREDITNOTEFINAL_NOTES = "Record is created...";
+		
 
 
 }
