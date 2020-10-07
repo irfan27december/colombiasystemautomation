@@ -28,6 +28,7 @@ import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
 import com.buddi.hdportal.pages.HDPortalManageAddNewVisitPage;
 import com.buddi.hdportal.pages.HDPortalManageAlertHistoryPage;
+import com.buddi.hdportal.pages.HDPortalManageCreditNotePage;
 import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
@@ -58,6 +59,8 @@ public class HDPortalBaseTest {
 	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
 	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageAddNewVisitPage hdPortalManageAddNewVisitPage;
+	protected HDPortalManageCreditNotePage hdPortalManageCreditNotePage;
+	
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
 	private static String log4jFileName = "log4.xml";
@@ -227,6 +230,7 @@ public class HDPortalBaseTest {
 		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
 		hdPortalManageAlertHistoryPage = new HDPortalManageAlertHistoryPage(driver);
 		hdPortalManageAddNewVisitPage = new HDPortalManageAddNewVisitPage(driver);
+		hdPortalManageCreditNotePage = new HDPortalManageCreditNotePage(driver);
 	}
 
 
