@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
+import com.buddi.colombia.utilities.Log;
 
 /**
  * @author irfan
@@ -42,7 +43,8 @@ public class HDPortalHomePage {
 
 	// Method to get HD title
 	public String getHelpDeskTitle() {
-		System.out.println("HelpDesk main title is: "+ helpDeskTitleElement.getText());
+		Log.info("HelpDesk main title is: "+ helpDeskTitleElement.getText());
+		//System.out.println("HelpDesk main title is: "+ helpDeskTitleElement.getText());
 		return helpDeskTitleElement.getText();
 	}
 

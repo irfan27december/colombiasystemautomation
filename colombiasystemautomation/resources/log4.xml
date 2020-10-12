@@ -7,15 +7,42 @@
 <log4j:configuration xmlns:log4j="https://jakarta.apache.org/log4j/"
 	debug="false">
 
-	<appender name="fileAppender" class="org.apache.log4j.FileAppender">
+	<!-- <appender name="fileAppender" class="org.apache.log4j.FileAppender"> -->
+	<!-- rolling file appender -->
+	<!-- RollingFileAppender extends FileAppender to backup the log files when 
+		they reach defined size. The default maximum size of a file is 10MB -->
+	<appender name="fileAppender" class="org.apache.log4j.RollingFileAppender">
 
 		<param name="Threshold" value="INFO" />
+		<!-- Specify whether to append file or not -->
+		<param name="Append" value="true" />
+
+		<param name="ImmediateFlush" value="true" />
+
+		<!-- Specify file size -->
+		<param name="maxFileSize" value="10MB" />
+
+		<!-- Define 'MaxBackupIndex' option which determines the number of previously 
+			rolled files to preserve. MaxBackUp takes only a positive integer value. 
+			MaxBackUp value will be set to 1 by default. If we set it to zero, then no 
+			roll over occurs and the log file will be simply truncated when it reaches 
+			the MaxFileSize. -->
+
+		<!-- For example, when the maxFileSize is reached to the specified size 
+			limit (here in our example 1MB), then the contents are archived in a file 
+			named logfile.log.1 . When the max size limit is reached for the second time, 
+			logfile.log.1 is renamed to logfile.log.2 and contents from logfile.log are 
+			archived to logfile.log.1. This will continue until the defined maximum backup 
+			index (here in example MaxBackupIndex=5) is reached, after which the oldest 
+			log file is deleted on each rollover. -->
+		<param name="maxBackupIndex" value="5" />
 
 		<param name="File" value="logfile.log" />
 
 		<layout class="org.apache.log4j.PatternLayout">
 
-			<param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
+			<!-- <param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" /> -->
+			<param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
 
 		</layout>
 

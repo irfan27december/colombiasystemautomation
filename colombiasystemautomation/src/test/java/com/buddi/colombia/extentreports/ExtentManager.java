@@ -6,6 +6,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.buddi.colombia.utilities.Log;
 
 public class ExtentManager {
     private static ExtentReports extent;
@@ -24,7 +25,7 @@ public class ExtentManager {
     //Create an extent report instance
     public static ExtentReports createInstance() {
         String fileName = getReportPath(reportFilepath);
-        System.out.println("reportFilepath "+reportFilepath);
+        Log.info("reportFilepath "+reportFilepath);
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
         htmlReporter.config().setChartVisibilityOnOpen(true);
@@ -47,14 +48,14 @@ public class ExtentManager {
     	File testDirectory = new File(path);
         if (!testDirectory.exists()) {
         	if (testDirectory.mkdir()) {
-                System.out.println("Directory: " + path + " is created!" );
+        		Log.info("Directory: " + path + " is created!" );
                 return reportFileLocation;
             } else {
-                System.out.println("Failed to create directory: " + path);
+            	Log.error("Failed to create directory: " + path);
                 return System.getProperty("user.dir");
             }
         } else {
-            System.out.println("Directory already exists: " + path);
+        	Log.info("Directory already exists: " + path);
         }
 		return reportFileLocation;
     }

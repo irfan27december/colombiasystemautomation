@@ -51,7 +51,7 @@ public class HDPortalLoginPage {
 			hdUserNameElement.clear();	
 			hdUserNameElement.click();	
 			hdUserNameElement.sendKeys(userName);
-			Log.info("Email field is displayed and email is entered");
+			Log.info("Email field is displayed and following email entered as:"+userName);
 		}else{
 			Log.error("Email field is not displayed..."); 
 		}
