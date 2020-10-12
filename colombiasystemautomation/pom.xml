@@ -41,6 +41,9 @@
 					<testErrorIgnore>true</testErrorIgnore>
 					<!-- Use below to send email, only if tests fails -->
 					<testFailureIgnore>true</testFailureIgnore>
+					<!-- Force alphabetical order to have a reproducible build -->
+					<runOrder>alphabetical</runOrder>
+					<useSystemClassLoader>false</useSystemClassLoader>
 				</configuration>
 			</plugin>
 

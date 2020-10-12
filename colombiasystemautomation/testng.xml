@@ -31,7 +31,7 @@
 		</classes>
 	</test>
 	
-	<test name="HD Portal New Alerts">
+	<!-- <test name="HD Portal New Alerts">
 		<classes>
 			<class
 				name="com.buddi.hdportal.tests.HDPortalManageNewManualAlertsTest" />
@@ -78,6 +78,6 @@
 			<class
 				name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" />
 		</classes>
-	</test>
+	</test> -->
 
 </suite> 

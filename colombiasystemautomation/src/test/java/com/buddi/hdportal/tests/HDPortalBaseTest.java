@@ -1,6 +1,8 @@
 package com.buddi.hdportal.tests;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -46,8 +48,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class HDPortalBaseTest {
-	//ExtentTest extentLogger;
-	//protected ExtentReports extent;
+
 	public static WebDriver driver = null;
 	ReadProperties properties = new ReadProperties();
 	protected HDPortalLoginPage hdPortalLoginPage;	
@@ -60,7 +61,6 @@ public class HDPortalBaseTest {
 	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageAddNewVisitPage hdPortalManageAddNewVisitPage;
 	protected HDPortalManageCreditNotePage hdPortalManageCreditNotePage;
-	
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
 	private static String log4jFileName = "log4.xml";
@@ -73,17 +73,17 @@ public class HDPortalBaseTest {
 	@Parameters({"browser", "SuiteName"})
 	@BeforeSuite
 	public void setUp(@Optional("chromedriver") String browser, @Optional("ChromeSuite") String SuiteName) throws IOException, InterruptedException{
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+		System.setProperty("currenttime", dateFormat.format(new Date()));
 		// Provide Log4j configuration settings	 
 		DOMConfigurator.configure(log4jFileLocation);
 		if(browser.equalsIgnoreCase("chromedriver")){
 			//setup the chromedriver using WebDriverManager
 			WebDriverManager.chromedriver().setup();
-
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("--start-maximized");
 			chromeOptions.addArguments("--disable-web-security");
 			chromeOptions.addArguments("--no-proxy-server");
-
 			chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER);
 			chromeOptions.addArguments("enable-automation"); 
 			chromeOptions.addArguments("--no-sandbox"); 
@@ -91,7 +91,6 @@ public class HDPortalBaseTest {
 			chromeOptions.addArguments("--disable-dev-shm-usage"); 
 			chromeOptions.addArguments("--disable-browser-side-navigation"); 
 			chromeOptions.addArguments("--disable-gpu");
-
 			Map<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("credentials_enable_service", false);
 			prefs.put("profile.password_manager_enabled", false);
@@ -119,35 +118,33 @@ public class HDPortalBaseTest {
 			driver = new InternetExplorerDriver(caps);
 			Log.info("IE driver instantiated...");
 		}else{
-			/*driver = new RemoteWebDriver(new URL(properties.getPropertyValue("HDPORTAL_URL")),
+			/*driver = new RemoteWebDriver(new URL(properties.getPropertyValue("hdportal.url")),
 					getBrowserCapabilities(browser, SuiteName));
 			driver.manage().window().maximize();*/	
 		}
 
 		try{	
-			driver.get(properties.getPropertyValue("HDPORTAL_URL"));	
-			Log.info("Web application launched...");
+			driver.get(properties.getPropertyValue("hdportal.url"));	
+			Log.info("Web application launched and URL is: "+properties.getPropertyValue("hdportal.url"));
 		}catch(Exception e){
-			Reporter.log("network server is slow..check internet connection");
-			throw new Error("network server is slow..check internet connection");
+			Log.error("Network server is slow, check internet connection");
+			throw new Error("Network server is slow, check internet connection");
 		}
-
 		driver.manage().window().maximize();			
 		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Log.info("Implicit wait applied on the driver for 30 seconds");
 
-
 		/*WebElement error = driver.findElement(By.className("error-code"));
 
 		if(error.getText().equals("DNS_PROBE_FINISHED_NO_INTERNET") || error.getText().equals("ERR_NAME_NOT_RESOLVED")
 				|| error.getText().equals("ERR_INTERNET_DISCONNECTED")) {
-			System.out.println("No Internet Connection");
+			Log.error("No Internet Connection");
 			driver.manage().deleteAllCookies();
 			driver.close();
 			driver.quit();
 		} else {
-			System.out.println("Internet Connected");
+			Log.info("Internet Connected");
 		}*/
 	}
 
@@ -196,7 +193,7 @@ public class HDPortalBaseTest {
 
 	}*/
 
-
+	//Method to related capabilities
 	protected static DesiredCapabilities getBrowserCapabilities(String browserType, String SuiteName) {
 		switch (browserType) {
 		case "firefox":
@@ -211,7 +208,7 @@ public class HDPortalBaseTest {
 			Log.info("Opening IE browser...");
 			return DesiredCapabilities.internetExplorer();
 		default:
-			Log.info("browser : " + browserType + " is invalid, launching Firefox as browser of choice..");
+			Log.info("Browser : " + browserType + " is invalid, launching Firefox as browser of choice..");
 			return DesiredCapabilities.firefox();
 		}
 	}

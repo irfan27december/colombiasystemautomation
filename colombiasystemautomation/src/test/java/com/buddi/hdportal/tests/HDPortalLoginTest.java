@@ -3,21 +3,15 @@
  */
 package com.buddi.hdportal.tests;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.testng.Assert;
-import org.testng.Reporter;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.buddi.colombia.testdata.StringConstants;
-import com.buddi.colombia.testdata.TestData;
-import com.buddi.colombia.utilities.ReadExcelSheet;
 import com.buddi.colombia.utilities.GetExcelData;
 import com.buddi.colombia.utilities.Log;
-import com.buddi.colombiaapp.samples.excel.XLSXManager;
+import com.buddi.colombia.utilities.ReadExcelSheet;
 
 /**
  * @author irfan
@@ -25,7 +19,7 @@ import com.buddi.colombiaapp.samples.excel.XLSXManager;
  */
 public class HDPortalLoginTest extends HDPortalBaseTest{
 	public static XSSFSheet sheet;
-	public static Object[][] LoginData;
+	public static Object[][] LoginData; 
 
 	@DataProvider(name="getLoginData")
 	public static Object[][] getData() throws Exception{

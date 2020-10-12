@@ -176,9 +176,9 @@ public class CommonActions {
 	public static void autoSuggestionMethod(WebDriver driver){
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.DOWN).perform();
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		action.sendKeys(Keys.ENTER).perform();
-		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 	}
 
 	//To zoom In page 4 time using CTRL and + keys.

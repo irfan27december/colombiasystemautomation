@@ -1,5 +1,7 @@
 package com.buddi.colombia.utilities;
 
+import java.math.BigDecimal;
+
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -25,7 +27,7 @@ public class GetExcelData extends ReadExcelSheet {
 			if (cell == null)
 				return "";
 			switch (cell.getCellType()){
-			case  STRING:
+			case  STRING: 
 				return cell.getStringCellValue();               
 			case  BOOLEAN:
 				return String.valueOf(cell.getBooleanCellValue());        
@@ -33,8 +35,9 @@ public class GetExcelData extends ReadExcelSheet {
 				return "";     
 			case  ERROR:
 				return cell.getStringCellValue();           
-			case NUMERIC:
-				return String.valueOf(cell.getNumericCellValue());          
+			case NUMERIC: 
+				return new BigDecimal(cell.getNumericCellValue()).toPlainString();
+				//return String.valueOf(cell.getNumericCellValue());          
 			default:
 				return "Cell not found";        
 			}

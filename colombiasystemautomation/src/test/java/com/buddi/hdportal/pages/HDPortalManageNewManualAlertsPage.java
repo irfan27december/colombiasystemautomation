@@ -220,8 +220,10 @@ public class HDPortalManageNewManualAlertsPage {
 		if(startHourField.isDisplayed()){
 			startHourField.click();
 			startHourField.clear();
+			/*startHourField.sendKeys(alertStartHours);
+			startHourField.sendKeys(Keys.TAB);*/
 			startHourField.sendKeys(alertStartHours);
-			startHourField.sendKeys(Keys.TAB);
+			CommonActions.autoSuggestionMethod(driver);
 			//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		}else{
 			System.out.println("Hour field is not displayed...");
@@ -235,8 +237,10 @@ public class HDPortalManageNewManualAlertsPage {
 		if(startMinutesField.isDisplayed()){
 			startMinutesField.click();
 			startMinutesField.clear();
+			/*startMinutesField.sendKeys(alertStartMinutes);
+			startMinutesField.sendKeys(Keys.TAB);*/
 			startMinutesField.sendKeys(alertStartMinutes);
-			startMinutesField.sendKeys(Keys.TAB);
+			CommonActions.autoSuggestionMethod(driver);
 		}else{
 			System.out.println("Minutes field is not displayed...");
 		}		
