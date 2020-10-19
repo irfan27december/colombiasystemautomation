@@ -16,14 +16,14 @@ public class DateToString{
 		if(strDateFormat.equalsIgnoreCase("dd/MM/yyyy")){
 			try{
 				dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-				//System.out.println("Date format is "+strDateFormat+ " and todays date is: "+dateFormat.format(date));
+				Log.info("Date format is "+strDateFormat+ " and todays date is: "+dateFormat.format(date));
 			}catch(Exception e){ 
 				Log.error(e.getMessage());
 			}
 		}else if(strDateFormat.equalsIgnoreCase("dd/MM/yyyy HH:mm:ss")){
 			try{
 				dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-				//System.out.println("Date format is "+strDateFormat+ " and todays date is: "+dateFormat.format(date));
+				Log.info("Date format is "+strDateFormat+ " and todays date is: "+dateFormat.format(date));
 				return dateFormat.format(date);
 			}catch(Exception e){
 				Log.error(e.getMessage());
