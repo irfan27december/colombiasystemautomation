@@ -31,12 +31,12 @@
 		</classes>
 	</test> -->
 	
-	<test name="HD Portal Add New Visit and Cancele Visit">
+	<test name="HD Portal Add New Visit and Cancel Visit">
 		<classes>
 			<class
 				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
 			<class
-				name="com.buddi.hdportal.tests.HDPortalManageCancelledVisitsTest" />
+				name="com.buddi.hdportal.tests.HDPortalManageCancelVisitsTest" />
 		</classes>
 	</test>	
 	
@@ -45,11 +45,11 @@
 		    <class
 				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
 			<class
-				name="com.buddi.hdportal.tests.HDPortalManageCompletedVisitsTest" />
+				name="com.buddi.hdportal.tests.HDPortalManageCompleteVisitsTest" />
 		</classes>
 	</test>	
 	
-	<test name="HD Portal Verify Completed and Cancelled Visits">
+	<test name="HD Portal Verify Complete and Cancel Visits">
 		<classes>
 			<class
 				name="com.buddi.hdportal.tests.HDPortalManageVisitHistoryTests" />

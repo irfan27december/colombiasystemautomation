@@ -13,8 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Reporter;
@@ -30,8 +28,8 @@ import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
 import com.buddi.hdportal.pages.HDPortalManageAddNewVisitPage;
 import com.buddi.hdportal.pages.HDPortalManageAlertHistoryPage;
-import com.buddi.hdportal.pages.HDPortalManageCancelledVisitsPage;
-import com.buddi.hdportal.pages.HDPortalManageCompletedVisitsPage;
+import com.buddi.hdportal.pages.HDPortalManageCancelVisitsPage;
+import com.buddi.hdportal.pages.HDPortalManageCompleteVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageCreditNotePage;
 import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
@@ -63,8 +61,8 @@ public class HDPortalBaseTest {
 	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
 	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
 	protected HDPortalManageAddNewVisitPage hdPortalManageAddNewVisitPage;
-	protected HDPortalManageCompletedVisitsPage hdPortalManageCompletedVisitsPage;
-	protected HDPortalManageCancelledVisitsPage hdPortalManageCancelledVisitsPage;
+	protected HDPortalManageCompleteVisitsPage hdPortalManageCompleteVisitsPage;
+	protected HDPortalManageCancelVisitsPage hdPortalManageCancelVisitsPage;
 	protected HDPortalManageVisitHistoryPage hdPortalManageVisitHistoryPage;
 	protected HDPortalManageCreditNotePage hdPortalManageCreditNotePage;
 
@@ -233,8 +231,8 @@ public class HDPortalBaseTest {
 		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
 		hdPortalManageAlertHistoryPage = new HDPortalManageAlertHistoryPage(driver);
 		hdPortalManageAddNewVisitPage = new HDPortalManageAddNewVisitPage(driver);
-		hdPortalManageCompletedVisitsPage = new HDPortalManageCompletedVisitsPage(driver);
-		hdPortalManageCancelledVisitsPage = new HDPortalManageCancelledVisitsPage(driver);
+		hdPortalManageCompleteVisitsPage = new HDPortalManageCompleteVisitsPage(driver);
+		hdPortalManageCancelVisitsPage = new HDPortalManageCancelVisitsPage(driver);
 		hdPortalManageVisitHistoryPage = new HDPortalManageVisitHistoryPage(driver);	
 		hdPortalManageCreditNotePage = new HDPortalManageCreditNotePage(driver);
 	}

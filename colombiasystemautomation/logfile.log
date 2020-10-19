@@ -6820,3 +6820,247 @@ Session ID: befce7389e1057d32c14a176204d9574
 2020-10-19 14:39:36 INFO  Log:36 - *** Executed launchHDPortal test successfully...
 2020-10-19 14:39:36 INFO  Log:36 - *** Running test method loginHDPortalWithValidCredentials...
 2020-10-19 14:39:36 INFO  Log:36 - HD Portal login page is displayed...
+2020-10-19 15:27:38 INFO  WebDriverManager:269 - Please answer the following questionnaire based on your experience with WebDriverManager. Thanks a lot!
+2020-10-19 15:27:38 INFO  WebDriverManager:271 - ====> http://tiny.cc/wdm-survey <====
+2020-10-19 15:27:38 INFO  WebDriverManager:571 - Using chromedriver 86.0.4240.22 (since Chrome 86 is installed in your machine)
+2020-10-19 15:27:38 INFO  WebDriverManager:615 - Exporting webdriver.chrome.driver as C:\Users\Dell\.m2\repository\webdriver\chromedriver\win32\86.0.4240.22\chromedriver.exe
+2020-10-19 15:27:42 INFO  Log:36 - Chrome driver instantiated...
+2020-10-19 15:27:44 INFO  Log:36 - Web application launched and URL is: https://eagle-test.buddi.co.uk/hd/
+2020-10-19 15:27:46 INFO  Log:36 - Implicit wait applied on the driver for 30 seconds
+2020-10-19 15:27:46 INFO  Log:36 - Test started
+2020-10-19 15:27:46 INFO  Log:36 - *** Test Suite App started ***
+2020-10-19 15:27:46 INFO  Log:36 - *** Test Suite App ending ***
+2020-10-19 15:27:46 INFO  Log:36 - Directory already exists: C:\Users\Dell\git\colombiasystemautomation\colombiasystemautomation\test-report
+2020-10-19 15:27:46 INFO  Log:36 - reportFilepath C:\Users\Dell\git\colombiasystemautomation\colombiasystemautomation\test-report
+2020-10-19 15:27:46 INFO  Log:36 - Test started
+2020-10-19 15:27:46 INFO  Log:36 - *** Test Suite Login HD Portal started ***
+2020-10-19 15:27:46 INFO  Log:36 - *** Running test method launchHDPortal...
+2020-10-19 15:27:46 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:27:46 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:27:46 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 launchHDPortal       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:27:46 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:27:46 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:27:46 INFO  Log:36 - Launched HD portal...
+2020-10-19 15:27:46 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:27:46 INFO  Log:29 - X
+2020-10-19 15:27:46 INFO  Log:30 - X
+2020-10-19 15:27:46 INFO  Log:36 - *** Executed launchHDPortal test successfully...
+2020-10-19 15:27:47 INFO  Log:36 - *** Running test method loginHDPortalWithValidCredentials...
+2020-10-19 15:27:47 INFO  Log:36 - HD Portal login page is displayed...
+2020-10-19 15:27:53 INFO  Log:36 - *** Test execution loginHDPortalWithValidCredentials failed...
+2020-10-19 15:27:53 INFO  Log:36 - *** Running test method loginHDPortalWithValidCredentials...
+2020-10-19 15:27:53 INFO  Log:36 - HD Portal login page is displayed...
+2020-10-19 15:27:53 INFO  Log:36 - Email field is displayed and following email entered as:sumaiah.mohammed@buddi.co.uk
+2020-10-19 15:27:53 INFO  Log:36 - Password field is displayed and password is entered......
+2020-10-19 15:27:54 INFO  Log:36 - Login button is clicked......
+2020-10-19 15:27:54 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:27:54 INFO  Log:29 - X
+2020-10-19 15:27:54 INFO  Log:30 - X
+2020-10-19 15:27:54 INFO  Log:36 - *** Executed loginHDPortalWithValidCredentials test successfully...
+2020-10-19 15:27:54 INFO  Log:36 - *** Test Suite Login HD Portal ending ***
+2020-10-19 15:27:54 INFO  Log:36 - Test started
+2020-10-19 15:27:54 INFO  Log:36 - *** Test Suite HD Portal Add New Visit and Cancel Visit started ***
+2020-10-19 15:27:54 INFO  Log:36 - *** Running test method accessVisitsMenu...
+2020-10-19 15:27:54 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:27:54 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:27:54 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 accessVisitsMenu       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:27:54 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:27:54 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:27:57 INFO  Log:36 - Visits menu is clicked...!
+2020-10-19 15:27:57 INFO  Log:36 - Pending visits sub menu is clicked...!
+2020-10-19 15:27:57 INFO  Log:36 - Is pending visit grid title is verified ...!true
+2020-10-19 15:27:57 INFO  Log:36 - *** Executed accessVisitsMenu test successfully...
+2020-10-19 15:27:57 INFO  Log:36 - *** Running test method accessAddButton...
+2020-10-19 15:27:57 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:27:57 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:27:57 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 accessAddButton       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:27:57 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:27:57 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:27:59 INFO  Log:36 -  Add button is clicked...!
+2020-10-19 15:27:59 INFO  Log:36 - Is Add New Visit dialog title is displayed...!true
+2020-10-19 15:27:59 INFO  Log:36 - *** Executed accessAddButton test successfully...
+2020-10-19 15:27:59 INFO  Log:36 - *** Running test method createAddNewVisit...
+2020-10-19 15:27:59 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:27:59 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:27:59 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 createAddNewVisit       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:27:59 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:27:59 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:27:59 INFO  Log:36 - Job Type dropdown is clicked ... Selected value is: End of Monitoring
+2020-10-19 15:28:00 INFO  Log:36 - WearerGroup dropdown is clicked... Selected WearerGroup is :CPAMS LA PAZ
+2020-10-19 15:28:00 INFO  Log:36 - Select Wearer dropdown is clicked...Selected wearer is : 1075062 ~ VIDAL  CEPEDA , JOHN JAIRO 
+2020-10-19 15:28:01 INFO  Log:36 - Assigned field Officer dropdown is clicked...Selected FO is: Mohammed, Sumaiah (testbuddi1212@gmail.com)
+2020-10-19 15:28:01 INFO  Log:36 - Date format is dd/MM/yyyy and todays date is: 19/10/2020
+2020-10-19 15:28:01 INFO  Log:36 - Selected visit start hours as: 20
+2020-10-19 15:28:02 INFO  Log:36 - Selected visit start minutes as: 25
+2020-10-19 15:28:02 INFO  Log:36 - Date format is dd/MM/yyyy and todays date is: 19/10/2020
+2020-10-19 15:28:02 INFO  Log:36 - Selected visit end hours as: 23
+2020-10-19 15:28:03 INFO  Log:36 - Selected visit end minutes as: 35
+2020-10-19 15:28:03 INFO  Log:36 - Entered Notes is: Creating add new visit...!
+2020-10-19 15:28:03 INFO  Log:36 - Add new visit button is clicked...
+2020-10-19 15:28:04 INFO  Log:36 - Is scheduled visit title is displayed...true
+2020-10-19 15:28:04 INFO  Log:36 - Clicked on close panel..!
+2020-10-19 15:28:04 INFO  Log:36 -  Visit created successfully..!
+2020-10-19 15:28:04 INFO  Log:36 - *** Executed createAddNewVisit test successfully...
+2020-10-19 15:28:04 INFO  Log:36 - *** Running test method verifyAddNewVisitInScheduledPage...
+2020-10-19 15:28:04 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:04 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:04 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 verifyAddNewVisitInScheduledPage       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:04 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:04 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:06 INFO  Log:36 - Visits menu is clicked...!
+2020-10-19 15:28:07 INFO  Log:36 - Scheduled Visits menu is clicked...
+2020-10-19 15:28:07 INFO  Log:36 - Open 1075062 NUI wearer visit
+2020-10-19 15:28:08 INFO  Log:36 - Is scheduled visit title is displayed...true
+2020-10-19 15:28:08 INFO  Log:36 - Created Add New Visit is verified successfully...
+2020-10-19 15:28:08 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:28:08 INFO  Log:29 - X
+2020-10-19 15:28:08 INFO  Log:30 - X
+2020-10-19 15:28:08 INFO  Log:36 - *** Executed verifyAddNewVisitInScheduledPage test successfully...
+2020-10-19 15:28:08 INFO  Log:36 - *** Running test method cancelledVisit...
+2020-10-19 15:28:08 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:08 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:08 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 cancelledVisit       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:08 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:08 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:10 INFO  Log:36 - Visits menu is clicked...!
+2020-10-19 15:28:10 INFO  Log:36 - Scheduled Visits menu is clicked...!
+2020-10-19 15:28:11 INFO  Log:36 - Open 1075062 NUI wearer visit.. true
+2020-10-19 15:28:12 INFO  Log:36 - Clicked on action visit button..!
+2020-10-19 15:28:12 INFO  Log:36 - Is Action dialog title is displayed...true
+2020-10-19 15:28:12 INFO  Log:36 - OutCome dropdown is clicked...selected value is : Cancelled
+2020-10-19 15:28:12 INFO  Log:36 - reason dropdown is clicked...selected value is: No visit required
+2020-10-19 15:28:12 INFO  Log:36 - Entered cancelled notes is:..Visit is cancelled..!
+2020-10-19 15:28:12 INFO  Log:36 - Clicked Update button..
+2020-10-19 15:28:13 INFO  Log:36 - Clicked on close panel..!
+2020-10-19 15:28:13 INFO  Log:36 - Visit Cancelled successfully...
+2020-10-19 15:28:13 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:28:13 INFO  Log:29 - X
+2020-10-19 15:28:13 INFO  Log:30 - X
+2020-10-19 15:28:13 INFO  Log:36 - *** Executed cancelledVisit test successfully...
+2020-10-19 15:28:13 INFO  Log:36 - *** Test Suite HD Portal Add New Visit and Cancel Visit ending ***
+2020-10-19 15:28:13 INFO  Log:36 - Test started
+2020-10-19 15:28:13 INFO  Log:36 - *** Test Suite HD Portal Add New Visit and Complete Visit started ***
+2020-10-19 15:28:13 INFO  Log:36 - *** Running test method accessVisitsMenu...
+2020-10-19 15:28:13 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:13 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:13 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 accessVisitsMenu       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:13 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:13 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:13 INFO  Log:36 - Visits menu is clicked...!
+2020-10-19 15:28:14 INFO  Log:36 - Pending visits sub menu is clicked...!
+2020-10-19 15:28:14 INFO  Log:36 - Is pending visit grid title is verified ...!true
+2020-10-19 15:28:14 INFO  Log:36 - *** Executed accessVisitsMenu test successfully...
+2020-10-19 15:28:14 INFO  Log:36 - *** Running test method accessAddButton...
+2020-10-19 15:28:14 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:14 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:14 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 accessAddButton       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:14 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:14 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:15 INFO  Log:36 -  Add button is clicked...!
+2020-10-19 15:28:16 INFO  Log:36 - Is Add New Visit dialog title is displayed...!true
+2020-10-19 15:28:16 INFO  Log:36 - *** Executed accessAddButton test successfully...
+2020-10-19 15:28:16 INFO  Log:36 - *** Running test method createAddNewVisit...
+2020-10-19 15:28:16 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:16 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:16 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 createAddNewVisit       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:16 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:16 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:16 INFO  Log:36 - Job Type dropdown is clicked ... Selected value is: End of Monitoring
+2020-10-19 15:28:16 INFO  Log:36 - WearerGroup dropdown is clicked... Selected WearerGroup is :CPAMS LA PAZ
+2020-10-19 15:28:17 INFO  Log:36 - Select Wearer dropdown is clicked...Selected wearer is : 1075062 ~ VIDAL  CEPEDA , JOHN JAIRO 
+2020-10-19 15:28:17 INFO  Log:36 - Assigned field Officer dropdown is clicked...Selected FO is: Mohammed, Sumaiah (testbuddi1212@gmail.com)
+2020-10-19 15:28:17 INFO  Log:36 - Date format is dd/MM/yyyy and todays date is: 19/10/2020
+2020-10-19 15:28:18 INFO  Log:36 - Selected visit start hours as: 20
+2020-10-19 15:28:18 INFO  Log:36 - Selected visit start minutes as: 25
+2020-10-19 15:28:18 INFO  Log:36 - Date format is dd/MM/yyyy and todays date is: 19/10/2020
+2020-10-19 15:28:19 INFO  Log:36 - Selected visit end hours as: 23
+2020-10-19 15:28:19 INFO  Log:36 - Selected visit end minutes as: 35
+2020-10-19 15:28:19 INFO  Log:36 - Entered Notes is: Creating add new visit...!
+2020-10-19 15:28:19 INFO  Log:36 - Add new visit button is clicked...
+2020-10-19 15:28:27 INFO  Log:36 - Is scheduled visit title is displayed...true
+2020-10-19 15:28:28 INFO  Log:36 - Clicked on close panel..!
+2020-10-19 15:28:28 INFO  Log:36 -  Visit created successfully..!
+2020-10-19 15:28:28 INFO  Log:36 - *** Executed createAddNewVisit test successfully...
+2020-10-19 15:28:28 INFO  Log:36 - *** Running test method verifyAddNewVisitInScheduledPage...
+2020-10-19 15:28:28 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:28 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:28 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 verifyAddNewVisitInScheduledPage       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:28 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:28 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:29 INFO  Log:36 - Visits menu is clicked...!
+2020-10-19 15:28:30 INFO  Log:36 - Scheduled Visits menu is clicked...
+2020-10-19 15:28:31 INFO  Log:36 - Open 1075062 NUI wearer visit
+2020-10-19 15:28:31 INFO  Log:36 - Is scheduled visit title is displayed...true
+2020-10-19 15:28:31 INFO  Log:36 - Created Add New Visit is verified successfully...
+2020-10-19 15:28:31 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:28:31 INFO  Log:29 - X
+2020-10-19 15:28:31 INFO  Log:30 - X
+2020-10-19 15:28:31 INFO  Log:36 - *** Executed verifyAddNewVisitInScheduledPage test successfully...
+2020-10-19 15:28:31 INFO  Log:36 - *** Running test method completedVisit...
+2020-10-19 15:28:31 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:31 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:31 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 completedVisit       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:31 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:31 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:33 INFO  Log:36 - Visits menu is clicked...
+2020-10-19 15:28:34 INFO  Log:36 - Scheduled Visits menu is clicked...
+2020-10-19 15:28:35 INFO  Log:36 - Open 1075062 NUI wearer visit ...true
+2020-10-19 15:28:35 INFO  Log:36 - Clicked on action visit button..!
+2020-10-19 15:28:35 INFO  Log:36 - Is Action dialog title is displayed...!true
+2020-10-19 15:28:36 INFO  Log:36 - OutCome dropdown is clicked......Selected value is: Completed
+2020-10-19 15:28:36 INFO  Log:36 - Reason dropdown is clicked...Selected value is: Made without HD Management
+2020-10-19 15:28:36 INFO  Log:36 - Date format is dd/MM/yyyy and todays date is: 19/10/2020
+2020-10-19 15:28:36 INFO  Log:36 - Visit start date is selected ...
+2020-10-19 15:28:36 INFO  Log:36 - Visit start hours is selected ...
+2020-10-19 15:28:37 INFO  Log:36 - Visit start minutes is selected ...
+2020-10-19 15:28:37 INFO  Log:36 - Date format is dd/MM/yyyy and todays date is: 19/10/2020
+2020-10-19 15:28:37 INFO  Log:36 - Visit End date is selected ...
+2020-10-19 15:28:37 INFO  Log:36 - Visit End hours is selected ...
+2020-10-19 15:28:38 INFO  Log:36 - Visit End minutes is selected...
+2020-10-19 15:28:38 INFO  Log:36 - Entered completed Notes is : Visit is completed...!
+2020-10-19 15:28:38 INFO  Log:36 - Clicked Update button..
+2020-10-19 15:28:38 INFO  Log:36 - Clicked on close panel..!
+2020-10-19 15:28:38 INFO  Log:36 - Visit Completed successfully..!
+2020-10-19 15:28:38 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:28:38 INFO  Log:29 - X
+2020-10-19 15:28:38 INFO  Log:30 - X
+2020-10-19 15:28:38 INFO  Log:36 - *** Executed completedVisit test successfully...
+2020-10-19 15:28:38 INFO  Log:36 - *** Test Suite HD Portal Add New Visit and Complete Visit ending ***
+2020-10-19 15:28:39 INFO  Log:36 - Test started
+2020-10-19 15:28:39 INFO  Log:36 - *** Test Suite HD Portal Verify Complete and Cancel Visits started ***
+2020-10-19 15:28:39 INFO  Log:36 - *** Running test method verifyCompletedVisitsInHistory...
+2020-10-19 15:28:39 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:39 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:39 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 verifyCompletedVisitsInHistory       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:39 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:39 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:41 INFO  Log:36 - Visits menu is clicked...
+2020-10-19 15:28:41 INFO  Log:36 - Clicked on History menu..!
+2020-10-19 15:28:42 INFO  Log:36 - Is Visit History grid title displayed ...true
+2020-10-19 15:28:42 INFO  Log:36 - Open 1075062 NUI wearer visit ...true
+2020-10-19 15:28:43 INFO  Log:36 - Is completed status displayed..true
+2020-10-19 15:28:43 INFO  Log:36 - Clicked on close panel..!
+2020-10-19 15:28:43 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:28:43 INFO  Log:29 - X
+2020-10-19 15:28:43 INFO  Log:30 - X
+2020-10-19 15:28:43 INFO  Log:36 - *** Executed verifyCompletedVisitsInHistory test successfully...
+2020-10-19 15:28:43 INFO  Log:36 - *** Running test method verifyCancelledVisitsInHistory...
+2020-10-19 15:28:43 INFO  Log:14 - ****************************************************************************************
+2020-10-19 15:28:43 INFO  Log:16 - ****************************************************************************************
+2020-10-19 15:28:43 INFO  Log:18 - $$$$$$$$$$$$$$$$$$$$$                 verifyCancelledVisitsInHistory       $$$$$$$$$$$$$$$$$$$$$$$$$
+2020-10-19 15:28:43 INFO  Log:20 - ****************************************************************************************
+2020-10-19 15:28:43 INFO  Log:22 - ****************************************************************************************
+2020-10-19 15:28:46 INFO  Log:36 - Visits menu is clicked...
+2020-10-19 15:28:46 INFO  Log:36 - Clicked on History menu..!
+2020-10-19 15:28:47 INFO  Log:36 - Is Visit History grid title displayed ...true
+2020-10-19 15:28:47 INFO  Log:36 - Open 1075062 NUI wearer visit ...true
+2020-10-19 15:28:48 INFO  Log:36 - Is cancelled status displayed ... true
+2020-10-19 15:28:48 INFO  Log:36 - Clicked on close panel..!
+2020-10-19 15:28:48 INFO  Log:28 - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
+2020-10-19 15:28:48 INFO  Log:29 - X
+2020-10-19 15:28:48 INFO  Log:30 - X
+2020-10-19 15:28:48 INFO  Log:36 - *** Executed verifyCancelledVisitsInHistory test successfully...
+2020-10-19 15:28:48 INFO  Log:36 - *** Test Suite HD Portal Verify Complete and Cancel Visits ending ***
+2020-10-19 15:28:48 INFO  Log:36 - Logout link element found and is clicked...
+2020-10-19 15:28:49 INFO  Log:36 - Logged out HD portal successfully....
+2020-10-19 15:28:49 INFO  Log:36 - Closing browser...
