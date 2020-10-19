@@ -28,11 +28,10 @@ public class StringConstants {
 	//Confirmation pop up variables
 	public static final String DELETE_USERGROUP_CONFIRMATION_TEXT = "Are you sure you wish to remove this User Group?";
 	
-
 	//Visits menu variables
 	public static final String PENDING_VISITS_GRID_TITLE = "Pending Visits";
-	public static final String ADD_NEW_VISIT_TITLE= "Add New Visit";
-	
+	public static final String ADD_NEW_VISIT_DIALOG_TITLE= "Add New Visit"; 
+	public static final String ACTION_DIALOG_TITLE= "Action Visit"; 
 
 	//Alerts management variables
 	public static final String ALERTS_GRID_TITLE = "New Alerts";
