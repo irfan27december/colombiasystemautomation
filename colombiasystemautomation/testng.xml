@@ -25,11 +25,36 @@
 		</classes>
 	</test>
 
-	<test name="HD Portal Home Page">
+	<!-- <test name="HD Portal Home Page">
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalHomeTest" />
 		</classes>
-	</test>
+	</test> -->
+	
+	<test name="HD Portal Add New Visit and Cancele Visit">
+		<classes>
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageCancelledVisitsTest" />
+		</classes>
+	</test>	
+	
+	<test name="HD Portal Add New Visit and Complete Visit">
+		<classes>
+		    <class
+				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageCompletedVisitsTest" />
+		</classes>
+	</test>	
+	
+	<test name="HD Portal Verify Completed and Cancelled Visits">
+		<classes>
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageVisitHistoryTests" />
+		</classes>
+	</test>	
 	
 	<!-- <test name="HD Portal New Alerts">
 		<classes>
@@ -59,12 +84,7 @@
 		</classes>
 	</test>
 
-	<test name="HD Portal Add New Visit">
-		<classes>
-			<class
-				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
-		</classes>
-	</test>
+	
 
 	<test name="HD Portal Manage User Groups">
 		<classes>

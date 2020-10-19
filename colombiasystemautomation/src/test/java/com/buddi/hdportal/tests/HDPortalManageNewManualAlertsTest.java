@@ -80,8 +80,8 @@ public class HDPortalManageNewManualAlertsTest extends HDPortalBaseTest{
 
 		/*boolean isWearerNameAndNUIPresentInAlertsDetailPage = hdPortalManageNewManualAlertsPage.isWearerNameNUIDisplayedInAlertsDetailPage(
 				TestData.ALERT_WEARER_NAME, TestData.WEARER_NUI);*/
-		String wearerName =  GetExcelData.getCellData(sheetName, 1, 0);
-		String wearerNUI =  GetExcelData.getCellData(sheetName, 1, 6);
+		String wearerName =  GetExcelData.getCellData(sheetName, 1, 2);
+		String wearerNUI =  GetExcelData.getCellData(sheetName, 1, 7);
 		wearerNUI = String.valueOf(wearerNUI);
 		
 		System.out.println("Wearer name is:"+wearerName + "  =====    "+" wearer NUI is: "+wearerNUI);
