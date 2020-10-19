@@ -19,6 +19,8 @@ public class TestData {
 	// HD Portal related login variables
 	public static final String HDPORTAL_EMAIL = "irfan.ahmed@buddi.co.uk";
 	public static final String HDPORTAL_PASSWORD = "MIA@27dec1";
+	public static final String HDPORTAL_EMAIL_02 = "sumaiah.mohammed@buddi.co.uk";
+	public static final String HDPORTAL_PASSWORD_02 = "1234sumayya";
 
 	//HD Portal Management related variables
 	public static final String USERGROUP_NAME = "UG_AUTOMATION";
@@ -41,7 +43,7 @@ public class TestData {
 	public static final String ALERT_NOTES = "Manual alert is created...";
 	public static final String CLOSE_ALERT_NOTES = "Closing alert...";
 
-	//Add New Visit related variables
+	//Add New Visit variables
 	public static final String ADD_VISIT_WEARER_NUI = "1075062";
 	public static final String SELECT_JOBTYPE = "End of Monitoring";
 	public static final String SELECT_WEARERGROUP = "CPAMS LA PAZ";
@@ -54,14 +56,25 @@ public class TestData {
 	public static final String VISIT_END_DATE_FORMAT = "dd/MM/yyyy";
 	public static final String VISIT_END_HOURS= "22";
 	public static final String VISIT_EMD_MINUTES= "40";
-	public static final String ADD_VISIT_NOTES= "Creatig new visit...";
+	public static final String ADD_VISIT_NOTES= "Creating new visit...!";
 
-	//Cancelled Visit related variables
-	public static final String SELECT_OUTCOME = "Cancelled";
-	public static final String SELECT_REASON = "No visit required";
-	public static final String ENTER_NOTES = "Add New Visit is cancelled";
-	
-	
+	//Cancelled Visit variables
+	public static final String SELECT_CANCELLED_OUTCOME = "Cancelled";
+	public static final String SELECT_CANCELLED_REASON = "No visit required";
+	public static final String ENTER_CANCELLED_NOTES = "Visit is cancelled..!";
+
+	//Completed Visit variables
+	public static final String SELECT_COMPLETED_OUTCOME = " Completed";
+	public static final String SELECT_COMPLETED_REASON = " Made without HD Management";
+	public static final String COMPLETED_VISIT_START_DATE_FORMAT = "dd/MM/yyyy";
+	public static final String COMPLETED_VISIT_START_HOURS = "20";
+	public static final String COMPLETED_VISIT_START_MINUTES = "30";
+	public static final String COMPLETED_VISIT_END_DATE_FORMAT = "dd/MM/yyyy";
+	public static final String COMPLETED_VISIT_END_HOURS= "22";
+	public static final String COMPLETED_VISIT_EMD_MINUTES= "40";
+	public static final String ENTER_COMPLETED_NOTES = "Visit is completed...!";
+
+
 	// Credit Note variable
 	public static final String RECORDCREDITNOTE_UBIN_ITEMNUMBER = "TEST"+randomInt;
 	public static final String RECORDCREDITNOTE_WEARER_NAME= "This is the subject for wearer name...";
@@ -70,7 +83,7 @@ public class TestData {
 	public static final String RECORDCREDITNOTE_START_DATE_FORMAT = "dd/MM/yyyy";
 	public static final String RECORDCREDITNOTE_END_DATE_FORMAT = "dd/MM/yyyy";
 	public static final String RECORDCREDITNOTEFINAL_NOTES = "Record is created...";
-		
+
 
 
 }

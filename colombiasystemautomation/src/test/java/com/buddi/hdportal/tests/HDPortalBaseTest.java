@@ -30,12 +30,15 @@ import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
 import com.buddi.hdportal.pages.HDPortalManageAddNewVisitPage;
 import com.buddi.hdportal.pages.HDPortalManageAlertHistoryPage;
+import com.buddi.hdportal.pages.HDPortalManageCancelledVisitsPage;
+import com.buddi.hdportal.pages.HDPortalManageCompletedVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageCreditNotePage;
 import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManagePendingVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
+import com.buddi.hdportal.pages.HDPortalManageVisitHistoryPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -54,12 +57,15 @@ public class HDPortalBaseTest {
 	protected HDPortalLoginPage hdPortalLoginPage;	
 	protected HDPortalHomePage hdPortalHomePage;
 	protected HDPortalManageNewManualAlertsPage hdPortalManageNewManualAlertsPage;
+	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
+	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
 	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
 	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
-	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
-	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageAddNewVisitPage hdPortalManageAddNewVisitPage;
+	protected HDPortalManageCompletedVisitsPage hdPortalManageCompletedVisitsPage;
+	protected HDPortalManageCancelledVisitsPage hdPortalManageCancelledVisitsPage;
+	protected HDPortalManageVisitHistoryPage hdPortalManageVisitHistoryPage;
 	protected HDPortalManageCreditNotePage hdPortalManageCreditNotePage;
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
@@ -227,6 +233,9 @@ public class HDPortalBaseTest {
 		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
 		hdPortalManageAlertHistoryPage = new HDPortalManageAlertHistoryPage(driver);
 		hdPortalManageAddNewVisitPage = new HDPortalManageAddNewVisitPage(driver);
+		hdPortalManageCompletedVisitsPage = new HDPortalManageCompletedVisitsPage(driver);
+		hdPortalManageCancelledVisitsPage = new HDPortalManageCancelledVisitsPage(driver);
+		hdPortalManageVisitHistoryPage = new HDPortalManageVisitHistoryPage(driver);	
 		hdPortalManageCreditNotePage = new HDPortalManageCreditNotePage(driver);
 	}
 
