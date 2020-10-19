@@ -7,6 +7,7 @@ package com.buddi.hdportal.pages;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.buddi.colombia.common.CommonActions;
 import com.buddi.colombia.utilities.DateToString;
+import com.buddi.colombia.utilities.Log;
 
 /**
  * @author Ganesh
@@ -75,9 +77,9 @@ import com.buddi.colombia.utilities.DateToString;
 			CommonActions.waitForElementToBeVisible(driver, inventoryMenuElement);
 			if(inventoryMenuElement.isDisplayed()){
 			inventoryMenuElement.click();
-			System.out.println("Inventory menu option is present...");
+			Log.info("Inventory menu option is present...");
 			}else{				
-			System.out.println("Inventory menu option is not displayed...");
+			Log.error("Inventory menu option is not displayed...");
 			}
 			System.out.println("Inventory menu is expanded...");
 		}
@@ -88,12 +90,12 @@ import com.buddi.colombia.utilities.DateToString;
 			CommonActions.waitForElementToBeVisible(driver, creditNotetElement);
 			if(creditNotetElement.isDisplayed()){
 			creditNotetElement.click();
-			System.out.println("CreditNote option is present...");
+			Log.info("CreditNote option is present...");
 			}else{
-			System.out.println("CreditNote option is not displayed...");
+			Log.error("CreditNote option is not displayed...");
 			}
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-			System.out.println("Clicked Credit Note option...");
+			Log.info("Clicked Credit Note option...");
 					
 		}
 		
@@ -102,15 +104,15 @@ import com.buddi.colombia.utilities.DateToString;
 		public void clickToolsBarAddRecordCreditNotesButton(){
 			CommonActions.waitForElementToBeVisible(driver, toolBarRecordCreditNotesButton);
 			if(toolBarRecordCreditNotesButton.isDisplayed()){
-			System.out.println("Tools bar addRecord option is present...");
+			Log.info("Tools bar addRecord option is present...");
 			}else{
-			System.out.println("Tools bar addRecord option is not displayed...");
+			Log.error("Tools bar addRecord option is not displayed...");
 			}
 			if(toolBarRecordCreditNotesButton.isEnabled()){
 			toolBarRecordCreditNotesButton.click();
-			System.out.println("Tools bar addRecord button is clicked...");
+			Log.info("Tools bar addRecord button is clicked...");
 			}else{
-			System.out.println("Tools bar addRecord button is not clicked...");
+			Log.error("Tools bar addRecord button is not clicked...");
 			}
 		}
 	    	
@@ -119,10 +121,10 @@ import com.buddi.colombia.utilities.DateToString;
 		public String verifyAddNewRecordDialogTitle(){
 			CommonActions.waitForElementToBeVisible(driver, recordCreditNoteDialogTitleElement);
 			if(recordCreditNoteDialogTitleElement.isEnabled()){
-			System.out.println("Add New Record dialog box is displayed...");
+			Log.info("Add New Record dialog box is displayed...");
 			return recordCreditNoteDialogTitleElement.getText();
 			}else{
-			System.out.println("Add New Record dialog box is not displayed...");
+			Log.error("Add New Record dialog box is not displayed...");
 			}
 			return null;
 		}
@@ -132,10 +134,10 @@ import com.buddi.colombia.utilities.DateToString;
 		public boolean isAddNewRecordtDialogDisplayed(){
 			CommonActions.waitForElementToBeVisible(driver, recordCreditNoteDialogTitleElement);
 			if(recordCreditNoteDialogTitleElement.isDisplayed()){
-			System.out.println("Add New Record dialog box is displayed...");
+			Log.info("Add New Record dialog box is displayed...");
 			return true;
 			}else{
-			System.out.println("Add New Record dialog box is not displayed...");
+			Log.error("Add New Record dialog box is not displayed...");
 			return false;
 			}
 			
@@ -146,14 +148,14 @@ import com.buddi.colombia.utilities.DateToString;
 		public void setUbin(String UbinNumber){
 			CommonActions.waitForElementToBeVisible(driver, ubinDropdownField);
 			if(ubinDropdownField.isDisplayed()){
-			System.out.println("ubin text box option is present...");
+			Log.info("ubin text box option is present...");
 			}else{
-			System.out.println("ubin text box option is not displayed...");
+			Log.error("ubin text box option is not displayed...");
 			}
 			ubinDropdownField.click();
 			ubinDropdownField.clear();
 			ubinDropdownField.sendKeys(UbinNumber);
-			System.out.println("Entered ubin number is..."+UbinNumber);
+			Log.info("Entered ubin number is..."+UbinNumber);
 			
 		}
 		
@@ -162,14 +164,14 @@ import com.buddi.colombia.utilities.DateToString;
 		public void setWearer(String wearer){
 			CommonActions.waitForElementToBeVisible(driver, wearerNameField);
 			if(wearerNameField.isDisplayed()){
-			System.out.println("wearer name option is present...");
+			Log.info("wearer name option is present...");
 			}else{
-			System.out.println("wearer name option  is not displayed...");
+			Log.error("wearer name option  is not displayed...");
 			}
 			wearerNameField.click();
 			wearerNameField.clear();
 			wearerNameField.sendKeys(wearer);
-			System.out.println("Entered wearer is..."+wearer);		
+			Log.info("Entered wearer is..."+wearer);		
 		}
 		
 
@@ -177,14 +179,14 @@ import com.buddi.colombia.utilities.DateToString;
 		public void setNotes(String Notes){
 		    CommonActions.waitForElementToBeVisible(driver, notesField);
 		    if(notesField.isDisplayed()){
-			System.out.println("Notes field option is present...");
+		    Log.info("Notes field option is present...");
 		    } else{
-			System.out.println("Notes field option  is not displayed...");
+		    Log.error("Notes field option  is not displayed...");
 		    }
 		    notesField.click();
 		    notesField.clear();
 		    notesField.sendKeys(Notes);
-		    System.out.println("Entered Notes is..."+Notes);		
+		    Log.info("Entered Notes is..."+Notes);		
 		}
 		
 		
@@ -192,14 +194,14 @@ import com.buddi.colombia.utilities.DateToString;
 		public void setObservtion(String Observation){
 		    CommonActions.waitForElementToBeVisible(driver, labobservationTextboxField);
 		    if(labobservationTextboxField.isDisplayed()){
-			System.out.println("lab observation option is present...");
+		    Log.info("lab observation option is present...");
 		    }else{
-			System.out.println("lab observation option  is not displayed...");
+		    Log.error("lab observation option  is not displayed...");
 		    }
 		    labobservationTextboxField.click();
 		    labobservationTextboxField.clear();
 		    labobservationTextboxField.sendKeys(Observation);
-		    System.out.println("Entered Notes is..."+Observation);		
+		    Log.info("Entered Notes is..."+Observation);		
 		}
 		
 		
@@ -209,8 +211,9 @@ import com.buddi.colombia.utilities.DateToString;
 			startDateField.click();
 			startDateField.clear();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-			System.out.println("DateToString.returnDate(alertStartDateFormat)     "+DateToString.returnDate(RecordStartDateFormat));
-			startDateField.sendKeys(DateToString.returnDate(RecordStartDateFormat));
+			startDateField.sendKeys(RecordStartDateFormat);
+			//System.out.println("DateToString.returnDate(alertStartDateFormat)     "+DateToString.returnDate(RecordStartDateFormat));
+			//startDateField.sendKeys(DateToString.returnDate(RecordStartDateFormat));
 			//startDateField.sendKeys(Keys.TAB);
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		}
@@ -221,8 +224,10 @@ import com.buddi.colombia.utilities.DateToString;
 			endDateField.click();
 			endDateField.clear();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
-			System.out.println("DateToString.returnDate(RecordEndDateFormat)     "+DateToString.returnDate(RecordEndDateFormat));
-			endDateField.sendKeys(DateToString.returnDate(RecordEndDateFormat));
+			endDateField.sendKeys(RecordEndDateFormat);
+			System.out.println("Entered date is..."  +RecordEndDateFormat);
+			//Log.info("DateToString.returnDate(RecordEndDateFormat)     "+DateToString.returnDate(RecordEndDateFormat));
+			//endDateField.sendKeys(DateToString.returnDate(RecordEndDateFormat));
 			//startDateField.sendKeys(Keys.TAB);
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 			
@@ -242,7 +247,7 @@ import com.buddi.colombia.utilities.DateToString;
 			setRecordEndDate(RecordEndDateFormat);
 			if(addRecordButton.isEnabled())
 			{	
-			    System.out.println("Add button to create RCN is enabled "+addRecordButton.isEnabled());		
+			    Log.info("Add button to create RCN is enabled "+addRecordButton.isEnabled());		
 			    CommonActions.waitForElementToBeClickable(driver, addRecordButton);
 				CommonActions.clickElementToHandleStaleElementException(addRecordButton);
 				driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);				
@@ -255,29 +260,19 @@ import com.buddi.colombia.utilities.DateToString;
 			CommonActions.waitForElementToBeVisible(driver, addRecordButton);
 			if(addRecordButton.isEnabled()){
 			addRecordButton.click();
-			System.out.println("Add new record button is clicked in Add New record dialog...");
+			Log.info("Add new record button is clicked in Add New record dialog...");
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+			//JavascriptExecutor jse = (JavascriptExecutor)driver;
+			//jse.executeScript("window.scrollBy(0,-250)");
 			}else{
-			System.out.println("Failed to click add new record button is clicked in Add New record dialog...");				
+			Log.error("Failed to click add new record button is clicked in Add New record dialog...");				
 			}				
 		}
 		
-		//Method accepts ubin number and returns ubin number element
-		public WebElement returnUbinNumberElement(String UbinNumber){
-			WebElement returnUbinNumberElement = driver.findElement(By.xpath("//div[contains(@class,'x-grid-cell-inner')][contains(text(),'"+UbinNumber+"')]"));
-			return returnUbinNumberElement;
-		}
-		
-		//Method to get ubin number
-		public String getubinnumber(String strubinnumber){
-			CommonActions.waitForElementToBeVisible(driver, returnUbinNumberElement(strubinnumber));
-			System.out.println("ubin with ubinnumber "+returnUbinNumberElement(strubinnumber).getText()+" is present...");
-			return returnUbinNumberElement(strubinnumber).getText();
-		}
-		
+	
 		
 		//Method to create new record
-		public void createNewRecordCreditNote(String UbinNumber, String wearer, String Notes, String Observation,String RecordStartDateFormat, String RecordEndDateFormat)
+		public void createNewRecordCreditNote(String UbinNumber, String wearer, String Notes, String Observation,String RecordStartDateFormat, String RecordEndDateFormat) throws InterruptedException
 		{
 		    setUbin(UbinNumber);
 			setWearer(wearer);
@@ -287,7 +282,34 @@ import com.buddi.colombia.utilities.DateToString;
 			setRecordEndDate(RecordEndDateFormat);
 			clickAddNewRecordButton();
 			driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+			isUbinDisplayedInRecordCrediNotePage(UbinNumber);
+									
 			
+		}
+		
+		
+		//Method to check UBIN in Record credit note page 
+		public boolean isUbinDisplayedInRecordCrediNotePage(String UbinNumber) throws InterruptedException{ 
+			
+			//navigateToNewRecordOption();
+			WebElement UbinElement = driver.findElement(By.xpath("//div[@class='x-grid-cell-inner ' and contains(text(),"
+					+ " '"+UbinNumber+"')]"));
+			String ue =UbinElement.getText();
+			Log.info(ue);
+			CommonActions.waitForElementToBeVisible(driver, UbinElement);
+			if(UbinElement.isDisplayed()){
+				//Thread.sleep(5000);
+			
+				CommonActions.clickElementToHandleStaleElementException(UbinElement);
+				driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+				Thread.sleep(5000);
+				Log.info("New UBIN number "+UbinNumber+ " is displayed in Record credit note page and clicked...");
+				return true;
+			}else{
+				Log.error("UBIN number "+UbinNumber+ " No Record credit note page...");
+				return false;
+			
+			}
 		}
 				
 				
@@ -299,7 +321,7 @@ import com.buddi.colombia.utilities.DateToString;
 			CommonActions.clickElementToHandleStaleElementException(inventoryMenuElement);
 			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 			CommonActions.waitForElementToBeClickable(driver, creditNotetElement);
-			CommonActions.clickElementToHandleStaleElementException(creditNotetElement);	
+			//CommonActions.clickElementToHandleStaleElementException(creditNotetElement);	
 		}	
 				
 			
