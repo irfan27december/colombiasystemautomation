@@ -30,9 +30,9 @@ public class AppiumBaseTest {
 	File appDir;
 	File appName;
 
-	public static final String testDataExcelFileName = "testdata.xlsx";	
-	public int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
-	public String appiumServerIPAddress = readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS");
+	//public static final String testDataExcelFileName = "testdata.xlsx";	
+	public int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("appium.server.port"));
+	public String appiumServerIPAddress = readProperties.getPropertyValue("appium.server.ipaddress");
 	String appiumServerURL;
 
 	@BeforeSuite
@@ -53,18 +53,18 @@ public class AppiumBaseTest {
 
 	//Method to launch app
 	public void launchColombiaApp(){
-		appDir = new File(readProperties.getPropertyValue("APP_DIRECTORY"));
-		appName = new File(readProperties.getPropertyValue("APP_DIRECTORY"), readProperties.getPropertyValue("APP_NAME"));
+		appDir = new File(readProperties.getPropertyValue("app.directory"));
+		appName = new File(readProperties.getPropertyValue("app.directory"), readProperties.getPropertyValue("app.name"));
 		//Create object of DesiredCapabilities class
 		capabilities = new DesiredCapabilities();	
 		//http://appium.io/docs/en/writing-running-appium/caps/
 		// Set android deviceName desired capability. Set your device name.
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, readProperties.getPropertyValue("ANDROID_EMULATOR_DEVICE_NAME"));
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, readProperties.getPropertyValue("android.emulator.device.name"));
 		// Set android VERSION desired capability. Set your mobile device’s OS version.
 		//capabilities.setCapability(CapabilityType.VERSION, “6.0.1”);
 		// Set android platformName desired capability. It’s Android in our case here.
 		//capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, readProperties.getPropertyValue("EMULATOR_PLATFORM"));
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, readProperties.getPropertyValue("emulator.platform"));
 		capabilities.setCapability(MobileCapabilityType.APP, appName.getAbsolutePath());
 		
 		/*Grant permissions your app requires and grant them to the app on install. 
@@ -82,7 +82,7 @@ public class AppiumBaseTest {
 		capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "100");
 		//Which automation engine to use, Appium (default), or UiAutomator2, Espresso, or UiAutomator1 for Android
 		//capabilities.setCapability("automationName", "UiAutomator2");
-		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, readProperties.getPropertyValue("EMULATOR_AUTOMATION_NAME"));
+		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, readProperties.getPropertyValue("emulator.automation.name"));
 		/*Set your application’s appPackage if you are using any other app
 		Java package of the Android app you want to run. 
 		By default this capability is received from the package manifest (@package attribute value)*/

@@ -29,7 +29,7 @@
 			the MaxFileSize. -->
 
 		<!-- For example, when the maxFileSize is reached to the specified size 
-			limit (here in our example 1MB), then the contents are archived in a file 
+			limit (here in our example 10MB), then the contents are archived in a file 
 			named logfile.log.1 . When the max size limit is reached for the second time, 
 			logfile.log.1 is renamed to logfile.log.2 and contents from logfile.log are 
 			archived to logfile.log.1. This will continue until the defined maximum backup 
