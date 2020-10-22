@@ -171,8 +171,9 @@ public class HDPortalManageAlertHistoryPage {
 
 	//Method to verify close alert panel heading
 	public void verifyClosedAlertPanelHeading(){
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
 		CommonActions.waitForElementToBeVisible(driver, closedAlertPanelHeading);
+		CommonActions.waitForElementToBeRefreshed(driver, closedAlertPanelHeading);
 		if(closedAlertPanelHeading.isDisplayed()){			
 			System.out.println("Closed alert panel heading is displayed in alert details page and the alert is closed successfully...");
 		}else{
