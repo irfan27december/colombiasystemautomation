@@ -9,9 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.buddi.colombia.common.CommonActions;
-import com.buddi.colombia.utilities.DateToString;
 import com.buddi.colombia.utilities.Log;
 import com.buddi.colombia.utilities.ReadProperties;
+import com.buddi.colombia.utilities.DatePicker;
 
 
 /**
@@ -61,20 +61,28 @@ public class HDPortalManageAddNewVisitPage {
 	private WebElement addVisitWearerDropDownElement;
 	@FindBy(xpath = "//input[@name='assignedofficer']")
 	private WebElement assignedfieldOfficerDropdownElement;	
+
+	@FindBy(xpath = "/html/body/div[5]/div[2]/div/div/div/div[1]/div/div/div[5]/div/div/div[1]/div/div/div[2]") 
+	private WebElement clickDatePickerElement;
+	@FindBy(xpath = "//div[@class='x-datepicker-month'][@role='heading']") 
+	private WebElement datePickerHeaderElement;
+
+
 	// Start Dates related Elements
 	@FindBy(xpath = "//input[@name='startdate']") 
-	private WebElement startDateField;
+	private WebElement visitStartDateElement;
 	@FindBy(xpath = "//input[@name='starthour']") 
-	private WebElement startHourField;
+	private WebElement visitStartHourElement;
 	@FindBy(xpath = "//input[@name='startmin']") 
-	private WebElement startMinutesField;
+	private WebElement visitStartMinutesElement;
+
 	// End Date related element 
 	@FindBy(xpath = "//input[@name='enddate']")
-	private WebElement endDateField;
+	private WebElement visitEndDateElement;
 	@FindBy(xpath = "//input[@name='endhour']") 
-	private WebElement endHourField;
+	private WebElement visitEndHourElement;
 	@FindBy(xpath = "//input[@name='endmin']") 
-	private WebElement endMinutesField;
+	private WebElement visitEndMinutesElement;
 	//Notes text box element 
 	@FindBy(xpath = "//textarea[@name='notes']") 
 	private WebElement addVisitNotesTextBoxElement;
@@ -97,7 +105,7 @@ public class HDPortalManageAddNewVisitPage {
 	private WebElement visitHistoryGridTitleElement;
 	@FindBy(xpath="/html/body/div[3]/div/div[2]/div/div/div[3]/div[1]/div/div/div[2]/div")
 	private WebElement closePanelElement;
-	
+
 
 	// Method to click LHS menu option
 	public void clickVisitsMenu() {
@@ -213,27 +221,26 @@ public class HDPortalManageAddNewVisitPage {
 			Log.info("Failed to clicked assigned field Officer dropdown...");
 		}
 	}
-	//Method to set visit start date
-	public void setVisitStartDate(String visitStartDateFormat) {
-		CommonActions.waitForElementToBeVisible(driver, startDateField);
-		if(startDateField.isDisplayed()){
-			startDateField.click();
-			startDateField.clear();
-			startDateField.sendKeys(DateToString.returnDate(visitStartDateFormat));
 
-		}else{
-			Log.info("Failed to select start date...");
-		}
-	}
+	//Method to set visit start date
+	public void setVisitStartDate(String visitStartDateVal) throws AWTException {
+		CommonActions.waitForElementToBeClickable(driver, visitStartDateElement);
+		if(visitStartDateElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, visitStartDateElement); 
+			DatePicker.datePcikerByJS(driver, visitStartDateElement, visitStartDateVal);
+			Log.info("Selected end date is: "+visitStartDateVal);
+
+		}else{ Log.info("Failed to select End date..."); }
+	}	
 
 	//Method to set visit start hours
 	public void setVisitStartHours(String visitStartHours){
-		CommonActions.waitForElementToBeVisible(driver, startHourField);
-		if(startHourField.isDisplayed()){
-			startHourField.click();
-			startHourField.clear();
-			startHourField.sendKeys(visitStartHours);
-			startHourField.sendKeys(Keys.TAB);
+		CommonActions.waitForElementToBeVisible(driver, visitStartHourElement);
+		if(visitStartHourElement.isDisplayed()){
+			visitStartHourElement.click();
+			visitStartHourElement.clear();
+			visitStartHourElement.sendKeys(visitStartHours);
+			visitStartHourElement.sendKeys(Keys.TAB);
 			Log.info("Selected visit start hours as: "+visitStartHours);
 
 		}else{
@@ -243,12 +250,12 @@ public class HDPortalManageAddNewVisitPage {
 
 	//Method to set visit start minutes
 	public void setVisitStartMinutes(String visitStartMinutes){
-		CommonActions.waitForElementToBeVisible(driver, startMinutesField);
-		if(startMinutesField.isDisplayed()){
-			startMinutesField.click();
-			startMinutesField.clear();
-			startMinutesField.sendKeys(visitStartMinutes);
-			startMinutesField.sendKeys(Keys.TAB);
+		CommonActions.waitForElementToBeVisible(driver, visitStartMinutesElement);
+		if(visitStartMinutesElement.isDisplayed()){
+			visitStartMinutesElement.click();
+			visitStartMinutesElement.clear();
+			visitStartMinutesElement.sendKeys(visitStartMinutes);
+			visitStartMinutesElement.sendKeys(Keys.TAB);
 			Log.info("Selected visit start minutes as: "+visitStartMinutes);
 
 		}else{
@@ -257,26 +264,25 @@ public class HDPortalManageAddNewVisitPage {
 	}
 
 	//Method to set visit end date
-	public void setVisitEndDate(String visitEndDateFormat) {
-		CommonActions.waitForElementToBeVisible(driver, endDateField);
-		if(endDateField.isDisplayed()){
-			endDateField.click();
-			endDateField.clear();
-			endDateField.sendKeys(DateToString.returnDate(visitEndDateFormat));
-			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-		}else{
-			Log.info("Failed to select End date...");
-		}	
-	}
+	public void setVisitEndDate(String visitEndDateVal) throws AWTException {
+		CommonActions.waitForElementToBeClickable(driver, visitEndDateElement);
+		if(visitEndDateElement.isDisplayed()){
+			CommonActions.javaScriptClick(driver, visitEndDateElement); 
+			DatePicker.datePcikerByJS(driver, visitEndDateElement, visitEndDateVal);
+			Log.info("Selected end date is: "+visitEndDateVal);
+
+		}else{ Log.info("Failed to select End date..."); }
+
+	}	
 
 	//Method to set visit start hours
 	public void setVisitEndHours(String visitEndHours){
-		CommonActions.waitForElementToBeVisible(driver, endHourField);
-		if(endHourField.isDisplayed()){
-			endHourField.click();
-			endHourField.clear();
-			endHourField.sendKeys(visitEndHours);
-			endHourField.sendKeys(Keys.TAB);
+		CommonActions.waitForElementToBeVisible(driver, visitEndHourElement);
+		if(visitEndHourElement.isDisplayed()){
+			visitEndHourElement.click();
+			visitEndHourElement.clear();
+			visitEndHourElement.sendKeys(visitEndHours);
+			visitEndHourElement.sendKeys(Keys.TAB);
 			Log.info("Selected visit end hours as: "+visitEndHours);
 
 		}else{
@@ -286,12 +292,12 @@ public class HDPortalManageAddNewVisitPage {
 
 	//Method to set visit start minutes
 	public void setVisitEndMinutes(String visitEndinutes){
-		CommonActions.waitForElementToBeVisible(driver, endMinutesField);
-		if(endMinutesField.isDisplayed()){
-			endMinutesField.click();
-			endMinutesField.clear();
-			endMinutesField.sendKeys(visitEndinutes);
-			endMinutesField.sendKeys(Keys.TAB);
+		CommonActions.waitForElementToBeVisible(driver, visitEndMinutesElement);
+		if(visitEndMinutesElement.isDisplayed()){
+			visitEndMinutesElement.click();
+			visitEndMinutesElement.clear();
+			visitEndMinutesElement.sendKeys(visitEndinutes);
+			visitEndMinutesElement.sendKeys(Keys.TAB);
 			Log.info("Selected visit end minutes as: "+visitEndinutes);
 
 		}else{
@@ -325,16 +331,16 @@ public class HDPortalManageAddNewVisitPage {
 
 	//Method to create new visit
 	public void createAddNewVisit(String selectJobType, String selectWearerGroup, String addNewVisitWearerNUI, String addNewVisitWearer,
-			String assignedFieldOfficer,String visitStartDateFormat, String visitStartHours, String visitStartMinutes,
-			String visitEndDateFormat,String visitEndHours, String visitEndMinutes, String addVisitNotes){
+			String assignedFieldOfficer,String visitStartDateVal, String visitStartHours, String visitStartMinutes,
+			String visitEndDateVal, String visitEndHours, String visitEndMinutes, String addVisitNotes) throws AWTException{
 		setJobtype(selectJobType);
 		setWearerGroup(selectWearerGroup);
 		setAddNewVisitWearer(addNewVisitWearerNUI, addNewVisitWearer);
 		setAssignedFieldOfficer(assignedFieldOfficer);
-		setVisitStartDate(visitStartDateFormat);
+		setVisitStartDate(visitStartDateVal);
 		setVisitStartHours(visitStartHours);
 		setVisitStartMinutes(visitStartMinutes);
-		setVisitEndDate(visitEndDateFormat);
+		setVisitEndDate(visitEndDateVal);
 		setVisitEndHours(visitEndHours);
 		setVisitEndMinutes(visitEndMinutes);
 		setAddNewVisitNotes(addVisitNotes);

@@ -80,11 +80,11 @@ public class HDPortalManageAddNewVisitsTest extends HDPortalBaseTest{
 	//@Create add new visit  
 	@Test(priority = 3, groups = "Smoke", dependsOnMethods = { "accessAddButton" },dataProvider = "getVisitsData")
 	public void createAddNewVisit(String selectJobType, String selectWearerGroup, String addNewVisitWearerNUI, String addNewVisitWearer,
-			String assignedFieldOfficer, String visitStartDateFormat, String visitStartHours, String visitStartMinutes, 
-			String visitEndDateFormat, String visitEndHours, String visitEndMinutes, String addVisitNotes) throws AWTException{
+			String assignedFieldOfficer, String visitStartDateVal, String visitStartHours, String visitStartMinutes, 
+			String visitEndDateVal, String visitEndHours, String visitEndMinutes, String addVisitNotes) throws AWTException{
 		Log.startTestCase("createAddNewVisit");
 		hdPortalManageAddNewVisitPage.createAddNewVisit(selectJobType, selectWearerGroup, addNewVisitWearerNUI, addNewVisitWearer,
-				assignedFieldOfficer, visitStartDateFormat, visitStartHours, visitStartMinutes, visitEndDateFormat, visitEndHours, 
+				assignedFieldOfficer, visitStartDateVal, visitStartHours, visitStartMinutes, visitEndDateVal, visitEndHours, 
 				visitEndMinutes, addVisitNotes);
 		hdPortalManageAddNewVisitPage.isScheduledVisitGridTitleDisplayed();
 		hdPortalManageAddNewVisitPage.closePanel();

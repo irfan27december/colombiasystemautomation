@@ -26,6 +26,8 @@ public class HDPortalManageVisitHistoryTests extends HDPortalBaseTest{
 		hdPortalManageVisitHistoryPage.clickHistoryMenu();
 		// verify history grid title
 		hdPortalManageVisitHistoryPage.isVisitHistoryGridTitleDisplayed();
+		//visits descending order list 
+		hdPortalManageVisitHistoryPage.visitsSortDescendingClick();
 		//open Completed visit 
 		hdPortalManageVisitHistoryPage.openCompletedVisit(TestData.ADD_VISIT_WEARER_NUI);
 		//verify the status 
@@ -46,6 +48,8 @@ public class HDPortalManageVisitHistoryTests extends HDPortalBaseTest{
 		hdPortalManageVisitHistoryPage.clickHistoryMenu();
 		// verify history grid title
 		hdPortalManageVisitHistoryPage.isVisitHistoryGridTitleDisplayed();
+		//visits descending order list 
+		hdPortalManageVisitHistoryPage.visitsSortDescendingClick();
 		//open Completed visit 
 		hdPortalManageVisitHistoryPage.openCancelledVisit(TestData.ADD_VISIT_WEARER_NUI);
 		//verify the status 

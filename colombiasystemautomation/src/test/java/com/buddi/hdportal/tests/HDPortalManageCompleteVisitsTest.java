@@ -45,8 +45,8 @@ public class HDPortalManageCompleteVisitsTest extends HDPortalBaseTest{
 
 	// @Complete visit usecase
 	@Test(priority = 1, groups = "Smoke", dataProvider = "getVisitsData")
-	public void completedVisit(String selectCompletedOutCome, String selectCompletedReason, String visitStartDateFormat,
-			String visitStartHours, String visitStartMinutes, String visitEndDateFormat, String visitEndHours, String visitEndMinutes, String enterCompletedNotes) throws AWTException{
+	public void completedVisit(String selectCompletedOutCome, String selectCompletedReason, String visitStartDateVal,
+			String visitStartHours, String visitStartMinutes, String visitEndDateVal, String visitEndHours, String visitEndMinutes, String enterCompletedNotes) throws AWTException{
 		Log.startTestCase("completedVisit");
 		driver.navigate().refresh();
 		// click on visits menu
@@ -63,8 +63,8 @@ public class HDPortalManageCompleteVisitsTest extends HDPortalBaseTest{
 		/*hdPortalManageCompletedVisitsPage.selectCompletedVisit(TestData.SELECT_COMPLETED_OUTCOME,TestData.SELECT_COMPLETED_REASON, TestData.VISIT_START_DATE_FORMAT, 
 				TestData.VISIT_START_HOURS, TestData.VISIT_START_MINUTES,TestData.VISIT_END_DATE_FORMAT, TestData.VISIT_END_HOURS, TestData.VISIT_EMD_MINUTES,
 				TestData.ENTER_COMPLETED_NOTES);*/
-		hdPortalManageCompleteVisitsPage.selectCompletedVisit(selectCompletedOutCome, selectCompletedReason, visitStartDateFormat,
-				visitStartHours, visitStartMinutes, visitEndDateFormat, visitEndHours, visitEndMinutes, enterCompletedNotes);
+		hdPortalManageCompleteVisitsPage.selectCompletedVisit(selectCompletedOutCome, selectCompletedReason, visitStartDateVal,
+				visitStartHours, visitStartMinutes, visitEndDateVal, visitEndHours, visitEndMinutes, enterCompletedNotes);
 		hdPortalManageCompleteVisitsPage.closePanel();
 		Log.info("Visit Completed successfully..!");
 		Log.endTestCase("completedVisit");

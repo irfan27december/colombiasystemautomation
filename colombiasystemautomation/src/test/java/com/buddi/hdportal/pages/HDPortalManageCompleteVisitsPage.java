@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.buddi.colombia.common.CommonActions;
+import com.buddi.colombia.utilities.DatePicker;
 import com.buddi.colombia.utilities.DateToString;
 import com.buddi.colombia.utilities.Log;
 import com.buddi.colombia.utilities.ReadProperties;
@@ -175,25 +176,24 @@ public class HDPortalManageCompleteVisitsPage {
 			CommonActions.javaScriptClick(driver, completedReasonDropdownElement);
 			completedReasonDropdownElement.sendKeys(selectCompletedReason);
 			CommonActions.autoSuggestionMethod(driver);
-			Log.info("Reason dropdown is clicked...Selected value is: "+selectCompletedReason);
+			Log.info("Reason dropdown is clicked...Selected value as: "+selectCompletedReason);
 
 		}else{
 			Log.info("Failed to clicked reason dropdown...");
 		}
 	}
 	//Method to set visit start date
-	public void setVisitStartDate(String visitStartDateFormat) {
-		CommonActions.waitForElementToBeVisible(driver, visitStartDateElement);
+	public void setVisitStartDate(String visitStartDateVal) {
+		CommonActions.waitForElementToBeClickable(driver, visitStartDateElement);
 		if(visitStartDateElement.isDisplayed()){
-			visitStartDateElement.click();
-			visitStartDateElement.clear();
-			visitStartDateElement.sendKeys(DateToString.returnDate(visitStartDateFormat));
-			Log.info("Visit start date is selected ...");
-		}else{
-			Log.info("Failed to select visit start date...");
-		}
-	}
+			CommonActions.javaScriptClick(driver, visitStartDateElement);
+			DatePicker.datePcikerByJS(driver, visitStartDateElement, visitStartDateVal);
+			Log.info("Selected end date is: "+visitStartDateVal);
 
+		}else{
+			Log.info("Failed to select End date...");
+		}	
+	}	
 	//Method to set visit start hours
 	public void setVisitStartHours(String visitStartHours){
 		CommonActions.waitForElementToBeVisible(driver, visitStartHourElement);
@@ -202,7 +202,7 @@ public class HDPortalManageCompleteVisitsPage {
 			visitStartHourElement.clear();
 			visitStartHourElement.sendKeys(visitStartHours);
 			visitStartHourElement.sendKeys(Keys.TAB);
-			Log.info("Visit start hours is selected ...");
+			Log.info("Selected visit start hours as: "+visitStartHours);
 		}else{
 			Log.info("Failed to select visit start hours...");
 		}
@@ -216,25 +216,24 @@ public class HDPortalManageCompleteVisitsPage {
 			visitStartMinElement.clear();
 			visitStartMinElement.sendKeys(visitStartMinutes);
 			visitStartMinElement.sendKeys(Keys.TAB);
-			Log.info("Visit start minutes is selected ...");
+			Log.info("Selected visit start minutes as: "+visitStartMinutes);
 		}else{
 			Log.info("Failed to selecte visit start minutes...");
 		}		
 	}
 
 	//Method to set visit end date
-	public void setVisitEndDate(String visitEndDateFormat) {
-		CommonActions.waitForElementToBeVisible(driver, visitEndDateElement);
+	public void setVisitEndDate(String visitEndDateVal) {
+		CommonActions.waitForElementToBeClickable(driver, visitEndDateElement);
 		if(visitEndDateElement.isDisplayed()){
-			visitEndDateElement.click();
-			visitEndDateElement.clear();
-			visitEndDateElement.sendKeys(DateToString.returnDate(visitEndDateFormat));
-			driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-			Log.info("Visit End date is selected ...");
+			CommonActions.javaScriptClick(driver, visitEndDateElement);
+			DatePicker.datePcikerByJS(driver, visitEndDateElement, visitEndDateVal);
+			Log.info("Selected visit end date as: "+visitEndDateVal);
+
 		}else{
-			Log.info("Failed to selecte End date...");
+			Log.info("Failed to select End date...");
 		}	
-	}
+	}	
 
 	//Method to set visit start hours
 	public void setVisitEndHours(String visitEndHours){
@@ -244,7 +243,7 @@ public class HDPortalManageCompleteVisitsPage {
 			visitEndHourElement.clear();
 			visitEndHourElement.sendKeys(visitEndHours);
 			visitEndHourElement.sendKeys(Keys.TAB);
-			Log.info("Visit End hours is selected ...");
+			Log.info("Selected visit End hours as :"+visitEndHours);
 		}else{
 			Log.info("Failed to selecte End hours...");
 		}	
@@ -258,7 +257,7 @@ public class HDPortalManageCompleteVisitsPage {
 			visitEndMinElement.clear();
 			visitEndMinElement.sendKeys(visitEndinutes);
 			visitEndMinElement.sendKeys(Keys.TAB);
-			Log.info("Visit End minutes is selected...");
+			Log.info("Selected visit End minutes as :"+visitEndinutes);
 		}else{
 			Log.info("Failed to select visit End minutes ...");
 		}		

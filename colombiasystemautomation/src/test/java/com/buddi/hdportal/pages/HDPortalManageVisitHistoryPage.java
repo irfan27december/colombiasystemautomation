@@ -38,6 +38,8 @@ public class HDPortalManageVisitHistoryPage {
 	private WebElement visitHistoryMenuElement;
 	@FindBy(xpath="//div[@class='x-title-text x-title-text-default-framed x-title-item' and text()='Visit History']")
 	private WebElement visitHistoryGridTitleElement;
+	@FindBy(xpath="/html/body/div[2]/div/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div[3]/div/div[1]/div/div/span")
+	private WebElement visitSortingElement;
 	//Open cancelled visit
 	@FindBy(xpath="/html/body/div[2]/div/div[2]/div/div/div[2]/div[2]/div[3]/div[1]/div[2]/table[1]/tbody/tr/td[1]/div/span/i")
 	private WebElement completedVisitOpenElement;
@@ -84,6 +86,18 @@ public class HDPortalManageVisitHistoryPage {
 			Log.info("Filed to clicked History Grid title...");
 			return false;
 		}
+	}
+	//Method for sorting visit column 
+	public void visitsSortDescendingClick() {
+		CommonActions.waitForElementToBeClickable(driver, visitSortingElement);
+		if(visitSortingElement.isDisplayed()) {
+			CommonActions.javaScriptClick(driver, visitSortingElement);
+			CommonActions.javaScriptClick(driver, visitSortingElement);
+			Log.info("visits list are displayed in descending order..!");
+		}
+		else{
+			Log.info("Failed to displaye descending order visits list..!");
+		}	
 	}
 
 	//Method to click open visit in scheduled page 
