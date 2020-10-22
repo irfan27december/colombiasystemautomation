@@ -100,7 +100,7 @@ public class DatePicker {
 			Log.info("selected date is : "+setDate);
 		}
 		else {
-			Log.info("Failed to select date...");
+			Log.info("Failed to select date...!!");
 		}	
 	}	
 }
