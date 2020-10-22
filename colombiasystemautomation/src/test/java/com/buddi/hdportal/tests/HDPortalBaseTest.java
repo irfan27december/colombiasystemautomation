@@ -1,5 +1,6 @@
 package com.buddi.hdportal.tests;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,17 +8,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.xml.DOMConfigurator;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.ScreenshotException;
+import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -30,12 +36,15 @@ import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
 import com.buddi.hdportal.pages.HDPortalManageAddNewVisitPage;
 import com.buddi.hdportal.pages.HDPortalManageAlertHistoryPage;
+import com.buddi.hdportal.pages.HDPortalManageCancelVisitsPage;
+import com.buddi.hdportal.pages.HDPortalManageCompleteVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageCreditNotePage;
 import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManagePendingVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
+import com.buddi.hdportal.pages.HDPortalManageVisitHistoryPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -54,27 +63,34 @@ public class HDPortalBaseTest {
 	protected HDPortalLoginPage hdPortalLoginPage;	
 	protected HDPortalHomePage hdPortalHomePage;
 	protected HDPortalManageNewManualAlertsPage hdPortalManageNewManualAlertsPage;
+	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
+	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
 	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
 	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
-	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
-	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageAddNewVisitPage hdPortalManageAddNewVisitPage;
+	protected HDPortalManageCompleteVisitsPage hdPortalManageCompleteVisitsPage;
+	protected HDPortalManageCancelVisitsPage hdPortalManageCancelVisitsPage;
+	protected HDPortalManageVisitHistoryPage hdPortalManageVisitHistoryPage;
 	protected HDPortalManageCreditNotePage hdPortalManageCreditNotePage;
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
 	private static String log4jFileName = "log4.xml";
 	private static String fileSeperator = System.getProperty("file.separator");
-	private static String log4jFileFolderPath = System.getProperty("user.dir") +fileSeperator+ "resources";
-	private static String log4jFileLocation =  log4jFileFolderPath +fileSeperator+ log4jFileName;
+	private static String log4jFileFolderPath = System.getProperty("user.dir") + fileSeperator + "resources";
+	private static String log4jFileLocation =  log4jFileFolderPath + fileSeperator + log4jFileName;
+	
+	
+	private static final String screenshotFolderPath = System.getProperty("user.dir") + fileSeperator + "screenshots"+ fileSeperator;
+    private static final String screenshotFormat = ".png";
 
 
 	//Set driver binary automatically using WebDriverManager
 	@Parameters({"browser", "SuiteName"})
-	@BeforeSuite
+	@BeforeSuite(alwaysRun=true)
 	public void setUp(@Optional("chromedriver") String browser, @Optional("ChromeSuite") String SuiteName) throws IOException, InterruptedException{
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
-		System.setProperty("currenttime", dateFormat.format(new Date()));
+		/*SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy-hh-mm-ss");
+		System.setProperty("currenttime", dateFormat.format(new Date()));*/
 		// Provide Log4j configuration settings	 
 		DOMConfigurator.configure(log4jFileLocation);
 		if(browser.equalsIgnoreCase("chromedriver")){
@@ -216,7 +232,7 @@ public class HDPortalBaseTest {
 
 	//Method to initialize all the page classes
 	@Parameters({ "SuiteName" })
-	@BeforeClass
+	@BeforeClass(alwaysRun=true)
 	public void initialize(@Optional("ChromeSuite") String SuiteName) {
 		hdPortalLoginPage = new HDPortalLoginPage(driver);
 		hdPortalHomePage = new HDPortalHomePage(driver);
@@ -227,6 +243,9 @@ public class HDPortalBaseTest {
 		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
 		hdPortalManageAlertHistoryPage = new HDPortalManageAlertHistoryPage(driver);
 		hdPortalManageAddNewVisitPage = new HDPortalManageAddNewVisitPage(driver);
+		hdPortalManageCompleteVisitsPage = new HDPortalManageCompleteVisitsPage(driver);
+		hdPortalManageCancelVisitsPage = new HDPortalManageCancelVisitsPage(driver);
+		hdPortalManageVisitHistoryPage = new HDPortalManageVisitHistoryPage(driver);	
 		hdPortalManageCreditNotePage = new HDPortalManageCreditNotePage(driver);
 	}
 
@@ -252,4 +271,28 @@ public class HDPortalBaseTest {
 			Log.info("Closing browser...");		
 		}
 	}
+
+
+	@AfterMethod(alwaysRun = true)
+	public void setScreenshot(ITestResult result) {
+		if (!result.isSuccess()) {
+			try {
+				WebDriver returned = new Augmenter().augment(driver);
+				if (returned != null) {
+					File f = ((TakesScreenshot) returned).getScreenshotAs(OutputType.FILE);
+					System.out.println("TakesScreenshot  "+f);
+					try {
+						FileUtils.copyFile(f,
+								new File(screenshotFolderPath + result.getName() + screenshotFormat));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			catch (ScreenshotException se) {
+				se.printStackTrace();
+			}
+		}
+	}
+
 }

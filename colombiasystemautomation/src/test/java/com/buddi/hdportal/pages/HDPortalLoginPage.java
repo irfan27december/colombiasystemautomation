@@ -41,6 +41,7 @@ public class HDPortalLoginPage {
 
 	//Method to verify HD login page title
 	public String verifyPageTitle() {
+		Log.info("Page title is displayed as :"+driver.getTitle());
 		return driver.getTitle();
 	}
 
@@ -79,8 +80,12 @@ public class HDPortalLoginPage {
 	//Method to click login element
 	public void clickLogin(){
 		CommonActions.waitForElementToBeClickable(driver, loginElement);
-		loginElement.click();	
-		Log.info("Login button is clicked......");
+		if(loginElement.isDisplayed()){
+			loginElement.click();	
+			Log.info("Login button is clicked...");
+		}else{
+			Log.error("Failed to click login button...");
+		}		
 	}
 
 	// Method to login HD portal

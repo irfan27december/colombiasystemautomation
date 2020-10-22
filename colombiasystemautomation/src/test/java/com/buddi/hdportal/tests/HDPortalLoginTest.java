@@ -6,6 +6,7 @@ package com.buddi.hdportal.tests;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.buddi.colombia.testdata.StringConstants;
@@ -17,7 +18,17 @@ import com.buddi.colombia.utilities.ReadExcelSheet;
  * @author irfan
  *
  */
+
+
+/*The first way is to use Listeners annotation (@Listeners) as shown below:
+@Listeners(com.buddi.colombia.listeners.TestListener.class)				
+We use this in the class "TestCases"*/
+
+
+
 public class HDPortalLoginTest extends HDPortalBaseTest{
+	
+	
 	public static XSSFSheet sheet;
 	public static Object[][] LoginData; 
 
@@ -35,7 +46,6 @@ public class HDPortalLoginTest extends HDPortalBaseTest{
 		}
 		return LoginData;
 	}
-
 
 	//Method to launch HD portal
 	@Test(priority = 0, groups = "Smoke")

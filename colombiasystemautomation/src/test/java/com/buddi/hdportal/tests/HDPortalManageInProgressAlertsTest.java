@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.buddi.colombia.testdata.StringConstants;
 import com.buddi.colombia.testdata.TestData;
+import com.buddi.colombia.utilities.GetExcelData;
 
 /**
  * @author irfan
@@ -16,6 +17,7 @@ import com.buddi.colombia.testdata.TestData;
  */
 
 public class HDPortalManageInProgressAlertsTest extends HDPortalBaseTest{
+	static String sheetName = "Alerts";
 
 	//Access In Progress menu and 
 	@Test(priority = 1, groups = "Smoke")
@@ -46,7 +48,12 @@ public class HDPortalManageInProgressAlertsTest extends HDPortalBaseTest{
 	@Test(priority = 3, groups = "Smoke",dependsOnMethods={"accessInProgressAlertsMenuAndVerifyGridTitle"})
 	public void openAlertDetailPage() throws InterruptedException{
 		//hdPortalManageInProgressAlertsPage.navigateToInProgressAlertsOption();
-		hdPortalManageInProgressAlertsPage.openAlert(TestData.ALERT_WEARER_NAME, TestData.ALERT_START_DATE_FORMAT,TestData.WEARER_NUI);
+		String wearerName =  GetExcelData.getCellData(sheetName, 1, 0);
+		String alertStartDateFormat =  GetExcelData.getCellData(sheetName, 1, 2);
+		String wearerNUI =  GetExcelData.getCellData(sheetName, 1, 6);
+		wearerNUI = String.valueOf(wearerNUI);
+		/*hdPortalManageInProgressAlertsPage.openAlert(TestData.ALERT_WEARER_NAME, TestData.ALERT_START_DATE_FORMAT,TestData.WEARER_NUI);*/
+		hdPortalManageInProgressAlertsPage.openAlert(wearerName, alertStartDateFormat,wearerNUI);
 	}
 	
 	//Confirm alert detail page

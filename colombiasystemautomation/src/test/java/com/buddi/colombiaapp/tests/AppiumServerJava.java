@@ -19,7 +19,7 @@ public class AppiumServerJava {
 	/*public String appiumServerIPAddress = "127.0.0.1";
 	public int appiumServerPort = 4723;*/
 	static ReadProperties readProperties = new ReadProperties();
-	public static int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT"));
+	public static int appiumServerPort = Integer.parseInt(readProperties.getPropertyValue("appium.server.port"));
 
 	//Method to start Appium server 
 	public void startAppiumServer() {
@@ -29,8 +29,8 @@ public class AppiumServerJava {
 
 		//Build the Appium service
 		builder = new AppiumServiceBuilder();
-		builder.withIPAddress(readProperties.getPropertyValue("APPIUMSERVER_IPADDRESS"));		
-		builder.usingPort(Integer.parseInt(readProperties.getPropertyValue("APPIUMSERVER_PORT")));
+		builder.withIPAddress(readProperties.getPropertyValue("appium.server.ipaddress"));		
+		builder.usingPort(Integer.parseInt(readProperties.getPropertyValue("appium.server.port")));
 		builder.withCapabilities(capabilities);
 		builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
 		builder.withArgument(GeneralServerFlag.LOG_LEVEL,"error");
