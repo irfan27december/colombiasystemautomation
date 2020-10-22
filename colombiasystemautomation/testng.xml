@@ -7,29 +7,28 @@
 	<!-- <suite name="Suite" parallel = "classes" thread-count = "2"> -->
 	<!-- <suite name="Suite" thread-count="3" parallel="methods"> -->
 
-	<!-- If project has multiple classes adding Listeners to each one of them could be cumbersome and error prone.
-	In such cases, add listeners tag in testng xml -->
+	<!-- If project has multiple classes adding Listeners to each one of them 
+		could be cumbersome and error prone. In such cases, add listeners tag in 
+		testng xml -->
 	<listeners>
 		<listener class-name="com.buddi.colombia.listeners.TestListener" />
 	</listeners>
- 	
- 	
- 	<!-- Listener for pdf: Reference URL: https://www.inviul.com/pdf-report-selenium-itext/ -->
- 	<!-- <listeners>
- 		<listener class-name="com.buddi.colombia.pdfreport.SeleniumPDFReportWithIReporter"/>
- 		<listener class-name="com.buddi.colombia.pdfreport.TestListener"/>
-	</listeners> -->
- 	
+
+
+	<!-- Listener for pdf: Reference URL: https://www.inviul.com/pdf-report-selenium-itext/ -->
+	<!-- <listeners> <listener class-name="com.buddi.colombia.pdfreport.SeleniumPDFReportWithIReporter"/> 
+		<listener class-name="com.buddi.colombia.pdfreport.TestListener"/> </listeners> -->
+
 	<parameter name="browser" value="chromedriver"></parameter>
 	<parameter name="SuiteName" value="ChromeSuite"></parameter>
 	<!-- <parameter name="driverPath" value="drivers/chromedriver.exe"></parameter> -->
 
 	<test name="App">
 		<classes>
-			<class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest"/>
+			<!-- <class name="com.buddi.colombiaapp.tests.LoginColombiaAppTest" /> -->
 		</classes>
 	</test>
-<!-- 
+
 	<test name="Login HD Portal">
 		<groups>
 			<run>
@@ -42,7 +41,7 @@
 		</classes>
 	</test>
 
-	<test name="HD Portal Home Page">
+	<!-- <test name="HD Portal Home Page">
 		<groups>
 			<run>
 				<include name="Smoke" />
@@ -51,7 +50,32 @@
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalHomeTest" />
 		</classes>
-	</test>
+	</test> -->
+	
+	<test name="HD Portal Add New Visit and Cancel Visit">
+		<classes>
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageCancelVisitsTest" />
+		</classes>
+	</test>	
+	
+	<test name="HD Portal Add New Visit and Complete Visit">
+		<classes>
+		    <class
+				name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageCompleteVisitsTest" />
+		</classes>
+	</test>	
+	
+	<test name="HD Portal Verify Complete and Cancel Visits">
+		<classes>
+			<class
+				name="com.buddi.hdportal.tests.HDPortalManageVisitHistoryTests" />
+		</classes>
+	</test>	
 
 	<test name="HD Portal New Alerts">
 		<groups>
@@ -67,7 +91,7 @@
 	<test name="HD Portal In Progress Alerts">
 		<groups>
 			<run>
-				<include name="Smoke" /> 
+				<include name="Smoke" />
 			</run>
 		</groups>
 		<classes>
@@ -78,7 +102,7 @@
 	<test name="HD Portal Alert History">
 		<groups>
 			<run>
-				<include name="Smoke" /> 
+				<include name="Smoke" />
 			</run>
 		</groups>
 		<classes>
@@ -86,32 +110,56 @@
 		</classes>
 	</test>
 
-	<test name="HD Portal Manage Pending Visits">
+	<!-- <test name="HD Portal Add New Visit and Cancel Visit">
 		<groups>
 			<run>
-				<include name="Smoke" /> 
-			</run>
-		</groups>
-		<classes>
-			<class name="com.buddi.hdportal.tests.HDPortalManagePendingVisitsTest" />
-		</classes>
-	</test>
-
-	<test name="HD Portal Add New Visit">
-		<groups>
-			<run>
-				<include name="Smoke" /> 
+				<include name="Smoke" />
 			</run>
 		</groups>
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
+			<class name="com.buddi.hdportal.tests.HDPortalManageCancelVisitsTest" />
+		</classes>
+	</test>
+
+	<test name="HD Portal Add New Visit and Complete Visit">
+		<groups>
+			<run>
+				<include name="Smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.buddi.hdportal.tests.HDPortalManageAddNewVisitsTest" />
+			<class name="com.buddi.hdportal.tests.HDPortalManageCompleteVisitsTest" />
+		</classes>
+	</test>
+
+	<test name="HD Portal Verify Complete and Cancel Visits">
+		<groups>
+			<run>
+				<include name="Smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.buddi.hdportal.tests.HDPortalManageVisitHistoryTests" />
+		</classes>
+	</test> -->
+
+	<test name="HD Portal Record Credit Note">
+		<groups>
+			<run>
+				<include name="Smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.buddi.hdportal.tests.HDPortalManageCreditNoteTest" />
 		</classes>
 	</test>
 
 	<test name="HD Portal Manage User Groups">
 		<groups>
 			<run>
-				<include name="Smoke" /> 
+				<include name="Smoke" />
 			</run>
 		</groups>
 		<classes>
@@ -122,12 +170,12 @@
 	<test name="HD Portal Manage Knowledge Base">
 		<groups>
 			<run>
-				<include name="Smoke" /> 
+				<include name="Smoke" />
 			</run>
 		</groups>
 		<classes>
 			<class name="com.buddi.hdportal.tests.HDPortalManageKnowledgeBaseTest" />
 		</classes>
-	</test> -->
+	</test>
 
 </suite> 

@@ -47,7 +47,6 @@ public class HDPortalLoginTest extends HDPortalBaseTest{
 		return LoginData;
 	}
 
-
 	//Method to launch HD portal
 	@Test(priority = 0, groups = "Smoke")
 	public void launchHDPortal(){		

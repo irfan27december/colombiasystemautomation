@@ -17,8 +17,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -38,12 +36,15 @@ import com.buddi.hdportal.pages.HDPortalHomePage;
 import com.buddi.hdportal.pages.HDPortalLoginPage;
 import com.buddi.hdportal.pages.HDPortalManageAddNewVisitPage;
 import com.buddi.hdportal.pages.HDPortalManageAlertHistoryPage;
+import com.buddi.hdportal.pages.HDPortalManageCancelVisitsPage;
+import com.buddi.hdportal.pages.HDPortalManageCompleteVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageCreditNotePage;
 import com.buddi.hdportal.pages.HDPortalManageInProgressAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManageKnowledgeBasePage;
 import com.buddi.hdportal.pages.HDPortalManageNewManualAlertsPage;
 import com.buddi.hdportal.pages.HDPortalManagePendingVisitsPage;
 import com.buddi.hdportal.pages.HDPortalManageUserGroupsPage;
+import com.buddi.hdportal.pages.HDPortalManageVisitHistoryPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -62,12 +63,15 @@ public class HDPortalBaseTest {
 	protected HDPortalLoginPage hdPortalLoginPage;	
 	protected HDPortalHomePage hdPortalHomePage;
 	protected HDPortalManageNewManualAlertsPage hdPortalManageNewManualAlertsPage;
+	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
+	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageUserGroupsPage hdPortalManageUserGroupsPage;
 	protected HDPortalManageKnowledgeBasePage hdPortalManageKnowledgeBasePage;
 	protected HDPortalManagePendingVisitsPage hdPortalManagePendingVisitsPage;
-	protected HDPortalManageInProgressAlertsPage hdPortalManageInProgressAlertsPage;
-	protected HDPortalManageAlertHistoryPage hdPortalManageAlertHistoryPage;
 	protected HDPortalManageAddNewVisitPage hdPortalManageAddNewVisitPage;
+	protected HDPortalManageCompleteVisitsPage hdPortalManageCompleteVisitsPage;
+	protected HDPortalManageCancelVisitsPage hdPortalManageCancelVisitsPage;
+	protected HDPortalManageVisitHistoryPage hdPortalManageVisitHistoryPage;
 	protected HDPortalManageCreditNotePage hdPortalManageCreditNotePage;
 
 	public static final String testDataExcelFileName = "testdata.xlsx";
@@ -239,6 +243,9 @@ public class HDPortalBaseTest {
 		hdPortalManageInProgressAlertsPage = new HDPortalManageInProgressAlertsPage(driver);
 		hdPortalManageAlertHistoryPage = new HDPortalManageAlertHistoryPage(driver);
 		hdPortalManageAddNewVisitPage = new HDPortalManageAddNewVisitPage(driver);
+		hdPortalManageCompleteVisitsPage = new HDPortalManageCompleteVisitsPage(driver);
+		hdPortalManageCancelVisitsPage = new HDPortalManageCancelVisitsPage(driver);
+		hdPortalManageVisitHistoryPage = new HDPortalManageVisitHistoryPage(driver);	
 		hdPortalManageCreditNotePage = new HDPortalManageCreditNotePage(driver);
 	}
 
@@ -268,7 +275,6 @@ public class HDPortalBaseTest {
 
 	@AfterMethod(alwaysRun = true)
 	public void setScreenshot(ITestResult result) {
-		System.out.println("setScreenshot in method....");
 		if (!result.isSuccess()) {
 			try {
 				WebDriver returned = new Augmenter().augment(driver);
@@ -278,8 +284,6 @@ public class HDPortalBaseTest {
 					try {
 						FileUtils.copyFile(f,
 								new File(screenshotFolderPath + result.getName() + screenshotFormat));
-						System.out.println("SCREENSHOT_FOLDER  "+screenshotFolderPath);
-						System.out.println("IRFAN---"+screenshotFolderPath + result.getName() + screenshotFormat);
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
